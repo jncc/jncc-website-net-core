@@ -8,6 +8,7 @@
     <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
     <PackageReference Include="Umbraco.Cms.Core" Version="9.2.0" />
     <PackageReference Include="Umbraco.Cms.Infrastructure" Version="9.2.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="9.2.0" />
   </ItemGroup>
 
 </Project>
