@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31410.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JNCC.PublicWebsite", "JNCC.PublicWebsite\JNCC.PublicWebsite.csproj", "{42B2F2CE-8571-4931-9E45-467CE3623615}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JNCC.PublicWebsite.Core", "JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj", "{33A714DB-9BEB-423D-B2EC-FB1200A3C771}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42B2F2CE-8571-4931-9E45-467CE3623615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42B2F2CE-8571-4931-9E45-467CE3623615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42B2F2CE-8571-4931-9E45-467CE3623615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42B2F2CE-8571-4931-9E45-467CE3623615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33A714DB-9BEB-423D-B2EC-FB1200A3C771}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33A714DB-9BEB-423D-B2EC-FB1200A3C771}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33A714DB-9BEB-423D-B2EC-FB1200A3C771}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33A714DB-9BEB-423D-B2EC-FB1200A3C771}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {14E4F85A-3290-4861-84F9-53A8424E829A}
+	EndGlobalSection
+EndGlobal
