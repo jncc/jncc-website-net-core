@@ -17,6 +17,7 @@ namespace JNCC.PublicWebsite.Core.Composers
         {
             //Services
             builder.Services.AddSingleton<IHomePageService, HomePageService>();
+            builder.Services.AddSingleton<IIndividualJobPageService, IndividualJobPageService>();
             builder.Services.AddSingleton<INewsAndInsightsLandingService, NewsAndInsightsLandingService>();
             builder.Services.AddSingleton<IBreadcrumbsService, BreadcrumbsService>();
             builder.Services.AddSingleton<INavigationItemService, NavigationItemService>();
