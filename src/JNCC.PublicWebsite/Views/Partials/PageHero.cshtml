@@ -1,0 +1,37 @@
+﻿@model JNCC.PublicWebsite.Core.ViewModels.PageHeroViewModel
+@if(Model == null) { return; }
+
+@if (Model.ImageUrl != null)
+{
+    <div class="visual-section" style="background-image: url(@Model.ImageUrl);">
+        <div class="container">
+            <h1>@Model.Headline</h1>
+        </div>
+
+        @if (!Model.ImageCopyrightText.IsNullOrWhiteSpace())
+        {
+            <div class="copyright-statement">
+                <div class="text-left">
+                    @Model.ImageCopyrightText
+                </div>
+            </div>
+        }
+    </div> }
+else
+{
+    <div class="visual-section">
+        <div class="container">
+            <h1>@Model.Headline</h1>
+        </div>
+
+        @if (!Model.ImageCopyrightText.IsNullOrWhiteSpace())
+        {
+            <div class="copyright-statement">
+                <div class="text-left">
+                    @Model.ImageCopyrightText
+                </div>
+            </div>
+        }
+    </div>
+
+}
