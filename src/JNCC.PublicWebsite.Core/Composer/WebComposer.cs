@@ -19,6 +19,7 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IHomePageService, HomePageService>();
             builder.Services.AddSingleton<IScienceDetailsPageService, ScienceDetailsPageService>();
             builder.Services.AddSingleton<IIndividualJobPageService, IndividualJobPageService>();
+            builder.Services.AddSingleton<IScienceCategoryPageService, ScienceCategoryPageService>();
             builder.Services.AddSingleton<INewsAndInsightsLandingService, NewsAndInsightsLandingService>();
             builder.Services.AddSingleton<IBreadcrumbsService, BreadcrumbsService>();
             builder.Services.AddSingleton<INavigationItemService, NavigationItemService>();
@@ -27,6 +28,7 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<ICategorisedFooterLinksService, CategorisedFooterLinksService>();
             builder.Services.AddSingleton<ISocialMediaLinksService, SocialMediaLinksService>();
             builder.Services.AddSingleton<ISidebarService, SidebarService>();
+            builder.Services.AddSingleton<IScienceSidebarService, ScienceSidebarService>();
             builder.Services.AddSingleton<IRelatedItemService, RelatedItemsService>();
             builder.Services.AddSingleton<ICareersSidebarService, CareersSidebarService>();
             builder.Services.AddSingleton<ICalloutCardsService, CalloutCardsService>();
