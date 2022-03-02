@@ -17,11 +17,13 @@ namespace JNCC.PublicWebsite.Core.Composers
         {
             //Services
             builder.Services.AddSingleton<IHomePageService, HomePageService>();
+            builder.Services.AddSingleton<IBreadcrumbsService, BreadcrumbsService>();
             builder.Services.AddSingleton<INavigationItemService, NavigationItemService>();
             builder.Services.AddSingleton<IPageHeroService, PageHeroService>();
             builder.Services.AddSingleton<IMainNavigationService, MainNavigationService>();
             builder.Services.AddSingleton<ICategorisedFooterLinksService, CategorisedFooterLinksService>();
             builder.Services.AddSingleton<ISocialMediaLinksService, SocialMediaLinksService>();
+            builder.Services.AddSingleton<ISidebarService, SidebarService>();
             builder.Services.AddSingleton<ICareersSidebarService, CareersSidebarService>();
             builder.Services.AddSingleton<ICalloutCardsService, CalloutCardsService>();
             builder.Services.AddSingleton<IScienceDetailsPageProvider, UmbracoScienceDetailsPageProvider>();
