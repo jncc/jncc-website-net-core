@@ -28,6 +28,7 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IRelatedItemService, RelatedItemsService>();
             builder.Services.AddSingleton<ICareersSidebarService, CareersSidebarService>();
             builder.Services.AddSingleton<ICalloutCardsService, CalloutCardsService>();
+            builder.Services.AddSingleton<ILatestNewsSectionService, LatestNewsSectionService>();
             builder.Services.AddSingleton<ISearchQueryService, SearchQueryService>();
             builder.Services.AddSingleton<IDataHubRawQueryService, DataHubRawQueryService>();
             builder.Services.AddSingleton<IQueryService, QueryService>();
