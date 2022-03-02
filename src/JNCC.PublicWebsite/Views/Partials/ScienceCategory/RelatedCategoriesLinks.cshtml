@@ -1,0 +1,21 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels;
+@model IReadOnlyDictionary<char, IEnumerable<NavigationItemViewModel>>
+
+@if (Model?.Any() ?? false)
+{
+    <h2>Related Categories</h2>
+    <div class="row small-collapse small-up-1 medium-up-2">
+        @foreach (var kvp in Model)
+        {
+            <div class="column">
+                <h3>@kvp.Key</h3>
+                <ul>
+                    @foreach (var pageItem in kvp.Value)
+                    {
+                        <li><a href="@pageItem.Url">@pageItem.Text</a></li>
+                    }
+                </ul>
+            </div>
+        }
+    </div>
+}
