@@ -11,6 +11,7 @@ namespace JNCC.PublicWebsite.Core.Composers
         public void Compose(IUmbracoBuilder builder)
         {
             //Services
+            builder.Services.AddSingleton<IHomePageService, HomePageService>();
             builder.Services.AddSingleton<IScienceDetailsPageProvider, UmbracoScienceDetailsPageProvider>();
             builder.Services.AddSingleton<ISciencePageCategoriesProvider, UmbracoSciencePageCategoriesProvider>();
             builder.Services.AddSingleton<IUmbracoArticleYearsProvider, UmbracoArticleYearsProvider>();
