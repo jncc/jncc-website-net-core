@@ -1,0 +1,26 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model IEnumerable<ScienceIFrameSectionViewModel>
+
+<div class="two-columns">
+    <div id="content">
+        @foreach (var section in Model)
+        {
+            if (!section.HideHeadline)
+            {
+                <h2 id="@(section.HtmlId)" style="display: block">@(section.Headline)</h2>
+            }
+            @(await Html.PartialAsync(string.Format("~/Views/Partials/IFrame/{0}.cshtml", section.PartialViewName), section))
+            if (section.SubSections.Any())
+            {
+                foreach (var subSection in section.SubSections)
+                {
+                    if (!subSection.HideHeadline)
+                    {
+                        <h3 id="@(subSection.HtmlId)">@(subSection.Headline)</h3><br />
+                    }
+                    @(await Html.PartialAsync(string.Format("~/Views/Partials/IFrame/{0}.cshtml", section.PartialViewName), section))
+                }
+            }
+        }
+    </div>
+</div>
