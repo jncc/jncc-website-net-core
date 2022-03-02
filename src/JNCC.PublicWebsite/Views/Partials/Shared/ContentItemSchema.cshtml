@@ -1,0 +1,41 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@model ContentItemSchema
+
+@if (Model.Image != null)
+{
+    <article class="article">
+
+        @if (Model.Image?.Any() ?? false)
+        {
+            foreach (BlockListItem image in Model.Image)
+            {
+                if (image.Content is ContentImageSchema mediaItem)
+                {
+                    if (mediaItem.Image is Image media && media != null)
+                    {
+                        var altText = media.AltText.IsNullOrWhiteSpace() ? media.Name : media.AltText;
+                        <div class="img-holder">
+                            <img src="@media.Url()" alt="@altText" title="@(media.TitleText)">
+                        </div>
+                    }
+                }
+            }
+
+        }
+
+        <div class="text-holder">
+            @Html.Raw(Model.Content)
+            <div class="button-group no-bullet">
+                @if (Model.ReadMoreButton != null)
+                {
+                    <a href="@Model.ReadMoreButton.Url" class="button hollow secondary read-more" target="@Model.ReadMoreButton.Target">read more<i class="icon-arrow-right"></i></a>
+                }
+                @if (Model.GetInTouchButton != null)
+                {
+                    <a href="@Model.GetInTouchButton.Url" class="button primary" target="@Model.GetInTouchButton.Target">get in touch</a>
+                }
+            </div>
+        </div>
+    </article>
+}
