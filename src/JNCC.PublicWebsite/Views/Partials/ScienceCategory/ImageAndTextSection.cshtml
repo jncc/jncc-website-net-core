@@ -1,0 +1,27 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels;
+@model IEnumerable<ScienceCategorySectionViewModel>
+
+@if (Model?.Any() ?? false)
+{
+    @foreach (var section in Model)
+    {
+        if (!section.HideHeadline)
+        {
+            <h2 id="@(section.HtmlId)">@(section.Headline)</h2>
+        }
+        @(await Html.PartialAsync(string.Format("~/Views/Partials/ScienceCategory/{0}.cshtml", section.PartialViewName), section))
+
+        if (section.SubSections.Any())
+        {
+            foreach (var subSection in section.SubSections)
+            {
+                if (!subSection.HideHeadline)
+                {
+                    <h3 id="@(subSection.HtmlId)">@(subSection.Headline)</h3>
+                }
+
+                @(await Html.PartialAsync(string.Format("~/Views/Partials/ScienceCategory/{0}.cshtml", subSection.PartialViewName), subSection))
+            }
+        }
+    }
+}
