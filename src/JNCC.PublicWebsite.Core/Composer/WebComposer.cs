@@ -19,6 +19,7 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IHomePageService, HomePageService>();
             builder.Services.AddSingleton<IScienceDetailsPageService, ScienceDetailsPageService>();
             builder.Services.AddSingleton<IIndividualJobPageService, IndividualJobPageService>();
+            builder.Services.AddSingleton<IScienceAtoZPageService, ScienceAtoZPageService>();
             builder.Services.AddSingleton<IScienceLandingPageService, ScienceLandingPageService>();
             builder.Services.AddSingleton<IScienceCategoryPageService, ScienceCategoryPageService>();
             builder.Services.AddSingleton<IIFramePageService, IFramePageService>();
