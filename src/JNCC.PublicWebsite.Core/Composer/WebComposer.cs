@@ -12,6 +12,11 @@ namespace JNCC.PublicWebsite.Core.Composers
         {
             //Services
             builder.Services.AddSingleton<IHomePageService, HomePageService>();
+            builder.Services.AddSingleton<INavigationItemService, NavigationItemService>();
+            builder.Services.AddSingleton<IPageHeroService, PageHeroService>();
+            builder.Services.AddSingleton<IMainNavigationService, MainNavigationService>();
+            builder.Services.AddSingleton<ICategorisedFooterLinksService, CategorisedFooterLinksService>();
+            builder.Services.AddSingleton<ISocialMediaLinksService, SocialMediaLinksService>();
             builder.Services.AddSingleton<IScienceDetailsPageProvider, UmbracoScienceDetailsPageProvider>();
             builder.Services.AddSingleton<ISciencePageCategoriesProvider, UmbracoSciencePageCategoriesProvider>();
             builder.Services.AddSingleton<IUmbracoArticleYearsProvider, UmbracoArticleYearsProvider>();
