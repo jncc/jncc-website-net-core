@@ -1,0 +1,31 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model IEnumerable<CareersListItemViewModel>
+@if (Model?.Any() ?? false)
+{
+    <div class="info-section" style="background-color:white">
+        <div class="container">
+            <h2 id="vacancies">Current vacancies</h2>
+            <table style="width:100%">
+                <tbody>
+                    <tr>
+                        <th>Job title</th>
+                        <th>Grade</th>
+                        <th>Type</th>
+                        <th>Location</th>
+                        <th>Team</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td><a href="@item.Url">@item.JobTitle</a></td>
+                            <td>@item.Grade</td>
+                            <td>@item.Type</td>
+                            <td>@item.Location</td>
+                            <td>@item.Team</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}

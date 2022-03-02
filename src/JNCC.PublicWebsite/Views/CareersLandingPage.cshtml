@@ -1,0 +1,50 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<CareersLandingPage>
+@{
+    Layout = "Master.cshtml";
+}
+
+<main id="main">
+    @(await Component.InvokeAsync("PageHero", new { model = Model }))
+    <div class="container">
+        @(await Component.InvokeAsync("Breadcrumbs", new { model = Model }))
+        <div class="two-columns">
+            <div id="content">
+                @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
+
+                @if (Model.Children<IndividualJobPage>()?.Any() ?? false)
+                {
+                    <div class="row">
+                        <div class="columns small-12 medium-6 callout toc">
+                            <h2 id="toc">Contents</h2>
+                            <ol>
+                                <li><a href="#vacancies">Current vacancies</a></li>
+                            </ol>
+                        </div>
+                    </div>
+                }
+
+                @Html.Raw(Model.Preamble)
+
+                @if (Model.MainContent?.Any() ?? false)
+                {
+                    <ul class="articles-list no-bullet">
+                        @foreach (var item in Model.MainContent)
+                        {
+                            if (item.Content as ContentItemSchema != null)
+                            {
+                                <li>
+                                    @(await Html.PartialAsync("~/Views/Partials/Shared/ContentItemSchema.cshtml", item.Content as ContentItemSchema))
+                                </li>
+                            }
+                        }
+                    </ul>
+                }
+            </div>
+            @(await Component.InvokeAsync("CareersSidebar", new { model = Model }))
+        </div>
+    </div>
+
+    @(await Component.InvokeAsync("CareersListing", new { model = Model }))
+    @(await Component.InvokeAsync("GetInTouch", new { model = Model }))
+</main>

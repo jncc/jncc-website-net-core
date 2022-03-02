@@ -18,12 +18,14 @@ namespace JNCC.PublicWebsite.Core.Composers
             //Services
             builder.Services.AddSingleton<IHomePageService, HomePageService>();
             builder.Services.AddSingleton<IScienceDetailsPageService, ScienceDetailsPageService>();
+            builder.Services.AddSingleton<ICareersLandingPageService, CareersLandingPageService>();
             builder.Services.AddSingleton<IIndividualJobPageService, IndividualJobPageService>();
             builder.Services.AddSingleton<IScienceAtoZPageService, ScienceAtoZPageService>();
             builder.Services.AddSingleton<IScienceLandingPageService, ScienceLandingPageService>();
             builder.Services.AddSingleton<IScienceCategoryPageService, ScienceCategoryPageService>();
             builder.Services.AddSingleton<IIFramePageService, IFramePageService>();
             builder.Services.AddSingleton<INewsAndInsightsLandingService, NewsAndInsightsLandingService>();
+
             builder.Services.AddSingleton<IBreadcrumbsService, BreadcrumbsService>();
             builder.Services.AddSingleton<INavigationItemService, NavigationItemService>();
             builder.Services.AddSingleton<IPageHeroService, PageHeroService>();
@@ -40,6 +42,7 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IDataHubRawQueryService, DataHubRawQueryService>();
             builder.Services.AddSingleton<IQueryService, QueryService>();
             builder.Services.AddSingleton<INewsAndInsightsLandingFilteringService, NewsAndInsightsLandingFilteringService>();
+
             builder.Services.AddSingleton<IScienceDetailsPageProvider, UmbracoScienceDetailsPageProvider>();
             builder.Services.AddSingleton<ISciencePageCategoriesProvider, UmbracoSciencePageCategoriesProvider>();
             builder.Services.AddSingleton<IUmbracoArticleYearsProvider, UmbracoArticleYearsProvider>();
