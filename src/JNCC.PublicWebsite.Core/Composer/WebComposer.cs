@@ -17,6 +17,7 @@ namespace JNCC.PublicWebsite.Core.Composers
         {
             //Services
             builder.Services.AddSingleton<IHomePageService, HomePageService>();
+            builder.Services.AddSingleton<INewsAndInsightsLandingService, NewsAndInsightsLandingService>();
             builder.Services.AddSingleton<IBreadcrumbsService, BreadcrumbsService>();
             builder.Services.AddSingleton<INavigationItemService, NavigationItemService>();
             builder.Services.AddSingleton<IPageHeroService, PageHeroService>();
@@ -29,6 +30,8 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<ICalloutCardsService, CalloutCardsService>();
             builder.Services.AddSingleton<ISearchQueryService, SearchQueryService>();
             builder.Services.AddSingleton<IDataHubRawQueryService, DataHubRawQueryService>();
+            builder.Services.AddSingleton<IQueryService, QueryService>();
+            builder.Services.AddSingleton<INewsAndInsightsLandingFilteringService, NewsAndInsightsLandingFilteringService>();
             builder.Services.AddSingleton<IScienceDetailsPageProvider, UmbracoScienceDetailsPageProvider>();
             builder.Services.AddSingleton<ISciencePageCategoriesProvider, UmbracoSciencePageCategoriesProvider>();
             builder.Services.AddSingleton<IUmbracoArticleYearsProvider, UmbracoArticleYearsProvider>();
