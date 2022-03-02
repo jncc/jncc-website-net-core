@@ -1,0 +1,27 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ArticlePage>
+@{
+    Layout = "Master.cshtml";
+}
+<main id="main">
+    @(await Component.InvokeAsync("PageHero", new { model = Model }))
+    <div class="container">
+        @(await Component.InvokeAsync("Breadcrumbs", new { model = Model }))
+        <div class="two-columns">
+            <div id="content">
+                @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
+                <p>
+                    <a href="@Model.Parent?.Url()?articleTypes=@Model.ArticleType"><span class="label location">@Model.ArticleType</span></a>
+                    <a href="@Model.Parent?.Url()?years=@Model.PublishDate.Year"><span class="label location">@Model.PublishDate.Year</span></a>
+                    @foreach (var tag in Model.ArticleTeams)
+                    {
+                        <a href="@Model.Parent?.Url()?teams=@tag"><span class="label location">@tag</span></a>
+                    }
+                </p>
+                @Html.Raw(Model.MainContent)
+            </div>
+            @(await Component.InvokeAsync("ArticleSidebar", new { model = Model }))
+        </div>
+    </div>
+    @(await Component.InvokeAsync("RelatedItems", new { model = Model }))
+</main>
