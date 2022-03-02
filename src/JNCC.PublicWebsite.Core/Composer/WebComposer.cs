@@ -1,8 +1,13 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using JNCC.PublicWebsite.Core.Services;
+using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
+using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Interfaces.Providers;
 using JNCC.PublicWebsite.Core.Providers;
+using JNCC.PublicWebsite.Core.Configuration;
+using JNCC.PublicWebsite.Core.Constants;
+using Microsoft.Extensions.Configuration;
 
 namespace JNCC.PublicWebsite.Core.Composers
 {
@@ -11,6 +16,14 @@ namespace JNCC.PublicWebsite.Core.Composers
         public void Compose(IUmbracoBuilder builder)
         {
             //Services
+            builder.Services.AddSingleton<IHomePageService, HomePageService>();
+            builder.Services.AddSingleton<INavigationItemService, NavigationItemService>();
+            builder.Services.AddSingleton<IPageHeroService, PageHeroService>();
+            builder.Services.AddSingleton<IMainNavigationService, MainNavigationService>();
+            builder.Services.AddSingleton<ICategorisedFooterLinksService, CategorisedFooterLinksService>();
+            builder.Services.AddSingleton<ISocialMediaLinksService, SocialMediaLinksService>();
+            builder.Services.AddSingleton<ICareersSidebarService, CareersSidebarService>();
+            builder.Services.AddSingleton<ICalloutCardsService, CalloutCardsService>();
             builder.Services.AddSingleton<IScienceDetailsPageProvider, UmbracoScienceDetailsPageProvider>();
             builder.Services.AddSingleton<ISciencePageCategoriesProvider, UmbracoSciencePageCategoriesProvider>();
             builder.Services.AddSingleton<IUmbracoArticleYearsProvider, UmbracoArticleYearsProvider>();
