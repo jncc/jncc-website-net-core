@@ -1,0 +1,30 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model ResourcesViewModel
+@if (Model?.Resources?.Any() ?? false)
+{
+    <section class="articles-section resources">
+        <div class="container">
+            <h2>@Model.ResourceTitle</h2>
+            <div class="row">
+                @foreach (var item in Model.Resources)
+                {
+                    <div class="columns small-12 medium-4">
+                        <div class="card">
+                            @if (string.IsNullOrWhiteSpace(item.ImageUrl) == false)
+                            {
+                                <div class="img-holder" style="background-image: url(@item.ImageUrl);"></div>
+                            }
+                            <div class="card-section">
+                                @item.Content
+                                @if (item.ReadMoreButton != null)
+                                {
+                                    <a href="@item.ReadMoreButton.Url" class="button expanded">@item.ReadMoreButton.Text</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+}
