@@ -1,0 +1,18 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ScienceLandingPage>
+@{
+    Layout = "Master.cshtml";
+}
+<main id="main" class="science-landing landing-page">
+    @(await Component.InvokeAsync("PageHero", new { model = Model }))
+    <div class="container">
+        @(await Component.InvokeAsync("Breadcrumbs", new { model = Model }))
+        @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
+    </div>
+
+    @(await Html.PartialAsync("~/Views/Partials/ScienceLanding/FeaturedQuote.cshtml"))
+    @(await Component.InvokeAsync("CalloutCards", new { model = Model }))
+    @(await Component.InvokeAsync("ScienceLandingLatestUpdates", new { model = Model }))
+    @(await Component.InvokeAsync("ResourcesCollections", new { model = Model }))
+    @(await Component.InvokeAsync("LatestNewsAndSocialFeed", new { model = Model }))
+</main>
