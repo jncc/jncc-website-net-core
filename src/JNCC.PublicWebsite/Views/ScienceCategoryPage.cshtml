@@ -1,0 +1,26 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ScienceCategoryPage>
+@{
+    Layout = "Master.cshtml";
+}
+<main id="main">
+    @(await Component.InvokeAsync("PageHero", new { model = Model }))
+    <div class="container">
+        @(await Component.InvokeAsync("Breadcrumbs", new { model = Model }))
+        <div class="two-columns">
+            <div id="content">
+                @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
+                @Html.Raw(Model.Preamble)
+
+                @(await Component.InvokeAsync("ScienceCategoryImageTextSection", new { model = Model }))
+                @(await Component.InvokeAsync("ScienceCategorySections", new { model = Model }))
+                @(await Component.InvokeAsync("PageMetaInformation", new { model = Model }))
+                @(await Component.InvokeAsync("ScienceCategoryCategorisedPages", new { model = Model }))
+                @(await Component.InvokeAsync("ScienceCategoryRelatedCategoryLinks", new { model = Model }))
+            </div>
+            @(await Component.InvokeAsync("ScienceCategoryPageSidebar", new { model = Model }))
+        </div>
+    </div>
+    @(await Component.InvokeAsync("GetInTouch", new { model = Model }))
+    @(await Component.InvokeAsync("RelatedItems", new { model = Model }))
+</main>
