@@ -45,7 +45,7 @@ namespace JNCC.PublicWebsite.Core.Services
                 {
                     Title = "Year",
                     Group = FilterNames.Years,
-                    Values = GetFilters(_umbracoArticleYearsProvider.GetAllByRoot(root), filteringModel.Years)
+                    Values = GetFilters(_umbracoArticleYearsProvider.GetAllByRootDescending(root), filteringModel.Years)
                 }
             };
 
