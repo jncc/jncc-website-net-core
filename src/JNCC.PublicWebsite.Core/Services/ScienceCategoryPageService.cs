@@ -6,6 +6,7 @@ using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.ViewModels;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
@@ -47,9 +48,10 @@ namespace JNCC.PublicWebsite.Core.Services
                 return null;
             }
 
-            if(scienceCategoryPage.RelatedCategories is IEnumerable<IScienceCategorisablePage> relatedCategories)
+            if(scienceCategoryPage.RelatedCategories?.Any() ?? false)
             {
-                return relatedCategories.CategorisePages();
+                var categories = scienceCategoryPage.RelatedCategories.Select(x => x as IScienceCategorisablePage);
+                return categories.CategorisePages();
             }
 
             return null;
