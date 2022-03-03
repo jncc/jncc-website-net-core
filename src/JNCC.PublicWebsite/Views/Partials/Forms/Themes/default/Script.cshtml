@@ -1,7 +1,6 @@
 @model Umbraco.Forms.Web.Models.FormViewModel
 
 @using Newtonsoft.Json
-@using Umbraco.Forms.Core
 @using Umbraco.Forms.Web
 
 @{
@@ -19,7 +18,7 @@
 
 <script type="application/javascript">
     if (typeof umbracoFormsCollection === 'undefined') var umbracoFormsCollection = [];
-    umbracoFormsCollection.push("@(Html.Raw(Uri.EscapeUriString(JsonConvert.SerializeObject(formJsObj, FormsJsonSerializerSettings.Default))))");
+    umbracoFormsCollection.push("@(Html.Raw(Uri.EscapeUriString(JsonConvert.SerializeObject(formJsObj))))");
 </script>
 
 @* Only render out scripts on the page if the form has not been submitted yet *@
