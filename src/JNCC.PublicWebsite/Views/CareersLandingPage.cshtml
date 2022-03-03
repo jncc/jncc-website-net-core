@@ -26,6 +26,7 @@
 
                 @Html.Raw(Model.Preamble)
 
+                <h2>@Model.MainContentHeading</h2>
                 @if (Model.MainContent?.Any() ?? false)
                 {
                     <ul class="articles-list no-bullet">
