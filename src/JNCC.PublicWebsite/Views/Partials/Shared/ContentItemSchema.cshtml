@@ -25,17 +25,12 @@
         }
 
         <div class="text-holder">
+            if(Model.LinkTo != null){
+                   <h2><a href="@Model.LinkTo?.Url" target="@Model.LinkTo?.Target">@Model.Headline</a></h2>
+            }else{
+                   <h2>@Model.Headline</h2>
+            }    
             @Html.Raw(Model.Content)
-            <div class="button-group no-bullet">
-                @if (Model.ReadMoreButton != null)
-                {
-                    <a href="@Model.ReadMoreButton.Url" class="button hollow secondary read-more" target="@Model.ReadMoreButton.Target">read more<i class="icon-arrow-right"></i></a>
-                }
-                @if (Model.GetInTouchButton != null)
-                {
-                    <a href="@Model.GetInTouchButton.Url" class="button primary" target="@Model.GetInTouchButton.Target">get in touch</a>
-                }
-            </div>
         </div>
     </article>
 }
