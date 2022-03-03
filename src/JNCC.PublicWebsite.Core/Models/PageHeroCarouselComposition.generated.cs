@@ -35,7 +35,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		/// <summary>Hero Images</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> HeroImages { get; }
+		global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops> HeroImages { get; }
 	}
 
 	/// <summary>Page Hero Carousel Composition</summary>
@@ -101,11 +101,11 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("heroImages")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> HeroImages => GetHeroImages(this, _publishedValueFallback);
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops> HeroImages => GetHeroImages(this, _publishedValueFallback);
 
 		/// <summary>Static getter for Hero Images</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> GetHeroImages(IPageHeroCarouselComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>>(publishedValueFallback, "heroImages");
+		public static global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops> GetHeroImages(IPageHeroCarouselComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.MediaWithCrops>>(publishedValueFallback, "heroImages");
 	}
 }

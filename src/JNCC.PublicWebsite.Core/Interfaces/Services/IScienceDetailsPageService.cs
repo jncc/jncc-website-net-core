@@ -1,6 +1,7 @@
 ﻿using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.ViewModels;
 using System.Collections.Generic;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
@@ -16,7 +17,7 @@ namespace JNCC.PublicWebsite.Core.Interfaces.Services
         ScienceDetailsImageGallerySectionViewModel CreateImageGallerySection(ScienceDetailsSectionImageGallerySchema schema);
         ScienceDetailsRichTextSubSectionViewModel CreateRichTextSubSection(ScienceDetailsSubSectionRichTextSchema schema, string parentSectionHtmlId);
         ScienceDetailsImageGallerySubSectionViewModel CreateImageGallerySubSection(ScienceDetailsSubSectionImageGallerySchema schema, string parentSectionHtmlId);
-        IEnumerable<ImageGalleryItemViewModel> CreateSectionImageGallery(IEnumerable<IPublishedContent> images);
+        IEnumerable<ImageGalleryItemViewModel> CreateSectionImageGallery(IEnumerable<MediaWithCrops> images);
         ScienceDetailsImageRichTextSectionViewModel CreateImageRichTextSection(ScienceDetailsSectionImageTextSchema schema);
         ScienceDetailsImageRichTextSectionViewModel CreateIndividualImageRichTextSection(ScienceDetailsIndividualSectionImageTextSchema schema);
         ScienceDetailsImageRichTextSubSectionViewModel CreateImageRichTextSubSection(ScienceDetailsSubSectionImageRichTextSchema schema, string parentSectionHtmlId);

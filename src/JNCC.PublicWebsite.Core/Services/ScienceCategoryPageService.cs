@@ -7,6 +7,7 @@ using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.ViewModels;
 using System;
 using System.Collections.Generic;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
@@ -260,7 +261,7 @@ namespace JNCC.PublicWebsite.Core.Services
             return model;
         }
 
-        public IEnumerable<ImageGalleryItemViewModel> CreateSectionImageGallery(IEnumerable<IPublishedContent> images)
+        public IEnumerable<ImageGalleryItemViewModel> CreateSectionImageGallery(IEnumerable<MediaWithCrops> images)
         {
             var viewModels = new List<ImageGalleryItemViewModel>();
 
@@ -271,7 +272,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             foreach (var image in images)
             {
-                if(image is Image galleryImage)
+                if(image?.Content is Image galleryImage)
                 {
                     var viewModel = new ImageGalleryItemViewModel()
                     {
@@ -298,7 +299,7 @@ namespace JNCC.PublicWebsite.Core.Services
             model.Content = schema.Content;
             if (schema.Image != null)
             {
-                if (schema.Image is Image image)
+                if (schema.Image?.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {
@@ -405,7 +406,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             if (schema.Image != null)
             {
-                if(schema.Image is Image image)
+                if(schema.Image?.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {
@@ -500,7 +501,7 @@ namespace JNCC.PublicWebsite.Core.Services
             model.Content = schema.Content;
             if (schema.Image != null)
             {
-                if(schema.Image is Image image)
+                if(schema.Image?.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {

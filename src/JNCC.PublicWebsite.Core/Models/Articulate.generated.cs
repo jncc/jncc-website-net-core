@@ -101,9 +101,8 @@ namespace JNCC.PublicWebsite.Core.Models
 		/// Comments Form: The Umbraco Form used by website users to submit comments to blog posts in this blog. If no form is selected users will not be able to submit comments.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("commentsForm")]
-		public virtual string CommentsForm => this.Value<string>(_publishedValueFallback, "commentsForm");
+		public virtual global::System.Nullable<global::System.Guid> CommentsForm => this.Value<global::System.Nullable<global::System.Guid>>(_publishedValueFallback, "commentsForm");
 
 		///<summary>
 		/// Custom RSS Feed Url: Optional custom rss feed URL (i.e. if you use feedburner, etc...)

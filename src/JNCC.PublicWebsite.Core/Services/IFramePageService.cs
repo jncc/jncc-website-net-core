@@ -11,6 +11,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Web;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
@@ -247,7 +248,7 @@ namespace JNCC.PublicWebsite.Core.Services
             return model;
         }
 
-        private IEnumerable<ImageGalleryItemViewModel> CreateSectionImageGallery(IEnumerable<IPublishedContent> images)
+        private IEnumerable<ImageGalleryItemViewModel> CreateSectionImageGallery(IEnumerable<MediaWithCrops> images)
         {
             var viewModels = new List<ImageGalleryItemViewModel>();
 
@@ -258,7 +259,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             foreach (var image in images)
             {
-                if (image is Image galleryImage)
+                if (image?.Content is Image galleryImage)
                 {
                     var viewModel = new ImageGalleryItemViewModel()
                     {

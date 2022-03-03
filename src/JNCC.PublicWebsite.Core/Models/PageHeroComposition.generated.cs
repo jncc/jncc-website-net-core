@@ -30,7 +30,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		/// <summary>Hero Image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent HeroImage { get; }
+		global::Umbraco.Cms.Core.Models.MediaWithCrops HeroImage { get; }
 	}
 
 	/// <summary>Page Hero Composition</summary>
@@ -83,11 +83,11 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("heroImage")]
-		public virtual global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent HeroImage => GetHeroImage(this, _publishedValueFallback);
+		public virtual global::Umbraco.Cms.Core.Models.MediaWithCrops HeroImage => GetHeroImage(this, _publishedValueFallback);
 
 		/// <summary>Static getter for Hero Image</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent GetHeroImage(IPageHeroComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>(publishedValueFallback, "heroImage");
+		public static global::Umbraco.Cms.Core.Models.MediaWithCrops GetHeroImage(IPageHeroComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<global::Umbraco.Cms.Core.Models.MediaWithCrops>(publishedValueFallback, "heroImage");
 	}
 }
