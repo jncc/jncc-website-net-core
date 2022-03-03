@@ -18,7 +18,7 @@
                     {
                         <h3 id="@(subSection.HtmlId)">@(subSection.Headline)</h3><br />
                     }
-                    @(await Html.PartialAsync(string.Format("~/Views/Partials/IFrame/{0}.cshtml", section.PartialViewName), section))
+                    @(await Html.PartialAsync(string.Format("~/Views/Partials/IFrame/{0}.cshtml", subSection.PartialViewName), subSection))
                 }
             }
         }
