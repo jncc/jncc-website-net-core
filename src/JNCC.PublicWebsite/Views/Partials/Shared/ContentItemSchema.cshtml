@@ -12,7 +12,7 @@
             {
                 if (image.Content is ContentImageSchema mediaItem)
                 {
-                    if (mediaItem.Image is Image media && media != null)
+                    if (mediaItem.Image?.Content is Image media && media != null)
                     {
                         var altText = media.AltText.IsNullOrWhiteSpace() ? media.Name : media.AltText;
                         <div class="img-holder">
