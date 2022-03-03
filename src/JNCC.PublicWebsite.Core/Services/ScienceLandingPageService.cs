@@ -9,6 +9,7 @@ using Umbraco.Cms.Web.Common.Mvc;
 using Umbraco.Cms.Core.Strings;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using System;
+using System.Text.RegularExpressions;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
@@ -62,7 +63,8 @@ namespace JNCC.PublicWebsite.Core.Services
 
                 if (ExistenceUtility.IsNullOrWhiteSpace(page.Preamble) == false)
                 {
-                    viewModel.Content = _htmlStringUtilities.Truncate(page.Preamble.ToHtmlString(), LatestUpdateItemContentLength, true, false) as IHtmlEncodedString;
+
+                    viewModel.Content = _htmlStringUtilities.Truncate(page.Preamble.ToString(), LatestUpdateItemContentLength, true, false);
                 }
 
                 viewModels.Add(viewModel);
