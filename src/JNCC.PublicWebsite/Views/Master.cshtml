@@ -26,8 +26,8 @@
 @section Footer {
     <footer id="footer" class="text-center medium-text-left">
         <div class="container">
+            @(await Component.InvokeAsync("CategorisedLinks", new { model = Model })) 
             @(await Component.InvokeAsync("SocialMediaLinks", new { model = Model }))
-            @(await Component.InvokeAsync("CategorisedLinks", new { model = Model }))
         </div>
         <div class="footer-bottom">
             <div class="container">

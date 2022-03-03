@@ -42,6 +42,8 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IDataHubRawQueryService, DataHubRawQueryService>();
             builder.Services.AddSingleton<IQueryService, QueryService>();
             builder.Services.AddSingleton<INewsAndInsightsLandingFilteringService, NewsAndInsightsLandingFilteringService>();
+            builder.Services.AddSingleton<ISeoMetaDataService, SeoMetaDataService>();
+            builder.Services.AddSingleton<IPageIncludesService, PageIncludesService>();
 
             builder.Services.AddSingleton<IScienceDetailsPageProvider, UmbracoScienceDetailsPageProvider>();
             builder.Services.AddSingleton<ISciencePageCategoriesProvider, UmbracoSciencePageCategoriesProvider>();

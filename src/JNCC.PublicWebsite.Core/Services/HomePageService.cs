@@ -11,6 +11,7 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Web;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
@@ -81,7 +82,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             foreach (var image in content.HeroImages)
             {
-                if(image is Image heroImage)
+                if(image?.Content is Image heroImage)
                 {
                     ImageViewModel imageModel = new ImageViewModel()
                     {

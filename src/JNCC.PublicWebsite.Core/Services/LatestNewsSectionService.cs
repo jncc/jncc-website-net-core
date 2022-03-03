@@ -77,7 +77,7 @@ namespace JNCC.PublicWebsite.Core.Services
                     Url = newsItem.Url()
                 };
 
-                if (newsItem.HeroImage is Image heroImage)
+                if (newsItem.HeroImage?.Content is Image heroImage)
                 {
                     viewModel.ImageUrl = heroImage.GetCropUrl(ImageCropAliases.ListingThumbnail);
                     viewModel.ImageAltText = heroImage.AltText.IsNullOrWhiteSpace() ? newsItem.Headline : heroImage.AltText;

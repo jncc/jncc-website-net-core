@@ -8,6 +8,7 @@ using JNCC.PublicWebsite.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Strings;
@@ -251,7 +252,7 @@ namespace JNCC.PublicWebsite.Core.Services
             return model;
         }
 
-        public IEnumerable<ImageGalleryItemViewModel> CreateSectionImageGallery(IEnumerable<IPublishedContent> images)
+        public IEnumerable<ImageGalleryItemViewModel> CreateSectionImageGallery(IEnumerable<MediaWithCrops> images)
         {
             var viewModels = new List<ImageGalleryItemViewModel>();
 
@@ -260,19 +261,22 @@ namespace JNCC.PublicWebsite.Core.Services
                 return viewModels;
             }
 
-            foreach (Image image in images)
+            foreach (MediaWithCrops galleryItem in images)
             {
-                var viewModel = new ImageGalleryItemViewModel()
+                if(galleryItem?.Content is Image image)
                 {
-                    Url = image.Url(),
-                    ThumbnailImageUrl = image.GetCropUrl(cropAlias: ImageCropAliases.Square, urlMode: UrlMode.Absolute),
-                    AlternativeText = image.AltText.IsNullOrWhiteSpace() ? image.Name : image.AltText,
-                    TitleText = image.TitleText,
-                };
+                    var viewModel = new ImageGalleryItemViewModel()
+                    {
+                        Url = image.Url(),
+                        ThumbnailImageUrl = image.GetCropUrl(cropAlias: ImageCropAliases.Square, urlMode: UrlMode.Absolute),
+                        AlternativeText = image.AltText.IsNullOrWhiteSpace() ? image.Name : image.AltText,
+                        TitleText = image.TitleText,
+                    };
 
-                if (string.IsNullOrEmpty(image.Url()) == false)
-                {
-                    viewModels.Add(viewModel);
+                    if (string.IsNullOrEmpty(image.Url()) == false)
+                    {
+                        viewModels.Add(viewModel);
+                    }
                 }
             }
 
@@ -286,7 +290,7 @@ namespace JNCC.PublicWebsite.Core.Services
             model.Content = schema.Content;
             if (schema.Image != null)
             {
-                if(schema.Image is Image image)
+                if(schema.Image?.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {
@@ -354,7 +358,7 @@ namespace JNCC.PublicWebsite.Core.Services
             model.Content = schema.Content;
             if (schema.Image != null)
             {
-                if(schema.Image is Image image)
+                if(schema.Image?.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {
@@ -478,7 +482,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             if (schema.Image != null)
             {
-                if(schema.Image is Image image)
+                if(schema.Image?.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {

@@ -22,26 +22,27 @@ namespace JNCC.PublicWebsite.Core.Services
 
         private string GetSearchTerm(HttpRequest request)
         {
-            request.Query.TryGetValue(Constants.FilterNames.SearchTerm, out var searchTerm);
+            request.Query.TryGetValue(Constants.FilterNames.SearchTerm, out var searchTerms);
+            var searchTerm = searchTerms.Any() ? searchTerms.First() : null;
             return searchTerm;
         }
 
         private string[] GetArticleTypes(HttpRequest request)
         {
             request.Query.TryGetValue(Constants.FilterNames.ArticleTypes, out var articleTypes);
-            return articleTypes.ToArray();
+            return articleTypes.Distinct().ToArray();
         }
 
         private string[] GetTeams(HttpRequest request)
         {
             request.Query.TryGetValue(Constants.FilterNames.Teams, out var teams);
-            return teams.ToArray();
+            return teams.Distinct().ToArray();
         }
 
         private int[] GetYears(HttpRequest request)
         {
             request.Query.TryGetValue(Constants.FilterNames.Years, out var years);
-            return years.Select(x => int.Parse(x)).ToArray();
+            return years.Distinct().Select(x => int.Parse(x)).ToArray();
         }
         private int GetPageNumber(HttpRequest request)
         {

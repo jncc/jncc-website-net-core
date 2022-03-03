@@ -14,7 +14,7 @@
             </div>
             <div class="row collapse">
                 <div class="columns small-12">
-                    @Model.Content
+                    @Html.Raw(Model.Content)
                 </div>
             </div>
         </div>
@@ -22,7 +22,7 @@
     else if (Model.ImagePosition == "Right")
     {
         <div class="columns small-12 medium-6 small-order-2 medium-order-1 right-pad">
-            @Model.Content
+            @Html.Raw(Model.Content)
         </div>
         <div class="columns small-12 medium-6 small-order-1 medium-order-2">
             <p>
@@ -38,7 +38,7 @@
             </p>
         </div>
         <div class="columns small-12 medium-6 small-order-2 medium-order-2 left-pad">
-            @Model.Content
+            @Html.Raw(Model.Content)
         </div>
     }
 

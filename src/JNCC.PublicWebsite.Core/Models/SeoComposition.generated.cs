@@ -29,7 +29,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		/// <summary>SEO Settings</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string SeoSettings { get; }
+		global::SEOChecker.Library.Models.MetaData SeoSettings { get; }
 	}
 
 	/// <summary>SEO Composition</summary>
@@ -80,11 +80,11 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("seoSettings")]
-		public virtual string SeoSettings => GetSeoSettings(this, _publishedValueFallback);
+		public virtual global::SEOChecker.Library.Models.MetaData SeoSettings => GetSeoSettings(this, _publishedValueFallback);
 
 		/// <summary>Static getter for SEO Settings</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetSeoSettings(ISeoComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "seoSettings");
+		public static global::SEOChecker.Library.Models.MetaData GetSeoSettings(ISeoComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<global::SEOChecker.Library.Models.MetaData>(publishedValueFallback, "seoSettings");
 	}
 }

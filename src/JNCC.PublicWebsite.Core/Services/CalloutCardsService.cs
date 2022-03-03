@@ -38,7 +38,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
                 if (card.Image?.First() is ContentImageSchema imageSchema)
                 {
-                    if(imageSchema.Image is Image image)
+                    if(imageSchema.Image?.Content is Image image)
                     {
                         viewModel.Image = new ImageViewModel()
                         {

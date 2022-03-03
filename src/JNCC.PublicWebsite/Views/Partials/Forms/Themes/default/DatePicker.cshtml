@@ -1,7 +1,6 @@
 @using System.Globalization
 @using Newtonsoft.Json
 @using Microsoft.Extensions.Options
-@using Umbraco.Forms.Core
 @using Umbraco.Forms.Core.Configuration
 @using Umbraco.Forms.Web
 
@@ -32,6 +31,6 @@
 @if (!alreadyRendered)
 {
     <script type="application/javascript">
-        var umbracoFormsLocale = { name: '@CultureInfo.CurrentUICulture.Name', datePickerYearRange: '@datePickerYearRange', locales: @Html.Raw(JsonConvert.SerializeObject(locales, FormsJsonSerializerSettings.Default)) };
+        var umbracoFormsLocale = { name: '@CultureInfo.CurrentUICulture.Name', datePickerYearRange: '@datePickerYearRange', locales: @Html.Raw(JsonConvert.SerializeObject(locales)) };
     </script>
 }

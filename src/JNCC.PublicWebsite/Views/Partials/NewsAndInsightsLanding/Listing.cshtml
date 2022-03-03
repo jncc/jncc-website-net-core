@@ -19,7 +19,7 @@
                             }
                             <div class="card-section">
                                 <h3>@article.Title</h3>
-                                <span class="subtitle">@Html.DisplayFor(model => article.PublishDate)</span>
+                                <span class="subtitle"><time datetime="@article.PublishDate.ToString("yyyy-MM-dd")">@article.PublishDate.ToLongDateString()</time></span>
                                 <div class="text">
                                     @Html.Raw(article.Description)
                                 </div>
