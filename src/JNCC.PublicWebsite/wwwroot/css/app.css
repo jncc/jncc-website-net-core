@@ -8059,6 +8059,7 @@ a:hover > .label {
 .aside-nav a:hover,
 #sidebar p a:hover {
 	color: #2d7a29;
+	font-weight: bold;
 }
 
 .aside-nav li {

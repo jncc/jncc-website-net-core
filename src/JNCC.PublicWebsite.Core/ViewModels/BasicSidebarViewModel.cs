@@ -50,6 +50,7 @@ namespace JNCC.PublicWebsite.Core.ViewModels
                 return ExistenceUtility.IsNullOrEmpty(OtherWebsitesLinks) == false;
             }
         }
+        public string SiblingLinksTitle { get; set; }
         public IEnumerable<NavigationItemViewModel> SiblingPageLinks { get; set; }
         public bool HasSiblingPageLinks
         {
@@ -58,6 +59,7 @@ namespace JNCC.PublicWebsite.Core.ViewModels
                 return ExistenceUtility.IsNullOrEmpty(SiblingPageLinks) == false;
             }
         }
+        public string ChildPageLinksTitle { get; set; }
         public IEnumerable<NavigationItemViewModel> ChildPageLinks { get; set; }
         public bool HasChildPageLinks
         {
