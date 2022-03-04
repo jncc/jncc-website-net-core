@@ -50,12 +50,12 @@ namespace JNCC.PublicWebsite.Core.Models
 		// properties
 
 		///<summary>
-		/// Team(s): The team(s) related or involved in this article page.
+		/// Themes: The theme(s) related to this article page.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("articleTeams")]
-		public virtual global::System.Collections.Generic.IEnumerable<string> ArticleTeams => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "articleTeams");
+		[ImplementPropertyType("articleThemes")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> ArticleThemes => this.Value<global::System.Collections.Generic.IEnumerable<string>>(_publishedValueFallback, "articleThemes");
 
 		///<summary>
 		/// Article Type: Classifies the article so it can be filtered by users.

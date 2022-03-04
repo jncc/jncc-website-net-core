@@ -26,6 +26,7 @@ namespace JNCC.PublicWebsite.Core.Services
         {
             
             var allTeams = _umbracoArticlePageTagsProvider.GetTagsByRoot(root, TagGroups.Teams);
+            var allThemes = _umbracoArticlePageTagsProvider.GetTagsByRoot(root, TagGroups.Themes);
 
             var viewModel = new NewsAndInsightsLandingFilteringViewModel()
             {
@@ -46,7 +47,13 @@ namespace JNCC.PublicWebsite.Core.Services
                     Title = "Year",
                     Group = FilterNames.Years,
                     Values = GetFilters(_umbracoArticleYearsProvider.GetAllByRootDescending(root), filteringModel.Years)
-                }
+                },
+                Themes = new FilterGroupViewModel()
+                {
+                    Title = "Themes",
+                    Group = FilterNames.Themes,
+                    Values = GetFilters(allThemes, filteringModel.Themes)
+                },
             };
 
             if (string.IsNullOrWhiteSpace(filteringModel.SearchTerm) == false)
