@@ -58,6 +58,13 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString BackgroundContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "backgroundContent");
 
 		///<summary>
+		/// Closing Date
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[ImplementPropertyType("closingDate")]
+		public virtual global::System.DateTime ClosingDate => this.Value<global::System.DateTime>(_publishedValueFallback, "closingDate");
+
+		///<summary>
 		/// Content
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
