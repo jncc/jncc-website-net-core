@@ -15055,4 +15055,14 @@ img.float-right,
 .global-alert-row .alert .alert-container p, .page-alert p{
 	margin-bottom: 0px;
 }
+
+.page-alert {
+	background-color: RGB(236, 193, 91);
+	margin-bottom: 20px;
+	padding: 20px 0px;
+	font-weight: bold;
+}
+
+.global-alert-row .nav.no-page-hero, .global-alert-row.no-page-hero{
+	position: static;
 }

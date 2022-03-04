@@ -1,0 +1,12 @@
+﻿@using Umbraco.Cms.Core.Strings;
+@model IHtmlEncodedString
+
+@if (Model != null && !string.IsNullOrWhiteSpace(Model.ToString()))
+{
+    <div class="page-alert">
+        <div class="container alert-container">
+            @Html.Raw(Model)
+        </div>
+    </div>
+
+}
