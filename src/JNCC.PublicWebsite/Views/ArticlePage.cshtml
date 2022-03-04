@@ -14,7 +14,7 @@
                 <p>
                     <a href="@Model.Parent?.Url()?articleTypes=@Model.ArticleType"><span class="label location">@Model.ArticleType</span></a>
                     <a href="@Model.Parent?.Url()?years=@Model.PublishDate.Year"><span class="label location">@Model.PublishDate.Year</span></a>
-                    @foreach (var tag in Model.ArticleTeams)
+                    @foreach (var tag in Model.ArticleThemes)
                     {
                         <a href="@Model.Parent?.Url()?teams=@tag"><span class="label location">@tag</span></a>
                     }

@@ -48,6 +48,14 @@ namespace JNCC.PublicWebsite.Core.Services
                 }
             }
 
+            if (ExistenceUtility.IsNullOrEmpty(filteringModel.Themes) == false)
+            {
+                foreach (var value in filteringModel.Themes)
+                {
+                    collection.Add(FilterNames.Themes, value);
+                }
+            }
+
             return collection;
         }
 
@@ -71,9 +79,14 @@ namespace JNCC.PublicWebsite.Core.Services
                 conditions.Add(x => filteringModel.ArticleTypes.Contains(x.ArticleType));
             }
 
-            if (ExistenceUtility.IsNullOrEmpty(filteringModel.Teams) == false)
+            //if (ExistenceUtility.IsNullOrEmpty(filteringModel.Teams) == false)
+            //{
+            //    conditions.Add(x => filteringModel.Teams.Any(y => x.ArticleTeams.Contains(y, StringComparer.OrdinalIgnoreCase)));
+            //}
+
+            if (ExistenceUtility.IsNullOrEmpty(filteringModel.Themes) == false)
             {
-                conditions.Add(x => filteringModel.Teams.Any(y => x.ArticleTeams.Contains(y, StringComparer.OrdinalIgnoreCase)));
+                conditions.Add(x => filteringModel.Themes.Any(y => x.ArticleThemes.Contains(y, StringComparer.OrdinalIgnoreCase)));
             }
 
             if (string.IsNullOrEmpty(filteringModel.SearchTerm) == false)
@@ -98,7 +111,8 @@ namespace JNCC.PublicWebsite.Core.Services
                 Title = string.IsNullOrWhiteSpace(content.Headline) ? content.Name : content.Headline,
                 PublishDate = content.PublishDate,
                 Description = content.LandingPageContent,
-                Url = content.Url()
+                Url = content.Url(),
+                ArticleType = content.ArticleType,
             };
 
             if (content.HeroImage?.Content is Image heroImage && heroImage != null)

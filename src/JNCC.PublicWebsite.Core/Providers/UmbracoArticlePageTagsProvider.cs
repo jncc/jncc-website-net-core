@@ -24,8 +24,8 @@ namespace JNCC.PublicWebsite.Core.Providers
 
             switch (tagGroup)
             {
-                case TagGroups.Teams:
-                    return articlePages.SelectMany(x => x.ArticleTeams)
+                case TagGroups.Themes:
+                    return articlePages.SelectMany(x => x.ArticleThemes)
                                        .Distinct()
                                        .OrderBy(x => x);
                 default:

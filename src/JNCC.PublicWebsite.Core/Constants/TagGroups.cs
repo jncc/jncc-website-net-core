@@ -4,5 +4,6 @@
     {
         public const string Locations = "Locations";
         public const string Teams = "Teams";
+        public const string Themes = "Themes";
     }
 }

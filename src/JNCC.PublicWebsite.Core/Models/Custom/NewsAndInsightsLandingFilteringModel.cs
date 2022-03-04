@@ -6,5 +6,6 @@
         public string[] Teams { get; set; }
         public string[] ArticleTypes { get; set; }
         public int[] Years { get; set; }
+        public string[] Themes { get; set; }
     }
 }

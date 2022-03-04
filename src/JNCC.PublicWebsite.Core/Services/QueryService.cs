@@ -15,6 +15,7 @@ namespace JNCC.PublicWebsite.Core.Services
                 ArticleTypes = GetArticleTypes(request),
                 Teams = GetTeams(request),
                 Years = GetYears(request),
+                Themes = GetThemes(request),
                 PageNumber = GetPageNumber(request),
             };
             return filterModel; 
@@ -37,6 +38,12 @@ namespace JNCC.PublicWebsite.Core.Services
         {
             request.Query.TryGetValue(Constants.FilterNames.Teams, out var teams);
             return teams.Distinct().ToArray();
+        }
+
+        private string[] GetThemes(HttpRequest request)
+        {
+            request.Query.TryGetValue(Constants.FilterNames.Themes, out var themes);
+            return themes.Distinct().ToArray();
         }
 
         private int[] GetYears(HttpRequest request)
