@@ -20,7 +20,7 @@ namespace JNCC.PublicWebsite.Core.Models
 {
 	/// <summary>Article Page</summary>
 	[PublishedModel("ArticlePage")]
-	public partial class ArticlePage : PublishedContentModel, IPageHeroComposition, IPageSpecificIncludesComposition, IRelatedItemsComposition, ISeoComposition, ISidebarComposition
+	public partial class ArticlePage : PublishedContentModel, IAlertComposition, IPageHeroComposition, IPageSpecificIncludesComposition, IRelatedItemsComposition, ISeoComposition, ISidebarComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -87,6 +87,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[ImplementPropertyType("publishDate")]
 		public virtual global::System.DateTime PublishDate => this.Value<global::System.DateTime>(_publishedValueFallback, "publishDate");
+
+		///<summary>
+		/// Alert Content: When populated this will show at the top of page body
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageSpecificAlertContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString PageSpecificAlertContent => global::JNCC.PublicWebsite.Core.Models.AlertComposition.GetPageSpecificAlertContent(this, _publishedValueFallback);
 
 		///<summary>
 		/// Headline: A headline that appears above the main content of the page.If no value is provided the page name will be used instead.If a hero image is also provided then this headline appears over the hero image. Otherwise it appears just above the main content.

@@ -20,7 +20,7 @@ namespace JNCC.PublicWebsite.Core.Models
 {
 	/// <summary>Science Details Page</summary>
 	[PublishedModel("scienceDetailsPage")]
-	public partial class ScienceDetailsPage : PublishedContentModel, IGetInTouchComposition, INavigationSettingsComposition, IPageHeroComposition, IPageMetaInformationComposition, IPageSpecificIncludesComposition, IRelatedItemsComposition, ISciencePageCategorisationComposition, ISeoComposition, ISidebarComposition
+	public partial class ScienceDetailsPage : PublishedContentModel, IAlertComposition, IGetInTouchComposition, INavigationSettingsComposition, IPageHeroComposition, IPageMetaInformationComposition, IPageSpecificIncludesComposition, IRelatedItemsComposition, ISciencePageCategorisationComposition, ISeoComposition, ISidebarComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -87,6 +87,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[ImplementPropertyType("reviewedDate")]
 		public virtual global::System.DateTime ReviewedDate => this.Value<global::System.DateTime>(_publishedValueFallback, "reviewedDate");
+
+		///<summary>
+		/// Alert Content: When populated this will show at the top of page body
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageSpecificAlertContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString PageSpecificAlertContent => global::JNCC.PublicWebsite.Core.Models.AlertComposition.GetPageSpecificAlertContent(this, _publishedValueFallback);
 
 		///<summary>
 		/// Get in Touch Button: The link & text for the Get in Touch button which accompanies the Get in Touch content below the main content of the page.

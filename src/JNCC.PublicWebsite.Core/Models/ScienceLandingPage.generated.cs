@@ -20,7 +20,7 @@ namespace JNCC.PublicWebsite.Core.Models
 {
 	/// <summary>Science Landing Page</summary>
 	[PublishedModel("scienceLandingPage")]
-	public partial class ScienceLandingPage : PublishedContentModel, INavigationSettingsComposition, IPageHeroComposition, IPageSpecificIncludesComposition, ISeoComposition
+	public partial class ScienceLandingPage : PublishedContentModel, IAlertComposition, INavigationSettingsComposition, IPageHeroComposition, IPageSpecificIncludesComposition, ISeoComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -80,6 +80,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("resourcesCollections")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel ResourcesCollections => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "resourcesCollections");
+
+		///<summary>
+		/// Alert Content: When populated this will show at the top of page body
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageSpecificAlertContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString PageSpecificAlertContent => global::JNCC.PublicWebsite.Core.Models.AlertComposition.GetPageSpecificAlertContent(this, _publishedValueFallback);
 
 		///<summary>
 		/// Hide from Navigation: Hides the page from the main navigation.
