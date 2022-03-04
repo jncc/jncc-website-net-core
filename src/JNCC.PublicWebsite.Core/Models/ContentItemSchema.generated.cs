@@ -58,12 +58,12 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Content => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "content");
 
 		///<summary>
-		/// Get in Touch Button: The link & text for the button that links to a full web page for getting in touch about this content item.
+		/// Headline: Headline of the content item to display above the paragraph content below
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("getInTouchButton")]
-		public virtual global::Umbraco.Cms.Core.Models.Link GetInTouchButton => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "getInTouchButton");
+		[ImplementPropertyType("headline")]
+		public virtual string Headline => this.Value<string>(_publishedValueFallback, "headline");
 
 		///<summary>
 		/// Image: An image which illustrates this content item.
@@ -74,11 +74,11 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Image => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "image");
 
 		///<summary>
-		/// Read More Button: The link & text for the button that links to the full web page for this content item.
+		/// Link To: Links to the full web page for this content item
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("readMoreButton")]
-		public virtual global::Umbraco.Cms.Core.Models.Link ReadMoreButton => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "readMoreButton");
+		[ImplementPropertyType("linkTo")]
+		public virtual global::Umbraco.Cms.Core.Models.Link LinkTo => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "linkTo");
 	}
 }
