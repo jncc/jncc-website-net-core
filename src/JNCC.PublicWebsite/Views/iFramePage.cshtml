@@ -51,23 +51,31 @@
 
 @section Header {
     <div class="">
-        <div class="row expanded">
-            <div class="small-1 small-offset-11">
-                <span class="float-right iframe-header-toggle"><a class="openMenu @iFrameCss">Hide</a></span>
+        <div id="hide-button" class="row expanded">
+             <span class="iframe-header-toggle iframe-toggle-button"><a class="openMenu hide-for-small-only">Hide</a></span>
+        </div>
+        <div id="iframe-header-holder" class="row iframe-header-holder">
+            <div class="iframe-menu iframe-inner-holder">
+                <strong class="logo" style="float:left;">
+                    <a href="/" accesskey="1">
+                        <img src="~/images/logo.png" class="iframe-logo" alt="JNCC">
+                    </a>
+                </strong>
+                    @if(Model.PageTitle != null && Model.PageTitle!= string.Empty){
+                        <h1>@Model.PageTitle</h1>
+                    }        
             </div>
         </div>
+
         <div class="row">
             <div class="large-offset-1 large-2 medium-3 small-12 columns iframe-header-logo iframe-menu">
-                <strong class="logo">
-                    <a href="/" accesskey="1"><img src="~/images/logo.png" alt="JNCC"></a>
-                </strong>
                 <div class="show-for-small-only iframe-toggle-menu-holder">
                     <div class="title-bar iframe-toggle-menu" data-responsive-toggle="menu" data-hide-for="medium">
                         <button type="button" class="nav-opener" data-toggle="menu" data-responsive-toggle="menu" aria-label="navigation-opener"><span></span></button>
                     </div>
                 </div>
             </div>
-            <div class="large-9 medium-9 small-12 columns iframe-header-nav iframe-menu">
+            <div class="large-9 medium-9 small-12 columns iframe-header-nav iframe-menu" style="position:relative; z-index:auto;">
                 @(await Component.InvokeAsync("IFrameNavigation", new { model = Model }))
             </div>
         </div>
