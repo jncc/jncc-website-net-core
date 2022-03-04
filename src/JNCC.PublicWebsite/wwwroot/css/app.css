@@ -8015,13 +8015,14 @@ a:hover > .label {
 
 .aside-nav a,
 #sidebar p a {
-	color: #666262;
+	color: #2d7a29;
 	text-decoration: underline;
 }
 
 .aside-nav a.active,
 #sidebar p a.active {
 	color: #2d7a29;
+	font-weight: bold;
 }
 
 .aside-nav a:hover,

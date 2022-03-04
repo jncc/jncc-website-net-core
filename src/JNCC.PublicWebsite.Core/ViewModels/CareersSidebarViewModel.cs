@@ -13,5 +13,6 @@ namespace JNCC.PublicWebsite.Core.ViewModels
                 return ExistenceUtility.IsNullOrEmpty(LatestJobs) == false;
             }
         }
+        public string AlsoInLinksTitle { get; set; }
     }
 }

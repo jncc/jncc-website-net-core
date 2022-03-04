@@ -220,6 +220,22 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual string SidebarDataHubQuery => global::JNCC.PublicWebsite.Core.Models.SidebarComposition.GetSidebarDataHubQuery(this, _publishedValueFallback);
 
 		///<summary>
+		/// Elsewhere on our website links: Links to other internal web pages
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("sidebarElsewhereOnOurWebsite")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> SidebarElsewhereOnOurWebsite => global::JNCC.PublicWebsite.Core.Models.SidebarComposition.GetSidebarElsewhereOnOurWebsite(this, _publishedValueFallback);
+
+		///<summary>
+		/// Other websites: Links to other external web pages
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("sidebarOtherWebsites")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> SidebarOtherWebsites => global::JNCC.PublicWebsite.Core.Models.SidebarComposition.GetSidebarOtherWebsites(this, _publishedValueFallback);
+
+		///<summary>
 		/// Primary Call To Action Button: Link & Text for an optional Call to Action button.This could be various purposes, for example "Get in Touch" or "Download Data".
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
