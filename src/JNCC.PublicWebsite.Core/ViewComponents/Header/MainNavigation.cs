@@ -25,7 +25,8 @@ namespace JNCC.PublicWebsite.Core.ViewComponents
             var viewModel = new MainNavigationViewModel
             {
                 Items = _mainNavigationService.GetRootMenuItems(model.Root(), model),
-                HasPageHero = _pageHeroService.HasPageHero(model)
+                HasPageHero = _pageHeroService.HasPageHero(model),
+                Content = model,
             };
 
             return View("~/Views/Partials/Header/MainNavigation.cshtml", viewModel);
