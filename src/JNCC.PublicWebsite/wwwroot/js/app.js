@@ -15,9 +15,16 @@ $(document).ready(function(){
 
            $('.iframe-header-toggle').addClass('iframe-header-toggle-on')
            $('.iframe-header-toggle-on').removeClass('iframe-header-toggle')
+           $('.iframe-header-toggle-on').css("top", "-26px");
+
+           $("#iframe-header-holder").removeClass("iframe-header-holder")
+           $("#iframe-header-holder").addClass("iframe-header-toggle-on'")
+
+           $("#hide-button").addClass("iframe-hide-button-on")
 
            $(document).ready(mapFrame);
-        $(window).on('resize', mapFrame);
+           $(window).on('resize', mapFrame);
+
         function mapFrame() {
             var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
             var newH = h - 32.375;
@@ -32,9 +39,17 @@ $(document).ready(function(){
 
            $('.iframe-header-toggle-on').addClass('iframe-header-toggle')
            $('.iframe-header-toggle').removeClass('iframe-header-toggle-on')
+           $('.iframe-header-toggle').removeAttr("style");
+
+           $("#iframe-header-holder").removeClass("iframe-header-holder-on")
+           $("#iframe-header-holder").addClass("iframe-header-toggle'")
+
+           $("#hide-button").removeClass("iframe-hide-button-on")
+
+
            
            $(document).ready(mapFrame);
-        $(window).on('resize', mapFrame);
+            $(window).on('resize', mapFrame);
         function mapFrame() {
             var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
             var newH = h - 68.375;
