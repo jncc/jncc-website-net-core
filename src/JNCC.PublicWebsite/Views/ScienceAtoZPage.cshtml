@@ -10,6 +10,7 @@
         <div class="two-columns">
             <div id="content">
                 @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
+                @(await Html.PartialAsync("~/Views/Partials/PageAlert.cshtml", Model.PageSpecificAlertContent))
                 @Html.Raw(Model.Preamble)
 
                 @(await Component.InvokeAsync("AtoZCategorisedPages", new { model = Model }))

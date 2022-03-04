@@ -98,6 +98,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> FooterUncategorisedLinks => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link>>(_publishedValueFallback, "footerUncategorisedLinks");
 
 		///<summary>
+		/// Global Alert content: When populated this will be shown across all pages, below the Navigation.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("globalAlertContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString GlobalAlertContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "globalAlertContent");
+
+		///<summary>
 		/// Member Account Page: The page logged in members will be able to manage their account.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
