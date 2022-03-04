@@ -8852,6 +8852,91 @@ header#header .row.expanded span.iframe-header-toggle {
 	font-size: 15px;
 }
 
+/*working point*/
+.iframe-toggle-button {
+	position: absolute;
+	z-index: 99
+}
+
+@media screen and (min-width: 950px) {
+	.iframe-toggle-button {
+		right: 3%;
+		top: 66%;
+	}
+}
+
+@media screen and (min-width: 1060px) {
+	.iframe-toggle-button {
+		right: 8%;
+		top: 66%;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.iframe-toggle-button {
+		right: 18%;
+		top: 66%;
+	}
+}
+
+@media screen and (min-width: 1500px) {
+	.iframe-toggle-button {
+		right: 23%;
+		top: 66%;
+	}
+}
+
+@media screen and (min-width: 1800px) {
+	.iframe-toggle-button {
+		right: 29%;
+		top: 66%;
+	}
+}
+
+@media screen and (min-width: 2200px) {
+	.iframe-toggle-button {
+		right: 32%;
+		top: 66%;
+	}
+}
+
+.iframe-header-holder {
+	margin-top: 0;
+}
+.iframe-header-holder-on {
+	margin-top: 2rem;
+}
+
+.iframe-inner-holder {
+	display: table;
+	margin: 0 auto;
+}
+
+	.iframe-inner-holder h1 {
+		font-size: 1.8rem;
+		padding-top: 1.19rem;
+		float: left;
+	}
+
+.iframe-logo {
+	padding: 1rem 1rem 0 3.5rem;
+}
+
+@media screen and (max-width: 767px) {
+	.iframe-logo {
+		padding: 1rem 1rem 0 0;
+	}
+
+	.iframe-inner-holder h1 {
+		font-size: 1.4rem;
+		padding-top: 1rem;
+	}
+}
+
+.iframe-hide-button-on{
+	margin-top:1.5rem;
+}
+
 header#header .row.expanded span.iframe-header-toggle-on {
 	height: 2rem;
 	padding: .2rem .1rem;
@@ -11882,7 +11967,7 @@ img.float-right,
 	}
 
 	header#header .row.expanded span.iframe-header-toggle > a::after {
-		top: 18%;
+		top: 69%;
 	}
 
 	header#header .row.expanded span.iframe-header-toggle-on > a::after {
@@ -14158,7 +14243,7 @@ img.float-right,
 	}
 
 	header#header .row.expanded span.iframe-header-toggle > a::after {
-		top: 24%;
+		top: 1.2rem;
 	}
 }
 
