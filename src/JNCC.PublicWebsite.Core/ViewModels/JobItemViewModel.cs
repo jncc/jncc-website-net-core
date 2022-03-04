@@ -1,4 +1,6 @@
-﻿namespace JNCC.PublicWebsite.Core.ViewModels
+﻿using System;
+
+namespace JNCC.PublicWebsite.Core.ViewModels
 {
     public class JobItemViewModel
     {
@@ -6,5 +8,6 @@
         public string JobTitle { get; set; }
         public string Grade { get; set; }
         public string Location { get; set; }
+        public DateTime ClosingDate { get; set; }
     }
 }

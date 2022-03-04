@@ -29,6 +29,7 @@ namespace JNCC.PublicWebsite.Core.Services
                     Location = job.Location,
                     Team = job.Team,
                     Type = job.TypeOfAppointment,
+                    ClosingDate = job.ClosingDate,
                     Url = job.Url()
                 };
 
