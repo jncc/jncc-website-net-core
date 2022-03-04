@@ -25,10 +25,13 @@
         }
 
         <div class="text-holder">
-            @if(Model.LinkTo != null){
-                   <h2><a href="@Model.LinkTo?.Url" target="@Model.LinkTo?.Target">@Model.Headline</a></h2>
-            }else{
-                   <h2>@Model.Headline</h2>
+            @if(Model.ReadMoreButton != null)
+            {
+                <h2><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h2>
+            }
+            else
+            {
+                <h2>@Model.Headline</h2>
             }    
             @Html.Raw(Model.Content)
         </div>
