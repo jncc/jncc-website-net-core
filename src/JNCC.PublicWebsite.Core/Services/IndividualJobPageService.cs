@@ -1,6 +1,7 @@
 ﻿using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Utilities;
+using JNCC.PublicWebsite.Core.Extensions;
 using JNCC.PublicWebsite.Core.ViewModels;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,8 @@ namespace JNCC.PublicWebsite.Core.Services
                 { "Grade", model.Grade },
                 { "Type of appointment", model.TypeOfAppointment },
                 { "Location",  model.Location },
-                { "Team", model.Team }
+                { "Team", model.Team },
+                { "Closing Date", model.ClosingDate.LongDateWithTimeFormat() }
             };
 
             return keyData.Where(x => string.IsNullOrWhiteSpace(x.Value) == false)
