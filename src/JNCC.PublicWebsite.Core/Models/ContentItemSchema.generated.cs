@@ -78,7 +78,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("linkTo")]
-		public virtual global::Umbraco.Cms.Core.Models.Link LinkTo => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "linkTo");
+		[ImplementPropertyType("readMoreButton")]
+		public virtual global::Umbraco.Cms.Core.Models.Link ReadMoreButton => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "readMoreButton");
 	}
 }

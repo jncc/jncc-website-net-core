@@ -13,6 +13,7 @@
     {
         <a href="@Model.PrimaryCallToActionButton.Url" class="button primary large medium-expanded" target="@Model.PrimaryCallToActionButton.Target">@Model.PrimaryCallToActionButton.Text</a>
     }
+
     @if (Model.HasInThisSectionLinks)
     {
         <nav class="holder" aria-label="aside-navigation">
@@ -53,12 +54,38 @@
         </nav>
     }
 
-    @if (Model.HasDataHubLinks)
+    @*@if (Model.HasDataHubLinks)
+        {
+            <nav class="holder" aria-label="aside-navigation">
+                <h2>Data Hub Links</h2>
+                <ul class="aside-nav no-bullet">
+                    @foreach (var link in Model.DataHubLinks)
+                    {
+                        <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+                    }
+                </ul>
+            </nav>
+        }*@
+
+    @if (Model.HasElsewhereOnOurWebsiteLinks)
     {
         <nav class="holder" aria-label="aside-navigation">
-            <h2>Data Hub Links</h2>
+            <h2>Elsewhere on our website:</h2>
             <ul class="aside-nav no-bullet">
-                @foreach (var link in Model.DataHubLinks)
+                @foreach (var link in Model.ElsewhereOnOurWebsiteLinks)
+                {
+                    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+                }
+            </ul>
+        </nav>
+    }
+
+    @if (Model.HasOtherWebsitesLinks)
+    {
+        <nav class="holder" aria-label="aside-navigation">
+            <h2>Other websites:</h2>
+            <ul class="aside-nav no-bullet">
+                @foreach (var link in Model.OtherWebsitesLinks)
                 {
                     <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
                 }

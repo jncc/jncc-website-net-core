@@ -12,20 +12,12 @@
             <div id="content">
                 @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
 
-                @if (Model.Children<IndividualJobPage>()?.Any() ?? false)
-                {
-                    <div class="row">
-                        <div class="columns small-12 medium-6 callout toc">
-                            <h2 id="toc">Contents</h2>
-                            <ol>
-                                <li><a href="#vacancies">Current vacancies</a></li>
-                            </ol>
-                        </div>
-                    </div>
-                }
-
                 @Html.Raw(Model.Preamble)
+                
 
+                @(await Component.InvokeAsync("CareersListing", new { model = Model }))
+
+                <h2>@Model.MainContentHeading</h2>
                 @if (Model.MainContent?.Any() ?? false)
                 {
                     <ul class="articles-list no-bullet">
@@ -45,6 +37,5 @@
         </div>
     </div>
 
-    @(await Component.InvokeAsync("CareersListing", new { model = Model }))
     @(await Component.InvokeAsync("GetInTouch", new { model = Model }))
 </main>

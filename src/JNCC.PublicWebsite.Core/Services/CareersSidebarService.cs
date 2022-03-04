@@ -24,7 +24,14 @@ namespace JNCC.PublicWebsite.Core.Services
             {
                 PrimaryCallToActionButton = _navigationItemService.GetViewModel(model.SidebarPrimaryCallToActionButton),
                 LatestJobs = GetLatestJobs(model),
-                SeeAlsoLinks = _navigationItemService.GetViewModels(model.SidebarSeeAlsoLinks)
+                SeeAlsoLinks = _navigationItemService.GetViewModels(model.SidebarSeeAlsoLinks),
+                ElsewhereOnOurWebsiteLinks = _navigationItemService.GetViewModels(model.SidebarElsewhereOnOurWebsite),
+                OtherWebsitesLinks = _navigationItemService.GetViewModels(model.SidebarOtherWebsites),
+                SiblingPageLinks = _navigationItemService.GetViewModels(model.Parent?.Children()),
+                ChildPageLinks = _navigationItemService.GetViewModels(model.Children()),
+                ParentLink = _navigationItemService.GetViewModels(model.Parent?.AsEnumerableOfOne()),
+                AlsoInLinksTitle = GetAlsoInLinksTitle(model),
+                CurrentPageUrl = model.Url(),
             };
         }
 
@@ -52,6 +59,11 @@ namespace JNCC.PublicWebsite.Core.Services
             }
 
             return viewModels;
+        }
+
+        private string GetAlsoInLinksTitle(CareersLandingPage root)
+        {
+            return string.Format("Also in {0}:", root.Name);
         }
     }
 }
