@@ -34,6 +34,14 @@ namespace JNCC.PublicWebsite.Core.Services
                 viewModel.AlsoInLinks = GetAlsoInLinks(sectionRoot);
             }
 
+            viewModel.ElsewhereOnOurWebsiteLinks = _navigationItemService.GetViewModels(composition.SidebarElsewhereOnOurWebsite);
+            viewModel.OtherWebsitesLinks = _navigationItemService.GetViewModels(composition.SidebarOtherWebsites);
+            viewModel.SiblingPageLinks = _navigationItemService.GetViewModels(composition.Parent?.VisibleChildren());
+            viewModel.SiblingLinksTitle = GetAlsoInLinksTitle(composition.Parent);
+            viewModel.ChildPageLinks = _navigationItemService.GetViewModels(composition.VisibleChildren());
+            viewModel.ParentLink = _navigationItemService.GetViewModels(composition.Parent?.AsEnumerableOfOne());
+            viewModel.CurrentPageUrl = composition.Url();
+
             return viewModel;
         }
 
@@ -62,7 +70,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
         private string GetAlsoInLinksTitle(IPublishedContent root)
         {
-            return string.Format("Also in {0}", root.Name);
+            return string.Format("Also in {0}:", root.Name);
         }
 
         private IEnumerable<NavigationItemViewModel> GetAlsoInLinks(IPublishedContent root)
