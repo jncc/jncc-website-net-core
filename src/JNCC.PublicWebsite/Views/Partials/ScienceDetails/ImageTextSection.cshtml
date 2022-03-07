@@ -20,6 +20,19 @@
             }
 
             @(await Html.PartialAsync(string.Format("~/Views/Partials/ScienceDetails/{0}.cshtml", subSection.PartialViewName), subSection))
+
+             if (subSection.SubSections.Any())
+                {
+                    foreach (var subSubSection in section.SubSections)
+                    {
+                         if (!subSubSection.HideHeadline)
+                         {
+                            <h3 id="@(subSubSection.HtmlId)">@(subSubSection.Headline)</h3>
+                         }
+
+                         @(await Html.PartialAsync(string.Format("~/Views/Partials/ScienceDetails/{0}.cshtml", subSubSection.PartialViewName), subSubSection))
+                    }
+                }
         }
     }
 }
