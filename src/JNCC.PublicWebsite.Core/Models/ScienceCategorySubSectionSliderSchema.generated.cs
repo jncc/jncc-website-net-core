@@ -78,5 +78,13 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("sliderItems")]
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel SliderItems => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "sliderItems");
+
+		///<summary>
+		/// Sub Sections
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("subSections")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel SubSections => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "subSections");
 	}
 }

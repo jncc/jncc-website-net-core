@@ -20,7 +20,7 @@ namespace JNCC.PublicWebsite.Core.Models
 {
 	/// <summary>iFrame Page</summary>
 	[PublishedModel("iFramePage")]
-	public partial class IFramePage : PublishedContentModel, INavigationSettingsComposition, IPageSpecificIncludesComposition, ISeoComposition
+	public partial class IFramePage : PublishedContentModel, IAlertComposition, INavigationSettingsComposition, IPageSpecificIncludesComposition, ISeoComposition
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -88,14 +88,6 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link> Navigation => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.Link>>(_publishedValueFallback, "navigation");
 
 		///<summary>
-		/// Page Title
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("pageTitle")]
-		public virtual string PageTitle => this.Value<string>(_publishedValueFallback, "pageTitle");
-
-		///<summary>
 		/// Passthrough Querystring Parameters: Allows any querystrings being passed in via the URL to be appended to the source URL of the the iframe.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
@@ -109,6 +101,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("sourceURL")]
 		public virtual string SourceUrl => this.Value<string>(_publishedValueFallback, "sourceURL");
+
+		///<summary>
+		/// Alert Content: When populated this will show at the top of page body
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("pageSpecificAlertContent")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString PageSpecificAlertContent => global::JNCC.PublicWebsite.Core.Models.AlertComposition.GetPageSpecificAlertContent(this, _publishedValueFallback);
 
 		///<summary>
 		/// Hide from Navigation: Hides the page from the main navigation.
