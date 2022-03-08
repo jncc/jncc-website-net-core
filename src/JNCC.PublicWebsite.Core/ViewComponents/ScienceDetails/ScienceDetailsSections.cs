@@ -17,10 +17,23 @@ namespace JNCC.PublicWebsite.Core.ViewComponents
 
         public IViewComponentResult Invoke(IPublishedContent model)
         {
-            var scienceDetails = model as ScienceDetailsPage;
-            var viewModel = _scienceDetailsPageService.GetSectionViewModels(scienceDetails.MainContent);
+            if (model.ContentType.Alias == "scienceDetailsPage")
+            {
+                var scienceDetails = model as ScienceDetailsPage;
+                var viewModel = _scienceDetailsPageService.GetSectionViewModels(scienceDetails.MainContent);
 
-            return View("~/Views/Partials/ScienceDetails/Sections.cshtml", viewModel);
+                return View("~/Views/Partials/ScienceDetails/Sections.cshtml", viewModel);
+            }
+            
+            if (model.ContentType.Alias == "ArticlePage")
+            {
+                var articleDetails = model as ArticlePage;
+                var viewModel = _scienceDetailsPageService.GetSectionViewModels(articleDetails.MainContentBlocks);
+
+                return View("~/Views/Partials/ScienceDetails/Sections.cshtml", viewModel);
+            }
+
+            return null;
         }
     }
 }

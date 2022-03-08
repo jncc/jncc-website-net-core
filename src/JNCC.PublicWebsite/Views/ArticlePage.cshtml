@@ -20,6 +20,24 @@
                     }
                 </p>
                 @Html.Raw(Model.MainContent)
+                
+                @if (Model.MainContentBlocks != null && Model.MainContentBlocks.Any())
+                {
+	                <ul class="articles-list no-bullet">
+		                @foreach (var item in Model.MainContentBlocks)
+		                {
+			                if (item.Content as ContentItemSchema != null)
+			                {
+				                <li>
+					                @(await Html.PartialAsync("~/Views/Partials/Shared/ContentItemSchema.cshtml", item.Content as ContentItemSchema))
+				                </li>
+			                }
+		                }
+	                </ul>
+                }
+
+                @(await Component.InvokeAsync("ScienceDetailsSections", new { model = Model }))
+
             </div>
             @(await Component.InvokeAsync("ArticleSidebar", new { model = Model }))
         </div>

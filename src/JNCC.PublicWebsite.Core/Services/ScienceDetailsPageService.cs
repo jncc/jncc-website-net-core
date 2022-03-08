@@ -423,6 +423,7 @@ namespace JNCC.PublicWebsite.Core.Services
                 };
             }
             model.ImagePosition = schema.ImagePosition;
+            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
