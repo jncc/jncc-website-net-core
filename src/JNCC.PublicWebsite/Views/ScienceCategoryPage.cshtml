@@ -16,8 +16,7 @@
                 @(await Component.InvokeAsync("ScienceCategoryImageTextSection", new { model = Model }))
                 @(await Component.InvokeAsync("ScienceCategorySections", new { model = Model }))
                 @(await Component.InvokeAsync("PageMetaInformation", new { model = Model }))
-                @(await Component.InvokeAsync("ScienceCategoryCategorisedPages", new { model = Model }))
-                @(await Component.InvokeAsync("ScienceCategoryRelatedCategoryLinks", new { model = Model }))
+
             </div>
             @(await Component.InvokeAsync("ScienceCategoryPageSidebar", new { model = Model }))
         </div>
