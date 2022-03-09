@@ -10,25 +10,26 @@
                 {
                     <div class="columns small-12 medium-4">
                         <div class="card">
-                            <div class="card-section">
-                                <a href="@item.ReadMoreLink.Url" target="@item.ReadMoreLink.Target">
-                                    <h3>@item.Title</h3>
-                                    @Html.Raw(item.Content)
-                                </a>
-                                <a href="@item.ReadMoreLink.Url" class="button expanded" target="@item.ReadMoreLink.Target">Read @item.ReadMoreLink.Text</a>
-                            </div>
+	                        <div class="card-section">
+		                        <h3>
+			                        <a href="@item.ReadMoreLink.Url" target="@item.ReadMoreLink.Target">
+				                        @item.Title
+			                        </a>
+		                        </h3>
+		                        @Html.Raw(item.Content)
+	                        </div>
                         </div>
                     </div>
                 }
             </div>
-            @if (Model.AToZPageLink != null)
+           @* @if (Model.AToZPageLink != null)
             {
                 <div class="row">
                     <div class="columns small-12 medium-6 medium-push-3">
                         <a href="@Model.AToZPageLink.Url" target="@Model.AToZPageLink.Url" class="button expanded">@Model.AToZPageLink.Text</a>
                     </div>
                 </div>
-            }
+            }*@
         </div>
     </section>
 }

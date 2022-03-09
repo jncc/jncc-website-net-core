@@ -9461,16 +9461,35 @@ html {
 .landing-page .articles-section.resources.latest-updates .featured-quote p,
 .landing-page .featured-quote .articles-section.resources.latest-updates p {
 	font-size: 1.5rem;
-	border-bottom: 2px solid #2d7a29;
 }
 
 .landing-page .articles-section.resources .card {
 	margin-bottom: 2rem !important;
 	height: calc(100% - 2rem);
+    box-shadow: -2px 1px 13px -2px #4e4e4e;
+    cursor: pointer;
+    position: relative;
 }
 
 .landing-page .articles-section.resources .card-section p {
 	margin-bottom: 1rem;
+}
+
+.landing-page .articles-section.resources .card-section h3, .landing-page .articles-section.resources .card-section h3 a {
+	color: #666262;
+}
+
+.landing-page .articles-section.resources .card-section a:hover {
+    color: #2d7a29;
+}
+
+.landing-page .articles-section.resources .card-section a:first-child:after {
+	content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .landing-page .articles-section.resources.science-group {
