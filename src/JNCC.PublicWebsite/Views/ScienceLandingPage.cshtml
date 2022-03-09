@@ -12,7 +12,7 @@
     </div>
 
     @(await Html.PartialAsync("~/Views/Partials/ScienceLanding/FeaturedQuote.cshtml"))
-@*    @(await Component.InvokeAsync("CalloutCards", new { model = Model }))*@
+    @(await Component.InvokeAsync("CalloutCards", new { model = Model }))
     @(await Component.InvokeAsync("ScienceLandingLatestUpdates", new { model = Model }))
     @(await Component.InvokeAsync("ResourcesCollections", new { model = Model }))
     @(await Component.InvokeAsync("LatestNewsAndSocialFeed", new { model = Model }))

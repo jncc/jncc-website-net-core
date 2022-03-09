@@ -9498,16 +9498,9 @@ html {
 }
 
 .landing-page .featured-quote {
-	background-image: -webkit-linear-gradient(left, #c9e6cc, #e0f0e7);
-	background-image: linear-gradient(to right, #c9e6cc, #e0f0e7);
-	padding: 2rem 0;
+    padding: 2rem 0;
 }
 
-.landing-page .featured-quote p {
-	font-weight: 100;
-	font-style: italic;
-	margin: 0;
-}
 
 .landing-page .row1 h3,
 .landing-page .row1 .featured-quote p,
@@ -11481,10 +11474,17 @@ img.float-right,
 	}
 
 	h3,
-	.landing-page .featured-quote p,
+	
 	.h3 {
 		font-size: 1.75rem;
 	}
+
+	.landing-page .featured-quote p {
+        margin-bottom: 20px;
+        font-size: inherit;
+        line-height: 1.52631579;
+        text-rendering: optimizeLegibility;
+}
 
 	h4,
 	h2#toc,
