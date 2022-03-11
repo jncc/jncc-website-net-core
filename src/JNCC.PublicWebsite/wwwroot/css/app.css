@@ -4870,8 +4870,8 @@ a.button:focus {
 	border: none;
 	border-radius: .1875rem;
 	background: #fefefe;
-	box-shadow: 8px 10px 50px rgba(0, 0, 0, .05);
-	overflow: hidden;
+    box-shadow: -2px 1px 13px -2px #4e4e4e;
+overflow: hidden;
 	color: #666262;
 }
 
@@ -9453,12 +9453,14 @@ html {
 	justify-content: space-between;
 }
 
-.news-holder .card {
-	width: 100%;
-	-webkit-box-flex: 0;
-	-ms-flex-positive: 0;
-	flex-grow: 0;
-	height: auto;
+	.news-holder .card {
+		width: 100%;
+		-webkit-box-flex: 0;
+		-ms-flex-positive: 0;
+		flex-grow: 0;
+		height: auto;
+        box-shadow: -2px 1px 13px -2px #4e4e4e;
+        position: relative;
 }
 
 .news-holder .card .img-holder {

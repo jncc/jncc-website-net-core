@@ -4,6 +4,9 @@
 @if (Model?.Any() ?? false)
 {
 	<div class="container">
+		
+		<h2 style="margin-bottom:2rem">Our work themes</h2>
+
 		<div class="row collapse">
 			<div class="columns science-landing">
 				<ul class="accordion" data-accordion>
@@ -26,14 +29,14 @@
 												<li><a href="@sciencePage.Url()">@sciencePage.Name</a></li>
 											}
 										</ul>
-										
+
 									}
 								</div>
 							</li>
 							accordionCount++;
 						}
 					}
-					
+
 				</ul>
 			</div>
 		</div>
