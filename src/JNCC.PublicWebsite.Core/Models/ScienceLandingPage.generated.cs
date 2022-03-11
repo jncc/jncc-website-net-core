@@ -74,6 +74,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual string FeaturedQuote => this.Value<string>(_publishedValueFallback, "featuredQuote");
 
 		///<summary>
+		/// Latest Updates: Here you can override the 3 latest news items on the page. If left blank this will be populated automatically by the 3 top latest  updates.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("latestUpdates")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> LatestUpdates => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>>(_publishedValueFallback, "latestUpdates");
+
+		///<summary>
 		/// Collections: Key resource collections to be rendered on the page the below Latest Updates section.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]

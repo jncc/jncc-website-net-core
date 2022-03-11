@@ -49,10 +49,49 @@ namespace JNCC.PublicWebsite.Core.Services
                 return viewModels;
             }
 
-            var latestPages = pages.OrderByDescending(x => x.UpdateDate)
-                                   .Take(NumberOfLatestUpdatesItems)
-                                   .ToArray();
+            List<ScienceDetailsPage> latestPages;
 
+            if (model.LatestUpdates != null && model.LatestUpdates.Any())
+            {
+                //use overridden latest updates
+                var selectedPages = model.LatestUpdates.OfType<ScienceDetailsPage>();
+                switch (model.LatestUpdates.Count())
+                {
+                    case 2:
+                        latestPages = selectedPages.OrderByDescending(x => x.UpdateDate)
+                            .Take(2)
+                            .ToList();
+
+                        var onePage = pages.OrderByDescending(x => x.UpdateDate)
+                            .Take(1)
+                            .ToList();
+                        latestPages.AddRange(onePage);
+                        break;
+                    case 1:
+                        latestPages = selectedPages.OrderByDescending(x => x.UpdateDate)
+                            .Take(1)
+                            .ToList();
+
+                        var twoPages = pages.OrderByDescending(x => x.UpdateDate)
+                            .Take(2)
+                            .ToList();
+                        latestPages.AddRange(twoPages);
+                        break;
+                    default:
+                        latestPages = selectedPages.OrderByDescending(x => x.UpdateDate)
+                            .Take(NumberOfLatestUpdatesItems)
+                            .ToList();
+                        break;
+                }
+            }
+            else
+            {
+                //use auto top 3
+                latestPages = pages.OrderByDescending(x => x.UpdateDate)
+                    .Take(NumberOfLatestUpdatesItems)
+                    .ToList();
+            }
+            
             foreach (var page in latestPages)
             {
                 var viewModel = new ScienceLatestUpdatedPageItemViewModel()
