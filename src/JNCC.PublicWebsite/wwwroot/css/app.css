@@ -4360,6 +4360,42 @@ a.button:focus {
 	text-decoration: none;
 }
 
+.science-landing .accordion-item {
+    margin-bottom: 2rem;
+}
+
+.science-landing .accordion-title {
+	background-color: #c9e6cc;
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+	.science-landing .accordion-title:hover, .science-landing .accordion-title:focus {
+		background-color: #c9e6cc;
+	}
+
+
+.columns.science-landing {
+    padding-bottom: 2rem;
+}
+
+.science-landing-accordion-content ul {
+    -webkit-column-count:2;
+    column-count:2;
+}
+
+@media print, screen and (max-width: 48em) {
+    .science-landing-accordion-content ul {
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+
+}
+    
+
+.science-landing-accordion-content ul li{
+    margin-bottom: 1rem;
+}
+
 .accordion {
 	margin-left: 0;
 	background: #fefefe;
@@ -7847,8 +7883,7 @@ a.thumbnail image {
 }
 
 h2,
-h3,
-.landing-page .featured-quote p {
+h3{
 	font-weight: 500;
 }
 

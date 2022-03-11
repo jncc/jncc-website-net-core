@@ -12,7 +12,17 @@
     </div>
 
     @(await Html.PartialAsync("~/Views/Partials/ScienceLanding/FeaturedQuote.cshtml"))
-    @(await Component.InvokeAsync("CalloutCards", new { model = Model }))
+    @(await Component.InvokeAsync("VerticalAccordionMenu", new { model = Model }))
+    
+	@if (Model.AToZpageLink != null)
+    {
+	   <div class="row">
+		    <div class="columns small-12 medium-6 medium-push-3">
+			    <a href="@Model.AToZpageLink.Url" target="@Model.AToZpageLink.Url" class="button expanded">@Model.AToZpageLink.Name</a>
+		    </div>
+	    </div>
+    }
+
     @(await Component.InvokeAsync("ScienceLandingLatestUpdates", new { model = Model }))
     @(await Component.InvokeAsync("ResourcesCollections", new { model = Model }))
     @(await Component.InvokeAsync("LatestNewsAndSocialFeed", new { model = Model }))
