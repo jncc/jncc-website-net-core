@@ -7,6 +7,7 @@ using JNCC.PublicWebsite.Core.Interfaces.Providers;
 using JNCC.PublicWebsite.Core.Providers;
 using JNCC.PublicWebsite.Core.Configuration;
 using JNCC.PublicWebsite.Core.Constants;
+using JNCC.PublicWebsite.Core.Models;
 using Microsoft.Extensions.Configuration;
 
 namespace JNCC.PublicWebsite.Core.Composers
@@ -44,6 +45,7 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<INewsAndInsightsLandingFilteringService, NewsAndInsightsLandingFilteringService>();
             builder.Services.AddSingleton<ISeoMetaDataService, SeoMetaDataService>();
             builder.Services.AddSingleton<IPageIncludesService, PageIncludesService>();
+            builder.Services.AddSingleton<IVerticalAccordionMenuService, VerticalAccordionMenuService>();
 
             builder.Services.AddSingleton<IScienceDetailsPageProvider, UmbracoScienceDetailsPageProvider>();
             builder.Services.AddSingleton<ISciencePageCategoriesProvider, UmbracoSciencePageCategoriesProvider>();

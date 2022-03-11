@@ -17,19 +17,12 @@ namespace JNCC.PublicWebsite.Core.ViewComponents
 
         public IViewComponentResult Invoke(IPublishedContent model)
         {
-            if (model is ScienceLandingPage scienceLanding)
-            {
-                var viewModel = _calloutCardsService.GetCalloutCards(scienceLanding.CalloutCards);
 
-                return View("~/Views/Partials/CalloutCards.cshtml", viewModel);
-            }
-            else
-            {
-                var homepage = model as HomePage;
-                var viewModel = _calloutCardsService.GetCalloutCards(homepage?.CalloutCards);
+           var homepage = model as HomePage;
+           var viewModel = _calloutCardsService.GetCalloutCards(homepage?.CalloutCards);
 
-                return View("~/Views/Partials/CalloutCards.cshtml", viewModel);
-            }
+           return View("~/Views/Partials/CalloutCards.cshtml", viewModel);
+            
         }
     }
 }

@@ -4360,6 +4360,42 @@ a.button:focus {
 	text-decoration: none;
 }
 
+.science-landing .accordion-item {
+    margin-bottom: 2rem;
+}
+
+.science-landing .accordion-title {
+	background-color: #c9e6cc;
+	font-size: 1.1rem;
+	font-weight: bold;
+}
+	.science-landing .accordion-title:hover, .science-landing .accordion-title:focus {
+		background-color: #c9e6cc;
+	}
+
+
+.columns.science-landing {
+    padding-bottom: 2rem;
+}
+
+.science-landing-accordion-content ul {
+    -webkit-column-count:2;
+    column-count:2;
+}
+
+@media print, screen and (max-width: 48em) {
+    .science-landing-accordion-content ul {
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+
+}
+    
+
+.science-landing-accordion-content ul li{
+    margin-bottom: 1rem;
+}
+
 .accordion {
 	margin-left: 0;
 	background: #fefefe;
@@ -4834,8 +4870,8 @@ a.button:focus {
 	border: none;
 	border-radius: .1875rem;
 	background: #fefefe;
-	box-shadow: 8px 10px 50px rgba(0, 0, 0, .05);
-	overflow: hidden;
+    box-shadow: -2px 1px 13px -2px #4e4e4e;
+overflow: hidden;
 	color: #666262;
 }
 
@@ -7847,8 +7883,7 @@ a.thumbnail image {
 }
 
 h2,
-h3,
-.landing-page .featured-quote p {
+h3{
 	font-weight: 500;
 }
 
@@ -9418,12 +9453,14 @@ html {
 	justify-content: space-between;
 }
 
-.news-holder .card {
-	width: 100%;
-	-webkit-box-flex: 0;
-	-ms-flex-positive: 0;
-	flex-grow: 0;
-	height: auto;
+	.news-holder .card {
+		width: 100%;
+		-webkit-box-flex: 0;
+		-ms-flex-positive: 0;
+		flex-grow: 0;
+		height: auto;
+        box-shadow: -2px 1px 13px -2px #4e4e4e;
+        position: relative;
 }
 
 .news-holder .card .img-holder {
@@ -9461,16 +9498,35 @@ html {
 .landing-page .articles-section.resources.latest-updates .featured-quote p,
 .landing-page .featured-quote .articles-section.resources.latest-updates p {
 	font-size: 1.5rem;
-	border-bottom: 2px solid #2d7a29;
 }
 
 .landing-page .articles-section.resources .card {
 	margin-bottom: 2rem !important;
 	height: calc(100% - 2rem);
+    box-shadow: -2px 1px 13px -2px #4e4e4e;
+    cursor: pointer;
+    position: relative;
 }
 
 .landing-page .articles-section.resources .card-section p {
 	margin-bottom: 1rem;
+}
+
+.landing-page .articles-section.resources .card-section h3, .landing-page .articles-section.resources .card-section h3 a {
+	color: #666262;
+}
+
+.landing-page .articles-section.resources .card-section a:hover {
+    color: #2d7a29;
+}
+
+.landing-page .articles-section.resources .card-section a:first-child:after {
+	content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
 }
 
 .landing-page .articles-section.resources.science-group {
@@ -9479,16 +9535,9 @@ html {
 }
 
 .landing-page .featured-quote {
-	background-image: -webkit-linear-gradient(left, #c9e6cc, #e0f0e7);
-	background-image: linear-gradient(to right, #c9e6cc, #e0f0e7);
-	padding: 2rem 0;
+    padding: 2rem 0;
 }
 
-.landing-page .featured-quote p {
-	font-weight: 100;
-	font-style: italic;
-	margin: 0;
-}
 
 .landing-page .row1 h3,
 .landing-page .row1 .featured-quote p,
@@ -11462,10 +11511,17 @@ img.float-right,
 	}
 
 	h3,
-	.landing-page .featured-quote p,
+	
 	.h3 {
 		font-size: 1.75rem;
 	}
+
+	.landing-page .featured-quote p {
+        margin-bottom: 20px;
+        font-size: inherit;
+        line-height: 1.52631579;
+        text-rendering: optimizeLegibility;
+}
 
 	h4,
 	h2#toc,

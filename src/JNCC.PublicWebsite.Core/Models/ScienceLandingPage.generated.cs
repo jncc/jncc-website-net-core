@@ -50,6 +50,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		// properties
 
 		///<summary>
+		/// Accordion
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("accordion")]
+		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Accordion => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "accordion");
+
+		///<summary>
 		/// A to Z Page Link: The link to the A to Z directory of all science pages.This link appears below the latest update items. If no link is authored then the link will not be displayed.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
@@ -58,20 +66,20 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::Umbraco.Cms.Core.Models.Link AToZpageLink => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "aToZPageLink");
 
 		///<summary>
-		/// Callout Cards: Boxes for important information which will appear below the headline or hero content of the page.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("calloutCards")]
-		public virtual global::System.Collections.Generic.IEnumerable<global::JNCC.PublicWebsite.Core.Models.CalloutCardSchema> CalloutCards => this.Value<global::System.Collections.Generic.IEnumerable<global::JNCC.PublicWebsite.Core.Models.CalloutCardSchema>>(_publishedValueFallback, "calloutCards");
-
-		///<summary>
 		/// Featured Quote: A featured quote which highlights the scientific research work done by JNCC.This is optional and if no quote is provided it will not be displayed on the page.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("featuredQuote")]
 		public virtual string FeaturedQuote => this.Value<string>(_publishedValueFallback, "featuredQuote");
+
+		///<summary>
+		/// Latest Updates: Here you can override the 3 latest news items on the page. If left blank this will be populated automatically by the 3 top latest  updates.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("latestUpdates")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> LatestUpdates => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>>(_publishedValueFallback, "latestUpdates");
 
 		///<summary>
 		/// Collections: Key resource collections to be rendered on the page the below Latest Updates section.
