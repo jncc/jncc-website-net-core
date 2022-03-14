@@ -153,14 +153,6 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> RelatedItems => global::JNCC.PublicWebsite.Core.Models.RelatedItemsComposition.GetRelatedItems(this, _publishedValueFallback);
 
 		///<summary>
-		/// Search Query: A search term used to find related items. If no term is used the page headline or name will be used instead.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("relatedItemsSearchQuery")]
-		public virtual string RelatedItemsSearchQuery => global::JNCC.PublicWebsite.Core.Models.RelatedItemsComposition.GetRelatedItemsSearchQuery(this, _publishedValueFallback);
-
-		///<summary>
 		/// Show Related Items
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]

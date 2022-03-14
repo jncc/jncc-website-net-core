@@ -16,12 +16,12 @@
                                 </div>
                             }
                             <div class="card-section">
-                                <h2>@card.Title</h2>
+	                            <h2><a href="@card.ReadMoreButton.Url">@card.Title</a></h2>
                                 @Html.Raw(card.Content)
-                                @if (card.ReadMoreButton != null)
+                              @*  @if (card.ReadMoreButton != null)
                                 {
                                     <a href="@card.ReadMoreButton.Url" class="button expanded">@card.ReadMoreButton.Text</a>
-                                }
+                                }*@
                             </div>
                         </article>
                     </div>

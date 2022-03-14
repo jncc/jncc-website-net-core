@@ -4,7 +4,12 @@
     Layout = "Master.cshtml";
 }
 <main id="main" class="home-a landing-page">
-    @(await Component.InvokeAsync("Carousel", new { model = Model }))
+	@(await Component.InvokeAsync("Carousel", new { model = Model }))
+	<div class="container">
+		<div class="row">
+			@Html.Raw(Model.Preamble)
+		</div>
+	</div>
     @(await Component.InvokeAsync("CalloutCards", new { model = Model }))
     @(await Component.InvokeAsync("Resources", new { model = Model }))
     @(await Component.InvokeAsync("LatestNewsAndSocialFeed", new { model = Model }))

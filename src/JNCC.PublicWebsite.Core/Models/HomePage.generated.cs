@@ -121,6 +121,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual decimal NumberOfTweets => this.Value<decimal>(_publishedValueFallback, "numberOfTweets");
 
 		///<summary>
+		/// Preamble
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("preamble")]
+		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Preamble => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "preamble");
+
+		///<summary>
 		/// Fallback Image: This is used by related items that do not have an image associated with them .
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
