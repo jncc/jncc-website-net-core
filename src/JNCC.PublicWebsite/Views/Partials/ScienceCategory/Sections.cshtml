@@ -13,7 +13,7 @@
                     {
                         <li>
                             <a href="#@(section.HtmlId)">@(section.Headline)</a>
-                            @if (section.SubSections.Any())
+                            @if (section.SubSections != null && section.SubSections.Any())
                             {
                                 <ol>
                                     @foreach (var subSection in section.SubSections)
@@ -56,7 +56,7 @@
 
         @(await Html.PartialAsync(string.Format("~/Views/Partials/ScienceCategory/{0}.cshtml", section.PartialViewName), section))
 
-        if (section.SubSections.Any())
+        if (section.SubSections != null && section.SubSections.Any())
         {
             <div class="science-subsection">
                 @foreach (var subSection in section.SubSections)

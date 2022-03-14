@@ -21,9 +21,7 @@ namespace JNCC.PublicWebsite.Core.Services
         //private readonly ISeoMetaDataService _seoMetaDataService;
         //private readonly UmbracoHelper _umbracoHelper;
 
-        public RelatedItemsService(
-            ISearchQueryService searchQueryService
-            )
+        public RelatedItemsService(ISearchQueryService searchQueryService)
         {
             _searchQueryService = searchQueryService ?? throw new ArgumentNullException(nameof(RelatedItemsService));
             //_seoMetaDataService = new SeoMetaDataService();
@@ -58,46 +56,7 @@ namespace JNCC.PublicWebsite.Core.Services
             var pickedRelatedItemViewModels = GetPickedRelatedItemViewModels(composition.RelatedItems, homePage);
             viewModels.AddRange(pickedRelatedItemViewModels);
 
-            if (viewModels.Count < MaximumRelatedItems)
-            {
-                var excludedNodeIds = GetNodeIdsToExcludeFromSearchResults(composition);
-                var searchQuery = GetSearchQuery(composition);
-                var numberOfItemsToTake = MaximumRelatedItems - viewModels.Count();
-                var searchedRelatedItemsViewModels = GetSearchQueryRelatedItemViewModels(searchQuery, MaximumNumberOfSearchResults, numberOfItemsToTake, excludedNodeIds, homePage);
-                viewModels.AddRange(searchedRelatedItemsViewModels);
-            }
-
             return viewModels;
-        }
-
-        private IEnumerable<string> GetNodeIdsToExcludeFromSearchResults(IRelatedItemsComposition composition)
-        {
-            var nodeIds = new List<string>
-            {
-                composition.Id.ToString()
-            };
-
-            if (ExistenceUtility.IsNullOrEmpty(composition.RelatedItems))
-            {
-                return nodeIds;
-            }
-
-            var pickedRelatedItemIds = composition.RelatedItems.Select(x => x.Id.ToString());
-            nodeIds.AddRange(pickedRelatedItemIds);
-
-            return nodeIds;
-        }
-
-        private string GetSearchQuery(IRelatedItemsComposition composition)
-        {
-            var searchTerm = composition.RelatedItemsSearchQuery;
-
-            if (string.IsNullOrWhiteSpace(searchTerm))
-            {
-                return composition.GetHeadline();
-            }
-
-            return searchTerm;
         }
 
         private IEnumerable<RelatedItemViewModel> GetPickedRelatedItemViewModels(IEnumerable<IPublishedContent> relatedItems, HomePage homePage)
@@ -116,33 +75,6 @@ namespace JNCC.PublicWebsite.Core.Services
                 viewModels.Add(viewModel);
             }
 
-            return viewModels;
-        }
-
-        private IEnumerable<RelatedItemViewModel> GetSearchQueryRelatedItemViewModels(string searchQuery, int numberOfItemsToSearchFor, int numberOfItemsToTake, IEnumerable<string> excludedNodeIds, HomePage homePage)
-        {
-            var viewModels = new List<RelatedItemViewModel>();
-            var searchResults = _searchQueryService.Query(searchQuery, numberOfItemsToSearchFor, 0, SearchIndexingSites.Website);
-            
-            if(searchResults != null && (searchResults.Hits?.Results?.Any() ?? false))
-            {
-                var filteredSearchResults = searchResults.Hits.Results.Where(x => excludedNodeIds.Contains(x.Id) == false)?
-                                                                  .Take(numberOfItemsToTake)?.ToList();
-                if(filteredSearchResults?.Any() ?? false)
-                {
-                    foreach (var result in filteredSearchResults)
-                    {
-                        //var content = _umbracoHelper.TypedContent(result.Id);
-
-                        //if (content != null)
-                        //{
-                        //    var viewModel = GetViewModel(content, homePage);
-
-                        //    viewModels.Add(viewModel);
-                        //}
-                    }
-                }
-            }
             return viewModels;
         }
 
