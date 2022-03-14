@@ -4901,6 +4901,7 @@ overflow: hidden;
 	padding: 1rem;
 }
 
+
 .card-section > :last-child {
 	margin-bottom: 0;
 }
@@ -7968,6 +7969,7 @@ a:hover > .label {
 
 .card {
 	height: calc(100% - .9375rem);
+    position: relative;
 }
 
 .card .img-holder {
@@ -7979,13 +7981,33 @@ a:hover > .label {
 
 .card .card-section {
 	padding-bottom: 1.375rem;
+    
 }
 
-.card .card-section p {
-	-webkit-box-flex: 1;
-	-ms-flex-positive: 1;
-	flex-grow: 1;
-}
+	.card .card-section h2, .card .card-section h2 a {
+        color: #666262;
+        text-decoration: none !important;
+	}
+
+		.card .card-section h2 a:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+		}
+
+		.card .card-section h2 a:hover {
+			color: #2d7a29;
+			text-decoration: none !important;
+		}
+
+		.card .card-section p {
+			-webkit-box-flex: 1;
+			-ms-flex-positive: 1;
+			flex-grow: 1;
+		}
 
 .card .footer-list {
 	display: -webkit-box;
@@ -14115,7 +14137,7 @@ img.float-right,
 	}
 
 	.articles-section {
-		padding: 6.25rem 0 5.1875rem;
+		padding: 6.25rem 0 2rem;
 	}
 
 	.articles-section .row {
@@ -14163,7 +14185,7 @@ img.float-right,
 	}
 
 	.widget-section {
-		padding: 9.1875rem 0 8.3125rem;
+		padding: 3rem 0 3rem;
 	}
 
 	.widget-section .decor {

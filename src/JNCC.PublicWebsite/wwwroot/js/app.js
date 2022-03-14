@@ -78,15 +78,25 @@ function initFoundation() {
 	});
 }
 
+
 // slick init
 function initSlickCarousel() {
+
+    var total = $('.main-slider .slider-image').length, // get the number of slides
+        rand = Math.floor(Math.random() * total); // random number
+
 	jQuery('.main-slider').slick({
-		slidesToScroll: 1,
-		rows: 0,
+        slidesToScroll: 1,
+        initialSlide: rand,
+        rows: 0,
+        autoplay: true,
+        autoplaySpeed: 5000,
+        speed: 2000,
+        arrows: false,
 		centerMode: true,
 		centerPadding: '0px',
 		adaptiveHeight: true
-	});
+    });
 }
 
 function initScienceDetailsSlickCarousel() {

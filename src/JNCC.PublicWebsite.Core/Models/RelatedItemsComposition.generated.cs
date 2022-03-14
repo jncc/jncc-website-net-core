@@ -27,11 +27,6 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> RelatedItems { get; }
 
-		/// <summary>Search Query</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string RelatedItemsSearchQuery { get; }
-
 		/// <summary>Show Related Items</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		bool ShowRelatedItems { get; }
@@ -80,19 +75,6 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		public static global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> GetRelatedItems(IRelatedItemsComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>>(publishedValueFallback, "relatedItems");
-
-		///<summary>
-		/// Search Query: A search term used to find related items. If no term is used the page headline or name will be used instead.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("relatedItemsSearchQuery")]
-		public virtual string RelatedItemsSearchQuery => GetRelatedItemsSearchQuery(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Search Query</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetRelatedItemsSearchQuery(IRelatedItemsComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "relatedItemsSearchQuery");
 
 		///<summary>
 		/// Show Related Items
