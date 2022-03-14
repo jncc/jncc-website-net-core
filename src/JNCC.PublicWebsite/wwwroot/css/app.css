@@ -8018,9 +8018,14 @@ a:hover > .label {
 	font-size: .875rem;
 }
 
+	.articles-list article {
+        margin: 2.75rem 0 1.875rem;
+}
+
 .articles-list > li {
 	/*border-top: 1px solid #edecec;*/
-	padding: 2.75rem 0 1.875rem;
+	/*padding: 2.75rem 0 1.875rem;*/
+    padding: 0;
 }
 
 .article h2 {

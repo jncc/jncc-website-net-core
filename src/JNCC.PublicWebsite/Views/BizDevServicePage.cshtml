@@ -12,20 +12,25 @@
                 @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
                 @(await Html.PartialAsync("~/Views/Partials/PageAlert.cshtml", Model.PageSpecificAlertContent))
                 @Html.Raw(Model.Preamble)
+
                 @if (Model.MainContent != null && Model.MainContent.Any())
                 {
-                    <ul class="articles-list no-bullet">
+                    <div class="articles-list no-bullet">
                         @foreach (var item in Model.MainContent)
                         {
-                            if (item.Content as ContentItemSchema != null)
-                            {
-                                <li>
-                                    @(await Html.PartialAsync("~/Views/Partials/Shared/ContentItemSchema.cshtml", item.Content as ContentItemSchema))
-                                </li>
-                            }
+	                        switch (item.Content)
+	                        {
+		                        case ContentItemSchema contentItemSchema:
+			                        @await Html.PartialAsync("~/Views/Partials/Shared/ContentItemSchema.cshtml", contentItemSchema)
+			                        break;
+		                        case ContentVideoSchema contentVideoSchema: 
+			                        @(await Html.PartialAsync("~/Views/Partials/Shared/ContentVideoSchema.cshtml", contentVideoSchema))
+			                        break;
+	                        }
                         }
-                    </ul>
+                    </div>
                 }
+
                 @(await Component.InvokeAsync("PageMetaInformation", new { model = Model }))
             </div>
             @(await Component.InvokeAsync("Sidebar", new { model = Model }))
