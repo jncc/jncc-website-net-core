@@ -2,7 +2,6 @@
 @model ScienceSidebarViewModel
 @if (Model.HasPrimaryCallToActionButton == false
     && Model.HasCategories == false
-    && Model.HasDataHubLinks == false
     && Model.HasSeeAlsoLinks == false)
 {
     return;
@@ -16,45 +15,65 @@
     {
         foreach (var category in Model.Categories)
         {
-            <nav class="holder" aria-label="aside-navigation">
-                <h2><a href="@category.Url">@category.Text</a></h2>
-                @if (category.HasChildren)
-                {
-                    <ul class="aside-nav no-bullet">
-                        @foreach (var link in category.Children)
-                        {
-                            if (link.Url.Equals(Model.CurrentPageUrl))
-                            {
-                                <li><a href="@link.Url" class="active">@link.Text</a></li>
-                            }
-                            else
-                            {
-                                <li><a href="@link.Url">@link.Text</a></li>
-                            }
-                        }
-                    </ul>
-                }
-            </nav>
+	        <nav class="holder" aria-label="aside-navigation">
+		        <span>
+                    This page is in the category:
+		        </span>
+		        <h2><a href="@category.Url">@category.Text</a></h2>
+		        @if (category.HasChildren)
+		        {
+			        <span>
+                        Also in @category.Text:
+			        </span>
+			        <ul class="aside-nav no-bullet">
+				        @foreach (var link in category.Children)
+				        {
+					        if (link.Url.Equals(Model.CurrentPageUrl))
+					        {
+						        <li><a href="@link.Url" class="active">@link.Text</a></li>
+					        }
+					        else
+					        {
+						        <li><a href="@link.Url">@link.Text</a></li>
+					        }
+				        }
+			        </ul>
+		        }
+	        </nav>
         }
     }
 
-    @if (Model.HasDataHubLinks)
+    
+    @if (Model.RelatedCategories != null && Model.RelatedCategories.Any())
     {
-        <nav class="holder" aria-label="aside-navigation">
-            <h2>Data Hub Links</h2>
-            <ul class="aside-nav no-bullet">
-                @foreach (var link in Model.DataHubLinks)
-                {
-                    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
-                }
-            </ul>
-        </nav>
+	    <nav class="holder" aria-label="aside-navigation">
+		    <span>Related categories:</span>
+		    <ul class="aside-nav no-bullet">
+			    @foreach (var link in Model.RelatedCategories)
+			    {
+				    <li><a href="@link.Url">@link.Text</a></li>
+			    }
+		    </ul>
+	    </nav>
     }
 
-    @if (Model.HasSeeAlsoLinks)
+    @if (Model.OtherWebsitesLinks != null && Model.OtherWebsitesLinks.Any())
+    {
+	    <nav class="holder" aria-label="aside-navigation">
+		    <span>Other websites:</span>
+		    <ul class="aside-nav no-bullet">
+			    @foreach (var link in Model.OtherWebsitesLinks)
+			    {
+				    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+			    }
+		    </ul>
+	    </nav>
+    }
+
+@*    @if (Model.HasSeeAlsoLinks)
     {
         <nav class="holder" aria-label="aside-navigation">
-            <h2>See also</h2>
+            <span>See also:</span>
             <ul class="aside-nav no-bullet">
                 @foreach (var link in Model.SeeAlsoLinks)
                 {
@@ -62,5 +81,5 @@
                 }
             </ul>
         </nav>
-    }
+    }*@
 </aside>

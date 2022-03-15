@@ -15,15 +15,6 @@ namespace JNCC.PublicWebsite.Core.ViewModels
             }
         }
 
-        public IEnumerable<NavigationItemViewModel> DataHubLinks { get; set; }
-        public bool HasDataHubLinks
-        {
-            get
-            {
-                return ExistenceUtility.IsNullOrEmpty(DataHubLinks) == false;
-            }
-        }
-
         public IEnumerable<NavigationItemViewModel> SeeAlsoLinks { get; set; }
         public bool HasSeeAlsoLinks
         {

@@ -82,6 +82,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Preamble => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "preamble");
 
 		///<summary>
+		/// Related Categories: Allows editors to related categories to the current category. This is a one way process, if the linked category is also related to this one, it must be authored on the other category page too.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("relatedCategories")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent> RelatedCategories => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Cms.Core.Models.PublishedContent.IPublishedContent>>(_publishedValueFallback, "relatedCategories");
+
+		///<summary>
 		/// Reviewed Date: The date the page last had a meaningful editorial review.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
