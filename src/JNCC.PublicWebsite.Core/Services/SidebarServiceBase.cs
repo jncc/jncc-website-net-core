@@ -13,8 +13,7 @@ namespace JNCC.PublicWebsite.Core.Services
         protected readonly INavigationItemService _navigationItemService;
         protected readonly IDataHubRawQueryService _dataHubRawQueryService;
 
-        public SidebarServiceBase(INavigationItemService navigationItemService
-            , IDataHubRawQueryService dataHubRawQueryService
+        public SidebarServiceBase(INavigationItemService navigationItemService, IDataHubRawQueryService dataHubRawQueryService
             )
         {
             _navigationItemService = navigationItemService;
@@ -26,38 +25,10 @@ namespace JNCC.PublicWebsite.Core.Services
             return new T
             {
                 PrimaryCallToActionButton = _navigationItemService.GetViewModel(composition.SidebarPrimaryCallToActionButton),
-                DataHubLinks = GetDataHubLinks(composition),
+                OtherWebsitesLinks = _navigationItemService.GetViewModels(composition.SidebarOtherWebsites),
                 SeeAlsoLinks = _navigationItemService.GetViewModels(composition.SidebarSeeAlsoLinks)
             };
         }
 
-        private IEnumerable<NavigationItemViewModel> GetDataHubLinks(ISidebarComposition composition)
-        {
-            var viewModels = new List<NavigationItemViewModel>();
-            if (string.IsNullOrWhiteSpace(composition.SidebarDataHubQuery))
-            {
-                return viewModels;
-            }
-
-            var results = _dataHubRawQueryService.GetByRawQuery(composition.SidebarDataHubQuery, _maxNumberOfResults);
-            if (ExistenceUtility.IsNullOrEmpty(results.Hits.Results))
-            {
-                return viewModels;
-            }
-
-            foreach (var result in results.Hits.Results)
-            {
-                var viewModel = new NavigationItemViewModel()
-                {
-                    Text = result.Source.Title,
-                    Url = result.Source.Url,
-                    Target = HtmlAnchorTargets.Blank
-                };
-
-                viewModels.Add(viewModel);
-            }
-
-            return viewModels;
-        }
     }
 }

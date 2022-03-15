@@ -8203,6 +8203,12 @@ a:hover > .label {
 	padding: 1.5625rem .625rem .25rem;
 }
 
+	#sidebar .holder span {
+		font-size: 1rem;
+        color: #666262;
+        font-weight: bold;
+}
+
 #sidebar .search-form {
 	position: static;
 	margin-bottom: 1.875rem;

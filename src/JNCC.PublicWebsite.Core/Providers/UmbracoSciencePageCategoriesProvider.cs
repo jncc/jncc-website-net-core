@@ -24,6 +24,9 @@ namespace JNCC.PublicWebsite.Core.Providers
             return null;
         }
 
+
+        
+
         protected override IEnumerable<ScienceCategoryPage> GetContentPagesForCaching(ScienceDetailsPage root)
         {
             var pages = root.Categories?.Select(x => x as ScienceCategoryPage);
