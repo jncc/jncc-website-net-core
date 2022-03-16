@@ -29,5 +29,6 @@ namespace JNCC.PublicWebsite.Core.Interfaces.Services
         ScienceSliderSchemaViewModel CreateHeadingTextSliderItem(ScienceSliderSchemaHeadingText schema);
         ScienceSliderSchemaViewModel CreateImageTextSliderItem(ScienceSliderSchemaImageText schema);
         ScienceDetailsSliderSubSectionViewModel CreateSliderSubSection(ScienceDetailsSubSectionSliderSchema schema, string parentSectionHtmlId);
+        IEnumerable<ScienceDetailsSubSectionViewModel> GetSubSubSectionViewModels(BlockListModel subSubSections, string parentHtmlId);
     }
 }
