@@ -1,0 +1,38 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels;
+@model IEnumerable<ArticlesSectionViewModel>
+
+@foreach (var section in Model)
+{
+    @if (!section.HideHeadline)
+    {
+        <h2 id="@(section.HtmlId)">@(section.Headline)</h2>
+    }
+
+    @(await Html.PartialAsync(string.Format("~/Views/Partials/Articles/{0}.cshtml", section.PartialViewName), section))
+
+    @if (section.SubSections.Any())
+    {
+        foreach (var subSection in section.SubSections)
+        {
+            if (!subSection.HideHeadline)
+            {
+                <h3 id="@(subSection.HtmlId)">@(subSection.Headline)</h3>
+            }
+
+            @(await Html.PartialAsync(string.Format("~/Views/Partials/Articles/{0}.cshtml", subSection.PartialViewName), subSection))
+
+             if (subSection.SubSections.Any())
+                {
+                    foreach (var subSubSection in section.SubSections)
+                    {
+                         if (!subSubSection.HideHeadline)
+                         {
+                            <h3 id="@(subSubSection.HtmlId)">@(subSubSection.Headline)</h3>
+                         }
+
+                         @(await Html.PartialAsync(string.Format("~/Views/Partials/Articles/{0}.cshtml", subSubSection.PartialViewName), subSubSection))
+                    }
+                }
+        }
+    }
+}
