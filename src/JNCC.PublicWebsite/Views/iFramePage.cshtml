@@ -52,7 +52,7 @@
 @section Header {
     <div class="">
         <div id="hide-button" class="row expanded">
-             <span class="iframe-header-toggle iframe-toggle-button"><a class="openMenu hide-for-small-only">Hide</a></span>
+             <span class="iframe-header-toggle iframe-toggle-button"><a href="#" class="openMenu hide-for-small-only">Hide</a></span>
         </div>
         <div id="iframe-header-holder" class="row iframe-header-holder">
             <div class="iframe-menu iframe-inner-holder">
@@ -61,7 +61,7 @@
                         <img src="~/images/logo.png" class="iframe-logo" alt="JNCC">
                     </a>
                 </strong>
-                    @if(Model.PageTitle != null && Model.PageTitle!= string.Empty){
+                    @if(!string.IsNullOrEmpty(Model.PageTitle)){
                         <h1>@Model.PageTitle</h1>
                     }        
             </div>
