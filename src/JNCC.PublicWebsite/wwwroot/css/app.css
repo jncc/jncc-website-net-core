@@ -3218,7 +3218,7 @@ h5 small,
 h6 small,
 .h6 small {
 	line-height: 0;
-	color: #cacaca;
+	color: #666666;
 }
 
 h1,
@@ -3278,10 +3278,10 @@ a {
 	cursor: pointer;
 }
 
-a:hover,
-a:focus {
-	color: #276923;
-}
+	a:hover,
+	a:focus {
+		color: #F0FAF0;
+	}
 
 a img {
 	border: 0;
@@ -3294,7 +3294,7 @@ hr {
 	margin: 1.25rem auto;
 	border-top: 0;
 	border-right: 0;
-	border-bottom: 1px solid #cacaca;
+	border-bottom: 1px solid #666666;
 	border-left: 0;
 }
 
@@ -3339,7 +3339,7 @@ dl dt {
 blockquote {
 	margin: 0 0 20px;
 	padding: .5625rem 1.25rem 0 1.1875rem;
-	border-left: 1px solid #cacaca;
+	border-left: 1px solid #666666;
 }
 
 blockquote,
@@ -3371,7 +3371,7 @@ figure {
 
 code {
 	padding: .125rem .3125rem .0625rem;
-	border: 1px solid #cacaca;
+	border: 1px solid #666666;
 	background-color: #faf9f9;
 	font-family: Consolas, "Liberation Mono", Courier, monospace;
 	font-weight: normal;
@@ -3455,7 +3455,7 @@ textarea {
 	height: 2.46381579rem;
 	margin: 0 0 1rem;
 	padding: .5rem;
-	border: 1px solid #cacaca;
+	border: 1px solid #666666;
 	border-radius: 0;
 	background-color: #fefefe;
 	box-shadow: none;
@@ -3489,7 +3489,7 @@ textarea:focus {
 	outline: none;
 	border: 1px solid #444;
 	background-color: #fefefe;
-	box-shadow: 0 0 5px #cacaca;
+	box-shadow: 0 0 5px #666666;
 	-webkit-transition: box-shadow .5s, border-color .25s ease-in-out;
 	transition: box-shadow .5s, border-color .25s ease-in-out;
 }
@@ -3618,7 +3618,7 @@ label.middle {
 
 .input-group-label {
 	padding: 0 1rem;
-	border: 1px solid #cacaca;
+	border: 1px solid #666666;
 	background: #faf9f9;
 	color: #535050;
 	text-align: center;
@@ -3705,7 +3705,7 @@ select {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	border: 1px solid #cacaca;
+	border: 1px solid #666666;
 	border-radius: 0;
 	background-color: #fefefe;
 	font-family: inherit;
@@ -3727,7 +3727,7 @@ select:focus {
 	outline: none;
 	border: 1px solid #444;
 	background-color: #fefefe;
-	box-shadow: 0 0 5px #cacaca;
+	box-shadow: 0 0 5px #666666;
 	-webkit-transition: box-shadow .5s, border-color .25s ease-in-out;
 	transition: box-shadow .5s, border-color .25s ease-in-out;
 }
@@ -4639,7 +4639,7 @@ a.button:focus {
 	margin: 0 .35rem;
 	opacity: 1;
 	content: "/";
-	color: #cacaca;
+	color: #666666;
 }
 
 	.breadcrumbs a {
@@ -4651,7 +4651,7 @@ a.button:focus {
 }
 
 .breadcrumbs .disabled {
-	color: #cacaca;
+	color: #666666;
 	cursor: not-allowed;
 }
 
@@ -5208,8 +5208,8 @@ overflow: hidden;
 }
 
 .menu-icon:hover::after {
-	background: #cacaca;
-	box-shadow: 0 7px 0 #cacaca, 0 14px 0 #cacaca;
+	background: #666666;
+	box-shadow: 0 7px 0 #666666, 0 14px 0 #666666;
 }
 
 .menu-icon.dark {
@@ -5364,7 +5364,7 @@ overflow: hidden;
 	width: 300px;
 	padding: 1rem;
 	visibility: hidden;
-	border: 1px solid #cacaca;
+	border: 1px solid #666666;
 	border-radius: 0;
 	background-color: #fefefe;
 	font-size: 1rem;
@@ -5536,7 +5536,7 @@ overflow: hidden;
 	z-index: 1;
 	display: none;
 	min-width: 200px;
-	border: 1px solid #cacaca;
+	border: 1px solid #666666;
 	background: #fefefe;
 }
 
@@ -6053,7 +6053,7 @@ overflow: hidden;
 	height: 1.2rem;
 	margin: .1rem;
 	border-radius: 50%;
-	background-color: #cacaca;
+	background-color: #666666;
 }
 
 .orbit-bullets button:hover {
@@ -6118,7 +6118,7 @@ overflow: hidden;
 
 .pagination .disabled {
 	padding: .1875rem .625rem;
-	color: #cacaca;
+	color: #666666;
 	cursor: not-allowed;
 }
 
@@ -6150,7 +6150,7 @@ overflow: hidden;
 	height: 1rem;
 	margin-bottom: 1rem;
 	border-radius: 0;
-	background-color: #cacaca;
+	background-color: #666666;
 }
 
 .progress.primary .progress-meter {
@@ -6218,7 +6218,7 @@ overflow: hidden;
 	display: inline-block;
 	max-width: 100%;
 	height: .5rem;
-	background-color: #cacaca;
+	background-color: #666666;
 	-webkit-transition: all .2s ease-in-out;
 	transition: all .2s ease-in-out;
 }
@@ -6360,7 +6360,7 @@ html.is-reveal-open body {
 	backface-visibility: hidden;
 	display: none;
 	padding: 1rem;
-	border: 1px solid #cacaca;
+	border: 1px solid #666666;
 	border-radius: 0;
 	background-color: #fefefe;
 	position: relative;
@@ -6431,7 +6431,7 @@ html.is-reveal-open body {
 	width: 4rem;
 	height: 2rem;
 	border-radius: 0;
-	background: #cacaca;
+	background: #666666;
 	-webkit-transition: all .25s ease-out;
 	transition: all .25s ease-out;
 	font-weight: inherit;
