@@ -9126,7 +9126,7 @@ header#header .row.expanded span.iframe-header-toggle-on > a::after {
 	text-decoration: underline;
 }
 
-#footer h3,
+#footer h2,
 #footer .landing-page .featured-quote p,
 .landing-page .featured-quote #footer p {
 	font-size: 1.125rem;
@@ -9168,9 +9168,9 @@ header#header .row.expanded span.iframe-header-toggle-on > a::after {
 	font-size: 1.25rem;
 }
 
-.social-media a:hover {
-	color: #535050 !important;
-}
+	.social-media a:hover, .social-media a:focus {
+		color: #535050 !important;
+	}
 
 .social-media a i {
 	position: absolute;
