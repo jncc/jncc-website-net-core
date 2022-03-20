@@ -51,10 +51,13 @@ namespace JNCC.PublicWebsite
                 .AddWebsite()
                 .AddComposers()
                 .AddNotificationHandler<ContentPublishedNotification, ContentPublishedNotificationHandler>()
-                .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
+                .AddNotificationHandler<ContentUnpublishedNotification, ContentUnpublishedPublishedNotificationHandler>()
+                .AddNotificationHandler<ContentDeletedNotification, ContentDeletedNotificationHandler>()
+                .AddNotificationHandler<MediaDeletedNotification, MediaDeletedNotificationHandler>()
+                 .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
                 .Build();
 
-            
+
             services.Configure<AmazonServiceConfigurationOptions>(_config.GetSection(AmazonServiceConfigurationOptions.AmazonServiceConfiguration));
 
             //services.Configure<UmbracoRenderingDefaultsOptions>(c =>
