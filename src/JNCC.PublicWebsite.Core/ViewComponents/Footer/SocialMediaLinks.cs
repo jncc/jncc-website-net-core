@@ -19,10 +19,11 @@ namespace JNCC.PublicWebsite.Core.ViewComponents
         {
             _socialMediaLinksService = socialMediaLinksService ?? throw new ArgumentNullException(nameof(socialMediaLinksService));
         }
+
         public IViewComponentResult Invoke(IPublishedContent model)
         {
             var homePage = model.Root() as HomePage;
-            var links = _socialMediaLinksService.GetSocialMediaLinks(homePage.FooterSocialMediaLinks);
+            var links = _socialMediaLinksService != null? _socialMediaLinksService.GetSocialMediaLinks(homePage.FooterSocialMediaLinks) : null;
 
             return View("~/Views/Partials/Footer/SocialMediaLinks.cshtml", links);
         }

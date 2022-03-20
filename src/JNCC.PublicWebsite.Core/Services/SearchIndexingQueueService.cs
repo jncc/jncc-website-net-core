@@ -1,4 +1,8 @@
-﻿using Amazon.SQS;
+﻿using Amazon;
+using Amazon.Runtime;
+using Amazon.S3;
+using Amazon.SQS;
+using Amazon.SQS.ExtendedClient;
 using Amazon.SQS.Model;
 using JNCC.PublicWebsite.Core.Constants;
 using JNCC.PublicWebsite.Core.Models;
@@ -6,15 +10,16 @@ using JNCC.PublicWebsite.Core.Options;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using System;
 using System.Threading.Tasks;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
-    public sealed class SearchIndexingQueueService : ISearchIndexingQueueService
+    public sealed class SearchIndexingQueueService : ISearchIndexingQueueService, IDisposable
     {
         //private readonly ISearchConfiguration _searchConfiguration;
         private readonly JsonSerializerSettings _jsonSettings;
-       // private readonly AmazonSQSExtendedClient _sqsExtendedClient;
+        private readonly AmazonSQSExtendedClient _sqsExtendedClient;
         private readonly ILogger<SearchIndexingQueueService> _logger;
         private readonly IAmazonSQS _sqs;
         private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
@@ -28,9 +33,9 @@ namespace JNCC.PublicWebsite.Core.Services
             };
 
           //  _searchConfiguration = searchConfiguration;
-           // _sqsExtendedClient = CreateExtendedClient();
+            _sqsExtendedClient = CreateExtendedClient();
             _logger = logger;
-            _sqs = sqs;
+           // _sqs = sqs;
             _amazonServiceConfigurationOptions = amazonServiceConfigurationOptions;
         }
 
@@ -64,10 +69,10 @@ namespace JNCC.PublicWebsite.Core.Services
             QueueRequest(request);
         }
 
-        //public void Dispose()
-        //{
-        //    _sqsExtendedClient.Dispose();
-        //}
+        public void Dispose()
+        {
+            _sqsExtendedClient.Dispose();
+        }
 
         private void QueueRequest(SearchIndexQueueRequestModel request)
         {
@@ -75,7 +80,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             var sendRequest = new SendMessageRequest(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint, message);
 
-            var response = _sqs.SendMessageAsync(sendRequest).Result;
+            var response = _sqsExtendedClient.SendMessageAsync(sendRequest).Result;
 
             if (response.HttpStatusCode != System.Net.HttpStatusCode.OK)
             {
@@ -93,7 +98,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             var sendRequest = new SendMessageRequest(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint, message);
 
-            var response = await _sqs.SendMessageAsync(sendRequest);
+            var response = await _sqsExtendedClient.SendMessageAsync(sendRequest);
 
             if (response.HttpStatusCode != System.Net.HttpStatusCode.OK)
             {
@@ -105,16 +110,16 @@ namespace JNCC.PublicWebsite.Core.Services
             }
         }
 
-        //private AmazonSQSExtendedClient CreateExtendedClient()
-        //{
-        //    var credentials = new BasicAWSCredentials(_searchConfiguration.AWSSQSAccessKey, _searchConfiguration.AWSSQSSecretKey);
-        //    var region = RegionEndpoint.GetBySystemName(_searchConfiguration.AWSESRegion);
-        //    var s3 = new AmazonS3Client(credentials, region);
-        //    var sqs = new AmazonSQSClient(credentials, region);
+        private AmazonSQSExtendedClient CreateExtendedClient()
+        {
+            var credentials = new BasicAWSCredentials(_amazonServiceConfigurationOptions.Value.AWSSQSAccessKey, _amazonServiceConfigurationOptions.Value.AWSSQSSecretKey);
+            var region = RegionEndpoint.GetBySystemName(_amazonServiceConfigurationOptions.Value.AWSESRegion);
+            var s3 = new AmazonS3Client(credentials, region);
+            var sqs = new AmazonSQSClient(credentials, region);
 
-        //    return new AmazonSQSExtendedClient(sqs,
-        //        new ExtendedClientConfiguration().WithLargePayloadSupportEnabled(s3, _searchConfiguration.AWSSQSPayloadBucket)
-        //    );
-        //}
+            return new AmazonSQSExtendedClient(sqs,
+                new ExtendedClientConfiguration().WithLargePayloadSupportEnabled(s3, _amazonServiceConfigurationOptions.Value.AWSSQSPayloadBucket)
+            );
+        }
     }
 }

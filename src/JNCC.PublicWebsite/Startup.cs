@@ -42,15 +42,19 @@ namespace JNCC.PublicWebsite
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddAWSService<IAmazonSQS>();
+
 #pragma warning disable IDE0022 // Use expression body for methods
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
                 .AddNotificationHandler<ContentPublishedNotification, ContentPublishedNotificationHandler>()
+                .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
                 .Build();
 
-            services.AddAWSService<IAmazonSQS>();
+            
             services.Configure<AmazonServiceConfigurationOptions>(_config.GetSection(AmazonServiceConfigurationOptions.AmazonServiceConfiguration));
 
             //services.Configure<UmbracoRenderingDefaultsOptions>(c =>

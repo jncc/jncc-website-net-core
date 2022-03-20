@@ -19,107 +19,98 @@ namespace JNCC.PublicWebsite.Core.Notifications
 {
     public class ContentPublishedNotificationHandler : INotificationHandler<ContentPublishedNotification>
     {
-        //private readonly ISearchIndexingQueueService _searchIndexingQueueService;
+        private readonly ISearchIndexingQueueService _searchIndexingQueueService;
 
-        //private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
+        private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
 
         private readonly ILogger<ContentPublishedNotificationHandler> _logger;
 
-        public ContentPublishedNotificationHandler(ILogger<ContentPublishedNotificationHandler> logger)
+        private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+
+        private const string _site = SearchIndexingSites.Website;
+
+
+        public ContentPublishedNotificationHandler(ISearchIndexingQueueService searchIndexingQueueService, IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions, ILogger<ContentPublishedNotificationHandler> logger, IUmbracoContextAccessor umbracoContextAccessor)
         {
+            _searchIndexingQueueService = searchIndexingQueueService;
+            _amazonServiceConfigurationOptions = amazonServiceConfigurationOptions;
             _logger = logger;
+            _umbracoContextAccessor = umbracoContextAccessor;
         }
 
         public void Handle(ContentPublishedNotification notification)
         {
-            _logger.LogWarning("Hello world from handler");
+            if (!_amazonServiceConfigurationOptions.Value.EnableIndexing)
+            {
+                _logger.LogWarning("Amazon indexing disabled");
+            }
+
+            _logger.LogWarning("Handling send to Amazon");
+
+
+            //_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
+
+            //string leftPartUrl = umbracoContext.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
+
+
+            //foreach (var entity in notification.PublishedEntities)
+            //{
+            //    var contentBuilder = new StringBuilder();
+
+            //    var fieldsToIndex = entity.Properties.Where(p => _amazonServiceConfigurationOptions.Value.IndexFields.Contains(p.Alias));
+
+            //    foreach (var contentField in fieldsToIndex)
+            //    {
+            //        var contentFieldValues = contentField.Values;
+
+            //        foreach (var contentFieldValue in contentFieldValues)
+            //        {
+            //            var contentFieldValueString = contentFieldValue.ToString();
+
+            //            _logger.LogInformation("{{alias} - {value}", contentField.Alias, contentFieldValueString);
+
+            //            //Check if it has a value and append it
+            //            if (string.IsNullOrEmpty(contentFieldValueString) == false)
+            //            {
+            //                if (contentFieldValueString.DetectIsJson() && JsonUtility.TryParseJson(contentFieldValueString, out object parsedJson))
+            //                {
+            //                    var processedJsonValue = "hello world";// ProcessJsonValue(parsedJson);
+
+            //                    if (string.IsNullOrEmpty(processedJsonValue) == false)
+            //                    {
+            //                        contentBuilder.AppendLine(processedJsonValue);
+            //                    }
+            //                }
+            //                else
+            //                {
+            //                    var sanitisedValue = contentFieldValueString.StripHtml().Trim();
+
+            //                    if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
+            //                    {
+            //                        contentBuilder.AppendLine(sanitisedValue);
+            //                    }
+            //                }
+            //            }
+            //        }
+
+            //    }
+
+            //    string content = contentBuilder.ToString().Trim();
+
+            //    var document = new SearchIndexDocumentModel()
+            //    {
+            //        NodeId = entity.Id,
+            //        Site = _site,
+            //        Published = DateTime.Parse(entity.PublishDate.ToString()),
+            //        Title = entity.Name,
+            //        Url = leftPartUrl + umbracoContext.Content.GetById(entity.Id).Url(),
+            //        Content = content
+            //    };
+
+
+            //    _searchIndexingQueueService.QueueUpsert(document);
+            //}
         }
-
-        //private readonly IUmbracoContextAccessor _umbracoContextAccessor;
-
-        //private const string _site = SearchIndexingSites.Website;
-
-
-        //public ContentPublishedNotificationHandler(ISearchIndexingQueueService searchIndexingQueueService, IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions, ILogger<ContentPublishedNotificationHandler> logger, IUmbracoContextAccessor umbracoContextAccessor)
-        //{
-        //    _searchIndexingQueueService = searchIndexingQueueService;
-        //    _amazonServiceConfigurationOptions = amazonServiceConfigurationOptions;
-        //    _logger = logger;
-        //    _umbracoContextAccessor = umbracoContextAccessor;
-        //}
-
-        //public void Handle(ContentPublishedNotification notification)
-        //{
-        //    if (!_amazonServiceConfigurationOptions.Value.EnableIndexing)
-        //    {
-        //        _logger.LogWarning("Amazon indexing disabled");
-        //    }
-
-        //    // _umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
-
-        //    _umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
-
-        //    string leftPartUrl = umbracoContext.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
-
-
-        //    foreach (var entity in notification.PublishedEntities)
-        //    {
-        //        var contentBuilder = new StringBuilder();
-
-        //        var fieldsToIndex = entity.Properties.Where(p => _amazonServiceConfigurationOptions.Value.IndexFields.Contains(p.Alias));
-
-        //        foreach (var contentField in fieldsToIndex)
-        //        {
-        //            var contentFieldValues = contentField.Values;
-
-        //            foreach (var contentFieldValue in contentFieldValues)
-        //            {
-        //                var contentFieldValueString = contentFieldValue.ToString();
-
-        //                _logger.LogInformation("{{alias} - {value}", contentField.Alias, contentFieldValueString);
-
-        //                // Check if it has a value and append it
-        //                //if (string.IsNullOrEmpty(contentFieldValueString) == false)
-        //                //{
-        //                //    if (contentFieldValueString.DetectIsJson() && JsonUtility.TryParseJson(contentFieldValueString, out object parsedJson))
-        //                //    {
-        //                //        var processedJsonValue = ProcessJsonValue(parsedJson);
-
-        //                //        if (string.IsNullOrEmpty(processedJsonValue) == false)
-        //                //        {
-        //                //            contentBuilder.AppendLine(processedJsonValue);
-        //                //        }
-        //                //    }
-        //                //    else
-        //                //    {
-        //                //        var sanitisedValue = contentFieldValueString.StripHtml().Trim();
-
-        //                //        if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
-        //                //        {
-        //                //            contentBuilder.AppendLine(sanitisedValue);
-        //                //        }
-        //                //    }
-        //                //}
-        //            }
-
-        //        }
-
-        //        //string content = contentBuilder.ToString().Trim();
-
-        //        //var document = new SearchIndexDocumentModel()
-        //        //{
-        //        //    NodeId = entity.Id,
-        //        //    Site = _site,
-        //        //    Published = DateTime.Parse(entity.PublishDate.ToString()),
-        //        //    Title = entity.Name,
-        //        //    Url = leftPartUrl + umbracoContext.Content.GetById(entity.Id).Url(),
-        //        //    Content = content
-        //        //};
-
-
-        //        //_searchIndexingQueueService.QueueUpsert(document);
-        //    }
-        //}
 
 
         //private string ProcessJsonValue(object obj)
