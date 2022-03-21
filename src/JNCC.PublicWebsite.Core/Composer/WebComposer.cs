@@ -53,6 +53,8 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IUmbracoArticleYearsProvider, UmbracoArticleYearsProvider>();
             builder.Services.AddSingleton<IUmbracoArticleTypesProvider, UmbracoArticleTypesProvider>();
             builder.Services.AddSingleton<IUmbracoArticlePageTagsProvider, UmbracoArticlePageTagsProvider>();
+
+            builder.Services.AddSingleton<ISearchIndexingQueueService, SearchIndexingQueueService>();
         }
     }
 }
