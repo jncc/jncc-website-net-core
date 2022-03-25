@@ -1,3 +1,6 @@
+using Amazon.SQS;
+using JNCC.PublicWebsite.Core.Notifications;
+using JNCC.PublicWebsite.Core.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -5,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.Notifications;
 using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite
@@ -38,12 +42,23 @@ namespace JNCC.PublicWebsite
         /// </remarks>
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddAWSService<IAmazonSQS>();
+
 #pragma warning disable IDE0022 // Use expression body for methods
             services.AddUmbraco(_env, _config)
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
+                .AddNotificationHandler<ContentPublishedNotification, ContentPublishedNotificationHandler>()
+                .AddNotificationHandler<ContentUnpublishedNotification, ContentUnpublishedPublishedNotificationHandler>()
+                .AddNotificationHandler<ContentDeletedNotification, ContentDeletedNotificationHandler>()
+                .AddNotificationHandler<MediaDeletedNotification, MediaDeletedNotificationHandler>()
+                 .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
                 .Build();
+
+
+            services.Configure<AmazonServiceConfigurationOptions>(_config.GetSection(AmazonServiceConfigurationOptions.AmazonServiceConfiguration));
 
             //services.Configure<UmbracoRenderingDefaultsOptions>(c =>
             //{

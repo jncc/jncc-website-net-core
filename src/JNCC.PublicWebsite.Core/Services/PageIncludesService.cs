@@ -31,15 +31,19 @@ namespace JNCC.PublicWebsite.Core.Services
         {
             var includesBuilder = new StringBuilder();
 
-            if (string.IsNullOrWhiteSpace(globalIncludes.GlobalHeadIncludes) == false)
+            if (globalIncludes != null)
             {
-                includesBuilder.Append(globalIncludes.GlobalHeadIncludes);
-            }
 
-            if (pageSpecificIncludes != null &&
-                string.IsNullOrWhiteSpace(pageSpecificIncludes.PageSpecificHeadIncludes) == false)
-            {
-                includesBuilder.Append(pageSpecificIncludes.PageSpecificHeadIncludes);
+                if (string.IsNullOrWhiteSpace(globalIncludes.GlobalHeadIncludes) == false)
+                {
+                    includesBuilder.Append(globalIncludes.GlobalHeadIncludes);
+                }
+
+                if (pageSpecificIncludes != null &&
+                    string.IsNullOrWhiteSpace(pageSpecificIncludes.PageSpecificHeadIncludes) == false)
+                {
+                    includesBuilder.Append(pageSpecificIncludes.PageSpecificHeadIncludes);
+                }
             }
 
             return includesBuilder.ToString();
