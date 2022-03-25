@@ -8149,6 +8149,7 @@ a:hover > .label {
 	justify-content: center;
 	overflow: hidden;
 	position: relative;
+    margin-bottom: 3rem;
 }
 
 .visual-section h1 {
@@ -9216,10 +9217,6 @@ header#header .row.expanded span.iframe-header-toggle-on > a::after {
 	width: 6rem;
 }
 
-.label.datahub {
-	background: #a80c0c;
-	color: #fefefe;
-}
 
 .resultContent {
 	overflow: hidden;
@@ -11976,6 +11973,7 @@ img.float-right,
 
 	.home-a .visual-section {
 		height: 34.375rem;
+        margin-bottom: 3rem;
 	}
 
 	#content {

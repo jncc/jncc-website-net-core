@@ -11,13 +11,10 @@ namespace JNCC.PublicWebsite.Core.Services
     {
         private const int _maxNumberOfResults = 5;
         protected readonly INavigationItemService _navigationItemService;
-        protected readonly IDataHubRawQueryService _dataHubRawQueryService;
 
-        public SidebarServiceBase(INavigationItemService navigationItemService, IDataHubRawQueryService dataHubRawQueryService
-            )
+        public SidebarServiceBase(INavigationItemService navigationItemService)
         {
             _navigationItemService = navigationItemService;
-            _dataHubRawQueryService = dataHubRawQueryService;
         }
 
         protected T CreateViewModel<T>(ISidebarComposition composition) where T : BasicSidebarViewModel, new()

@@ -11,11 +11,7 @@ namespace JNCC.PublicWebsite.Core.Services
     internal sealed class CareersSidebarService : SidebarServiceBase, ICareersSidebarService
     {
         private const int NumberOfLatestJobs = 5;
-        public CareersSidebarService(INavigationItemService navigationItemService
-            , IDataHubRawQueryService dataHubRawQueryService
-            ) : base(navigationItemService
-                , dataHubRawQueryService
-                )
+        public CareersSidebarService(INavigationItemService navigationItemService) : base(navigationItemService)
         { }
 
         public CareersSidebarViewModel GetViewModel(CareersLandingPage model)

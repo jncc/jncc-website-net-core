@@ -54,7 +54,7 @@ namespace JNCC.PublicWebsite
                 .AddNotificationHandler<ContentUnpublishedNotification, ContentUnpublishedPublishedNotificationHandler>()
                 .AddNotificationHandler<ContentDeletedNotification, ContentDeletedNotificationHandler>()
                 .AddNotificationHandler<MediaDeletedNotification, MediaDeletedNotificationHandler>()
-                 .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
+                .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
                 .Build();
 
 

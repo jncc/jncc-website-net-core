@@ -20,13 +20,9 @@ namespace JNCC.PublicWebsite.Core.Notifications
     public class ContentPublishedNotificationHandler : INotificationHandler<ContentPublishedNotification>
     {
         private readonly ISearchIndexingQueueService _searchIndexingQueueService;
-
         private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
-
         private readonly ILogger<ContentPublishedNotificationHandler> _logger;
-
         private readonly IUmbracoContextAccessor _umbracoContextAccessor;
-
         private const string _site = SearchIndexingSites.Website;
 
 
@@ -44,162 +40,245 @@ namespace JNCC.PublicWebsite.Core.Notifications
             {
                 _logger.LogWarning("Amazon indexing disabled");
             }
+            else
+            {
+                _logger.LogWarning("Handling send to Amazon");
 
-            _logger.LogWarning("Handling send to Amazon");
+                _umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
+
+                string leftPartUrl = umbracoContext.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
+
+                foreach (var entity in notification.PublishedEntities)
+                {
+                    var contentBuilder = new StringBuilder();
+
+                    var fieldsToIndex = entity.Properties.Where(p => _amazonServiceConfigurationOptions.Value.IndexFields.Contains(p.Alias));
+
+                    foreach (var contentField in fieldsToIndex)
+                    {
+                        var contentFieldValues = contentField.Values;
+
+                        if (contentFieldValues != null && contentFieldValues.Any())
+                        {
+                            foreach (var contentFieldValue in contentFieldValues)
+                            {
+                                if (contentFieldValue != null && contentFieldValue.PublishedValue != null)
+                                {
+                                    var contentFieldValueString = contentFieldValue.PublishedValue.ToString();
+
+                                    _logger.LogInformation("{{alias} - {value}", contentField.Alias, contentFieldValueString);
+
+                                    //Check if it has a value and append it
+                                    if (string.IsNullOrEmpty(contentFieldValueString) == false)
+                                    {
+                                        if (contentFieldValueString.DetectIsJson() && JsonUtility.TryParseJson(contentFieldValueString, out object parsedJson))
+                                        {
+                                            var processedJsonValue = ProcessJsonValue(parsedJson);
+
+                                            if (string.IsNullOrEmpty(processedJsonValue) == false)
+                                            {
+                                                contentBuilder.AppendLine(processedJsonValue);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            var sanitisedValue = contentFieldValueString.StripHtml().Trim();
+
+                                            if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
+                                            {
+                                                contentBuilder.AppendLine(sanitisedValue);
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                       
+
+                    }
+
+                    string content = contentBuilder.ToString().Trim();
+
+                    var document = new SearchIndexDocumentModel()
+                    {
+                        NodeId = entity.Id,
+                        Site = _site,
+                        Published = DateTime.Parse(entity.PublishDate.ToString()),
+                        Title = entity.Name,
+                        Url = leftPartUrl + umbracoContext.Content.GetById(entity.Id).Url(),
+                        Content = content
+                    };
 
 
-            //_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
+                    _searchIndexingQueueService.QueueUpsert(document);
+                }
+            }
 
-            //string leftPartUrl = umbracoContext.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
+          
+        }
 
+        private string ProcessJsonValueSubSection(string value)
+        {
+            if (value.DetectIsJson() && JsonUtility.TryParseJson(value, out object parsedJson))
+            {
+               return ProcessJsonValue(parsedJson);
+            }
 
-            //foreach (var entity in notification.PublishedEntities)
-            //{
-            //    var contentBuilder = new StringBuilder();
-
-            //    var fieldsToIndex = entity.Properties.Where(p => _amazonServiceConfigurationOptions.Value.IndexFields.Contains(p.Alias));
-
-            //    foreach (var contentField in fieldsToIndex)
-            //    {
-            //        var contentFieldValues = contentField.Values;
-
-            //        foreach (var contentFieldValue in contentFieldValues)
-            //        {
-            //            var contentFieldValueString = contentFieldValue.ToString();
-
-            //            _logger.LogInformation("{{alias} - {value}", contentField.Alias, contentFieldValueString);
-
-            //            //Check if it has a value and append it
-            //            if (string.IsNullOrEmpty(contentFieldValueString) == false)
-            //            {
-            //                if (contentFieldValueString.DetectIsJson() && JsonUtility.TryParseJson(contentFieldValueString, out object parsedJson))
-            //                {
-            //                    var processedJsonValue = "hello world";// ProcessJsonValue(parsedJson);
-
-            //                    if (string.IsNullOrEmpty(processedJsonValue) == false)
-            //                    {
-            //                        contentBuilder.AppendLine(processedJsonValue);
-            //                    }
-            //                }
-            //                else
-            //                {
-            //                    var sanitisedValue = contentFieldValueString.StripHtml().Trim();
-
-            //                    if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
-            //                    {
-            //                        contentBuilder.AppendLine(sanitisedValue);
-            //                    }
-            //                }
-            //            }
-            //        }
-
-            //    }
-
-            //    string content = contentBuilder.ToString().Trim();
-
-            //    var document = new SearchIndexDocumentModel()
-            //    {
-            //        NodeId = entity.Id,
-            //        Site = _site,
-            //        Published = DateTime.Parse(entity.PublishDate.ToString()),
-            //        Title = entity.Name,
-            //        Url = leftPartUrl + umbracoContext.Content.GetById(entity.Id).Url(),
-            //        Content = content
-            //    };
-
-
-            //    _searchIndexingQueueService.QueueUpsert(document);
-            //}
+            return string.Empty;
         }
 
 
-        //private string ProcessJsonValue(object obj)
-        //{
-        //    var processedValue = new StringBuilder();
-        //    var objType = obj.GetType();
+        private string ProcessJsonValue(object obj)
+        {
+            var processedValue = new StringBuilder();
+            var objType = obj.GetType();
 
-        //    if (objType == typeof(JObject))
-        //    {
-        //        var jObj = obj as JObject;
-        //        if (jObj != null)
-        //        {
-        //            foreach (var field in _searchConfiguration.NestedIndexFields)
-        //            {
-        //                var nestedField = jObj[field.Alias];
-        //                if (nestedField == null)
-        //                {
-        //                    continue;
-        //                }
+            if (objType == typeof(JObject))
+            {
+                var jObj = obj as JObject;
+                if (jObj != null)
+                {
+                    foreach (var field in _amazonServiceConfigurationOptions.Value.NestedIndexFields.Split(','))
+                    {
+                        var nestedField = jObj[field];
+                        if (nestedField == null)
+                        {
+                            continue;
+                        }
 
-        //                var valueType = nestedField.GetType();
-        //                var value = nestedField.Value<string>();
+                        var valueType = nestedField.GetType();
 
-        //                if (typeof(JContainer).IsAssignableFrom(valueType))
-        //                {
-        //                    var innerValue = ProcessJsonValue(value);
+                        if (valueType == typeof(JArray))
+                        {
+                            var jArr = nestedField as JArray;
+                            if (jArr != null)
+                            {
+                                for (var i = 0; i < jArr.Count; i++)
+                                {
+                                    var item = jArr[i];
 
-        //                    if (string.IsNullOrWhiteSpace(innerValue) == false)
-        //                    {
-        //                        processedValue.AppendLine(innerValue);
-        //                    }
-        //                }
-        //                else
-        //                {
-        //                    var sanitisedValue = value.StripHtml().Trim();
+                                    foreach (var jField in _amazonServiceConfigurationOptions.Value.NestedIndexFields.Split(','))
+                                    {
+                                        var nestedJField = item[jField];
 
-        //                    if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
-        //                    {
-        //                        processedValue.AppendLine(sanitisedValue);
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
-        //    else if (objType == typeof(JArray))
-        //    {
-        //        var jArr = obj as JArray;
-        //        if (jArr != null)
-        //        {
-        //            for (var i = 0; i < jArr.Count; i++)
-        //            {
-        //                var item = jArr[i];
+                                        if (nestedJField == null)
+                                        {
+                                            continue;
+                                        }
 
-        //                foreach (var field in _searchConfiguration.NestedIndexFields)
-        //                {
-        //                    var nestedField = item[field.Alias];
+                                        var valueJType = nestedField.GetType();
+                                        var valueJ = nestedJField.Value<string>();
 
-        //                    if (nestedField == null)
-        //                    {
-        //                        continue;
-        //                    }
+                                        if (jField == "contentData" || jField == "subSections")
+                                        {
+                                            var innerValue = ProcessJsonValueSubSection(valueJ);
 
-        //                    var valueType = nestedField.GetType();
-        //                    var value = nestedField.Value<string>();
+                                            if (string.IsNullOrWhiteSpace(innerValue) == false)
+                                            {
+                                                processedValue.AppendLine(innerValue);
+                                            }
+                                        }
+                                        else if(jField == "content")
+                                        {
+                                            var sanitisedValue = valueJ.StripHtml().Trim();
 
-        //                    if (typeof(JContainer).IsAssignableFrom(valueType))
-        //                    {
-        //                        var innerValue = ProcessJsonValue(value);
+                                            if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
+                                            {
+                                                processedValue.AppendLine(sanitisedValue);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            if (string.IsNullOrWhiteSpace(valueJ) == false)
+                                            {
+                                                processedValue.AppendLine(valueJ);
+                                            }
+                                        }
+                                    }
 
-        //                        if (string.IsNullOrWhiteSpace(innerValue) == false)
-        //                        {
-        //                            processedValue.AppendLine(innerValue);
-        //                        }
-        //                    }
-        //                    else
-        //                    {
-        //                        var sanitisedValue = value.StripHtml().Trim();
+                                }
+                            }
+                        }
+                        else
+                        {
+                            var value = nestedField.Value<string>();
 
-        //                        if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
-        //                        {
-        //                            processedValue.AppendLine(sanitisedValue);
-        //                        }
-        //                    }
-        //                }
-        //            }
-        //        }
-        //    }
+                            if (typeof(JContainer).IsAssignableFrom(valueType))
+                            {
+                                var innerValue = ProcessJsonValue(value);
 
-        //    return processedValue.ToString().Trim();
-        //}
+                                if (string.IsNullOrWhiteSpace(innerValue) == false)
+                                {
+                                    processedValue.AppendLine(innerValue);
+                                }
+                            }
+                            else
+                            {
+                                var sanitisedValue = value.StripHtml().Trim();
+
+                                if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
+                                {
+                                    processedValue.AppendLine(sanitisedValue);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (objType == typeof(JArray))
+            {
+                var jArr = obj as JArray;
+                if (jArr != null)
+                {
+                    for (var i = 0; i < jArr.Count; i++)
+                    {
+                        var item = jArr[i];
+
+                        foreach (var field in _amazonServiceConfigurationOptions.Value.NestedIndexFields.Split(','))
+                        {
+                            var nestedField = item[field];
+
+                            if (nestedField == null)
+                            {
+                                continue;
+                            }
+
+                            var valueType = nestedField.GetType();
+                            var value = nestedField.Value<string>();
+
+                            if (field == "contentData" || field == "subSections")
+                            {
+                                var innerValue = ProcessJsonValueSubSection(value);
+
+                                if (string.IsNullOrWhiteSpace(innerValue) == false)
+                                {
+                                    processedValue.AppendLine(innerValue);
+                                }
+                            }
+                            else if (field == "content")
+                            {
+                                var sanitisedValue = value.StripHtml().Trim();
+
+                                if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
+                                {
+                                    processedValue.AppendLine(sanitisedValue);
+                                }
+                            }
+                            else
+                            {
+                                if (string.IsNullOrWhiteSpace(value) == false)
+                                {
+                                    processedValue.AppendLine(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            return processedValue.ToString().Trim();
+        }
     }
 }

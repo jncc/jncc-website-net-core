@@ -7,8 +7,11 @@ using Microsoft.Extensions.Options;
 using System;
 using System.IO;
 using System.Text;
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
+using Umbraco.Cms.Core.Hosting;
 using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.PublishedCache;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 
@@ -23,16 +26,19 @@ namespace JNCC.PublicWebsite.Core.Notifications
         private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
 
         private readonly IUmbracoContextAccessor _umbracoContextAccessor;
-
+        private readonly IUmbracoContextFactory _umbracoContextFactory;
+        private readonly IHostingEnvironment _hostingEnvironment;
         private const string _site = SearchIndexingSites.Website;
 
 
-        public MediaSavedNotificationHandler(ISearchIndexingQueueService searchIndexingQueueService, IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions, ILogger<MediaSavedNotificationHandler> logger, IUmbracoContextAccessor umbracoContextAccessor)
+        public MediaSavedNotificationHandler(ISearchIndexingQueueService searchIndexingQueueService, IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions, ILogger<MediaSavedNotificationHandler> logger, IUmbracoContextAccessor umbracoContextAccessor, IUmbracoContextFactory umbracoContextFactory, IHostingEnvironment hostingEnvironment)
         {
             _searchIndexingQueueService = searchIndexingQueueService;
             _amazonServiceConfigurationOptions = amazonServiceConfigurationOptions;
             _logger = logger;
             _umbracoContextAccessor = umbracoContextAccessor;
+            _umbracoContextFactory = umbracoContextFactory;
+             _hostingEnvironment = hostingEnvironment;
         }
 
         public void Handle(MediaSavedNotification notification)
@@ -49,40 +55,56 @@ namespace JNCC.PublicWebsite.Core.Notifications
             string leftPartUrl = umbracoContext.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
 
 
-            foreach (var entity in notification.SavedEntities)
+            using (UmbracoContextReference umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext())
             {
-               var mediaNode = umbracoContext.Content.GetById(entity.Id);
+                IPublishedMediaCache contentCache = umbracoContextReference.UmbracoContext.Media;
 
-                var file = mediaNode.Value<string>("umbracoFile");
-
-                var mediaFullUrl = leftPartUrl + mediaNode.Url();
-
-                if (!file.IsNullOrWhiteSpace() && file.ToLower().Contains("pdf"))
+                foreach (var entity in notification.SavedEntities)
                 {
-                    var document = new SearchIndexDocumentModel()
+                    var mediaNode = contentCache.GetById(entity.Id);
+
+                    if (mediaNode != null)
                     {
-                        NodeId = mediaNode.Id,
-                        Site = _site,
-                        Published = DateTime.Parse(mediaNode.UpdateDate.ToString()),
-                        Title = mediaNode.Name
-                    };
+                        var file = mediaNode.Value<string>("umbracoFile");
 
-                    var fileInfo = new FileInfo(mediaFullUrl);                    
-                    // index the node
+                        var mediaFullUrl = leftPartUrl + mediaNode.Url();
 
-                    var pdf = System.IO.File.ReadAllBytes(mediaFullUrl);
-                    var pdfEncoded = Convert.ToBase64String(pdf);
+                        if (!file.IsNullOrWhiteSpace() && file.ToLower().Contains("pdf"))
+                        {
+                            var document = new SearchIndexDocumentModel()
+                            {
+                                NodeId = mediaNode.Id,
+                                Site = _site,
+                                Published = DateTime.Parse(mediaNode.UpdateDate.ToString()),
+                                Title = mediaNode.Name
+                            };
 
-                    document.Url = mediaFullUrl;
-                    document.Content = "Umbraco Media File";
-                    document.FileBase64Encoded = pdfEncoded;
-                    document.FileExtension = fileInfo.Extension;
-                    document.FileSizeInBytes = fileInfo.Length;
+                            var fileInfo = new FileInfo(mediaNode.Url());
+                            // index the node
 
-                    _searchIndexingQueueService.QueueUpsert(document);
+                            var fullPath = _hostingEnvironment.MapPathWebRoot(mediaNode.Url());
+
+                            var pdf = System.IO.File.ReadAllBytes(fullPath);
+                            var pdfEncoded = Convert.ToBase64String(pdf);
+
+                            document.Url = mediaFullUrl;
+                            document.Content = "Umbraco Media File";
+                            document.FileBase64Encoded = pdfEncoded;
+                            document.FileExtension = fileInfo.Extension;
+                            document.FileSizeInBytes = pdf.Length;
+
+                            _searchIndexingQueueService.QueueUpsert(document);
+                        }
+                    }
+                    else
+                    {
+                        _logger.LogWarning("Failed to add media to Queue Upsert (ID: {0}, Name: {1}). Reason: Media is Null or WhiteSpace.", entity.Id, entity.Name);
+                    }
                 }
-                
             }
+
+
+
         }
     }
 }

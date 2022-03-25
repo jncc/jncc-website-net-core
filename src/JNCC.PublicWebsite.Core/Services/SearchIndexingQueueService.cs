@@ -17,26 +17,23 @@ namespace JNCC.PublicWebsite.Core.Services
 {
     public sealed class SearchIndexingQueueService : ISearchIndexingQueueService, IDisposable
     {
-        //private readonly ISearchConfiguration _searchConfiguration;
         private readonly JsonSerializerSettings _jsonSettings;
         private readonly AmazonSQSExtendedClient _sqsExtendedClient;
         private readonly ILogger<SearchIndexingQueueService> _logger;
-        private readonly IAmazonSQS _sqs;
         private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
 
-        public SearchIndexingQueueService(ILogger<SearchIndexingQueueService> logger, IAmazonSQS sqs, IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions)
+        public SearchIndexingQueueService(ILogger<SearchIndexingQueueService> logger, IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions)
         {
             _jsonSettings = new JsonSerializerSettings()
             {
                 NullValueHandling = NullValueHandling.Ignore,
                 DefaultValueHandling = DefaultValueHandling.Ignore
             };
-
-          //  _searchConfiguration = searchConfiguration;
-            _sqsExtendedClient = CreateExtendedClient();
-            _logger = logger;
-           // _sqs = sqs;
             _amazonServiceConfigurationOptions = amazonServiceConfigurationOptions;
+            _logger = logger;
+
+            _sqsExtendedClient = CreateExtendedClient();
+
         }
 
         public void QueueUpsert(SearchIndexDocumentModel document)
@@ -78,18 +75,35 @@ namespace JNCC.PublicWebsite.Core.Services
         {
             var message = JsonConvert.SerializeObject(request, Formatting.None, _jsonSettings);
 
-            var sendRequest = new SendMessageRequest(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint, message);
-
-            var response = _sqsExtendedClient.SendMessageAsync(sendRequest).Result;
-
-            if (response.HttpStatusCode != System.Net.HttpStatusCode.OK)
+            if (!string.IsNullOrEmpty(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint))
             {
-                _logger.LogWarning("[Failure] Document Request (ID: {0}, Title: {1}) has not been pushed up to SQS. Response HTTP Status Code: {2}. MD5 of message attributes: {3}. MD5 of message body: {4}.",request.Document.NodeId, request.Document.Title,response.HttpStatusCode, response.MD5OfMessageAttributes, response.MD5OfMessageBody);
+                var sendRequest = new SendMessageRequest(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint, message);
+
+                if (_sqsExtendedClient != null)
+                {
+                    var response = _sqsExtendedClient.SendMessageAsync(sendRequest).Result;
+
+                    if (response.HttpStatusCode != System.Net.HttpStatusCode.OK)
+                    {
+                        _logger.LogWarning("[Failure] Document Request (ID: {0}, Title: {1}) has not been pushed up to SQS. Response HTTP Status Code: {2}. MD5 of message attributes: {3}. MD5 of message body: {4}.", request.Document.NodeId, request.Document.Title, response.HttpStatusCode, response.MD5OfMessageAttributes, response.MD5OfMessageBody);
+                    }
+                    else
+                    {
+                        _logger.LogInformation("[Success] Document Request (ID: {0}, Title: {1}) has been pushed up to SQS.", request.Document.NodeId, request.Document.Title);
+                    }
+                }
+                else
+                {
+                    _logger.LogWarning("[Failure] Amazon SQS Extended Client could not be created.");
+                }
+
             }
             else
             {
-                _logger.LogInformation("[Success] Document Request (ID: {0}, Title: {1}) has been pushed up to SQS.", request.Document.NodeId, request.Document.Title);
+                _logger.LogWarning("[Failure] AWS SQS Endpoint not supplied.");
             }
+
+           
         }
 
         private async Task QueueRequestAsync(SearchIndexQueueRequestModel request)
@@ -112,14 +126,23 @@ namespace JNCC.PublicWebsite.Core.Services
 
         private AmazonSQSExtendedClient CreateExtendedClient()
         {
-            var credentials = new BasicAWSCredentials(_amazonServiceConfigurationOptions.Value.AWSSQSAccessKey, _amazonServiceConfigurationOptions.Value.AWSSQSSecretKey);
-            var region = RegionEndpoint.GetBySystemName(_amazonServiceConfigurationOptions.Value.AWSESRegion);
-            var s3 = new AmazonS3Client(credentials, region);
-            var sqs = new AmazonSQSClient(credentials, region);
+            if (!string.IsNullOrEmpty(_amazonServiceConfigurationOptions.Value.AWSSQSAccessKey) 
+                && !string.IsNullOrEmpty(_amazonServiceConfigurationOptions.Value.AWSSQSSecretKey)
+                && !string.IsNullOrEmpty(_amazonServiceConfigurationOptions.Value.AWSESRegion)
+                && !string.IsNullOrEmpty(_amazonServiceConfigurationOptions.Value.AWSSQSPayloadBucket))
+            {
+                var credentials = new BasicAWSCredentials(_amazonServiceConfigurationOptions.Value.AWSSQSAccessKey, _amazonServiceConfigurationOptions.Value.AWSSQSSecretKey);
+                var region = RegionEndpoint.GetBySystemName(_amazonServiceConfigurationOptions.Value.AWSESRegion);
+                var s3 = new AmazonS3Client(credentials, region);
+                var sqs = new AmazonSQSClient(credentials, region);
 
-            return new AmazonSQSExtendedClient(sqs,
-                new ExtendedClientConfiguration().WithLargePayloadSupportEnabled(s3, _amazonServiceConfigurationOptions.Value.AWSSQSPayloadBucket)
-            );
+                return new AmazonSQSExtendedClient(sqs, new ExtendedClientConfiguration().WithLargePayloadSupportEnabled(s3, _amazonServiceConfigurationOptions.Value.AWSSQSPayloadBucket));
+            }
+            else
+            {
+                return null;
+            }
+          
         }
     }
 }

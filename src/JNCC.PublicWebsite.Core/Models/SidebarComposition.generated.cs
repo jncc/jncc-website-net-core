@@ -22,11 +22,6 @@ namespace JNCC.PublicWebsite.Core.Models
 	/// <summary>Sidebar Composition</summary>
 	public partial interface ISidebarComposition : IPublishedContent
 	{
-		/// <summary>Data Hub Query</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		string SidebarDataHubQuery { get; }
-
 		/// <summary>Elsewhere on our website links</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -78,19 +73,6 @@ namespace JNCC.PublicWebsite.Core.Models
 		}
 
 		// properties
-
-		///<summary>
-		/// Data Hub Query: An optional query which pulls links from the data hub.If no data hub query is authored or no items are found from the data hub query then no links will be displayed.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("sidebarDataHubQuery")]
-		public virtual string SidebarDataHubQuery => GetSidebarDataHubQuery(this, _publishedValueFallback);
-
-		/// <summary>Static getter for Data Hub Query</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.2.0+763cb70e677ac0c85557b19b5df09eccfa1b9dfb")]
-		[return: global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		public static string GetSidebarDataHubQuery(ISidebarComposition that, IPublishedValueFallback publishedValueFallback) => that.Value<string>(publishedValueFallback, "sidebarDataHubQuery");
 
 		///<summary>
 		/// Elsewhere on our website links: Links to other internal web pages
