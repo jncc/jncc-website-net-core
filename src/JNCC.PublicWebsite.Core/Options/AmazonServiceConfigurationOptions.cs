@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using JNCC.PublicWebsite.Core.Services;
 
 namespace JNCC.PublicWebsite.Core.Options
 {
@@ -17,6 +18,8 @@ namespace JNCC.PublicWebsite.Core.Options
         public string AWSSQSEndpoint { get; set; } = string.Empty;
         public string AWSSQSPayloadBucket { get; set; } = string.Empty;
         public bool EnableIndexing { get; set; } = false;
-        public List<string> IndexFields { get; set; }
+        public string IndexFields { get; set; }
+
+        public string NestedIndexFields { get; set; }
     }
 }
