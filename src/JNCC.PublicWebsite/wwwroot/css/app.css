@@ -8957,7 +8957,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 header#header .row .iframe-header-logo {
 	padding-top: .5rem;
-	padding-bottom: 1rem;
+	padding-bottom: 2.5rem;
 }
 
 header#header .row.expanded span.iframe-header-toggle {
@@ -9109,7 +9109,7 @@ header#header .row.expanded span.iframe-header-toggle-on > a::after {
 }
 
 .iframe-toggle-menu {
-	padding-top: 25px;
+	padding-top: 0;
 }
 
 #footer {
