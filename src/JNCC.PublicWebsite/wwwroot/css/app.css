@@ -8215,6 +8215,10 @@ a:hover > .label {
 	margin-bottom: 1.875rem;
 }
 
+	#sidebar .search-form .input-group-button {
+        margin-top: 0;
+	}
+
 .no-breadcrumbs .two-columns {
 	margin-top: 1.4375rem;
 }
