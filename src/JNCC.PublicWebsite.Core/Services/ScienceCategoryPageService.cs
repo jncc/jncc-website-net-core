@@ -229,7 +229,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             model.Content = schema.Content;
 
-            model.SubSections = GetSubSectionViewModels(schema.SubSections, model.HtmlId);
+            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
@@ -240,7 +240,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             model.Images = CreateSectionImageGallery(schema.Images);
 
-            model.SubSections = GetSubSectionViewModels(schema.SubSections, model.HtmlId);
+            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
@@ -251,6 +251,8 @@ namespace JNCC.PublicWebsite.Core.Services
 
             model.Content = schema.Content;
 
+            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
+
             return model;
         }
 
@@ -259,6 +261,8 @@ namespace JNCC.PublicWebsite.Core.Services
             var model = CreateSection<ScienceCategoryImageGallerySubSectionViewModel>(schema, parentSectionHtmlId);
 
             model.Images = CreateSectionImageGallery(schema.Images);
+
+            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
@@ -288,6 +292,47 @@ namespace JNCC.PublicWebsite.Core.Services
                     {
                         viewModels.Add(viewModel);
                     }
+                }
+            }
+
+            return viewModels;
+        }
+
+        public IEnumerable<ScienceCategorySubSectionViewModel> GetSubSubSectionViewModels(BlockListModel subSubSections, string parentHtmlId)
+        {
+            var viewModels = new List<ScienceCategorySubSectionViewModel>();
+
+            if (ExistenceUtility.IsNullOrEmpty(subSubSections))
+            {
+                return viewModels;
+            }
+
+            foreach (var section in subSubSections)
+            {
+                ScienceCategorySubSectionViewModel viewModel = null;
+
+                switch (section.Content)
+                {
+                    case ScienceCategorySubSectionRichTextSchema richText:
+                        viewModel = CreateRichTextSubSection(richText, parentHtmlId);
+                        break;
+                    case ScienceCategorySubSectionImageGallerySchema imageGallery:
+                        viewModel = CreateImageGallerySubSection(imageGallery, parentHtmlId);
+                        break;
+                    case ScienceCategorySubSectionImageRichTextSchema imageRichText:
+                        viewModel = CreateImageRichTextSubSection(imageRichText, parentHtmlId);
+                        break;
+                    case ScienceCategorySubSectionImageCodeSchema imageCode:
+                        viewModel = CreateImageCodeSubSection(imageCode, parentHtmlId);
+                        break;
+                    case ScienceCategorySubSectionSliderSchema slider:
+                        viewModel = CreateSliderSubSection(slider, parentHtmlId);
+                        break;
+                }
+
+                if (viewModel != null)
+                {
+                    viewModels.Add(viewModel);
                 }
             }
 
@@ -523,7 +568,7 @@ namespace JNCC.PublicWebsite.Core.Services
                 };
             }
             model.ImagePosition = schema.ImagePosition;
-
+            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
             return model;
         }
 
@@ -536,7 +581,7 @@ namespace JNCC.PublicWebsite.Core.Services
             model.ImageCode = schema.ImageCode;
 
             model.ImagePosition = schema.ImagePosition;
-
+            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
             return model;
         }
         public ScienceCategorySliderSubSectionViewModel CreateSliderSubSection(ScienceCategorySubSectionSliderSchema schema, string parentSectionHtmlId)
@@ -547,7 +592,7 @@ namespace JNCC.PublicWebsite.Core.Services
             model.ShowBackground = schema.ShowGreyBackground;
             model.ShowTimelineArrows = schema.ShowTimelineArrows;
             model.SliderItems = GetSliderItemViewModels(schema.SliderItems);
-
+            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
             return model;
         }
     }
