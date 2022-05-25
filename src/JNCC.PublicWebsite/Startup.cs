@@ -83,17 +83,17 @@ namespace JNCC.PublicWebsite
                 app.UseExceptionHandler("/500.html");
             }
 
-            //Cookie hijacking and protocol downgrade attacks Protection (Strict-Transport-Security Header (HSTS)
-            app.UseHsts(options => options.MaxAge(days: 365));
+            ////Cookie hijacking and protocol downgrade attacks Protection (Strict-Transport-Security Header (HSTS)
+            //app.UseHsts(options => options.MaxAge(days: 365));
 
-            //X-frame-options
-            app.UseXfo(options => options.SameOrigin());
+            ////X-frame-options
+            //app.UseXfo(options => options.SameOrigin());
 
-            //Content/MIME Sniffing Protection
-            app.UseXContentTypeOptions();
+            ////Content/MIME Sniffing Protection
+            //app.UseXContentTypeOptions();
 
-            //Cross-site scripting Protection (X-XSS-Protection header)
-            app.UseXXssProtection(options => options.EnabledWithBlockMode());
+            ////Cross-site scripting Protection (X-XSS-Protection header)
+            //app.UseXXssProtection(options => options.EnabledWithBlockMode());
 
             app.UseUmbraco()
                 .WithMiddleware(u =>
