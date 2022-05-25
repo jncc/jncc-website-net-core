@@ -2,9 +2,11 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <Configurations>Debug;Release;Development</Configurations>
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
         <PackageReference Include="SEOChecker" Version="9.0.0" />
         <PackageReference Include="Umbraco.Cms" Version="9.2.0" />
     </ItemGroup>
