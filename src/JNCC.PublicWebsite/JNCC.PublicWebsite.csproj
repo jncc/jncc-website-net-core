@@ -7,7 +7,7 @@
 
     <ItemGroup>
         <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
-        <PackageReference Include="SEOChecker" Version="9.0.0" />
+        <PackageReference Include="SEOChecker" Version="9.0.4" />
         <PackageReference Include="Umbraco.Cms" Version="9.2.0" />
     </ItemGroup>
 
