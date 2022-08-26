@@ -9,9 +9,9 @@
     <PackageReference Include="Aws4RequestSigner" Version="1.0.3" />
     <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
     <PackageReference Include="SEOChecker.Core" Version="9.0.0" />
-    <PackageReference Include="Umbraco.Cms.Core" Version="9.2.0" />
-    <PackageReference Include="Umbraco.Cms.Infrastructure" Version="9.2.0" />
-    <PackageReference Include="Umbraco.Cms.Web.Common" Version="9.2.0" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="9.5.3" />
+    <PackageReference Include="Umbraco.Cms.Infrastructure" Version="9.5.3" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="9.5.3" />
   </ItemGroup>
 
 </Project>
