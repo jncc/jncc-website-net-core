@@ -26,7 +26,6 @@ namespace JNCC.PublicWebsite.Core.Models
         public string Url { get; set; }
         [JsonProperty("file_extension")]
         public string FileExtension { get; set; }
-        //public List<DatahubKeyword> datahub_keywords { get; set; }
     }
 
     internal sealed class Hit
@@ -55,9 +54,4 @@ namespace JNCC.PublicWebsite.Core.Models
         public string value { get; set; }
     }
 
-    internal sealed class DatahubKeyword
-    {
-        public string vocab { get; set; }
-        public string value { get; set; }
-    }
 }

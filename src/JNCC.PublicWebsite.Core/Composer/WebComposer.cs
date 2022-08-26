@@ -1,4 +1,6 @@
-﻿using JNCC.PublicWebsite.Core.Services;
+﻿using Amazon.SQS;
+using Amazon.SQS.ExtendedClient;
+using JNCC.PublicWebsite.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
@@ -8,7 +10,10 @@ using JNCC.PublicWebsite.Core.Providers;
 using JNCC.PublicWebsite.Core.Configuration;
 using JNCC.PublicWebsite.Core.Constants;
 using JNCC.PublicWebsite.Core.Models;
+using JNCC.PublicWebsite.Core.Options;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 
 namespace JNCC.PublicWebsite.Core.Composers
 {
@@ -41,7 +46,6 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<ICalloutCardsService, CalloutCardsService>();
             builder.Services.AddSingleton<ILatestNewsSectionService, LatestNewsSectionService>();
             builder.Services.AddSingleton<ISearchQueryService, SearchQueryService>();
-            builder.Services.AddSingleton<IDataHubRawQueryService, DataHubRawQueryService>();
             builder.Services.AddSingleton<IQueryService, QueryService>();
             builder.Services.AddSingleton<INewsAndInsightsLandingFilteringService, NewsAndInsightsLandingFilteringService>();
             builder.Services.AddSingleton<ISeoMetaDataService, SeoMetaDataService>();
@@ -53,6 +57,14 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IUmbracoArticleYearsProvider, UmbracoArticleYearsProvider>();
             builder.Services.AddSingleton<IUmbracoArticleTypesProvider, UmbracoArticleTypesProvider>();
             builder.Services.AddSingleton<IUmbracoArticlePageTagsProvider, UmbracoArticlePageTagsProvider>();
+
+            builder.Services.AddSingleton<ISearchIndexingQueueService, SearchIndexingQueueService>();
+
+
+            builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
+            builder.Services.AddSingleton<JsonSerializerSettings>();
+            builder.Services.AddSingleton<AmazonSQSExtendedClient>();
+        
         }
     }
 }

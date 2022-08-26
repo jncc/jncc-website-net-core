@@ -89,13 +89,14 @@ function initSlickCarousel() {
         slidesToScroll: 1,
         initialSlide: rand,
         rows: 0,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
         speed: 2000,
         arrows: false,
 		centerMode: true,
 		centerPadding: '0px',
-		adaptiveHeight: true
+        adaptiveHeight: true,
+        fade:true
     });
 }
 

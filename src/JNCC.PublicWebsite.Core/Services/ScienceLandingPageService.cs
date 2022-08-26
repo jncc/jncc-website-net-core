@@ -146,8 +146,7 @@ namespace JNCC.PublicWebsite.Core.Services
                 return null;
             }
 
-            var mainCategoryPageContent = collection.MainCategoryPage.OfType<ScienceCategoryPage>()
-                                                                     .FirstOrDefault();
+            var mainCategoryPageContent = collection.MainCategoryPage.FirstChildOfType("scienceCategoryPage") as ScienceCategoryPage;
 
             if (mainCategoryPageContent == null)
             {
@@ -159,6 +158,8 @@ namespace JNCC.PublicWebsite.Core.Services
                 Text = string.Format("All References Resources in {0}", mainCategoryPageContent.GetHeadline()),
                 Url = mainCategoryPageContent.Url(),
             };
+
+
         }
     }
 }

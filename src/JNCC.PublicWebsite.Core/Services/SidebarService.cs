@@ -13,11 +13,7 @@ namespace JNCC.PublicWebsite.Core.Services
     {
         private const int _sectionRootLevel = 2;
 
-        public SidebarService(INavigationItemService navigationItemService
-            , IDataHubRawQueryService dataHubRawQueryService
-            ) : base(navigationItemService
-                , dataHubRawQueryService
-                )
+        public SidebarService(INavigationItemService navigationItemService) : base(navigationItemService)
         {
         }
 
@@ -39,6 +35,7 @@ namespace JNCC.PublicWebsite.Core.Services
             viewModel.SiblingPageLinks = _navigationItemService.GetViewModels(composition.Parent?.VisibleChildren());
             viewModel.SiblingLinksTitle = GetAlsoInLinksTitle(composition.Parent);
             viewModel.ChildPageLinks = _navigationItemService.GetViewModels(composition.VisibleChildren());
+            viewModel.ChildPageLinksTitle = "Pages in " + composition.Name + ":";
             viewModel.ParentLink = _navigationItemService.GetViewModels(composition.Parent?.AsEnumerableOfOne());
             viewModel.CurrentPageUrl = composition.Url();
 

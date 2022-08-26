@@ -16,12 +16,7 @@ namespace JNCC.PublicWebsite.Core.Services
     {
         private readonly ISciencePageCategoriesProvider _sciencePageCategoriesProvider;
 
-        public ScienceSidebarService(INavigationItemService navigationItemService
-            ,IDataHubRawQueryService dataHubRawQueryService
-            , ISciencePageCategoriesProvider sciencePageCategoriesProvider) 
-            : base(navigationItemService
-                  , dataHubRawQueryService
-                  )
+        public ScienceSidebarService(INavigationItemService navigationItemService, ISciencePageCategoriesProvider sciencePageCategoriesProvider) : base(navigationItemService)
         {
             _sciencePageCategoriesProvider = sciencePageCategoriesProvider ?? throw new ArgumentNullException(nameof(sciencePageCategoriesProvider));
         }

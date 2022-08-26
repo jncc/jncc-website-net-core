@@ -46,6 +46,19 @@
         </nav>
     }
 
+    @if (Model.HasChildPageLinks)
+    {
+	    <nav class="holder" aria-label="aside-navigation">
+		    <h2>@Model.ChildPageLinksTitle</h2>
+		    <ul class="aside-nav no-bullet">
+			    @foreach (var link in Model.ChildPageLinks)
+			    {
+				    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+			    }
+		    </ul>
+	    </nav>
+    }
+
     @if (Model.HasElsewhereOnOurWebsiteLinks)
     {
         <nav class="holder" aria-label="aside-navigation">
