@@ -19,11 +19,20 @@
         <ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
         <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
     </ItemGroup>
+    
     <ItemGroup>
       <Folder Include="App_Plugins\" />
     </ItemGroup>
-
-
+    
+    <ItemGroup>
+        <Content Include="App_Plugins\TwoFactorProviders\Authenticator.html" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <None Include="App_Plugins\TwoFactorProviders\Authenticator.controller.js" />
+      <None Include="App_Plugins\TwoFactorProviders\package.manifest" />
+    </ItemGroup>
+    
 
     <PropertyGroup>
         <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
