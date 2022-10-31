@@ -2,7 +2,7 @@
 @model IScienceDetailsImageRichTextSectionViewModel
 
 <div class="row collapse">
-    @if (Model.ImagePosition == "Top")
+    @if (string.Equals(Model.ImagePosition, "Top", StringComparison.OrdinalIgnoreCase))
     {
 
     <div class="columns small-12">
@@ -20,7 +20,7 @@
         </div>
     </div>
     }
-    else if (Model.ImagePosition == "Right")
+    else if (string.Equals(Model.ImagePosition, "Right", StringComparison.OrdinalIgnoreCase))
     {
         <div class="columns small-12 medium-6 small-order-2 medium-order-1 right-pad">
             @Html.Raw(Model.Content)
