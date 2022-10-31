@@ -8976,42 +8976,42 @@ header#header .row.expanded span.iframe-header-toggle {
 @media screen and (min-width: 950px) {
 	.iframe-toggle-button {
 		right: 3%;
-		top: 66%;
+		top: 75%;
 	}
 }
 
 @media screen and (min-width: 1060px) {
 	.iframe-toggle-button {
 		right: 8%;
-		top: 66%;
+		top: 75%;
 	}
 }
 
 @media screen and (min-width: 1200px) {
 	.iframe-toggle-button {
 		right: 18%;
-		top: 66%;
+		top: 75%;
 	}
 }
 
 @media screen and (min-width: 1500px) {
 	.iframe-toggle-button {
 		right: 23%;
-		top: 66%;
+		top: 75%;
 	}
 }
 
 @media screen and (min-width: 1800px) {
 	.iframe-toggle-button {
 		right: 29%;
-		top: 66%;
+		top: 75%;
 	}
 }
 
 @media screen and (min-width: 2200px) {
 	.iframe-toggle-button {
 		right: 32%;
-		top: 66%;
+		top: 75%;
 	}
 }
 
@@ -12089,6 +12089,7 @@ img.float-right,
 
 	header#header .row .iframe-header-nav {
 		padding-left: 0;
+		padding-bottom: 20px;
 	}
 
 	header#header .row.expanded span.iframe-header-toggle {
