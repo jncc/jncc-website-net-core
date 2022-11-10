@@ -55,6 +55,12 @@ namespace JNCC.PublicWebsite.Core.Services
                     case ArticlesSectionSliderSchema slider:
                         viewModel = CreateSliderSection(slider);
                         break;
+                    case ContentItemSchema contentItemSchema:
+                        viewModel = CreateContentItemSchemaSection(contentItemSchema);
+                        break;
+                    case ContentVideoSchema contentVideoSchema:
+                        viewModel = CreateContentVideoSchemaSection(contentVideoSchema);
+                        break;
                 }
 
                 if (viewModel != null)
@@ -112,6 +118,12 @@ namespace JNCC.PublicWebsite.Core.Services
                 case ArticlesSectionSliderSchema.ModelTypeAlias:
                 case ArticlesSubSectionSliderSchema.ModelTypeAlias:
                     return ArticlesPartialViewNames.Slider;
+
+                case ContentItemSchema.ModelTypeAlias:
+                    return ArticlesPartialViewNames.ContentItemSchema;
+                case ContentVideoSchema.ModelTypeAlias:
+                    return ArticlesPartialViewNames.ContentVideoSchema;
+
                 default:
                     throw new NotSupportedException($"Document Type, {schema.ContentType.Alias}, is not currently supported.");
             }
@@ -364,6 +376,33 @@ namespace JNCC.PublicWebsite.Core.Services
             return model;
         }
 
+        public ArticlesContentItemSchemaSectionViewModel CreateContentItemSchemaSection(ContentItemSchema schema)
+        {
+            var model = new ArticlesContentItemSchemaSectionViewModel()
+            {
+                Content = schema,
+                PartialViewName = ArticlesPartialViewNames.ContentItemSchema,
+                HideHeadline = true,
+                Headline = schema.Headline
+            };
+
+            var sectionHtmlId = schema.Headline.ToUrlSegment(_shortStringHelper);
+            model.HtmlId = sectionHtmlId;
+
+            return model;
+        }
+
+        public ArticlesContentVideoSchemaSectionViewModel CreateContentVideoSchemaSection(ContentVideoSchema schema)
+        {
+            var model = new ArticlesContentVideoSchemaSectionViewModel()
+            {
+                Content = schema,
+                PartialViewName = ArticlesPartialViewNames.ContentVideoSchema,
+                HideHeadline = true,
+            };
+
+            return model;
+        }
 
         //Sub Sections
         public  ArticlesRichTextSubSectionViewModel CreateRichTextSubSection(ArticlesSubSectionRichTextSchema schema, string parentSectionHtmlId)

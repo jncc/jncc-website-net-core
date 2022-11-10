@@ -7,5 +7,7 @@
         public const string ImageRichText = "ImageRichText";
         public const string ImageCode = "ImageCode";
         public const string Slider = "Slider";
+        public const string ContentItemSchema = "ContentItemSchema";
+        public const string ContentVideoSchema = "ContentVideoSchema";
     }
 }

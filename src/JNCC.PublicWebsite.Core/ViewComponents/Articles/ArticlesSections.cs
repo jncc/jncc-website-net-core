@@ -1,6 +1,7 @@
 ﻿using System;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
+using JNCC.PublicWebsite.Core.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
@@ -18,7 +19,12 @@ namespace JNCC.PublicWebsite.Core.ViewComponents
         public IViewComponentResult Invoke(IPublishedContent model)
         {
             var article = model as ArticlePage;
-            var viewModel = _articlesPageService.GetSectionViewModels(article.MainContentBlocks);
+
+            ArticlesContentViewModel viewModel = new ArticlesContentViewModel()
+            {
+                SubSections = _articlesPageService.GetSectionViewModels(article.MainContentBlocks),
+                ShowTableOfContents = article.ShowTableOfContents,
+            };
 
             return View("~/Views/Partials/Articles/Sections.cshtml", viewModel);
         }

@@ -1,29 +1,31 @@
 ﻿@using JNCC.PublicWebsite.Core.ViewModels;
-@model IEnumerable<ArticlesSectionViewModel>
+@model ArticlesContentViewModel
 
-@if (Model?.Any() ?? false)
+@if (Model?.SubSections?.Any() ?? false)
 {
-    <div class="row">
-        <div class="columns small-12 medium-12 callout toc">
-            <h2 id="toc">Contents</h2>
-            <ol>
-                @foreach (var section in Model)
-                {
-                    if (!section.HideHeadline)
+    @if(Model.ShowTableOfContents)
+    {
+        <div class="row">
+            <div class="columns small-12 medium-12 callout toc">
+                <h2 id="toc">Contents</h2>
+                <ol>
+                    @foreach (var section in Model.SubSections)
                     {
-                        <li>
-                            <a href="#@(section.HtmlId)">@(section.Headline)</a>
-                            @if (section.SubSections != null && section.SubSections.Any())
-                            {
-                                <ol>
-                                    @foreach (var subSection in section.SubSections)
-                                    {
-                                        if (!subSection.HideHeadline)
+                        if (!section.HideHeadline)
+                        {
+                            <li>
+                                <a href="#@(section.HtmlId)">@(section.Headline)</a>
+                                @if (section.SubSections != null && section.SubSections.Any())
+                                {
+                                    <ol>
+                                        @foreach (var subSection in section.SubSections)
                                         {
-                                            <li>
-                                                <a href="#@(subSection.HtmlId)">@(subSection.Headline)</a>
-                                                 @if (subSection.SubSections != null && subSection.SubSections.Any())
-                                                  {
+                                            if (!subSection.HideHeadline)
+                                            {
+                                                <li>
+                                                    <a href="#@(subSection.HtmlId)">@(subSection.Headline)</a>
+                                                    @if (subSection.SubSections != null && subSection.SubSections.Any())
+                                                    {
                                                     <ol>
                                                         @foreach (var subSubSection in subSection.SubSections)
                                                         {
@@ -35,19 +37,21 @@
                                                             }
                                                         }
                                                     </ol>
-                                                 }
-                                            </li>
+                                                    }
+                                                </li>
+                                            }
                                         }
-                                    }
-                                </ol>
-                            }
-                        </li>
+                                    </ol>
+                                }
+                            </li>
+                        }
                     }
-                }
-            </ol>
+                </ol>
+            </div>
         </div>
-    </div>
-    foreach (var section in Model)
+    }
+    
+    foreach (var section in Model.SubSections)
     {
         if (!section.HideHeadline)
         {

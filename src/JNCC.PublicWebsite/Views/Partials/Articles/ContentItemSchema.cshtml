@@ -1,14 +1,15 @@
 ﻿@using JNCC.PublicWebsite.Core.Models
+@using JNCC.PublicWebsite.Core.ViewModels
 @using Umbraco.Cms.Core.Models.Blocks
-@model ContentItemSchema
+@model ArticlesContentItemSchemaSectionViewModel
 
-@if (Model.Image != null)
+@if (Model.Content?.Image != null)
 {
-    <article class="article @(Model.ReadMoreButton != null ? "article-list" : "")">
+    <article class="article @(Model.Content.ReadMoreButton != null ? "article-list" : "")">
 
-        @if (Model.Image?.Any() ?? false)
+        @if (Model.Content.Image?.Any() ?? false)
         {
-            foreach (BlockListItem image in Model.Image)
+            foreach (BlockListItem image in Model.Content.Image)
             {
                 if (image.Content is ContentImageSchema mediaItem)
                 {
@@ -25,15 +26,15 @@
         }
 
         <div class="text-holder">
-            @if(Model.ReadMoreButton != null)
+            @if(Model.Content.ReadMoreButton != null)
             {
-                <h2><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h2>
+                <h2><a href="@Model.Content.ReadMoreButton?.Url" target="@Model.Content.ReadMoreButton?.Target">@Model.Headline</a></h2>
             }
             else
             {
-                <h2>@Model.Headline</h2>
+                <h2>@Model.Content.Headline</h2>
             }    
-            @Html.Raw(Model.Content)
+            @Html.Raw(Model.Content.Content)
         </div>
     </article>
 }

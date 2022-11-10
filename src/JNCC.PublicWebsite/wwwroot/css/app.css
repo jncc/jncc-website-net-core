@@ -8035,6 +8035,10 @@ a:hover > .label {
 	color: #535050;
 }
 
+.article {
+	margin-bottom: 2rem;
+}
+
 .articles-list {
 	/* padding-top: 2.0625rem; */
 	font-size: .875rem;
@@ -11943,6 +11947,15 @@ img.float-right,
 		display: flex;
 		-webkit-box-shadow: -2px 1px 13px -2px #4E4E4E;
 		box-shadow: -2px 1px 13px -2px #4E4E4E;
+		position: relative;
+	}
+
+	.article-link {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-shadow: -2px 1px 13px -2px #4E4E4E;
+		box-shadow: -2px 1px 13px -2px #4E4E4E;
 		cursor: pointer;
 		position: relative;
 	}
@@ -11990,7 +12003,7 @@ img.float-right,
 		-ms-flex-negative: 0;
 		flex-shrink: 0;
 		border-left: 1px solid #d8d8d8;
-		padding: 0 1.25rem 15.3125rem;
+		padding: 0 1.25rem 8.3125rem;
 	}
 
 	.two-columns {
@@ -14297,7 +14310,7 @@ img.float-right,
 
 	#sidebar {
 		width: 19.3125rem;
-		padding: 0 2.1875rem 15.3125rem 1.8125rem;
+		padding: 0 2.1875rem 8.3125rem 1.8125rem;
 	}
 
 	#sidebar .search-form {
