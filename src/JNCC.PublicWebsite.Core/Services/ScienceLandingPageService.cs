@@ -10,6 +10,7 @@ using Umbraco.Cms.Core.Strings;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using System;
 using System.Text.RegularExpressions;
+using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
@@ -42,19 +43,19 @@ namespace JNCC.PublicWebsite.Core.Services
         private IEnumerable<ScienceLatestUpdatedPageItemViewModel> GetLatestUpdatedPages(ScienceLandingPage model)
         {
             var viewModels = new List<ScienceLatestUpdatedPageItemViewModel>();
-            var pages = model.Children<ScienceDetailsPage>();
+            var pages = model.Children(x => x.ContentType.Alias == ScienceCategoryPage.ModelTypeAlias || x.ContentType.Alias == ScienceDetailsPage.ModelTypeAlias);
 
             if (ExistenceUtility.IsNullOrEmpty(pages))
             {
                 return viewModels;
             }
 
-            List<ScienceDetailsPage> latestPages;
+            List<IPublishedContent> latestPages;
 
             if (model.LatestUpdates != null && model.LatestUpdates.Any())
             {
                 //use overridden latest updates
-                var selectedPages = model.LatestUpdates.OfType<ScienceDetailsPage>();
+                var selectedPages = model.LatestUpdates.OfType<IPublishedContent>();
                 switch (model.LatestUpdates.Count())
                 {
                     case 2:
@@ -100,10 +101,29 @@ namespace JNCC.PublicWebsite.Core.Services
                     ReadMoreLink = _navigationItemService.GetViewModel(page)
                 };
 
-                if (ExistenceUtility.IsNullOrWhiteSpace(page.Preamble) == false)
+                if(page.ContentType.Alias == ScienceDetailsPage.ModelTypeAlias)
                 {
+                    var scienceDetails = page as ScienceDetailsPage;
+                    if (scienceDetails != null)
+                    {
+                        if (ExistenceUtility.IsNullOrWhiteSpace(scienceDetails.Preamble) == false)
+                        {
 
-                    viewModel.Content = _htmlStringUtilities.Truncate(page.Preamble.ToString(), LatestUpdateItemContentLength, true, false);
+                            viewModel.Content = scienceDetails.Preamble;
+                        }
+                    }
+                } 
+                else if (page.ContentType.Alias == ScienceCategoryPage.ModelTypeAlias)
+                {
+                    var scienceCategoryPage = page as ScienceCategoryPage;
+                    if (scienceCategoryPage != null)
+                    {
+                        if (ExistenceUtility.IsNullOrWhiteSpace(scienceCategoryPage.Preamble) == false)
+                        {
+
+                            viewModel.Content = scienceCategoryPage.Preamble;
+                        }
+                    }
                 }
 
                 viewModels.Add(viewModel);
