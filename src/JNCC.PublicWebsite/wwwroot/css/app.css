@@ -6359,7 +6359,7 @@ html.is-reveal-open body {
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 	display: none;
-	padding: 1rem;
+	padding: 2.75rem;
 	border: 1px solid #666666;
 	border-radius: 0;
 	background-color: #fefefe;
@@ -15273,7 +15273,8 @@ img.float-right,
 }
 
 .global-alert-row .alert {
-	background-color: RGB(236, 193, 91, 0.82);
+	background-color: #F3D795;
+	color: #2B2B2B
 }
 
 .global-alert-row .alert .alert-container{

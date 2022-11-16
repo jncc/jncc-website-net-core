@@ -9,12 +9,20 @@ using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
 using Umbraco.Cms.Core.Models;
+using Umbraco.Cms.Web.Common.Mvc;
 using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
     internal sealed class NewsAndInsightsLandingService : INewsAndInsightsLandingService
     {
+        private const int ItemContentLength = 150;
+        private readonly HtmlStringUtilities _htmlStringUtilities;
+        public NewsAndInsightsLandingService()
+        {
+            _htmlStringUtilities = new HtmlStringUtilities();
+        }
+
         public NameValueCollection ConvertFiltersToNameValueCollection(NewsAndInsightsLandingFilteringModel filteringModel)
         {
             var collection = new NameValueCollection();
@@ -110,7 +118,7 @@ namespace JNCC.PublicWebsite.Core.Services
             {
                 Title = string.IsNullOrWhiteSpace(content.Headline) ? content.Name : content.Headline,
                 PublishDate = content.PublishDate,
-                Description = content.LandingPageContent,
+                Description = _htmlStringUtilities.Truncate(content.LandingPageContent.ToString(), ItemContentLength, true, false),
                 Url = content.Url(),
                 ArticleType = content.ArticleType,
             };

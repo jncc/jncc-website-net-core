@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Html;
+using System;
 using System.Web;
 using Umbraco.Cms.Core.Strings;
 
@@ -11,7 +12,7 @@ namespace JNCC.PublicWebsite.Core.ViewModels
         public string ImageAltText { get; set; }
         public string ImageTitleText { get; set; }
         public DateTime PublishDate { get; set; }
-        public IHtmlEncodedString Description { get; set; }
+        public IHtmlContent Description { get; set; }
         public string Url { get; set; }
         public string ArticleType { get; set; }
     }
