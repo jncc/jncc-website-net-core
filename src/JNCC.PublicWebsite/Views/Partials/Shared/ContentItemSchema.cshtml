@@ -4,7 +4,7 @@
 
 @if (Model.Image != null)
 {
-    <article class="article">
+    <article class="article @(Model.ReadMoreButton != null ? "article-list" : "")">
 
         @if (Model.Image?.Any() ?? false)
         {

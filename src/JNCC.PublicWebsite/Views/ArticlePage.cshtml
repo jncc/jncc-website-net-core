@@ -24,7 +24,19 @@
                 
                 @(await Component.InvokeAsync("ArticlesSections", new { model = Model }))
                 
-
+                <div id="meta" class="callout secondary">
+                    <div class="row collapse">
+                        <div class="column small-12 medium-6">
+                            <p><span data-tooltip title="The date this page was last published">Published</span>: <time datetime="@Model.PublishDate.ToString("yyyy-MM-dd")">@Model.PublishDate.ToLongDateString().</time> </p>
+                        </div>
+                        @if (Model.ReviewedDate != DateTime.MinValue)
+                        {
+                            <div class="column small-12 medium-6">
+                                <p><span data-tooltip title="The date the content last had a meaningful editorial review">Reviewed</span>: <time datetime="@Model.ReviewedDate.ToString("yyyy-MM-dd")">@Model.ReviewedDate.ToLongDateString()</time></p>
+                            </div>
+                        }
+                    </div>
+                </div>
             </div>
             @(await Component.InvokeAsync("ArticleSidebar", new { model = Model }))
         </div>

@@ -15,7 +15,7 @@
                                 <div class="img-holder" style="background-image: url(@item.ImageUrl);"></div>
                             }
                             <div class="card-section">
-                                @item.Content
+                                @Html.Raw(item.Content)
                                 @if (item.ReadMoreButton != null)
                                 {
                                     <a href="@item.ReadMoreButton.Url" class="button expanded">@item.ReadMoreButton.Text</a>

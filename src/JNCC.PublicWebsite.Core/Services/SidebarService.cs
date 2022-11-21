@@ -54,7 +54,9 @@ namespace JNCC.PublicWebsite.Core.Services
             var viewModel = new SidebarViewModel()
             {
                 PrimaryCallToActionButton = _navigationItemService.GetViewModel(composition.SidebarPrimaryCallToActionButton),
-                SeeAlsoLinks = _navigationItemService.GetViewModels(composition.SidebarSeeAlsoLinks)
+                SeeAlsoLinks = _navigationItemService.GetViewModels(composition.SidebarSeeAlsoLinks),
+                ElsewhereOnOurWebsiteLinks = _navigationItemService.GetViewModels(composition.SidebarElsewhereOnOurWebsite),
+                OtherWebsitesLinks = _navigationItemService.GetViewModels(composition.SidebarOtherWebsites)
             };
 
             return viewModel;
