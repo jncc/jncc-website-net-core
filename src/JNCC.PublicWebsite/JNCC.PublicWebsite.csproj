@@ -16,6 +16,7 @@
         <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
         <PackageReference Include="Umbraco.Forms" Version="9.2.0" />
         <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="1.1.0" />
+        <PackageReference Include="uSync" Version="9.4.0" />
         <ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
         <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
     </ItemGroup>
