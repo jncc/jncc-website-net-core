@@ -286,7 +286,7 @@ namespace JNCC.PublicWebsite.Core.Services
             model.Content = schema.Content;
             if (schema.Image != null)
             {
-                if (schema.Image is Image image)
+                if (schema.Image.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {
@@ -319,7 +319,7 @@ namespace JNCC.PublicWebsite.Core.Services
             model.Content = schema.Content;
             if (schema.Image != null)
             {
-                if(schema.Image is Image image)
+                if(schema.Image.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {

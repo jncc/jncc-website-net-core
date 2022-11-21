@@ -498,7 +498,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             if (schema.Image != null)
             {
-                if(schema.Image is Image image)
+                if(schema.Image.Content is Image image)
                 {
                     model.Image = new ImageViewModel()
                     {
