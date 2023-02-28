@@ -3282,6 +3282,10 @@ a {
 	a:focus {
 		color: #2D7A29;
 	}
+	li > a:hover {
+		color: #2D7A29;
+		text-decoration: underline;
+	}
 
 a img {
 	border: 0;
@@ -3799,6 +3803,7 @@ select[multiple] {
 	color: #fefefe;
 }
 
+
 [data-whatinput="mouse"] .button {
 	outline: 0;
 }
@@ -3827,17 +3832,23 @@ select[multiple] {
 	margin-right: 0;
 	margin-left: 0;
 }
+	.button.expanded:hover,
+	.button.expanded:focus {
+		text-decoration:underline;
+		color: white !important;
+	}
 
 .button.primary {
 	background-color: #1C4D19;
 	color: #fefefe;
 }
 
-.button.primary:hover,
-.button.primary:focus {
-	background-color: #246221;
-	color: #fefefe;
-}
+	.button.primary:hover,
+	.button.primary:focus {
+		background-color: #fefefe;
+		color: #1C4D19;
+		box-shadow: -2px 1px 13px -2px #4e4e4e;
+	}
 
 .button.secondary {
 	background-color: #767676;
@@ -4905,10 +4916,16 @@ overflow: hidden;
 .card-section > :last-child {
 	margin-bottom: 0;
 }
-
-.card-image {
-	min-height: 1px;
-}
+	.card-section > h3:hover,
+	.card-section > h3:focus {
+		text-decoration: underline;
+	}
+	.card-section > strong:hover{
+		text-decoration:underline;
+	}
+	.card-image {
+		min-height: 1px;
+	}
 
 .close-button {
 	position: absolute;
@@ -7997,10 +8014,9 @@ a:hover > .label {
             right: 0;
             bottom: 0;
 		}
-
 		.card .card-section h2 a:hover {
 			color: #1C4D19;
-			text-decoration: none !important;
+			text-decoration: underline !important;
 		}
 
 		.card .card-section p {
@@ -8056,6 +8072,10 @@ a:hover > .label {
 
 .article h2 {
 	font-size: 1.3rem;
+}
+.article > .text-holder:hover,
+.article > .text-holder:focus {
+	text-decoration: underline;
 }
 
 .article h2, .article h2 a {
