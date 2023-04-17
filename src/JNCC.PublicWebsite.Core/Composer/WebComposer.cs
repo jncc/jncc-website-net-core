@@ -14,6 +14,8 @@ using JNCC.PublicWebsite.Core.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using JNCC.PublicWebsite.Core.Interfaces.Api;
+using JNCC.PublicWebsite.Core.Api;
 
 namespace JNCC.PublicWebsite.Core.Composers
 {
@@ -60,10 +62,12 @@ namespace JNCC.PublicWebsite.Core.Composers
 
             builder.Services.AddSingleton<ISearchIndexingQueueService, SearchIndexingQueueService>();
 
-
             builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
             builder.Services.AddSingleton<JsonSerializerSettings>();
             builder.Services.AddSingleton<AmazonSQSExtendedClient>();
+
+            //Resource API client
+            builder.Services.AddScoped<IResourceApi, ResourceApi>();
         
         }
     }
