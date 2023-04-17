@@ -66,7 +66,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual string ArticleType => this.Value<string>(_publishedValueFallback, "articleType");
 
 		///<summary>
-		/// Content: A brief paragraph describing this article when listed on the News and Insights Landing Page.
+		/// Content: A brief paragraph describing this article when listed on the News and Insights Landing Page. (MAX 150 CHARACTERS)
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
