@@ -1,0 +1,22 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model FeaturedResourcesViewModel
+<div class="exemplar-list-header">
+    <h2>@Model.Title</h2>
+    <div class="row">
+        @foreach (var resource in Model.FeaturedResources)
+        {
+            <div class="columns small-12 medium-6">
+                <div class="card">
+                    <div class="card-section">
+                        <h2>@resource.Headline</h2>
+                        @Html.Raw(resource.Content)
+                        @if (resource.ReadMoreButton != null)
+                        {
+                            <a href="@resource.ReadMoreButton.Url" class="button expanded">@resource.ReadMoreButton.Text</a>
+                        }
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -62,6 +62,8 @@ namespace JNCC.PublicWebsite.Core.Composers
 
             builder.Services.AddSingleton<ISearchIndexingQueueService, SearchIndexingQueueService>();
 
+            builder.Services.AddSingleton<IResourcesService, ResourcesService>();
+
             builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
             builder.Services.AddSingleton<JsonSerializerSettings>();
             builder.Services.AddSingleton<AmazonSQSExtendedClient>();

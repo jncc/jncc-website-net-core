@@ -97,6 +97,7 @@ namespace JNCC.PublicWebsite.Core.Services
                 Headline = headline,
                 ImageUrl = pageHeroComposition.HeroImage.Url(),
                 ImageCopyrightText = pageHeroComposition.HeroImage.Value<string>("titleText"),
+                ShowResourceSearch = pageHeroComposition is ResourcesPage
             };
         }
 
