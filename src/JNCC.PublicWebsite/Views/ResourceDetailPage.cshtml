@@ -1,0 +1,17 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Custom.VirtualResourceModel>
+@using ContentModels = JNCC.PublicWebsite.Core.Models;
+@{
+    Layout = "Master.cshtml";
+}
+<main id="main">
+    @(await Component.InvokeAsync("PageHero", new { model = Model }))
+    <div class="container">
+        @(await Component.InvokeAsync("Breadcrumbs", new { model = Model }))
+        <div class="two-columns">
+            <div id="content">
+                <h1>TODO: RENDER THE ACTUAL PAGE HERE!!!</h1>
+            </div>
+        </div>
+    </div>
+</main>
