@@ -6,6 +6,7 @@ using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Extensions;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.ViewModels;
+using JNCC.PublicWebsite.Core.Models.Custom;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
@@ -29,6 +30,16 @@ namespace JNCC.PublicWebsite.Core.Services
                 Ancestors = _navigationItemService.GetViewModels(visibleOrderedAncestors),
                 CurrentPage = model.Name
             };
+
+            //special case for virtual resource pages
+            if (model is VirtualResourceModel virtualResourcePage)
+            {
+                if (virtualResourcePage.ResourceToDisplay != null)
+                {
+                    ((IList<NavigationItemViewModel>)viewModel.Ancestors).Add(new NavigationItemViewModel() { Text = virtualResourcePage.Name, Url = virtualResourcePage.Url() });
+                    viewModel.CurrentPage = virtualResourcePage.ResourceToDisplay.MetaData.Title;
+                }
+            }
 
             return viewModel;
         }

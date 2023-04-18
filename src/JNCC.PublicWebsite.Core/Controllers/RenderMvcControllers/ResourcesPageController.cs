@@ -36,6 +36,8 @@ namespace JNCC.PublicWebsite.Core.Controllers.RenderMvcControllers
                 {
                     var model = new VirtualResourceModel(CurrentPage, new PublishedValueFallback(_serviceContext, _variationContextAccessor));
 
+                    model.ResourceToDisplay = resourceItem;
+
                     return View("ResourceDetailPage", model);
                 }
             }
