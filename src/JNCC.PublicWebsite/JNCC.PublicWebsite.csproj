@@ -6,6 +6,10 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <None Remove="Views\ResourceDetailPage.cshtml~RF9d71bc8.TMP" />
+    </ItemGroup>
+
+    <ItemGroup>
         <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
         <PackageReference Include="SEOChecker" Version="9.0.4" />
         <PackageReference Include="Umbraco.Cms" Version="9.5.4" />

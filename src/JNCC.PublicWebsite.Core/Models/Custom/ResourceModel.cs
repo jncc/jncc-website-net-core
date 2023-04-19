@@ -65,10 +65,10 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
         public string SpatialReferenceSystem { get; set; }
 
         [JsonProperty("metadataDate")]
-        public DateTime? MetaDataDate { get; set; }
+        public string MetaDataDate { get; set; }
 
         [JsonProperty("datasetReferenceDate")]
-        public DateTime? DatasetReferenceDate { get; set; }
+        public string DatasetReferenceDate { get; set; }
 
         [JsonProperty("metadataPointOfContact")]
         public ResourceContact MetadataPointOfContact { get; set; }
@@ -99,10 +99,10 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
     public class ResourceExtent
     {
         [JsonProperty("begin")]
-        public DateTime? Begin { get; set; }
+        public string Begin { get; set; }
 
         [JsonProperty("end")]
-        public DateTime? End { get; set; }
+        public string End { get; set; }
     }
 
     /// <summary>
