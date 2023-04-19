@@ -25,6 +25,11 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
 
         [JsonProperty("timestamp_utc")]
         public DateTime Timestamp { get; set; }
+
+        public string DigitalObjectIdentifier { get; set; }
+        public string Citation { get; set; }
+
+        public ResourceImage Image { get; set; }
     }
 
     /// <summary>
@@ -75,13 +80,17 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
         public ResourceExtent TemporalExtent { get; set; }
 
         [JsonProperty("useConstraints")]
-        public string UseConstraint { get; set; }
+        public string UseConstraints { get; set; }
 
         [JsonProperty("responsibleOrganisation")]
         public ResourceContact ResponsibleOrganisation { get; set; }
 
         [JsonProperty("resourceType")]
         public string ResourceType { get; set; }
+
+        public string AdditionalInformationSource { get; set; }
+
+        public string Copyright { get; set; }
     }
 
     /// <summary>
@@ -129,16 +138,16 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
     public class ResourceBounding
     {
         [JsonProperty("east")]
-        public double East { get; set; }
+        public decimal East { get; set; }
 
         [JsonProperty("west")]
-        public double West { get; set; }
+        public decimal West { get; set; }
 
         [JsonProperty("north")]
-        public double North { get; set; }
+        public decimal North { get; set; }
 
         [JsonProperty("south")]
-        public double South { get; set; }
+        public decimal South { get; set; }
     }
 
     /// <summary>
@@ -169,5 +178,25 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
 
         [JsonProperty("fileBase64")]
         public string FileBase64 { get; set; }
+    }
+
+    /// <summary>
+    /// The model for resource images
+    /// </summary>
+    public class ResourceImage
+    {
+        public string Url { get; set; }
+        public int Width { get; set; }
+        public int Height { get; set; }
+        public ResourceImageCrops Crops { get; set; }
+    }
+
+    /// <summary>
+    /// The model for resource image crops
+    /// </summary>
+    public class ResourceImageCrops
+    {
+        public string SquareUrl { get; set; }
+        public string ThumbnailUrl { get; set; }
     }
 }
