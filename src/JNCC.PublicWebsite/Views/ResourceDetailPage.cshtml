@@ -21,7 +21,7 @@
                                    data-toggle="tooltip" title="@Model.ResourceToDisplay.MetaData.ResourceType"></i>
                             </span>
                             <span style="margin-right: 0.1em;">@Model.ResourceToDisplay.MetaData.Title</span>
-                            <span class="text-small text-muted">@Model.ResourceToDisplay.MetaData.DatasetReferenceDate?.Year</span>
+                            <span class="text-small text-muted">@Model.ResourceToDisplay.MetaData.DatasetReferenceDate.Substring(0, 4)</span>
                         </h1>
                         
                         <div class="module">
@@ -131,14 +131,7 @@
                                 <p>
                                     <span class="text-label">Reference date</span>
                                     <span title="Dataset Reference Date" data-toggle="tooltip" data-placement="top">
-                                        @if (Model.ResourceToDisplay.MetaData.DatasetReferenceDate != null)
-                                        {
-                                            <span>@Model.ResourceToDisplay.MetaData.DatasetReferenceDate?.ToString("yyyy")</span>
-                                            <span class="text-muted">·</span>
-                                            <span>@Model.ResourceToDisplay.MetaData.DatasetReferenceDate?.ToString("MM")</span>
-                                            <span class="text-muted">·</span>
-                                            <span>@Model.ResourceToDisplay.MetaData.DatasetReferenceDate?.ToString("dd")</span>
-                                        }
+                                        @await Html.PartialAsync("isoDate", Model.ResourceToDisplay.MetaData.DatasetReferenceDate)
                                     </span>
                                 </p>
                                 @if (!string.IsNullOrWhiteSpace(Model.ResourceToDisplay.DigitalObjectIdentifier))
@@ -201,14 +194,7 @@
                                 <p>
                                     <span class="text-label">Metadata date</span>
                                     <span title="@Model.ResourceToDisplay.MetaData" data-toggle="tooltip">
-                                        @if (Model.ResourceToDisplay.MetaData.MetaDataDate != null)
-                                        {
-                                            <span>@Model.ResourceToDisplay.MetaData.MetaDataDate?.ToString("yyyy")</span>
-                                            <span class="text-muted">·</span>
-                                            <span>@Model.ResourceToDisplay.MetaData.MetaDataDate?.ToString("MM")</span>
-                                            <span class="text-muted">·</span>
-                                            <span>@Model.ResourceToDisplay.MetaData.MetaDataDate?.ToString("dd")</span>
-                                        }
+                                        @await Html.PartialAsync("isoDate", Model.ResourceToDisplay.MetaData.MetaDataDate)
                                     </span>
                                 </p>
                                 <p>
@@ -234,19 +220,11 @@
                                     <p>
                                         <span class="text-label">Temporal extent</span>
                                         <span data-toggle="tooltip" title="@begin" class="space-after">
-                                            <span>@begin?.ToString("yyyy")</span>
-                                            <span class="text-muted">·</span>
-                                            <span>@begin?.ToString("MM")</span>
-                                            <span class="text-muted">·</span>
-                                            <span>@begin?.ToString("dd")</span>
+                                            @await Html.PartialAsync("isoDate", begin)
                                         </span>
                                         <i class="fas fa-long-arrow-alt-right space-after"></i>
                                         <span data-toggle="tooltip" title="@end">
-                                            <span>@end?.ToString("yyyy")</span>
-                                            <span class="text-muted">·</span>
-                                            <span>@end?.ToString("MM")</span>
-                                            <span class="text-muted">·</span>
-                                            <span>@end?.ToString("dd")</span>
+                                            @await Html.PartialAsync("isoDate", end)
                                         </span>
                                     </p>
                                 }
