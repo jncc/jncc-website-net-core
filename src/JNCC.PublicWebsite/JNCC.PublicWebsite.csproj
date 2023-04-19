@@ -43,6 +43,7 @@
     <PropertyGroup>
         <RazorCompileOnBuild>false</RazorCompileOnBuild>
         <RazorCompileOnPublish>false</RazorCompileOnPublish>
+        <UserSecretsId>f32089cc-cccc-44f5-8a1c-6a937ca44000</UserSecretsId>
     </PropertyGroup>
 
 </Project>

@@ -14,6 +14,10 @@ using JNCC.PublicWebsite.Core.Options;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using JNCC.PublicWebsite.Core.Interfaces.Api;
+using JNCC.PublicWebsite.Core.Api;
+using Umbraco.Cms.Core.Routing;
+using JNCC.PublicWebsite.Core.ContentFinders;
 
 namespace JNCC.PublicWebsite.Core.Composers
 {
@@ -60,11 +64,18 @@ namespace JNCC.PublicWebsite.Core.Composers
 
             builder.Services.AddSingleton<ISearchIndexingQueueService, SearchIndexingQueueService>();
 
+            builder.Services.AddSingleton<IResourcesService, ResourcesService>();
 
             builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
             builder.Services.AddSingleton<JsonSerializerSettings>();
             builder.Services.AddSingleton<AmazonSQSExtendedClient>();
-        
+
+            //Resource API client
+            builder.Services.AddSingleton<IResourceApi, ResourceApi>();
+
+            //Content finders
+            builder.ContentFinders().InsertAfter<ContentFinderByUrl, ResourceContentFinder>();
+
         }
     }
 }
