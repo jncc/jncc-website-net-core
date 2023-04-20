@@ -5,6 +5,7 @@ using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.ViewModels;
 using JNCC.PublicWebsite.Core.Extensions;
 using JNCC.PublicWebsite.Core.Utilities;
+using JNCC.PublicWebsite.Core.Models.Custom;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
@@ -110,6 +111,11 @@ namespace JNCC.PublicWebsite.Core.Services
             //var isArticulatePost = currentPage is ArticulatePost;
             //var blogRoot = currentPage.AncestorOrSelf<ArticulateModel>();
             //var hasBlogRoot = blogRoot != null;
+
+            if (currentPage is VirtualResourceModel)
+            {
+                return false;
+            }
 
             if (isPageHeroComposition == false && isPageHeroCarouselComposition == false)
             {

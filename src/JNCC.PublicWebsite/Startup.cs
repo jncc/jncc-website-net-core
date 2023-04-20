@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SEOChecker.Core.Notifications;
 using System;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
@@ -56,6 +57,7 @@ namespace JNCC.PublicWebsite
                 .AddNotificationHandler<ContentDeletedNotification, ContentDeletedNotificationHandler>()
                 .AddNotificationHandler<MediaDeletedNotification, MediaDeletedNotificationHandler>()
                 .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
+                .AddNotificationHandler<XmlSitemapGeneratedNotification, SitemapGeneratedNotificationHandler>()
                 .Build();
 
 

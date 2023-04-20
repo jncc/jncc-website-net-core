@@ -1,5 +1,4 @@
-﻿using Amazon.SQS;
-using Amazon.SQS.ExtendedClient;
+﻿using Amazon.SQS.ExtendedClient;
 using JNCC.PublicWebsite.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Umbraco.Cms.Core.Composing;
@@ -7,12 +6,7 @@ using Umbraco.Cms.Core.DependencyInjection;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Interfaces.Providers;
 using JNCC.PublicWebsite.Core.Providers;
-using JNCC.PublicWebsite.Core.Configuration;
-using JNCC.PublicWebsite.Core.Constants;
-using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Options;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using JNCC.PublicWebsite.Core.Interfaces.Api;
 using JNCC.PublicWebsite.Core.Api;
@@ -75,7 +69,6 @@ namespace JNCC.PublicWebsite.Core.Composers
 
             //Content finders
             builder.ContentFinders().InsertAfter<ContentFinderByUrl, ResourceContentFinder>();
-
         }
     }
 }
