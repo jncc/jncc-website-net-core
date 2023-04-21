@@ -38,6 +38,12 @@
       <None Include="App_Plugins\TwoFactorProviders\package.manifest" />
     </ItemGroup>
     
+    <ItemGroup>
+      <None Update="IISUrlRewrite.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+    
 
     <PropertyGroup>
         <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>

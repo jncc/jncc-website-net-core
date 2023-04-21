@@ -3273,20 +3273,16 @@ h6,
 
 a {
 	line-height: inherit;
-	color: #1C4D19;
+	color: #2d7a29;
 	text-decoration: none;
 	cursor: pointer;
 }
 
 	a:hover,
 	a:focus {
-		color: #2D7A29;
+		color: #1C4D19;
 	}
-	li > a:hover {
-		color: #2D7A29;
-		text-decoration: underline;
-	}
-
+	
 a img {
 	border: 0;
 }
@@ -4619,8 +4615,8 @@ a.button:focus {
 }
 
 .breadcrumbs {
-	margin: 1.4375rem 0 1.46875rem 0;
 	list-style: none;
+	margin: 1.4375rem 0 1.46875rem 0;
 }
 
 .breadcrumbs::before,
@@ -6727,6 +6723,10 @@ table.hover:not(.unstriped) tr:nth-of-type(even):hover {
 	color: #1C4D19;
 }
 
+.tabs-title a:hover{
+	text-decoration: none;
+}
+
 [data-whatinput="mouse"] .tabs-title > a {
 	outline: 0;
 }
@@ -8812,14 +8812,12 @@ button.slick-arrow {
 .search-form .input-group-button {
 	-webkit-transition: background .3s ease-in-out, color .3s ease-in-out;
 	transition: background .3s ease-in-out, color .3s ease-in-out;
-	width: 2rem;
-	height: 34px;
+	width: 3.875rem;
+	height: 3.125rem;
 	position: relative;
-	color: #1C4D19;
+	color: #2d7a29;
 	display: inline-block;
 	vertical-align: middle;
-	margin-top: 25px;
-    background-color: #eeebeb;
 }
 
 @media screen and (max-width: 765px) {
@@ -8850,7 +8848,7 @@ button.slick-arrow {
 }
 
 .search-form {
-    background-color: transparent;
+	background-color: #faf9f9;
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -8859,11 +8857,11 @@ button.slick-arrow {
 }
 
 	.search-form .input-group-field {
-		height: 2.125rem;
+		height: 3.125rem;
 		border: none;
-        background-color: #eeebeb;
-        padding-right: 1rem;
-		padding-left: 1rem;
+		background: transparent;
+		padding-right: 1.1875rem;
+		padding-left: 1.1875rem;
 		max-width: none;
 	}
 
@@ -9137,7 +9135,7 @@ header#header .row.expanded span.iframe-header-toggle-on > a::after {
 }
 
 #footer {
-	background-color: #1C4D19;
+	background-color: #2d7a29;
 	color: #fefefe;
 	font-size: .9375rem;
 	padding-top: 2rem;
@@ -15514,4 +15512,220 @@ img.hover-shadow {
 	height: auto;
 	width: 100%;
 	max-height: 80vh
+}
+
+/* site.css */
+
+/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification 
+for details on configuring this project to bundle and minify static web assets. */
+
+.text-muted {
+	color: #999;
+}
+
+.text-small {
+	font-size: 85%;
+}
+
+.text-label {
+	font-weight: bold;
+	margin-right: 0.2rem;
+}
+
+.spot-colour {
+	color: #48A943;
+}
+
+.space-below {
+	margin-bottom: 1.5em;
+}
+
+.space-after {
+	margin-right: 0.2rem;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+
+.asset-image {
+	max-width: 300px;
+	/* drop shadow */
+	-webkit-filter: drop-shadow(5px 5px 5px #666);
+	filter: drop-shadow(5px 5px 5px #666);
+}
+
+#abstract {
+	max-height: 150px;
+	margin-bottom: 0.5rem;
+}
+
+.square-badge {
+	font-size: 70%;
+	background-color: #999;
+	color: white;
+	font-weight: bold;
+	border-radius: 0.3rem;
+	padding: 0.1rem 0.3rem;
+	vertical-align: middle;
+}
+
+.round-badge {
+	background-color: #48A943;
+	font-size: 70%;
+	color: white;
+	font-weight: bold;
+	border-radius: 0.5rem;
+	/* width: 300px; */
+	padding: 0.1rem 0.4rem;
+	vertical-align: middle;
+}
+
+.email-address-icon {
+	font-size: 90%;
+	margin-right: 0.2rem;
+	color: #777;
+}
+
+.email-address {
+	color: #007bff;
+}
+
+/* foundation tabs look horrible */
+.tabs {
+	border: none;
+	margin-bottom: 0.5rem;
+}
+
+	.tabs > .tabs-title.is-active {
+		/* use a box shadow instead of a border to keep the size of the div the same */
+		-webkit-box-shadow: inset 0px -3px 0px 0px #777;
+		-moz-box-shadow: inset 0px -3px 0px 0px #777;
+		box-shadow: inset 0px -3px 0px 0px #777;
+	}
+
+	.tabs > .tabs-title > a {
+		color: #666262;
+		background-color: white;
+		font-size: 95%;
+		/* padding: 1rem 1.5rem; */
+		outline: none; /* remove blue highlight when selected */
+		margin-bottom: 3px;
+	}
+
+		.tabs > .tabs-title > a > i {
+			font-size: 90%;
+			margin-right: 0.3rem;
+		}
+
+.tabs-content {
+	border: none;
+	padding: 1rem;
+}
+
+	.tabs-content > .tabs-panel {
+		padding: 0;
+	}
+
+		.tabs-content > .tabs-panel > ul {
+			margin-left: 1.5rem;
+		}
+
+			.tabs-content > .tabs-panel > ul > li {
+				margin-bottom: 0.5rem;
+			}
+
+.keyword {
+	color: #666262;
+	white-space: nowrap;
+	display: inline-block;
+	background-color: #ddd;
+	padding: 0.2em 0.4em;
+	margin: 0 0.8em 0.45em 0;
+	line-height: normal;
+	border-left: 7px solid #48A943;
+}
+
+	.keyword:hover {
+		background-color: #ccc;
+	}
+
+	.keyword > i {
+		font-size: 80%;
+		padding-left: 0.2em;
+	}
+
+.results-pager {
+	text-align: center;
+}
+
+.pagination > li {
+	font-size: 1.1875rem;
+}
+
+	.pagination > li.current > a {
+		color: white;
+	}
+
+		.pagination > li.current > a:hover {
+			background-color: rgb(45, 122, 41);
+		}
+
+.search-result {
+	display: flex;
+	flex-direction: row;
+}
+
+.search-result-resource {
+	padding: 0.5em 0 0 2em;
+}
+
+.search-result-parent {
+	padding: 0 0 0 2em;
+}
+
+.homepage-header {
+	margin: 2rem 0 3rem 0;
+}
+
+.exemplar-list-header > h2 {
+	text-align: center;
+	font-size: 120%;
+	font-weight: bold;
+	border-bottom: 4px solid #48A943;
+	padding-bottom: 1rem;
+	margin-bottom: 2rem;
+}
+
+.exemplar {
+	background-color: #ddd;
+	padding: 1rem 1.5rem;
+	margin-bottom: 1rem;
+}
+
+	.exemplar > a.button {
+		margin-top: 1rem;
+		width: 100%;
+	}
+
+.exemplar-title {
+	font-weight: bold;
+	font-size: 120%;
+	margin-bottom: 0.5rem;
+}
+
+.highlightable {
+	padding: 0 0.5em 0 0.5em;
+}
+
+.highlighted .highlight-bar {
+	max-width: 0.5em;
+	height: 100%;
+	background-color: #2d7a29;
+}
+
+.embedded-grid {
+	width: 100%;
+	display: inline-flex;
 }

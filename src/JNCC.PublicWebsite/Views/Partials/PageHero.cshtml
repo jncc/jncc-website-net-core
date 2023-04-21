@@ -1,39 +1,15 @@
 ﻿@model JNCC.PublicWebsite.Core.ViewModels.PageHeroViewModel
-@if(Model == null) { return; }
-
+@if (Model == null) { return; }
 @if (Model.ImageUrl != null)
 {
     <div class="visual-section" style="background-image: url(@Model.ImageUrl);">
         <div class="container">
             <h1>@Model.Headline</h1>
+            @if (Model.ShowResourceSearch)
+            {
+                await RenderForm();
+            }
         </div>
-
-        @if (Model.ShowResourceSearch)
-        {
-            await RenderForm();
-        }
-
-        @if (!Model.ImageCopyrightText.IsNullOrWhiteSpace())
-        {
-            <div class="copyright-statement">
-                <div class="text-left">
-                    @Model.ImageCopyrightText
-                </div>
-            </div>
-        }
-    </div> }
-else
-{
-    <div class="visual-section">
-        <div class="container">
-            <h1>@Model.Headline</h1>
-        </div>
-
-        @if (Model.ShowResourceSearch)
-        {
-            await RenderForm();
-        }
-
         @if (!Model.ImageCopyrightText.IsNullOrWhiteSpace())
         {
             <div class="copyright-statement">
@@ -43,9 +19,27 @@ else
             </div>
         }
     </div>
-
 }
-
+else
+{
+    <div class="visual-section">
+        <div class="container">
+            <h1>@Model.Headline</h1>
+        </div>
+        @if (Model.ShowResourceSearch)
+        {
+            await RenderForm();
+        }
+        @if (!Model.ImageCopyrightText.IsNullOrWhiteSpace())
+        {
+            <div class="copyright-statement">
+                <div class="text-left">
+                    @Model.ImageCopyrightText
+                </div>
+            </div>
+        }
+    </div>
+}
 @functions {
     public async Task RenderForm()
     {
@@ -55,6 +49,6 @@ else
             <input type="hidden" name="v" value="resources">
             <input type="hidden" name="s" value="relevance">
             <button class="input-group-button" aria-label="search-button"><i class="icon-search"></i></button>
-        </form>  
+        </form>
     }
 }

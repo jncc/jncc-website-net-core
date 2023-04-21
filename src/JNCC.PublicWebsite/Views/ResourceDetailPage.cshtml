@@ -13,7 +13,6 @@
             <div id="content">
                 <div class="grid-x grid-margin-x">
                     <div class="cell medium-expand small-order-1 medium-order-2">
-
                         <!-- Title -->
                         <h1 style="margin-bottom: 1rem;">
                             <span class="spot-colour" style="margin-right:0.3rem;">
@@ -23,7 +22,6 @@
                             <span style="margin-right: 0.1em;">@Model.ResourceToDisplay.MetaData.Title</span>
                             <span class="text-small text-muted">@Model.ResourceToDisplay.MetaData.DatasetReferenceDate.Substring(0, 4)</span>
                         </h1>
-                        
                         <div class="module">
                             <p id="abstract">
                                 <span class="text-label">Abstract</span> @AssetUtility.GetFormattedMarkdown(Model.ResourceToDisplay.MetaData.Abstract)
@@ -178,7 +176,6 @@
                                     <i class="fas fa-envelope email-address-icon"></i>
                                     <span class="email-address">@Model.ResourceToDisplay.MetaData.ResponsibleOrganisation.Email</span>
                                 </p>
-
                                 <p>
                                     <span class="text-label">Limitations on public access</span>
                                     @(Model.ResourceToDisplay.MetaData.LimitationsOnPublicAccess == "no limitations"
@@ -262,27 +259,26 @@
         </div>
     </div>
 </main>
-
-<script>
-    $(function () {
-        new Readmore('#abstract', {
-            moreLink: '<a href="#" class="text-right">Read more</a>',
-            lessLink: '<a href="#" class="text-right">Read less</a>'
-        });
-    })
-</script>
-
+@*
+    <script>
+        $(function () {
+            new Readmore('#abstract', {
+                moreLink: '<a href="#" class="text-right">Read more</a>',
+                lessLink: '<a href="#" class="text-right">Read less</a>'
+            });
+        })
+    </script>
+*@
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" integrity="sha384-JPbtLYL10d/Z1crlc6GGGGM3PavCzzoUJ1UxH0bXHOfguWHQ6XAWrIzW+MBGGXe5" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function () {
-        @* handle scrolling in an over the top way because it doesn't behave in small Firefox viewports *@
-        $('html, body').hide();
+    @* handle scrolling in an over the top way because it doesn't behave in small Firefox viewports *@
+            $('html, body').hide();
         if (window.location.hash) {
             $('<div><a href="#header">Back to top</a></div>').insertAfter('#resource-list');
             $('html, body').scrollTop(0).show();
             setTimeout(function () {
                 var targetId = window.location.hash.replace(/\./g, '\\.');
-
                 $('html, body').animate({
                     scrollTop: $(targetId).offset().top
                 });
@@ -290,7 +286,6 @@
                     $(targetId).addClass('highlighted');
                     $(targetId).find('.highlightable').effect('highlight', { color: '#FFFF99' }, 3000);
                 }, 500);
-
             }, 10);
         } else {
             $('html, body').show();
