@@ -199,4 +199,15 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
         public string SquareUrl { get; set; }
         public string ThumbnailUrl { get; set; }
     }
+
+    /// <summary>
+    /// The model for the sitemap API endpoint
+    /// </summary>
+    public class ResourceSitemap
+    {
+        public string Id { get; set; }
+
+        public DateTime LastUpdated { get; set; }
+    }
+
 }

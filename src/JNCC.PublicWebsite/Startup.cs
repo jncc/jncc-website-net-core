@@ -3,6 +3,7 @@ using JNCC.PublicWebsite.Core.Notifications;
 using JNCC.PublicWebsite.Core.Options;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Rewrite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -97,6 +98,9 @@ namespace JNCC.PublicWebsite
 
             //Cross-site scripting Protection (X-XSS-Protection header)
             app.UseXXssProtection(options => options.EnabledWithBlockMode());
+
+            //Use the IIS Rewrite Middleware
+            app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml"));
 
             app.UseUmbraco()
                 .WithMiddleware(u =>

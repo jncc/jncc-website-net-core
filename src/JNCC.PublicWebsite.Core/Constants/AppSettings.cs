@@ -14,5 +14,7 @@
         public const string AWSSQSSecretKey = "JNCC_AWS:AWSSQSSecretKey";
         public const string EnableIndexing = "JNCC_AWS:EnableIndexing";
         public const string EnableEditPageBar = "JNCC_CONFIG:EnableEditPageBar";
+        public const string ResourceApiBaseUrl = "JNCC_CONFIG:ResourceApiBaseUrl";
+        public const string ResourceApiCacheInHours = "JNCC_CONFIG:ResourceApiCacheInHours";
     }
 }
