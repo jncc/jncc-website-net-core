@@ -16,5 +16,6 @@
         public const string EnableEditPageBar = "JNCC_CONFIG:EnableEditPageBar";
         public const string ResourceApiBaseUrl = "JNCC_CONFIG:ResourceApiBaseUrl";
         public const string ResourceApiCacheInHours = "JNCC_CONFIG:ResourceApiCacheInHours";
+        public const string SearchUrl = "JNCC_CONFIG:SearchUrl";
     }
 }
