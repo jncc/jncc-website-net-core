@@ -201,13 +201,25 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
     }
 
     /// <summary>
-    /// The model for the sitemap API endpoint
+    /// The model for the sitemap API endpoint sitemap items
     /// </summary>
     public class ResourceSitemap
     {
+        [JsonProperty("id")]
         public string Id { get; set; }
 
+        [JsonProperty("timestamp")]
         public DateTime LastUpdated { get; set; }
+    }
+
+    /// <summary>
+    /// The model for the sitemap API endpoint
+    /// </summary>
+    public class ResourceSitemapResonse
+    {
+        public int Count { get; set; }
+
+        public List<ResourceSitemap> Items { get; set; }
     }
 
 }
