@@ -37,7 +37,7 @@ namespace JNCC.PublicWebsite.Core.Services
                 if (virtualResourcePage.ResourceToDisplay != null)
                 {
                     ((IList<NavigationItemViewModel>)viewModel.Ancestors).Add(new NavigationItemViewModel() { Text = virtualResourcePage.Name, Url = virtualResourcePage.Url() });
-                    viewModel.CurrentPage = virtualResourcePage.ResourceToDisplay.MetaData.Title;
+                    viewModel.CurrentPage = "";
                 }
             }
 

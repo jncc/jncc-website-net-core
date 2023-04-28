@@ -7,7 +7,10 @@
             {
                 <li><a href="@ancestor.Url">@ancestor.Text</a></li>
             }
-            <li><span class="show-for-sr">Current: </span>@Model.CurrentPage</li>
+            @if (!string.IsNullOrEmpty(Model.CurrentPage))
+            {
+                <li><span class="show-for-sr">Current: </span>@Model.CurrentPage</li>
+            }
         </ul>
     </nav>
 
