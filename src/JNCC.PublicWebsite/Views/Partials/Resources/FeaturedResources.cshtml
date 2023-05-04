@@ -6,28 +6,42 @@
         <div class="cell small-12 medium-6">
             @foreach (var resource in Model.FeaturedResources.Take(Model.ItemsPerColumn))
             {
-                <div class="exemplar">
-                    <h2>@resource.Headline</h2>
-                    @Html.Raw(resource.Content)
-                    @if (resource.ReadMoreButton != null)
-                    {
-                        <a href="@resource.ReadMoreButton.Url" class="button expanded">@resource.ReadMoreButton.Text</a>
-                    }
-                </div>
+                @if (resource.ReadMoreButton != null)
+                {
+                    <div class="cell small-12 medium-6">
+                        <div class="card">
+                            <div class="card-section">
+                                <h2>
+                                    <a href="@resource.ReadMoreButton.Url">
+                                        @resource.Headline
+                                    </a>
+                                </h2>
+                                @Html.Raw(resource.Content)
+                            </div>
+                        </div>
+                    </div>
+                }
             }
         </div>
 
         <div class="cell small-12 medium-6">
             @foreach (var resource in Model.FeaturedResources.Skip(Model.ItemsPerColumn))
             {
-                <div class="exemplar">
-                    <h2>@resource.Headline</h2>
-                    @Html.Raw(resource.Content)
-                    @if (resource.ReadMoreButton != null)
-                    {
-                        <a href="@resource.ReadMoreButton.Url" class="button expanded">@resource.ReadMoreButton.Text</a>
-                    }
-                </div>
+                @if (resource.ReadMoreButton != null)
+                {
+                    <div class="cell small-12 medium-6">
+                        <div class="card">
+                            <div class="card-section">
+                                <h2>
+                                    <a href="@resource.ReadMoreButton.Url">
+                                        @resource.Headline
+                                    </a>
+                                </h2>
+                                @Html.Raw(resource.Content)
+                            </div>
+                        </div>
+                    </div>
+                }
             }
         </div>
     </div>
