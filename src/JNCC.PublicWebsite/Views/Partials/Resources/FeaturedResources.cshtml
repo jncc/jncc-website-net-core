@@ -3,11 +3,8 @@
 <div class="exemplar-list-header">
     <h2>@Model.Title</h2>
     <div class="row grid-x grid-margin-x space-below">
-        <div class="cell small-12 medium-6">
             @foreach (var resource in Model.FeaturedResources.Take(Model.ItemsPerColumn))
             {
-                @if (resource.ReadMoreButton != null)
-                {
                     <div class="cell small-12 medium-6">
                         <div class="card">
                             <div class="card-section">
@@ -20,15 +17,10 @@
                             </div>
                         </div>
                     </div>
-                }
             }
-        </div>
 
-        <div class="cell small-12 medium-6">
             @foreach (var resource in Model.FeaturedResources.Skip(Model.ItemsPerColumn))
             {
-                @if (resource.ReadMoreButton != null)
-                {
                     <div class="cell small-12 medium-6">
                         <div class="card">
                             <div class="card-section">
@@ -41,8 +33,6 @@
                             </div>
                         </div>
                     </div>
-                }
             }
-        </div>
     </div>
 </div>
