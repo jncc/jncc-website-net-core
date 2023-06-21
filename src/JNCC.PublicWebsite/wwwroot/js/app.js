@@ -392,27 +392,6 @@ var _arrayUtility = _arrayUtility || (function () {
     };
 })();
 
-
-// Cookie Policy Banner
-(function ($, invalidators) {
-    var $cookieBannerContainer = $('[data-cookie-banner-container]');
-
-    if (invalidators.isUndefinedOrLengthIsZero($cookieBannerContainer)) {
-        return;
-    }
-
-    var $bannerTemplate = $("#cookie-banner-template");
-
-    displayCookieBanner($cookieBannerContainer, $bannerTemplate);
-
-    function displayCookieBanner($container, $bannerTemplate) {
-        var htmlContent = $bannerTemplate.text();
-        $container.prepend(htmlContent);
-    }
-
-})($, _invalidators);
-
-
 function getDataAttributeValueOrDefault($element, key, defaultValue, invalidator) {
     var dataAttribute = $element.data(key);
 
@@ -451,34 +430,6 @@ function checkCookie(name) {
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
-}
-
-function CookieAgreement() {
-    console.log("Cookies Agreed");
-    var $cookieBannerContainer = $('[data-cookie-banner-container]');
-
-    var $bannerTemplate = $("#cookie-banner-template");
-
-    var cookieDuration = 14;
-    var cookieName = "cookiePolicyAcceptance";
-    var cookieValue = "true";
-
-    createCookie(cookieName, cookieValue, cookieDuration);
-    location.reload();
-}
-
-function CookieDisagreement() {
-    console.log("Cookies Disagreed");
-    var $cookieBannerContainer = $('[data-cookie-banner-container]');
-
-    var $bannerTemplate = $("#cookie-banner-template");
-
-    var cookieDuration = 14;
-    var cookieName = "cookiePolicyAcceptance";
-    var cookieValue = "false";
-
-    createCookie(cookieName, cookieValue, cookieDuration);
-    location.reload();
 }
 
 // Image Lightbox

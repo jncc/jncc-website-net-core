@@ -58,14 +58,6 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::System.Collections.Generic.IEnumerable<global::JNCC.PublicWebsite.Core.Models.CalloutCardSchema> CalloutCards => this.Value<global::System.Collections.Generic.IEnumerable<global::JNCC.PublicWebsite.Core.Models.CalloutCardSchema>>(_publishedValueFallback, "calloutCards");
 
 		///<summary>
-		/// Content: Content to be displayed informing users of the website cookie policy
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("cookieBannerContent")]
-		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString CookieBannerContent => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "cookieBannerContent");
-
-		///<summary>
 		/// Categorised Links: Links grouped into useful categories (e.g. About, Our Services, etc) to be displayed within the footer below the main content of the page.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "9.5.4+4df082703500212e5bf2ded279a06d5bbffb212c")]
