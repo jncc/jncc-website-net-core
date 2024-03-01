@@ -16,7 +16,8 @@ namespace JNCC.PublicWebsite.Core.Utilities
                 // Validate missing fields of object
                 var settings = new JsonSerializerSettings
                 {
-                    MissingMemberHandling = MissingMemberHandling.Error
+                    MissingMemberHandling = MissingMemberHandling.Error,
+                    PreserveReferencesHandling = PreserveReferencesHandling.Objects
                 };
 
                 result = JsonConvert.DeserializeObject<T>(obj, settings);

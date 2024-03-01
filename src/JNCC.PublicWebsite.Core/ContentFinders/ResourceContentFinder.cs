@@ -3,6 +3,7 @@ using JNCC.PublicWebsite.Core.Interfaces.Api;
 using JNCC.PublicWebsite.Core.Models;
 using Microsoft.AspNetCore.Http;
 using System.Linq;
+using System.Threading.Tasks;
 using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
 
@@ -21,13 +22,13 @@ namespace JNCC.PublicWebsite.Core.ContentFinders
             _resourceApi = resourceApi;
         }
 
-        bool IContentFinder.TryFindContent(IPublishedRequestBuilder request)
+        Task<bool> IContentFinder.TryFindContent(IPublishedRequestBuilder request)
         {
             var path = request.AbsolutePathDecoded;
 
             if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext))
             {
-                return false;
+                return Task.FromResult(false);
             }
 
             if (path.Contains("/"))
@@ -54,13 +55,13 @@ namespace JNCC.PublicWebsite.Core.ContentFinders
 
                             request.SetPublishedContent(content);
 
-                            return true;
+                            return Task.FromResult(true);
                         }
                     }
                 }
             }
 
-            return false;
+            return Task.FromResult(false);
         }
     }
 }

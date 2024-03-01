@@ -107,8 +107,6 @@ namespace JNCC.PublicWebsite
                 {
                     u.UseBackOffice();
                     u.UseWebsite();
-                    // This enables the Azure Blob storage middleware for media.
-                    u.UseAzureBlobMediaFileSystem();
                 })
                 .WithEndpoints(u =>
                 {
