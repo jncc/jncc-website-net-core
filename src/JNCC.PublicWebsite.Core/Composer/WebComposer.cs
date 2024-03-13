@@ -61,7 +61,7 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IResourcesService, ResourcesService>();
 
             builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
-            builder.Services.AddSingleton<JsonSerializerSettings>();
+            //builder.Services.AddSingleton<JsonSerializerSettings>();
             builder.Services.AddSingleton<AmazonSQSExtendedClient>();
 
             //Resource API client

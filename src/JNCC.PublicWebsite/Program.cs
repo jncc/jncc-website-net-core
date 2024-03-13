@@ -1,19 +1,22 @@
+using JNCC.PublicWebsite;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace JNCC.PublicWebsite
-{
-    public class Program
+var builder = Host.CreateDefaultBuilder()
+    .ConfigureUmbracoDefaults()
+    .ConfigureWebHostDefaults(webBuilder =>
     {
-        public static void Main(string[] args)
-            => CreateHostBuilder(args)
-                .Build()
-                .Run();
+        webBuilder.UseStaticWebAssets();
+        webBuilder.UseStartup<Startup>();
+    })
+    .ConfigureLogging(x => x.ClearProviders())
+    .ConfigureAppConfiguration((ctx, builder) =>
+    {
+        builder.AddJsonFile("appsettings.json", false, true);
+    });
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureLogging(x => x.ClearProviders())
-                .ConfigureWebHostDefaults(webBuilder => webBuilder.UseStartup<Startup>());
-    }
-}
+
+var host = builder.Build();
+host.Run();
