@@ -507,7 +507,7 @@ appsettings-schema.json
 **/wwwroot/umbraco/
 
 #ignore umbraco data/views/settings
-**/[Uu]mbraco/
+**/[Uu]mbraco/*
 
 # Packages created from the backoffice (package.xml/package.zip)
 /umbraco/Data/CreatedPackages/
@@ -531,7 +531,10 @@ appsettings-schema.json
 !**/umbraco/Data/packages
 
 #include default location for deploy
-!**/umbraco/Deploy/Revision/*
+!**/umbraco/Deploy/
+
+**/umbraco/Deploy/*
+!**/umbraco/Deploy/Revision
 
 # End of https://www.toptal.com/developers/gitignore/api/dotnetcore,aspnetcore,umbraco,visualstudio
 src/JNCC.PublicWebsite/appsettings.json
