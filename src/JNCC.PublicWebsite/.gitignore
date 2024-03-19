@@ -476,3 +476,8 @@ appsettings-schema.json
 
 # Media files
 /wwwroot/media/
+
+**/media/*
+
+# Umbraco deploy specific
+**/umbraco/Deploy/deploy*
