@@ -1,0 +1,134 @@
+<div class="umb-dialog" ng-controller="UmbracoDeploy.ImportDialogController as vm">
+  <umb-load-indicator ng-if="vm.loading"></umb-load-indicator>
+  <div class="umb-dialog-body">
+    <div class="umb-pane" ng-cloak ng-if="vm.loading == false">
+      <div ng-if="vm.state === 'upload'">
+        <p><localize key="dialogs_deployImportDescription"></localize></p>
+        <form name="importForm">
+          <button accept=".zip"
+                  class="btn btn-action"
+                  name="file"
+                  ng-model="filesHolder"
+                  ng-disabled="vm.uploading"
+                  ngf-change="vm.handleFiles($files, $event, $invalidFiles)"
+                  ngf-multiple="false"
+                  ngf-max-size="vm.maxFileSizeBytes"
+                  ngf-pattern=".zip"
+                  ngf-select>
+            <localize key="dialogs_deployImportSelectFile"></localize>
+          </button>
+          <div ng-if="vm.uploading" class="mt3">
+            <umb-progress-bar percentage="{{ vm.uploading.progress }}"></umb-progress-bar>
+            <small>Uploading: {{ vm.uploading.loaded }} of {{ vm.uploading.total }}</small>
+          </div>
+        </form>
+        <div class="umb-alert umb-alert--warning mt3" ng-if="importForm.file.$error.pattern">Please choose a .zip file to import.</div>
+        <div class="umb-alert umb-alert--warning mt3" ng-if="importForm.file.$error.maxSize"><localize key="media_maxFileSize">Max file size is</localize> {{ vm.maxFileSize }}.</div>
+        <div class="umb-alert umb-alert--warning mt3" ng-if="!importForm.file.$error.pattern && !importForm.file.$error.maxSize && !vm.uploading && vm.serverErrorMessage">{{ vm.serverErrorMessage }}</div>
+      </div>
+      <div ng-if="vm.state === 'confirm'">
+        <p><localize key="dialogs_deployImportDescription2" tokens="[vm.selectedFileName]"></localize></p>
+
+        <div class="mb4">
+          <label><localize key="dialogs_deployImportIncludeEntityTypesDescription"></localize></label>
+          <umb-checkbox value="vm.includeContentEntityTypes"
+                        model="vm.includeContentEntityTypes"
+                        name="includeContentEntityTypes"
+                        label-key="dialogs_deployImportIncludeContentEntityTypes">
+          </umb-checkbox>
+          <umb-checkbox value="vm.includeContentFileEntityTypes"
+                        model="vm.includeContentFileEntityTypes"
+                        name="includeContentFileEntityTypes"
+                        label-key="{{vm.allowSchemaImport ? 'dialogs_deployImportIncludeContentFileEntityTypes' : 'dialogs_deployImportIncludeContentFileEntityTypesNoSchema'}}">
+          </umb-checkbox>
+          <div ng-if="vm.allowSchemaImport">
+            <umb-checkbox value="vm.includeSchemaEntityTypes"
+                          model="vm.includeSchemaEntityTypes"
+                          name="includeSchemaEntityTypes"
+                          label-key="dialogs_deployImportIncludeSchemaEntityTypes">
+            </umb-checkbox>
+            <umb-checkbox value="vm.includeSchemaFileEntityTypes"
+                          model="vm.includeSchemaFileEntityTypes"
+                          name="includeSchemaFileEntityTypes"
+                          label-key="dialogs_deployImportIncludeSchemaFileEntityTypes">
+            </umb-checkbox>
+          </div>
+        </div>
+
+        <umb-button type="button"
+                    button-style="success"
+                    action="vm.startImport()"
+                    label-key="actions_deployImport"
+                    state="vm.importButtonState">
+        </umb-button>
+      </div>
+
+      <div ng-if="vm.state === 'inprogress'">
+
+        <ud-import-progress ng-if="vm.import.status === 'inProgress'"
+                            progress="vm.import.importProgress"
+                            current-activity="vm.import.currentActivity"
+                            timestamp="vm.import.timestamp"
+                            server-timestamp="vm.import.serverTimestamp">
+        </ud-import-progress>
+
+        <ud-import-complete ng-if="vm.import.status === 'completed'"
+                            timestamp="vm.import.timestamp"
+                            server-timestamp="vm.import.serverTimestamp">
+        </ud-import-complete>
+
+        <div ng-if="vm.import.error.hasError">
+          <div ng-if="vm.import.error.softFail" class="mb4">
+            <h4 class="bold"><localize key="dialogs_deployImportSoftFailTitle"></localize></h4>
+            <p><localize key="dialogs_deployImportSoftFailDescription1"></localize></p>
+            <p><localize key="dialogs_deployImportSoftFailDescription2"></localize></p>
+
+            <umb-button type="button"
+                        button-style="success"
+                        action="vm.startImport(false)"
+                        label-key="actions_deployImportSoftFail">
+            </umb-button>
+          </div>
+
+          <div ng-if="!vm.import.error.softFail" class="mb4">
+            <h4 class="bold"><localize key="dialogs_deployImportFailTitle"></localize></h4>
+            <p><localize key="dialogs_deployImportFailDescription1"></localize></p>
+            <p><localize key="dialogs_deployImportFailDescription2"></localize></p>
+          </div>
+
+          <ud-error comment="vm.import.error.comment"
+                    log="vm.import.error.log"
+                    exception="vm.import.error.exception"
+                    status="vm.import.status"
+                    operation="import"
+                    on-debug="vm.showDebug()"
+                    timestamp="vm.import.timestamp"
+                    server-timestamp="vm.import.serverTimestamp"
+                    is-debug-info="vm.import.trace"
+                    show-debug="vm.import.showDebug"
+                    feedback-message-level="vm.feedbackMessageLevel">
+          </ud-error>
+        </div>
+
+        <div ng-if="vm.import.showDebug" class="umb-deploy-debug">
+          <div class="umb-deploy-debug-console-wrapper">
+            <div class="umb-deploy-debug-console" ng-bind-html="vm.import.trace | safe_html"></div>
+          </div>
+          <umb-button type="button"
+                      button-style="outline"
+                      action="vm.copyDebugToClipboard()"
+                      label="Copy to clipboard">
+          </umb-button>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="umb-dialog-footer btn-toolbar umb-btn-toolbar">
+    <button type="button" class="btn btn-link" ng-click="vm.closeDialog()">
+      <localize key="general_close">Close</localize>
+    </button>
+  </div>
+</div>

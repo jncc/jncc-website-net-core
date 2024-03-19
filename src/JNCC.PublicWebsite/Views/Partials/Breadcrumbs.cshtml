@@ -1,0 +1,17 @@
+﻿@model JNCC.PublicWebsite.Core.ViewModels.BreadcrumbsViewModel
+@if (Model.Ancestors?.Any() ?? false)
+{
+    <nav aria-label="breadcrumbs">
+        <ul class="breadcrumbs">
+            @foreach (var ancestor in Model.Ancestors)
+            {
+                <li><a href="@ancestor.Url">@ancestor.Text</a></li>
+            }
+            @if (!string.IsNullOrEmpty(Model.CurrentPage))
+            {
+                <li><span class="show-for-sr">Current: </span>@Model.CurrentPage</li>
+            }
+        </ul>
+    </nav>
+
+}

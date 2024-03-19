@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rewrite>
+  <rules>
+    <rule name="Redirect old assets to new location" stopProcessing="true">
+      <match url="^assets(.*)" />
+      <action type="Redirect" url="/resources{R:1}" />
+    </rule>
+  </rules>
+</rewrite>

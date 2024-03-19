@@ -1,0 +1,99 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model SidebarViewModel
+@if (Model.HasPrimaryCallToActionButton == false
+      && Model.HasInThisSectionLinks == false
+      && Model.HasAlsoInLinks == false
+      && Model.HasSeeAlsoLinks == false)
+{
+    return;
+}
+<aside id="sidebar">
+    @if (Model.HasPrimaryCallToActionButton)
+    {
+        <a href="@Model.PrimaryCallToActionButton.Url" class="button primary large medium-expanded" target="@Model.PrimaryCallToActionButton.Target">@Model.PrimaryCallToActionButton.Text</a>
+    }
+
+    @if (Model.HasParentLink)
+    {
+        <nav class="holder" aria-label="aside-navigation">
+            <h2>This page is in the section:</h2>
+            <ul class="aside-nav no-bullet">
+                @foreach (var link in Model.ParentLink)
+                {
+                    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+                }
+            </ul>
+        </nav>
+    }
+
+    @if (Model.HasSiblingPageLinks)
+    {
+        <nav class="holder" aria-label="aside-navigation">
+            <h2>@Model.SiblingLinksTitle</h2>
+            <ul class="aside-nav no-bullet">
+                @foreach (var link in Model.SiblingPageLinks)
+                {
+                    if (Model.CurrentPageUrl.Contains(link.Url))
+                    {
+                        <li><a href="@link.Url" class="active">@link.Text</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@link.Url">@link.Text</a></li>
+                    }
+                }
+            </ul>
+        </nav>
+    }
+
+    @if (Model.HasChildPageLinks)
+    {
+	    <nav class="holder" aria-label="aside-navigation">
+		    <h2>@Model.ChildPageLinksTitle</h2>
+		    <ul class="aside-nav no-bullet">
+			    @foreach (var link in Model.ChildPageLinks)
+			    {
+				    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+			    }
+		    </ul>
+	    </nav>
+    }
+
+    @if (Model.HasElsewhereOnOurWebsiteLinks)
+    {
+        <nav class="holder" aria-label="aside-navigation">
+            <h2>Elsewhere on our website:</h2>
+            <ul class="aside-nav no-bullet">
+                @foreach (var link in Model.ElsewhereOnOurWebsiteLinks)
+                {
+                    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+                }
+            </ul>
+        </nav>
+    }
+    @if (Model.HasOtherWebsitesLinks)
+    {
+        <nav class="holder" aria-label="aside-navigation">
+            <h2>Other websites:</h2>
+            <ul class="aside-nav no-bullet">
+                @foreach (var link in Model.OtherWebsitesLinks)
+                {
+                    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+                }
+            </ul>
+        </nav>
+    }
+
+    @if (Model.HasSeeAlsoLinks)
+    {
+        <nav class="holder" aria-label="aside-navigation">
+            <h2>See also</h2>
+            <ul class="aside-nav no-bullet">
+                @foreach (var link in Model.SeeAlsoLinks)
+                {
+                    <li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+                }
+            </ul>
+        </nav>
+    }
+</aside>

@@ -1,0 +1,96 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels;
+@model ArticlesContentViewModel
+
+@if (Model?.SubSections?.Any() ?? false)
+{
+    @if(Model.ShowTableOfContents)
+    {
+        <div class="row">
+            <div class="columns small-12 medium-12 callout toc">
+                <h2 id="toc">Contents</h2>
+                <ol>
+                    @foreach (var section in Model.SubSections)
+                    {
+                        if (!section.HideHeadline)
+                        {
+                            <li>
+                                <a href="#@(section.HtmlId)">@(section.Headline)</a>
+                                @if (section.SubSections != null && section.SubSections.Any())
+                                {
+                                    <ol>
+                                        @foreach (var subSection in section.SubSections)
+                                        {
+                                            if (!subSection.HideHeadline)
+                                            {
+                                                <li>
+                                                    <a href="#@(subSection.HtmlId)">@(subSection.Headline)</a>
+                                                    @if (subSection.SubSections != null && subSection.SubSections.Any())
+                                                    {
+                                                    <ol>
+                                                        @foreach (var subSubSection in subSection.SubSections)
+                                                        {
+                                                            if (!subSubSection.HideHeadline)
+                                                            {
+                                                                <li>
+                                                                    <a href="#@(subSubSection.HtmlId)">@(subSubSection.Headline)</a>
+                                                                </li>
+                                                            }
+                                                        }
+                                                    </ol>
+                                                    }
+                                                </li>
+                                            }
+                                        }
+                                    </ol>
+                                }
+                            </li>
+                        }
+                    }
+                </ol>
+            </div>
+        </div>
+    }
+    
+    foreach (var section in Model.SubSections)
+    {
+        if (!section.HideHeadline)
+        {
+            <h2 id="@(section.HtmlId)">@(section.Headline)</h2>
+        }
+
+        @(await Html.PartialAsync(string.Format("~/Views/Partials/Articles/{0}.cshtml", section.PartialViewName), section))
+
+        if (section.SubSections != null && section.SubSections.Any())
+        {
+            <div class="science-subsection">
+                @foreach (var subSection in section.SubSections)
+                {
+                    if (!subSection.HideHeadline)
+                    {
+                        <h3 id="@(subSection.HtmlId)">@(subSection.Headline)</h3>
+                    }
+                    @(await Html.PartialAsync(string.Format("~/Views/Partials/Articles/{0}.cshtml", subSection.PartialViewName), subSection))
+
+                    if (subSection.SubSections != null && subSection.SubSections.Any())
+                    {
+                        <div class="science-subsection">
+                            @foreach (var subSubSection in subSection.SubSections)
+                            {
+                                if (!subSubSection.HideHeadline)
+                                {
+                                    <h3 id="@(subSubSection.HtmlId)">@(subSubSection.Headline)</h3>
+                                }
+                                @(await Html.PartialAsync(string.Format("~/Views/Partials/Articles/{0}.cshtml", subSubSection.PartialViewName), subSubSection))
+                            }
+                        </div>
+                    }
+
+                }
+            </div>
+        }
+        if (!section.HideHeadline)
+        {
+            <p class="text-right"><a href="#toc" class="return-to-top">Top <i class="step fi-arrow-up"></i></a></p>
+        }
+    }
+}

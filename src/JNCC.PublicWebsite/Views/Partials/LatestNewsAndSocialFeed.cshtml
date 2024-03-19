@@ -1,0 +1,58 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model LatestNewsSectionViewModel
+@{
+    //var cookiePolicyAcceptance = "false";
+    //var value = Request.Cookies["cookiePolicyAcceptance"];
+    //if (Request.Cookies["cookiePolicyAcceptance"] != null)
+    //{
+    //    cookiePolicyAcceptance = Request.Cookies["cookiePolicyAcceptance"].Value;
+    //}
+}
+<section class="widget-section">
+	<div class="container">
+        <div class="row">
+            @if (Model.LatestNews.Any())
+            {
+                <div class="columns small-12 large-8">
+	                <h2><a href="/news/">Latest News</a></h2>
+                    <div class="news-holder">
+                        @foreach (var newsItem in Model.LatestNews)
+                        {
+                            <article class="card">
+                                @if (string.IsNullOrWhiteSpace(newsItem.ImageUrl) == false)
+                                {
+                                    <div class="img-holder img-for-print">
+                                        <img src="@newsItem.ImageUrl" alt="@newsItem.ImageAltText" title="@newsItem.ImageTitleText">
+                                    </div>
+                                }
+
+                                <div class="card-section">
+                                    <h3>@newsItem.Title</h3>
+                                    <ul class="footer-list no-bullet">
+                                        <li><time datetime="@newsItem.PublishDate.ToString("yyyy-MM-dd")">@newsItem.PublishDate.ToLongDateString()</time></li>
+                                    </ul>
+                                    @Html.Raw(newsItem.Description)
+                                    <a href="@newsItem.Url" class="button expanded">Read More</a>
+                                </div>
+                            </article>
+                        }
+                    </div>
+                </div>
+            }
+            @if (Model.SocialFeed != null && Model.SocialFeed.HasTwitterFeedUrl)
+            {
+                <div class="columns small-12 large-4 twitter-print-hide">
+                    <h2><a href="https://twitter.com/JNCC_UK" target="_blank">Twitter</a></h2>
+                    <div class="twitter-widget">
+                        <article class="card full-border">
+                            <div class="card-section">
+                                <a class="twitter-timeline" href="@Model.SocialFeed.TwitterFeedUrl?ref_src=twsrc%5Etfw" data-chrome="noheader nofooter noborders" data-tweet-limit="@Model.SocialFeed.NumberOfTweets">Tweets by JNCC_UK</a>
+                                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

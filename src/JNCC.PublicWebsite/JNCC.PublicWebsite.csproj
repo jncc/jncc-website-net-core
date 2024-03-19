@@ -1,65 +1,43 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <ManagePackageVersionsCentrally>false</ManagePackageVersionsCentrally>
+  </PropertyGroup>
 
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <Configurations>Debug;Release;Development;Staging</Configurations>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-    </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
+    <PackageReference Include="SEOChecker" Version="10.0.5" />
+    <PackageReference Include="Umbraco.Cms" Version="10.8.4" />
+    <PackageReference Include="Umbraco.Deploy.Forms" Version="10.4.0" />
+    <PackageReference Include="Umbraco.Deploy.OnPrem" Version="10.4.0" />
+    <PackageReference Include="Umbraco.Forms" Version="10.5.4" />
+  </ItemGroup>
 
-    <ItemGroup>
-      <Compile Remove="wwwroot\umbraco\**" />
-      <Content Remove="wwwroot\umbraco\**" />
-      <EmbeddedResource Remove="wwwroot\umbraco\**" />
-      <None Remove="wwwroot\umbraco\**" />
-    </ItemGroup>
+  <ItemGroup>
+    <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
+    <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
+    <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="10.0.1" />
+    <ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
+    <!-- <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2.0.9" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />-->
+  </ItemGroup>
 
-    <ItemGroup>
-      <None Remove="Views\ResourceDetailPage.cshtml~RF9d71bc8.TMP" />
-    </ItemGroup>
+  <ItemGroup>
+    <None Update="IISUrlRewrite.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Azure.Core" Version="1.24.0" />
-        <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
-        <PackageReference Include="SEOChecker" Version="10.0.5" />
-        <PackageReference Include="Umbraco.Cms" Version="10.8.4" />
-    </ItemGroup>
+  <PropertyGroup>
+    <!-- Razor files are needed for the backoffice to work correctly -->
+    <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+  </PropertyGroup>
 
-    <!-- Force windows to use ICU. Otherwise Windows 10 2019H1+ will do it, but older windows 10 and most if not all winodws servers will run NLS -->
-    <ItemGroup>
-        <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
-        <PackageReference Include="Umbraco.Forms" Version="10.5.4" />
-        <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="10.0.1" />
-        <PackageReference Include="uSync" Version="10.7.3" />
-        <ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
-        <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
-    </ItemGroup>
-    
-    <ItemGroup>
-        <Content Include="App_Plugins\TwoFactorProviders\Authenticator.html" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <None Include="App_Plugins\TwoFactorProviders\Authenticator.controller.js" />
-      <None Include="App_Plugins\TwoFactorProviders\package.manifest" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <None Update="IISUrlRewrite.xml">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-    
-
-    <PropertyGroup>
-        <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
-    </PropertyGroup>
-
-    <!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
-    <PropertyGroup>
-        <RazorCompileOnBuild>false</RazorCompileOnBuild>
-        <RazorCompileOnPublish>false</RazorCompileOnPublish>
-        <UserSecretsId>f32089cc-cccc-44f5-8a1c-6a937ca44000</UserSecretsId>
-    </PropertyGroup>
+  <PropertyGroup>
+    <!-- Remove RazorCompileOnBuild and RazorCompileOnPublish when not using ModelsMode InMemoryAuto -->
+    <RazorCompileOnBuild>false</RazorCompileOnBuild>
+    <RazorCompileOnPublish>false</RazorCompileOnPublish>
+  </PropertyGroup>
 
 </Project>

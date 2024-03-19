@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language>
+  <area alias="dashboardTabs">
+    <key alias="deploy">Workspaces</key>
+    <key alias="deployManagement">Deploy</key>
+  </area>
+  <area alias="general">
+    <key alias="Deploy">Deploy</key>
+    <key alias="restore">Restore</key>
+  </area>
+  <area alias="sections">
+    <key alias="deploy">Deploy</key>
+    <key alias="deployOpenPortal">Deploy</key>
+    <key alias="deployHelpAndDocumentation">Help and documentation</key>
+    <key alias="deployOpenQueue">Open transfer queue</key>
+    <key alias="deployGettingStarted">Getting Started</key>
+    <key alias="deploySetupProject">Set up a Project</key>
+    <key alias="deployDeployment">Deployment</key>
+    <key alias="deployTroubleshooting">Troubleshooting</key>
+  </area>
+  <area alias="actions">
+    <key alias="deployQueueForTransfer">Queue for transfer</key>
+    <key alias="deployRestore">Workspace restore</key>
+    <key alias="deployTreeRestore">Tree restore</key>
+    <key alias="deployPartialRestore">Partial restore</key>
+    <key alias="deployTransferNow">Transfer now</key>
+    <key alias="deployCompare">Compare</key>
+    <key alias="deployImport">Import</key>
+    <key alias="deployImportSoftFail">Import (ignore warnings)</key>
+    <key alias="deployExport">Export</key>
+  </area>
+  <area alias="actionDescriptions">
+    <key alias="deployQueueForTransfer">Allow the user to queue item(s)</key>
+    <key alias="deployRestore">Allow the user to restore items for the whole workspace</key>
+    <key alias="deployTreeRestore">Allow the user to restore items for a tree</key>  
+    <key alias="deployPartialRestore">Allow the user to partial restore items</key>
+    <key alias="deployCompare">Allow the user to compare items between workspaces</key>
+    <key alias="deployImport">Allow the user to import content, schema and files from an exported archive file</key>
+    <key alias="deployExport">Allow the user to export content, schema and files to an archive file</key>
+  </area>
+  <area alias="actionCategories">
+    <key alias="deploy">Deploy</key>
+  </area>
+  <area alias="dialogs">
+    <key alias="deployTransferNowTitle">Transfer now</key>
+    <key alias="deployTransferNowHeadline"><![CDATA[<h4 class="bold">Transfer <em>%0%</em> to %1%</h4>]]></key>
+    <key alias="deployTransferNowDescription"><![CDATA[<p>You are about to transfer <em>%0%</em> directly to %1%, without adding it to the queue.</p>]]></key>
+    <key alias="deployAddToQueueHeadline"><![CDATA[<h4 class="bold">Queue <em>%0%</em> for transfer to <em>%1%</em></h4>]]></key>
+    <key alias="deployAddToQueueDescription"><![CDATA[<p>This will put <em class="bold">%0%</em> in the queue for the next transfer, nothing will be transfered yet.</p>]]></key>
+    <key alias="deployAddToQueueCultureDescription"><![CDATA[<p>Select language to include in transfer:</p>]]></key>
+    <key alias="deployAddToQueueChildPageDescription"><![CDATA[<p>Should all items below <em class="bold">%0%</em> be included in the transfer?</p>]]></key>
+    <key alias="deployAddToQueueReleaseDateDescription"><![CDATA[<p>The published or unpublished status will be transferred along with the content. To schedule the update for publishing in the future, please set a date:</p>]]></key>
+    <key alias="deployIncludeChildPages">Include all items below</key>
+    <key alias="deployAddToQueueDone"><![CDATA[<h5>Changes have been queued</h5><p>When you are ready to transfer your full set of changes, go to the <a href="#/content?dashboard=deploy">workspace dashboard</a> to start the transfer.</p>]]></key>
+    <key alias="deployVariantQueueForTransferNotAllowed">Transfer is not allowed</key>
+    <key alias="deployRestoreFrom">From</key>
+    <key alias="deployRestoreWorkspace">workspace</key>
+    <key alias="deployRestoreThis">Restore</key>
+    <key alias="deployRestoreIncludingDescendants">Including all items below</key>
+    <key alias="deployRestoreNotIncludingDescendants">Not including items below</key>
+    <key alias="deployRestoreDescription">
+    <![CDATA[
+      <p>This includes changes to referenced content, media and other items.</p>
+      <p style="margin-top: 15px; margin-bottom: 30px;">
+          <strong>Notice:</strong>
+          Restoring a large number of items can take a long time to perform.  Whilst this operation is proceeding you should not make changes to your Umbraco data or initiate any further deploy operations.
+      </p>
+    ]]>
+    </key>
+    <key alias="deployRestorePickFrom">Or pick content from</key>
+    <key alias="deployFullRestoreFrom">Restore this workspace from</key>
+    <key alias="deployFullRestoreDescription">
+    <![CDATA[
+      <p>This will transfer changes from <em>%0%</em> for all items and apply them to this workspace.</p>
+      <p style="margin-top: 15px; margin-bottom: 30px;">
+          <strong>Notice:</strong>
+          Restoring a large number of items can take a long time to perform.  Whilst this operation is proceeding you should not make changes to your Umbraco data or initiate any further deploy operations.
+      </p>
+    ]]>
+    </key>
+    <key alias="deployFullRestoreAction">Restore from</key>
+    <key alias="deployTreeRestoreFrom">Restore this tree from</key>
+    <key alias="deployTreeRestoreDescription">
+    <![CDATA[
+      <p>This will transfer changes from <em>%0%</em> and apply them to the selected tree in this workspace. This will include changes to any referenced content, media or other items.</p>
+      <p style="margin-top: 15px; margin-bottom: 30px;">
+          <strong>Notice:</strong>
+          Restoring a large number of items can take a long time to perform.  Whilst this operation is proceeding you should not make changes to your Umbraco data or initiate any further deploy operations.
+      </p>
+    ]]>
+    </key>
+    <key alias="deployCompareTitle">Compare</key>
+    <key alias="deployGoToTransferQueue">Open transfer queue</key>
+    <key alias="deployImportDescription"><![CDATA[<p>Please select a ZIP file generated from a previous export.</p>]]></key>
+    <key alias="deployImportDescription2"><![CDATA[<p>The <em>%0%</em> file has been uploaded and is ready for import.</p>]]></key>
+    <key alias="deployImportSelectFile">Select ZIP file</key>
+    <key alias="deployImportIncludeEntityTypesDescription"><![CDATA[<p>Import the following types:</p>]]></key>
+    <key alias="deployImportIncludeContentEntityTypes">Content (e.g. content and media)</key>
+    <key alias="deployImportIncludeContentFileEntityTypes">Content files (e.g. media files)</key>
+    <key alias="deployImportIncludeContentFileEntityTypesNoSchema">Files (e.g. media files)</key>
+    <key alias="deployImportIncludeSchemaEntityTypes">Schema (e.g. document and data types)</key>
+    <key alias="deployImportIncludeSchemaFileEntityTypes">Schema files (e.g. templates, scripts and stylesheets)</key>
+    <key alias="deployImportSoftFailTitle">Import failed due to warnings</key>
+    <key alias="deployImportSoftFailDescription1">One or more issues were found when attempting to import the provided file.</key>
+    <key alias="deployImportSoftFailDescription2"><![CDATA[They are classed as <span class="ud-import-artifact-message-warning">warnings</span> or <span class="ud-import-artifact-message-error">errors</span> below. Warnings should not prevent you from importing the file so you can choose to proceed having reviewed them.]]></key>
+    <key alias="deployImportFailTitle">Import failed</key>
+    <key alias="deployImportFailDescription1">One or more issues were found when attempting to import the provided file, including at least one error that cannot be ignored.</key>
+    <key alias="deployImportFailDescription2"><![CDATA[They are classed as <span class="ud-import-artifact-message-warning">warnings</span> or <span class="ud-import-artifact-message-error">errors</span> below.]]></key>
+    <key alias="deployExportDescription"><![CDATA[<p>All deployable items in the workspace are selected for export to a ZIP file.</p>]]></key>
+    <key alias="deployTreeExportDescription"><![CDATA[<p><em>%0%</em> is selected for export to a ZIP file.</p>]]></key>
+    <key alias="deployExportIncludeChildPagesDescription"><![CDATA[<p>Should all items below <em class="bold">%0%</em> be included in the export?</p>]]></key>
+    <key alias="deployExportIncludeDependenciesDescription"><![CDATA[<p>Include additional dependencies in the export?</p>]]></key>
+    <key alias="deployExportIncludeContentDependencies">Include content dependencies (e.g. related media and content)</key>
+    <key alias="deployExportIncludeContentFileDependencies">Include content file dependencies (e.g. media files)</key>
+    <key alias="deployExportIncludeContentFileDependenciesNoSchema">Include file dependencies (e.g. media files)</key>
+    <key alias="deployExportIncludeSchemaDependencies">Include schema dependencies (e.g. document and data types)</key>
+    <key alias="deployExportIncludeSchemaFileDependencies">Include schema file dependencies (e.g. templates, scripts and stylesheets)</key>
+  </area>
+  <area alias="deployManagementDashboard">
+    <key alias="refreshStatus">Refresh Status</key>
+    <key alias="deployStatus">Deploy Status</key>
+    <key alias="deployOperations">Deploy Operations</key>
+    <key alias="triggerOperation">Trigger Operation</key>
+    <key alias="version">Version</key>
+    <key alias="status">Status</key>
+    <key alias="operationTime">Last operation time</key>
+    <key alias="schemaComparison">Schema Comparison</key>
+    <key alias="configurationDetails">Configuration Details</key>
+    <key alias="updateUmbracoSchemaFromDataFiles">Update Umbraco Schema From Data Files</key>
+    <key alias="updateUmbracoSchemaFromDataFilesDescription">Update the Umbraco schema based on the information contained in the .uda files on disk.</key>
+    <key alias="schemaDeployment">Update Umbraco Schema</key>
+    <key alias="exportSchemaToDataFiles">Export Schema To Data Files</key>
+    <key alias="exportSchemaToDataFilesDescription">Extract the schema from Umbraco and output it to the .uda files on disk.</key>
+    <key alias="exportSchema">Export Schema</key>
+    <key alias="clearCachedSignatures">Clear Cached Signatures</key>
+    <key alias="clearCachedSignaturesDescription">
+      Clear the cached artifact signatures from the Umbraco environment.<br />
+      This should not be necessary in normal use. This may solve reports of schema mismatches when transferring content between environments that have been aligned.
+    </key>
+    <key alias="clearSignatures">Clear Signatures</key>
+    <key alias="setCachedSignatures">Set Cached Signatures</key>
+    <key alias="setCachedSignaturesDescription">
+      Sets the cached artifact signatures for all entities within the Umbraco environment.
+      This can be used when signatures have been cleared and you want to ensure they are pre-generated before attempting a potentially long-running restore or transfer operation.
+    </key>
+    <key alias="setSignatures">Set Signatures</key>
+    <key alias="deleteImportArchives">Delete all temporary import ZIP archives</key>
+    <key alias="deleteImportArchivesDescription">
+      When carrying out a Deploy import, the uploaded ZIP archive will be temporarily stored on disk.
+      Once the import has completed or the dialog is closed normally, this file will be automatically removed.
+      In case this isn't triggered, you can manually delete all temporary import ZIP archives here.
+    </key>
+    <key alias="deleteImportArchivesTrigger">Delete Import Archives</key>
+    <key alias="deleteExportArchives">Delete all exported ZIP archives</key>
+    <key alias="deleteExportArchivesDescription">
+      When carrying out a Deploy export, the ZIP archive is stored on the local file system to subsequently be downloaded.
+      After download the export archive can be deleted, but if this isn't done you can manually delete all exported ZIP archives here.
+    </key>
+    <key alias="deleteExportArchivesTrigger">Delete Export Archives</key>
+    <key alias="numberOfArchiveFiles">Number of files</key>
+  </area>
+</language>

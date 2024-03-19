@@ -1,0 +1,39 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@model ContentItemSchema
+
+@if (Model.Image != null)
+{
+    <article class="article @(Model.ReadMoreButton != null ? "article-list" : "")">
+
+        @if (Model.Image?.Any() ?? false)
+        {
+            foreach (BlockListItem image in Model.Image)
+            {
+                if (image.Content is ContentImageSchema mediaItem)
+                {
+                    if (mediaItem.Image?.Content is Image media && media != null)
+                    {
+                        var altText = media.AltText.IsNullOrWhiteSpace() ? media.Name : media.AltText;
+                        <div class="img-holder">
+                            <img src="@media.Url()" alt="@altText" title="@(media.TitleText)">
+                        </div>
+                    }
+                }
+            }
+
+        }
+
+        <div class="text-holder">
+            @if(Model.ReadMoreButton != null)
+            {
+                <h2><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h2>
+            }
+            else
+            {
+                <h2>@Model.Headline</h2>
+            }    
+            @Html.Raw(Model.Content)
+        </div>
+    </article>
+}

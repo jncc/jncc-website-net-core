@@ -1,0 +1,21 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model IEnumerable<CategorisedFooterLinksViewModel>
+@if (Model?.Any() ?? false)
+{
+    <div class="row" id="footer-nav">
+        @foreach (var category in Model)
+        {
+            <div class="columns small-12 medium-4">
+                <nav class="holder" aria-label="footer-navigation">
+                    <h2>@category.Heading</h2>
+                    <ul class="footer-nav no-bullet">
+                        @foreach (var link in category.Links)
+                        {
+                            <li><a href="@link.Url" accesskey="@link.AccessKey" target="@link.Target">@link.Text</a></li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+        }
+    </div>
+}

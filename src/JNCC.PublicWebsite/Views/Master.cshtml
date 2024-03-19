@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "Base.cshtml";
+    @*Html.RequiresJs("/js/lib/jquery.validate-1.15.0.min.js");
+        Html.RequiresJs("/js/lib/jquery.validate.unobtrusive.min.js");*@
+}
+@section AdditionalHeadIncludes{@RenderSection("AdditionalHeadIncludes", false)}
+@section Header {
+    <div class="container">
+        <strong class="logo">
+            <a href="/" accesskey="1"><img src="~/images/logo.png" alt="JNCC"></a>
+        </strong>
+        @(await Component.InvokeAsync("Search", new { model = Model }))
+
+        <div class="show-for-small-only">
+            <div class="title-bar" data-responsive-toggle="search-form" data-hide-for="medium">
+                <button type="button" class="search-opener" data-toggle="search-form" aria-label="search-opener"><i class="icon-search"></i></button>
+            </div>
+            <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
+                <button type="button" class="nav-opener" data-toggle="menu" data-responsive-toggle="menu" aria-label="navigation-opener"><span></span></button>
+            </div>
+        </div>
+    </div>
+    @(await Component.InvokeAsync("MainNavigation", new { model = Model }))
+}
+@RenderBody()
+@section Footer {
+    <footer id="footer" class="text-center medium-text-left">
+        <div class="container">
+            @(await Component.InvokeAsync("CategorisedLinks", new { model = Model })) 
+            @(await Component.InvokeAsync("SocialMediaLinks", new { model = Model }))
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                @(await Component.InvokeAsync("FooterContent", new { model = Model }))
+                @(await Component.InvokeAsync("UncategorisedLinks", new { model = Model }))
+            </div>
+        </div>
+    </footer>
+}
+@section EndOfBodyIncludes {
+    <div class="reveal large" id="table-modal" data-reveal>
+        <div id="table-modal-body"></div>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="reveal large" id="image-modal" data-reveal>
+        <div id="image-modal-body"></div>
+        <button class="close-button" data-close aria-label="Close modal" type="button">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}

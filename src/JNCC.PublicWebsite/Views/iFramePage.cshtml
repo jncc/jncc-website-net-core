@@ -1,0 +1,167 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<IFramePage>
+@{
+    Layout = "Base.cshtml";
+    var cookiePolicyAcceptance = "false";
+    //TODO: Update to new cookie control
+    //if (Request.Cookies["cookiePolicyAcceptance"] != null)
+    //{
+    //    cookiePolicyAcceptance = Request.Cookies["cookiePolicyAcceptance"].Value;
+    //}
+
+    string fallbackCss = "";
+    string iFrameCss = "";
+    <script>
+        var w = window.innerWidth;
+    </script>
+
+    if (Model.DisplayOnMediumDevices && Model.DisplayOnSmallDevices)
+    {
+        fallbackCss = "hide-for-large";
+        iFrameCss = "hide-for-small-only hide-for-medium-only";
+        <script>
+            if (w >= 1023) { $("body").css("overflow", "hidden") }
+        </script>
+    }
+    else if (Model.DisplayOnMediumDevices)
+    {
+        fallbackCss = "show-for-medium-only hide-for-large";
+        iFrameCss = "hide-for-medium-only";
+        <script>
+            if (w >= 1023) { $("body").css("overflow", "hidden") }
+            if (w < 768) { $("body").css("overflow", "hidden") }
+        </script>
+    }
+    else if (Model.DisplayOnSmallDevices)
+    {
+        fallbackCss = "show-for-small-only hide-for-large";
+        iFrameCss = "hide-for-small-only";
+        <script>
+            if (w >= 768) { $("body").css("overflow", "hidden") }
+        </script>
+    }
+    else
+    {
+        fallbackCss = "hide";
+        <script>
+            $("body").css("overflow", "hidden")
+        </script>
+    }
+}
+
+@section Header {
+    <div class="">
+        <div id="hide-button" class="row expanded">
+             <span class="iframe-header-toggle iframe-toggle-button"><a href="#" class="openMenu hide-for-small-only">Hide</a></span>
+        </div>
+        <div id="iframe-header-holder" class="row iframe-header-holder">
+            <div class="iframe-menu iframe-inner-holder">
+                <strong class="logo" style="float:left;">
+                    <a href="/" accesskey="1">
+                        <img src="~/images/logo.png" class="iframe-logo" alt="JNCC">
+                    </a>
+                </strong>
+                    @if(!string.IsNullOrEmpty(Model.PageTitle)){
+                        <h1>@Model.PageTitle</h1>
+                    }        
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-offset-1 large-2 medium-3 small-12 columns iframe-header-logo iframe-menu">
+                <div class="show-for-small-only iframe-toggle-menu-holder">
+                    <div class="title-bar iframe-toggle-menu" data-responsive-toggle="menu" data-hide-for="medium">
+                        <button type="button" class="nav-opener" data-toggle="menu" data-responsive-toggle="menu" aria-label="navigation-opener"><span></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="large-9 medium-9 small-12 columns iframe-header-nav iframe-menu" style="position:relative; z-index:auto;">
+                @(await Component.InvokeAsync("IFrameNavigation", new { model = Model }))
+            </div>
+        </div>
+    </div>
+}
+<main id="main">
+    <div class="container @fallbackCss">
+        @(await Component.InvokeAsync("IFrameSections", new { model = Model }))
+    </div>
+
+
+    @*TODO: Update to new cookie control
+        @if (cookiePolicyAcceptance == "true")
+        {*@
+    <script>
+        $(document).ready(mapFrame);
+        $(window).on('resize', mapFrame);
+        function mapFrame() {
+            var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+            var newH = h - 68.375;
+            document.getElementById('map-frame').setAttribute("style", "height:" + newH + "px" + ";");
+            document.getElementById('map-holder').setAttribute("style", "height:" + newH + "px" + ";");
+        };
+    </script>
+
+    <div id="map-holder" class="@iFrameCss expanded collapse is-display-block">
+        @(await Component.InvokeAsync("IFrameSourceUrl", new { model = Model }))
+    </div>
+
+    <script>
+        function getSearchParameters() {
+            var prmstr = window.location.search.substr(1);
+            return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+        }
+        function transformToAssocArray(prmstr) {
+            var params = {};
+            var prmarr = prmstr.split("&");
+            for (var i = 0; i < prmarr.length; i++) {
+                var tmparr = prmarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            return params;
+        }
+        function applyParameters(paramlist) {
+            out = "";
+            for (i = 0; i < paramlist.length; i++) {
+                if (params[paramlist[i]]) {
+                    out += String.fromCharCode(38) + paramlist[i] + "=" + params[paramlist[i]];
+                    delete params[paramlist[i]];
+                }
+            }
+            return out;
+        }
+        var params = getSearchParameters();
+        var mapsrc = applyParameters(['zoom', 'center', 'layerIds', 'baseLayerId', 'activeFilters', 'lang']);
+        var ifp = window.location.origin + window.location.pathname;
+        if (Object.keys(params).length) {
+            ifp += "?";
+            for (var key in params) ifp += key + "=" + params[key] + String.fromCharCode(38);
+            ifp = ifp.substr(0, ifp.length - 1);
+        }
+        var p = document.getElementById('map-frame');
+        if (p.src.indexOf("?") != -1) {
+            p.src = p.src + "&ifp=" + btoa(ifp) + mapsrc;
+        }
+        else {
+            p.src = p.src + "?ifp=" + btoa(ifp) + mapsrc;
+        }
+
+        /**/</script>
+    @*}
+        else
+        {
+            if (Model.CookieDisabledError != null && !Model.CookieDisabledError.ToString().IsNullOrWhiteSpace())
+            {
+                <div class="@iFrameCss">
+                    @Model.CookieDisabledError
+                </div>
+            }
+            else
+            {
+                <div class="@iFrameCss">
+                    <p> </p>
+                    <h2 style="text-align: center;">Mapper Disabled</h2>
+                    <p style="text-align: center;">The mapper cannot be displayed because cookies are needed to display the map. Please <button class="buttonLink" onclick="CookieAgreement()"> click here</button>, to enable cookies.</p>
+                </div>
+            }
+        }*@
+</main>

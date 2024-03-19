@@ -1,0 +1,46 @@
+﻿@using JNCC.PublicWebsite.Core.Extensions
+@using JNCC.PublicWebsite.Core.ViewModels
+@model IEnumerable<CareersListItemViewModel>
+@if (Model?.Any() ?? false)
+{
+    <ul class="articles-list no-bullet row gutter-medium">
+        @foreach (var item in Model)
+        {
+            <li class="large-6 columns grid-padding-x">
+                <article class="article">
+                    <div class="text-holder">
+                        @if (item.Url != null)
+                        {
+                            <h2><a href="@item.Url">@item.JobTitle</a></h2>
+                        }
+                        else
+                        {
+                            <h2>@item.JobTitle</h2>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(item.Grade))
+                        {
+                            <p>Grade: @item.Grade</p>
+                        }
+
+
+                        @if (!string.IsNullOrWhiteSpace(item.Grade))
+                        {
+                            <p>Location: @item.Location</p>
+                        }
+
+                        @if (item.ClosingDate != DateTime.MinValue)
+                        {
+                            <p>Closing Date: <time datetime="@item.ClosingDate.ToString("dd MMM yyyy")">@item.ClosingDate.LongDateWithFormat()</time></p>
+                        }
+
+                        @if (!string.IsNullOrWhiteSpace(item.Grade))
+                        {
+                            <p>Type: @item.Type</p>
+                        }
+                    </div>
+                </article>
+            </li>
+        }
+    </ul>
+}

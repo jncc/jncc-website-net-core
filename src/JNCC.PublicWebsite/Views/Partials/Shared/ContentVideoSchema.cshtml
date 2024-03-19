@@ -1,0 +1,10 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@model ContentVideoSchema
+
+@if (Model.Video != null)
+{
+	<div class="responsive-embed">
+	@Html.Raw(Model.Video)
+	</div>
+}
