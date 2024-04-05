@@ -1,0 +1,38 @@
+{
+  "Name": "Image  Text Schema Section - Science Category",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "cf546329-0c7e-4cfe-8e62-e711cd5e9775",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "17012e7c-dbc8-4aa4-be1b-ab4c20e5c4f6",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/65fe95e6f0464ae091056a910e289447",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/17012e7cdbc84aa4be1bab4c20e5c4f6",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/cf5463290c7e4cfe8e62e711cd5e9775",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

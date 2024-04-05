@@ -1,0 +1,19 @@
+{
+  "Name": "Internal Text Page",
+  "Alias": "InternalTextPage",
+  "File": "umb://template-file/InternalTextPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/d9d79e961aae44c3b1bc6e3532f5be02",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/InternalTextPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

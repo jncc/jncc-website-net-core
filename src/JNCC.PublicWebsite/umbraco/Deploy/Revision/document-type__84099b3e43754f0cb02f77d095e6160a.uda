@@ -1,0 +1,72 @@
+{
+  "Name": "Science iFrame Sub Section Image & Rich Text Schema",
+  "Alias": "scienceIFrameSubSectionImageRichTextSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-edit color-black",
+  "Thumbnail": "folder.png",
+  "Description": "A Science iFrame Section that offers an Image picker & Rich Text editor for generic written content.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b",
+  "CompositionContentTypes": [
+    "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "96d78694-1efc-4bad-b192-feae1339ac45",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "53f9b588-e20d-4f38-bf81-9c28015a5149",
+          "Alias": "image",
+          "DataType": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+          "Description": "",
+          "Name": "Image",
+          "SortOrder": 2
+        },
+        {
+          "Key": "82433880-23ea-4ed2-826a-f8ca442e3e8f",
+          "Alias": "content",
+          "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
+          "Description": "",
+          "Name": "Content",
+          "SortOrder": 4
+        },
+        {
+          "Key": "8df067b3-ff69-4cc3-aa95-16930aac7489",
+          "Alias": "imagePosition",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Accepted written positions are: 'Left', 'Right', 'Top'",
+          "Name": "Image Position",
+          "SortOrder": 3
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/84099b3e43754f0cb02f77d095e6160a",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/135d60e064d949edab08893c9ba44ae5",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/721586028a674e60b6b983f122f14a21",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

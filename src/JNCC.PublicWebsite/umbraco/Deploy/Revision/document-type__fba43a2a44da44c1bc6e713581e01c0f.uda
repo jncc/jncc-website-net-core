@@ -1,0 +1,116 @@
+{
+  "Name": "Resources Page",
+  "Alias": "resourcesPage",
+  "DefaultTemplate": "umb://template/a8db83c380134a2eabc8fb904f92f581",
+  "AllowedTemplates": [
+    "umb://template/a8db83c380134a2eabc8fb904f92f581"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-file-cabinet color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "The landing page for the resources section of the site. The actual content underneath this page is pulled in from the JNCC resources API.",
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/b435c3f8648447c2a099b4e7aec739f2"
+    ]
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "2b1bdbe5-bff4-4bf6-ae73-325e05938b53",
+      "Name": "Featured Resources",
+      "SortOrder": 1,
+      "Alias": "featuredResources",
+      "PropertyTypes": [
+        {
+          "Key": "135036b7-b4a1-421f-9e6e-42445b69e2e1",
+          "Alias": "featuredResources",
+          "DataType": "umb://data-type/c94bb35b33484e798969c76f024d9726",
+          "Description": "Add the featured resource panels you require here.",
+          "MandatoryMessage": "",
+          "Name": "Featured Resources",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "bd42d718-b9d4-44e1-b209-11b5c216ba38",
+          "Alias": "featuredResourcesTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The title that is displayed at the top of the featured resources panel.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Featured Resources Title",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "d3f59e8d-a18e-4823-9023-5071bf255e86",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "7cf34b38-0176-45b0-967b-11bf7777cdc3",
+          "Alias": "content",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/fba43a2a44da44c1bc6e713581e01c0f",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c94bb35b33484e798969c76f024d9726",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/b435c3f8648447c2a099b4e7aec739f2"
+    },
+    {
+      "Udi": "umb://template/a8db83c380134a2eabc8fb904f92f581",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

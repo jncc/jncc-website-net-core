@@ -1,0 +1,19 @@
+{
+  "Name": "Related Items Picker",
+  "Alias": "",
+  "EditorAlias": "Umbraco.MultiNodeTreePicker",
+  "Configuration": {
+    "startNode": {
+      "type": "content"
+    },
+    "filter": "internalTextPage,scienceDetailsPage,scienceCategoryPage,ArticlePage,genericListingPage,bizDevServicePage,aboutUsPage,individualJobPage,StaffProfilePage",
+    "minNumber": 0,
+    "maxNumber": 3,
+    "showOpenButton": false,
+    "ignoreUserStartNodes": false
+  },
+  "Udi": "umb://data-type/d9a98cd3d24e4e2ab6560cf9c64a3058",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

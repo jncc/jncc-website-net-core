@@ -1,0 +1,84 @@
+{
+  "Name": "Callout Card Schema",
+  "Alias": "calloutCardSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-blueprint color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "b208b87f-b22b-4d80-a8bc-9b7915db2f54",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "2e6d6953-82b7-4eea-8214-57faa343c978",
+          "Alias": "title",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The title for this callout card.",
+          "Mandatory": true,
+          "Name": "Title"
+        },
+        {
+          "Key": "be688dbc-bd18-4cf3-b2e4-34a21cc236e9",
+          "Alias": "readMoreButton",
+          "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+          "Description": "The link & text for the button that links to the full web page for this callout card.",
+          "Mandatory": true,
+          "Name": "Read More Button",
+          "SortOrder": 3
+        },
+        {
+          "Key": "c70fcf04-acb6-48c0-8b02-411b26d418ee",
+          "Alias": "content",
+          "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+          "Description": "A brief paragraph or two explaining this callout card.",
+          "Mandatory": true,
+          "Name": "Content",
+          "SortOrder": 2
+        },
+        {
+          "Key": "f051e607-21ce-4670-aa0d-937fd161a483",
+          "Alias": "image",
+          "DataType": "umb://data-type/8e1084a1a39f4701a2ff4c8789583cb5",
+          "Description": "An image which illustrates this callout card.",
+          "Mandatory": true,
+          "Name": "Image",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/0a5c3e8a53554f10ba1292e2fb909fd3",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/8e1084a1a39f4701a2ff4c8789583cb5",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

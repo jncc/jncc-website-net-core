@@ -1,0 +1,19 @@
+{
+  "Name": "About Us Page",
+  "Alias": "AboutUsPage",
+  "File": "umb://template-file/AboutUsPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/7215d10d52bd40a7ac3c15d9b51e035e",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/AboutUsPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

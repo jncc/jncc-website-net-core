@@ -1,0 +1,14 @@
+{
+  "Name": "Member Account Page",
+  "Alias": "MemberAccountPage",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/9b3169feee6a4d108b809940b10f0ca5",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

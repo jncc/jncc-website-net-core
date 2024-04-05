@@ -1,0 +1,91 @@
+{
+  "Name": "Content Item Schema",
+  "Alias": "contentItemSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-blueprint color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "07e44860-022f-487b-a104-2a70dca2508a",
+      "Name": "Content",
+      "SortOrder": 1,
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "2a9c608a-9f4b-42ae-9797-660ae75b7dc5",
+          "Alias": "readMoreButton",
+          "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+          "Description": "Links to the full web page for this content item",
+          "MandatoryMessage": "",
+          "Name": "Link To",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "42836a1a-352b-4314-a823-107e2a41c3f4",
+          "Alias": "image",
+          "DataType": "umb://data-type/6a5ebd6f682f456290e4de0b5e299a48",
+          "Description": "An image which illustrates this content item.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Image",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "7b65891a-b2f6-4378-9746-56a8e2e7ecc1",
+          "Alias": "content",
+          "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+          "Description": "A brief paragraph or two explaining this content item.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "ecfbba26-36aa-45a2-9a25-c77c80114513",
+          "Alias": "headline",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Headline of the content item to display above the paragraph content below",
+          "MandatoryMessage": "",
+          "Name": "Headline",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/e38ff08980ca4cb48fa7ae8901c3f0ba",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/6a5ebd6f682f456290e4de0b5e299a48",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

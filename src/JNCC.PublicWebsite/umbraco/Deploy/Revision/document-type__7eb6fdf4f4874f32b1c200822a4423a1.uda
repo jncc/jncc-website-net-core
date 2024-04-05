@@ -1,0 +1,37 @@
+{
+  "Name": "Articulate Archive",
+  "Alias": "ArticulateArchive",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-list color-blue",
+  "Thumbnail": "folder.png",
+  "IsContainer": true,
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/297dda1fbe114ab787d218b49d089a5a"
+    ]
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [
+    {
+      "Key": "87b518ef-f0ba-4173-a413-e38eef32baa7",
+      "Alias": "umbracoUrlName",
+      "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Description": "The Umbraco Url Name for this node, this will be the prefix URL for each blog post",
+      "Name": "Umbraco Url Name"
+    }
+  ],
+  "Udi": "umb://document-type/7eb6fdf4f4874f32b1c200822a4423a1",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/297dda1fbe114ab787d218b49d089a5a"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

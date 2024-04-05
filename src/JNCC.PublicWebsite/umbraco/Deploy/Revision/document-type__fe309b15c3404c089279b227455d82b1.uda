@@ -1,0 +1,53 @@
+{
+  "Name": "Articles Section Rich Text Schema",
+  "Alias": "articlesSectionRichTextSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-edit color-black",
+  "Thumbnail": "folder.png",
+  "Description": "An Article Section that offers a Rich Text editor for generic written content.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/e5ae390499f04c57abcab8a2edf8aeb6",
+  "CompositionContentTypes": [
+    "umb://document-type/117afd9156b748f98b05bf7fc5f62729",
+    "umb://document-type/e5ae390499f04c57abcab8a2edf8aeb6"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "e46280fd-bb03-4b5e-b0db-3d6db1c8259f",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "013cccd1-a070-4c30-83fd-90c1628a48ed",
+          "Alias": "content",
+          "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
+          "Mandatory": true,
+          "Name": "Content",
+          "SortOrder": 3
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/fe309b15c3404c089279b227455d82b1",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/721586028a674e60b6b983f122f14a21",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/117afd9156b748f98b05bf7fc5f62729",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/e5ae390499f04c57abcab8a2edf8aeb6",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

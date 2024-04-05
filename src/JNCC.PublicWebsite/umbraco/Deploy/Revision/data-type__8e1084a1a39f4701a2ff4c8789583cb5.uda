@@ -1,0 +1,29 @@
+{
+  "Name": "Nested Content: Single Content Image",
+  "Alias": "",
+  "EditorAlias": "Umbraco.NestedContent",
+  "Configuration": {
+    "contentTypes": [
+      {
+        "ncAlias": "contentImageSchema",
+        "ncTabAlias": "Content",
+        "nameTemplate": "{{imageAlternativeText}}"
+      }
+    ],
+    "minItems": 0,
+    "maxItems": 1,
+    "confirmDeletes": false,
+    "showIcons": false,
+    "expandsOnLoad": true,
+    "hideLabel": false
+  },
+  "Udi": "umb://data-type/8e1084a1a39f4701a2ff4c8789583cb5",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/e3575e3222e74aaa9d518523d1c1032d",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

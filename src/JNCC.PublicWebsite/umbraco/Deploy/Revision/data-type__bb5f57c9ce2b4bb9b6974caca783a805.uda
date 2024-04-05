@@ -1,0 +1,26 @@
+{
+  "Name": "Text and Image Radiobox",
+  "Alias": "",
+  "EditorAlias": "Umbraco.RadioButtonList",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "items": [
+      {
+        "id": 254,
+        "value": "Left"
+      },
+      {
+        "id": 255,
+        "value": "Right"
+      },
+      {
+        "id": 256,
+        "value": "Top"
+      }
+    ]
+  },
+  "Udi": "umb://data-type/bb5f57c9ce2b4bb9b6974caca783a805",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

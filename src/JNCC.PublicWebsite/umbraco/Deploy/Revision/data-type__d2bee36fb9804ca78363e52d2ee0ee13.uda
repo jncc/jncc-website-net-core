@@ -1,0 +1,29 @@
+{
+  "Name": "Nested Content: Carousel",
+  "Alias": "",
+  "EditorAlias": "Umbraco.NestedContent",
+  "Configuration": {
+    "contentTypes": [
+      {
+        "ncAlias": "carouselItemSchema",
+        "ncTabAlias": "Content",
+        "nameTemplate": "{{headline}}"
+      }
+    ],
+    "minItems": 0,
+    "maxItems": 0,
+    "confirmDeletes": true,
+    "showIcons": true,
+    "expandsOnLoad": true,
+    "hideLabel": false
+  },
+  "Udi": "umb://data-type/d2bee36fb9804ca78363e52d2ee0ee13",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/8c064fad20e64e0c8e72a305bd1ec99a",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

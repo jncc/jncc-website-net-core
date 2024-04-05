@@ -1,0 +1,14 @@
+{
+  "Name": "Staff Profile Page",
+  "Alias": "StaffProfilePage",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/50d995569e1540ec86623c0ee88b15d9",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

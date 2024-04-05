@@ -1,0 +1,19 @@
+{
+  "Name": "Biz Dev Service Page",
+  "Alias": "BizDevServicePage",
+  "File": "umb://template-file/BizDevServicePage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/25f53633836a48c2ad01412e3639d6f4",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/BizDevServicePage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

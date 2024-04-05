@@ -1,0 +1,29 @@
+{
+  "Name": "Nested Content: Categorised Footer Links",
+  "Alias": "",
+  "EditorAlias": "Umbraco.NestedContent",
+  "Configuration": {
+    "contentTypes": [
+      {
+        "ncAlias": "categorisedFooterLinksSchema",
+        "ncTabAlias": "Content",
+        "nameTemplate": "{{heading}}"
+      }
+    ],
+    "minItems": 0,
+    "maxItems": 3,
+    "confirmDeletes": true,
+    "showIcons": true,
+    "expandsOnLoad": true,
+    "hideLabel": false
+  },
+  "Udi": "umb://data-type/21c2bc67675a4f16b7d1e1a5f1ac2d60",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/71398e3ab7e2407d9001f75e24f0837e",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

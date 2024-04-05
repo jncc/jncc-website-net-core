@@ -1,0 +1,38 @@
+{
+  "Name": "Stacked Content: Biz Dev Service Page",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "e38ff089-80ca-4cb4-8fa7-ae8901c3f0ba",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "ee1589a3-b2a8-4594-b205-3c7ba5a822f5",
+        "label": "Video",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/4fae47b05a4543109ae27c8063487870",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/e38ff08980ca4cb48fa7ae8901c3f0ba",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/ee1589a3b2a84594b2053c7ba5a822f5",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

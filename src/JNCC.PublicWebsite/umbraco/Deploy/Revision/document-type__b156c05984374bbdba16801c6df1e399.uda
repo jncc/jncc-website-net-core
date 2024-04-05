@@ -1,0 +1,54 @@
+{
+  "Name": "Science Details Section Rich Text Schema",
+  "Alias": "scienceDetailsSectionRichTextSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-edit color-black",
+  "Thumbnail": "folder.png",
+  "Description": "A Science Details Section that offers a Rich Text editor for generic written content.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+  "CompositionContentTypes": [
+    "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+    "umb://document-type/b44781dda6954950a5da2474796e070a"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "e15707e8-525c-4220-b76d-36daab120747",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "c5eb9b86-351f-4bf6-a5a6-5a88e78a3145",
+          "Alias": "content",
+          "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
+          "Description": "The main content for the section.",
+          "Mandatory": true,
+          "Name": "Content",
+          "SortOrder": 2
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/b156c05984374bbdba16801c6df1e399",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/721586028a674e60b6b983f122f14a21",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/b44781dda6954950a5da2474796e070a",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

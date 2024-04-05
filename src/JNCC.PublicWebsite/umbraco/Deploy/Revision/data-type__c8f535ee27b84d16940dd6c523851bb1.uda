@@ -1,0 +1,33 @@
+{
+  "Name": "Articulate Cropper",
+  "Alias": "",
+  "EditorAlias": "Umbraco.ImageCropper",
+  "Configuration": {
+    "crops": [
+      {
+        "alias": "blogPost",
+        "width": 200,
+        "height": 200
+      },
+      {
+        "alias": "thumbnail",
+        "width": 50,
+        "height": 50
+      },
+      {
+        "alias": "square",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "alias": "wide",
+        "width": 1024,
+        "height": 512
+      }
+    ]
+  },
+  "Udi": "umb://data-type/c8f535ee27b84d16940dd6c523851bb1",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

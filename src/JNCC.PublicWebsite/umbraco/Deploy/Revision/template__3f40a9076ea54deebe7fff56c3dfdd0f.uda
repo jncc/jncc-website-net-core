@@ -1,0 +1,14 @@
+{
+  "Name": "Generic Listing Page",
+  "Alias": "GenericListingPage",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/3f40a9076ea54deebe7fff56c3dfdd0f",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

@@ -1,0 +1,19 @@
+{
+  "Name": "Careers Landing Page",
+  "Alias": "CareersLandingPage",
+  "File": "umb://template-file/CareersLandingPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/49f3e41aa7ce4714811c937601669826",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/CareersLandingPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

@@ -1,0 +1,27 @@
+{
+  "Name": "Nested Content: Featured Resources",
+  "Alias": "",
+  "EditorAlias": "Umbraco.NestedContent",
+  "Configuration": {
+    "contentTypes": [
+      {
+        "ncAlias": "featuredResourceSchema",
+        "ncTabAlias": "Content",
+        "nameTemplate": "{{headline}}"
+      }
+    ],
+    "confirmDeletes": true,
+    "showIcons": true,
+    "expandsOnLoad": true,
+    "hideLabel": false
+  },
+  "Udi": "umb://data-type/c94bb35b33484e798969c76f024d9726",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/f72adea7e8ef45d1b8c64cc8cd994e57",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

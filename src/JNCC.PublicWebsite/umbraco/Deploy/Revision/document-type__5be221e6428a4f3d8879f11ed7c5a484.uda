@@ -1,0 +1,48 @@
+{
+  "Name": "Science iFrame Sub Section Rich Text Schema",
+  "Alias": "scienceIFrameSubSectionRichTextSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-edit color-black",
+  "Thumbnail": "folder.png",
+  "Description": "A Science iFrame Sub Section that offers a Rich Text editor for generic written content.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b",
+  "CompositionContentTypes": [
+    "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "6fd73a21-10e0-4187-b98e-44cb5d65a3e8",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "d86ebc47-8e08-4f1a-8732-f7de67c9c1c2",
+          "Alias": "content",
+          "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
+          "Description": "The main content for the section.",
+          "Name": "Content",
+          "SortOrder": 2
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/5be221e6428a4f3d8879f11ed7c5a484",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/721586028a674e60b6b983f122f14a21",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

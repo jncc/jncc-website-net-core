@@ -1,0 +1,56 @@
+{
+  "Name": "SEO Composition",
+  "Alias": "seoComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "5e4ab89d-e0f1-4ac4-a02b-1b14918b63aa",
+      "Name": "SEO",
+      "SortOrder": 200,
+      "Alias": "sEO",
+      "PropertyTypes": [
+        {
+          "Key": "5d032642-5579-4dc3-9f67-a1d3b50e46fa",
+          "Alias": "noIndex",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "The default value for this is False, if the checkbox is set to true the NoIndex property will be added to this page",
+          "Name": "NoIndex"
+        },
+        {
+          "Key": "ee0ab65f-4a62-439b-b03f-4a999cbca78b",
+          "Alias": "seoSettings",
+          "DataType": "umb://data-type/e8fe592edf504a3d837df0a1d81004bd",
+          "Description": "",
+          "Name": "SEO Settings",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e8fe592edf504a3d837df0a1d81004bd",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

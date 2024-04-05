@@ -1,0 +1,68 @@
+{
+  "Name": "Custom Error Page",
+  "Alias": "customErrorPage",
+  "DefaultTemplate": "umb://template/1e5d77556ab741dc8e77f14da4d9a103",
+  "AllowedTemplates": [
+    "umb://template/1e5d77556ab741dc8e77f14da4d9a103"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-application-error color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page for custom errors like Page Not Found.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "dd67ce19-79de-4827-bba6-aa8d99b5ea55",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "240ccaa5-9280-400f-8213-e4d1fb8981b5",
+          "Alias": "mainContent",
+          "DataType": "umb://data-type/b3254cb2d5d84bf5b46174bc93a0d16b",
+          "Description": "The main content of the page.",
+          "Name": "Main Content",
+          "SortOrder": 2
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/c13bce713a5d4370abc3e9c1aabce4ec",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/b3254cb2d5d84bf5b46174bc93a0d16b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/1e5d77556ab741dc8e77f14da4d9a103",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

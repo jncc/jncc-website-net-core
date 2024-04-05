@@ -1,0 +1,48 @@
+{
+  "Name": "Reset Password Page",
+  "Alias": "resetPasswordPage",
+  "DefaultTemplate": "umb://template/e820f833bf0e42b9904a57348e505df3",
+  "AllowedTemplates": [
+    "umb://template/e820f833bf0e42b9904a57348e505df3"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-help color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page members who have forgot their password can use to retrieve it",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67"
+  ],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/8aa6b9d082d842029594c00e732813d6",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/e820f833bf0e42b9904a57348e505df3",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

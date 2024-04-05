@@ -1,0 +1,130 @@
+{
+  "Name": "To Be Deleted",
+  "Alias": "toBeDeleted",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-trash color-red",
+  "Thumbnail": "folder.png",
+  "Description": "A container node that allows pages to be deleted via Courier",
+  "Permissions": {
+    "AllowedAtRoot": true,
+    "AllowedChildContentTypes": [
+      "umb://document-type/50ea99838bf84016bcffeb652534ed3c",
+      "umb://document-type/cb35e9f10716438f822797d45c9dde36",
+      "umb://document-type/7eb6fdf4f4874f32b1c200822a4423a1",
+      "umb://document-type/93265f0038e64cfaa5dce7f125d3bc4f",
+      "umb://document-type/93d3ec9b473f4f8fa077b940f9fd1afa",
+      "umb://document-type/6adcfc8336ec45a498b098aea7fa1fcf",
+      "umb://document-type/71bb6811715f43be9fa8268f06ec23b3",
+      "umb://document-type/297dda1fbe114ab787d218b49d089a5a",
+      "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18",
+      "umb://document-type/f446c13c75eb4970a311e29f3a91096c",
+      "umb://document-type/c13bce713a5d4370abc3e9c1aabce4ec",
+      "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3",
+      "umb://document-type/0ebc2fcd60aa43d4a48a960f90898768",
+      "umb://document-type/5f83c74572b54fd3953d5f1504567a4e",
+      "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2",
+      "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a",
+      "umb://document-type/f30c81ec37f040309fffd94cef6a7786",
+      "umb://document-type/11fdff54fcb2423b879b93ea2b233c73",
+      "umb://document-type/098d59e990db47cba5c860f59a3339f7",
+      "umb://document-type/8aa6b9d082d842029594c00e732813d6",
+      "umb://document-type/7c435c3931f0450f87663a3a1bb90143",
+      "umb://document-type/91a95559dc334e0386fbddfb0a26b4ca",
+      "umb://document-type/81786f6a760340b4910e7b6c1c937249",
+      "umb://document-type/a591f2b082f9459abf2ab01e7c0745c2",
+      "umb://document-type/6f223ecf3ef54c33bb28029fd537b63f",
+      "umb://document-type/a08289f832154ddebb00d69cd16d7b1c",
+      "umb://document-type/c9f50924f7844ba2a9520f559db4cc55"
+    ]
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/3b8c062e45714cd9b51e39635ff8ca3e",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/098d59e990db47cba5c860f59a3339f7"
+    },
+    {
+      "Udi": "umb://document-type/0ebc2fcd60aa43d4a48a960f90898768"
+    },
+    {
+      "Udi": "umb://document-type/11fdff54fcb2423b879b93ea2b233c73"
+    },
+    {
+      "Udi": "umb://document-type/297dda1fbe114ab787d218b49d089a5a"
+    },
+    {
+      "Udi": "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2"
+    },
+    {
+      "Udi": "umb://document-type/50ea99838bf84016bcffeb652534ed3c"
+    },
+    {
+      "Udi": "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3"
+    },
+    {
+      "Udi": "umb://document-type/5f83c74572b54fd3953d5f1504567a4e"
+    },
+    {
+      "Udi": "umb://document-type/6adcfc8336ec45a498b098aea7fa1fcf"
+    },
+    {
+      "Udi": "umb://document-type/6f223ecf3ef54c33bb28029fd537b63f"
+    },
+    {
+      "Udi": "umb://document-type/71bb6811715f43be9fa8268f06ec23b3"
+    },
+    {
+      "Udi": "umb://document-type/7c435c3931f0450f87663a3a1bb90143"
+    },
+    {
+      "Udi": "umb://document-type/7eb6fdf4f4874f32b1c200822a4423a1"
+    },
+    {
+      "Udi": "umb://document-type/81786f6a760340b4910e7b6c1c937249"
+    },
+    {
+      "Udi": "umb://document-type/8aa6b9d082d842029594c00e732813d6"
+    },
+    {
+      "Udi": "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18"
+    },
+    {
+      "Udi": "umb://document-type/91a95559dc334e0386fbddfb0a26b4ca"
+    },
+    {
+      "Udi": "umb://document-type/93265f0038e64cfaa5dce7f125d3bc4f"
+    },
+    {
+      "Udi": "umb://document-type/93d3ec9b473f4f8fa077b940f9fd1afa"
+    },
+    {
+      "Udi": "umb://document-type/a08289f832154ddebb00d69cd16d7b1c"
+    },
+    {
+      "Udi": "umb://document-type/a591f2b082f9459abf2ab01e7c0745c2"
+    },
+    {
+      "Udi": "umb://document-type/c13bce713a5d4370abc3e9c1aabce4ec"
+    },
+    {
+      "Udi": "umb://document-type/c9f50924f7844ba2a9520f559db4cc55"
+    },
+    {
+      "Udi": "umb://document-type/cb35e9f10716438f822797d45c9dde36"
+    },
+    {
+      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    },
+    {
+      "Udi": "umb://document-type/f30c81ec37f040309fffd94cef6a7786"
+    },
+    {
+      "Udi": "umb://document-type/f446c13c75eb4970a311e29f3a91096c"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

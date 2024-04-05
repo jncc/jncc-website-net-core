@@ -1,0 +1,35 @@
+{
+  "Name": "Dropdown: Article Type",
+  "Alias": "",
+  "EditorAlias": "Umbraco.DropDown.Flexible",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "multiple": false,
+    "items": [
+      {
+        "id": 18,
+        "value": "News Item"
+      },
+      {
+        "id": 19,
+        "value": "Case Study"
+      },
+      {
+        "id": 20,
+        "value": "Press Release"
+      },
+      {
+        "id": 21,
+        "value": "Event"
+      },
+      {
+        "id": 22,
+        "value": "Blog"
+      }
+    ]
+  },
+  "Udi": "umb://data-type/70ad520f1e0f4335aca8b413762414c0",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

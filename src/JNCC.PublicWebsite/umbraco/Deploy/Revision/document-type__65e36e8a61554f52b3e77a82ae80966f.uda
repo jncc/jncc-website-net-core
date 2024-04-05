@@ -1,0 +1,85 @@
+{
+  "Name": "Science Details Sub Section Image & Rich Text Schema",
+  "Alias": "scienceDetailsSubSectionImageRichTextSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-edit color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "A Science Details Section that offers an Image picker & Rich Text editor for generic written content.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+  "CompositionContentTypes": [
+    "umb://document-type/79a3f4992f234de492159cffca5a38a9"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "5d0d80ca-bdc1-4f6d-9dac-8136cd149be2",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "69d01751-a8e1-4546-aaec-99cabda62423",
+          "Alias": "content",
+          "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
+          "Description": "",
+          "Name": "Content",
+          "SortOrder": 4
+        },
+        {
+          "Key": "71036d14-9dfd-4b91-b45b-4c7dff5c63aa",
+          "Alias": "image",
+          "DataType": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+          "Description": "",
+          "Name": "Image",
+          "SortOrder": 2
+        },
+        {
+          "Key": "b20365b3-edd4-4385-b20b-e19b5a889bc1",
+          "Alias": "imagePosition",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Accepted written positions are: 'Left', 'Right', 'Top'",
+          "Mandatory": true,
+          "Name": "Image Position",
+          "SortOrder": 3
+        },
+        {
+          "Key": "ceec7c86-98d3-43a4-aabc-bd80eaaadcb8",
+          "Alias": "subSections",
+          "DataType": "umb://data-type/329caded29b4499ca6ddb9184f6b421f",
+          "Description": "Optional sub sections which will be rendered below the content of this section.",
+          "Name": "Sub Sections",
+          "SortOrder": 5
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/65e36e8a61554f52b3e77a82ae80966f",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/329caded29b4499ca6ddb9184f6b421f",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/721586028a674e60b6b983f122f14a21",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

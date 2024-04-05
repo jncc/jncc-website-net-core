@@ -1,0 +1,57 @@
+{
+  "Name": "Science Slider Schema - Heading & Text",
+  "Alias": "scienceSliderSchemaHeadingText",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-notepad-alt color-black",
+  "Thumbnail": "folder.png",
+  "Description": "A Slider item consisting of an Heading & Rich Text editor.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "e55b77c8-185c-4035-9980-46aecf5b3bcc",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "083bdae1-bee2-4efa-8eac-e89b1a2d71a4",
+          "Alias": "text",
+          "DataType": "umb://data-type/1c4c9c33a8d647e888ec317c67001d9e",
+          "Description": "",
+          "Name": "Text",
+          "SortOrder": 1
+        },
+        {
+          "Key": "8ecf7853-d708-4e85-a3bb-1df05cf4fd85",
+          "Alias": "heading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Name": "Heading"
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/457390dfaf224eee92e3ea8cd69ed6ed",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/1c4c9c33a8d647e888ec317c67001d9e",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

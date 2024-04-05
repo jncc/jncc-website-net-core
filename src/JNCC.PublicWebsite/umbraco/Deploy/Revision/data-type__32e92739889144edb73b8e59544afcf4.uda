@@ -1,0 +1,88 @@
+{
+  "Name": "Stacked Content: Article Page",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "57556c51-78a6-497c-bce7-5f0a3f510388",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "981336bb-3188-4bd1-8a62-205fd6dfa5ef",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "0142b36f-7da5-49c5-90cf-0868057dc985",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "fe309b15-c340-4c08-9279-b227455d82b1",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "d1ba32b8-ab93-4101-928a-4b0f60e65644",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "e38ff089-80ca-4cb4-8fa7-ae8901c3f0ba",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "ee1589a3-b2a8-4594-b205-3c7ba5a822f5",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/32e92739889144edb73b8e59544afcf4",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/0142b36f7da549c590cf0868057dc985",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/57556c5178a6497cbce75f0a3f510388",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/981336bb31884bd18a62205fd6dfa5ef",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/d1ba32b8ab934101928a4b0f60e65644",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/e38ff08980ca4cb48fa7ae8901c3f0ba",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/ee1589a3b2a84594b2053c7ba5a822f5",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/fe309b15c3404c089279b227455d82b1",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

@@ -1,0 +1,25 @@
+{
+  "Name": "Articulate Authors",
+  "Alias": "ArticulateAuthors",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-user-females-alt color-blue",
+  "Thumbnail": "folder.png",
+  "IsContainer": true,
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/93265f0038e64cfaa5dce7f125d3bc4f"
+    ]
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/93d3ec9b473f4f8fa077b940f9fd1afa",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/93265f0038e64cfaa5dce7f125d3bc4f"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

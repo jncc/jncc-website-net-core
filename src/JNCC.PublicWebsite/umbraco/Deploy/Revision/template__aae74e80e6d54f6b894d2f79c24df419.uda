@@ -1,0 +1,19 @@
+{
+  "Name": "Individual Job Page",
+  "Alias": "IndividualJobPage",
+  "File": "umb://template-file/IndividualJobPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/aae74e80e6d54f6b894d2f79c24df419",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/IndividualJobPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

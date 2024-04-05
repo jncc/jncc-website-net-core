@@ -1,0 +1,217 @@
+{
+  "Name": "Staff Profile Page",
+  "Alias": "StaffProfilePage",
+  "DefaultTemplate": "umb://template/50d995569e1540ec86623c0ee88b15d9",
+  "AllowedTemplates": [
+    "umb://template/50d995569e1540ec86623c0ee88b15d9"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-user color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page for an individual JNCC staff member.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+    "umb://document-type/96135853b8f04e8f91728b6e72dd903b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "35cae7da-a1ba-4907-a3ad-6ce0e3f4fdcb",
+      "Name": "Research",
+      "SortOrder": 6,
+      "Alias": "research",
+      "PropertyTypes": [
+        {
+          "Key": "9ef53262-d736-4080-9298-31077348ac4c",
+          "Alias": "researchContent",
+          "DataType": "umb://data-type/2227963b9f2549b5a535ef2c119cebe0",
+          "Description": "",
+          "Name": "Content"
+        }
+      ]
+    },
+    {
+      "Key": "5a20c038-3774-48ad-94f1-001c58058eb0",
+      "Name": "Directory Listing",
+      "SortOrder": 2,
+      "Alias": "directoryListing",
+      "PropertyTypes": [
+        {
+          "Key": "0d2c807c-babd-4e16-8ca9-7f75bba1ba33",
+          "Alias": "sortName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The value used to sort an item in Staff Directory Page.\n\nIf no value is specified then the full name will be used followed by the node name.\n\nThis property is useful if the profile should be sorted without a title. For example: \"Dr. Jane Smith\" would typically be sorted under D, but specifying the value \"Jane Smith\" would sort the profile under J.",
+          "Name": "Sort Name",
+          "SortOrder": 1
+        },
+        {
+          "Key": "bb9df8df-0470-42a2-b6b0-a27e83f43bb8",
+          "Alias": "directoryListingContent",
+          "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+          "Description": "A brief paragraph describing this staff profile when listed on the Staff Directory Page.",
+          "Name": "Content"
+        }
+      ]
+    },
+    {
+      "Key": "76238388-01d9-4f47-99da-97b867fd3e25",
+      "Name": "Biography",
+      "SortOrder": 3,
+      "Alias": "biography",
+      "PropertyTypes": [
+        {
+          "Key": "c15feb29-4571-4057-90d2-691077ca4a01",
+          "Alias": "biographyContent",
+          "DataType": "umb://data-type/2227963b9f2549b5a535ef2c119cebe0",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Content"
+        }
+      ]
+    },
+    {
+      "Key": "847a9fc3-fd04-4716-870a-64d612b21ff5",
+      "Name": "Categorisation",
+      "SortOrder": 1,
+      "Alias": "categorisation",
+      "PropertyTypes": [
+        {
+          "Key": "940fec30-8c01-4586-b2c1-b0ff2c08b9f3",
+          "Alias": "profileLocations",
+          "DataType": "umb://data-type/f3150225716d431785187cdd1de21222",
+          "Description": "The location(s) this staff member commonly works at.",
+          "Name": "Location(s)",
+          "SortOrder": 1
+        },
+        {
+          "Key": "db313a7c-af9a-40c6-b992-b6ac1489306d",
+          "Alias": "profileTeams",
+          "DataType": "umb://data-type/76e15fc07d1b4d83b839bc103212a0c6",
+          "Description": "The team(s) this staff member works for.",
+          "Name": "Team(s)",
+          "SortOrder": 2
+        }
+      ]
+    },
+    {
+      "Key": "be1d6682-2103-413f-beb5-fb6285482d1b",
+      "Name": "General",
+      "Alias": "general",
+      "PropertyTypes": [
+        {
+          "Key": "09ad0935-bf56-4939-9bd9-e3f723e293da",
+          "Alias": "jobTitle",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Job Title",
+          "SortOrder": 1
+        },
+        {
+          "Key": "3fc68d07-8bec-4112-b3eb-d682afa0835e",
+          "Alias": "profilePicture",
+          "DataType": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Profile Picture",
+          "SortOrder": 2
+        },
+        {
+          "Key": "b17351a9-877f-479c-84c2-c5f6fae21d0e",
+          "Alias": "fullName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The full name of the staff member. If no value is authored the page name is used instead.\n\nThis is useful if two staff members share the same name. Umbraco page names must be unique when they share a parent page such Staff Directory Page.\n\nThis allows authors to display all \"John Smith\"s as \"John Smith\" rather than; \"John Smith\", \"John Smith (1)\", \"John Smith (2)\".",
+          "Name": "Full Name"
+        }
+      ]
+    },
+    {
+      "Key": "fa6d203b-5569-451a-b72e-5c6e2865e1e0",
+      "Name": "Projects",
+      "SortOrder": 4,
+      "Alias": "projects",
+      "PropertyTypes": [
+        {
+          "Key": "92b09b6c-39d3-4578-9a7d-5f4b1f3f9912",
+          "Alias": "projectsContent",
+          "DataType": "umb://data-type/2227963b9f2549b5a535ef2c119cebe0",
+          "Description": "",
+          "Name": "Content"
+        }
+      ]
+    },
+    {
+      "Key": "fafa8aec-3357-4fd2-84da-2ffbb74a3f43",
+      "Name": "Publications",
+      "SortOrder": 5,
+      "Alias": "publications",
+      "PropertyTypes": [
+        {
+          "Key": "69fb8b24-b0b4-45e1-92b8-61f2f0d190f9",
+          "Alias": "publicationsContent",
+          "DataType": "umb://data-type/2227963b9f2549b5a535ef2c119cebe0",
+          "Description": "",
+          "Name": "Content"
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/c9f50924f7844ba2a9520f559db4cc55",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/2227963b9f2549b5a535ef2c119cebe0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/76e15fc07d1b4d83b839bc103212a0c6",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/f3150225716d431785187cdd1de21222",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/50d995569e1540ec86623c0ee88b15d9",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

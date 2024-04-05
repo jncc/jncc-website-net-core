@@ -1,0 +1,59 @@
+{
+  "Name": "Rich Text Editor: Cookie Banner",
+  "Alias": "",
+  "EditorAlias": "Umbraco.TinyMCE",
+  "Configuration": {
+    "editor": {
+      "toolbar": [
+        "removeformat",
+        "undo",
+        "redo",
+        "cut",
+        "copy",
+        "paste",
+        "styleselect",
+        "bold",
+        "italic",
+        "alignleft",
+        "aligncenter",
+        "alignright",
+        "alignjustify",
+        "link",
+        "unlink",
+        "subscript",
+        "superscript",
+        "charmap"
+      ],
+      "stylesheets": [
+        "/css/floats.css",
+        "/css/headings.css",
+        "/css/highlighting.css"
+      ],
+      "dimensions": {
+        "height": 100
+      },
+      "maxImageSize": 500,
+      "mode": "classic"
+    },
+    "overlaySize": "small",
+    "hideLabel": false,
+    "ignoreUserStartNodes": false
+  },
+  "Udi": "umb://data-type/92c2c1022ede4241b11952c06687bfed",
+  "Dependencies": [
+    {
+      "Udi": "umb://stylesheet/floats.css",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://stylesheet/headings.css",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://stylesheet/highlighting.css",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

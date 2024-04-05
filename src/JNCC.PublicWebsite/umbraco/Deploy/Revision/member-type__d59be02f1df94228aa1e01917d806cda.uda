@@ -1,0 +1,54 @@
+{
+  "Name": "Member",
+  "Alias": "Member",
+  "Icon": "icon-user",
+  "Thumbnail": "icon-user",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "0756729d-d665-46e3-b84a-37aceaa614f8",
+      "Name": "Membership",
+      "SortOrder": 1,
+      "Alias": "membership",
+      "PropertyTypes": [
+        {
+          "Key": "0000001c-0000-0000-0000-000000000000",
+          "Alias": "umbracoMemberComments",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Name": "Comments"
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [
+    {
+      "Key": "1f7bcae4-935c-490b-a616-67a872efbd80",
+      "Alias": "umbracoMemberPasswordRetrievalQuestion",
+      "DataType": "umb://data-type/f0bc4bfbb49940d6ba86058885a5178c",
+      "Name": "Password Question",
+      "SortOrder": 1
+    },
+    {
+      "Key": "2b715b9a-559e-4dc1-b476-9159ef66738b",
+      "Alias": "umbracoMemberPasswordRetrievalAnswer",
+      "DataType": "umb://data-type/f0bc4bfbb49940d6ba86058885a5178c",
+      "Name": "Password Answer"
+    }
+  ],
+  "Udi": "umb://member-type/d59be02f1df94228aa1e01917d806cda",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/f0bc4bfbb49940d6ba86058885a5178c",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.MemberTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

@@ -1,0 +1,27 @@
+{
+  "Name": "Dropdown: Image Position",
+  "Alias": "",
+  "EditorAlias": "Umbraco.DropDown.Flexible",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "multiple": false,
+    "items": [
+      {
+        "id": 314,
+        "value": "Left"
+      },
+      {
+        "id": 315,
+        "value": "Right"
+      },
+      {
+        "id": 316,
+        "value": "Top"
+      }
+    ]
+  },
+  "Udi": "umb://data-type/8682684c8a264e22b46500b164f63805",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

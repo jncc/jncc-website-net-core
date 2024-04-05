@@ -1,0 +1,83 @@
+{
+  "Name": "Carousel Item Schema",
+  "Alias": "carouselItemSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-blueprint color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "Schema for items within a carousel.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "0c35b9a8-07b4-4233-8645-5c59f1b07344",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "5e8171df-49d3-4553-b9dc-e19847cfb4c2",
+          "Alias": "readMoreButton",
+          "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+          "Description": "An optional link & text for the button that links to the full web page for this carousel item.",
+          "Name": "Read More Button",
+          "SortOrder": 3
+        },
+        {
+          "Key": "939b6e3e-b1ec-4472-90d2-1a82be5ec98f",
+          "Alias": "headline",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "A headline to be displayed over the image.",
+          "Mandatory": true,
+          "Name": "Headline"
+        },
+        {
+          "Key": "c500b8c3-069b-400c-adea-991c1b53ff2c",
+          "Alias": "image",
+          "DataType": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+          "Description": "An image to be used in the background for this carousel item.",
+          "Mandatory": true,
+          "Name": "Image",
+          "SortOrder": 1
+        },
+        {
+          "Key": "f7e458c8-f54a-41b8-8cb5-e326dc6af796",
+          "Alias": "description",
+          "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+          "Description": "An optional short paragraph to describe this carousel item.",
+          "Name": "Description",
+          "SortOrder": 2
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/8c064fad20e64e0c8e72a305bd1ec99a",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

@@ -1,0 +1,67 @@
+{
+  "Name": "Page Hero Carousel Composition",
+  "Alias": "pageHeroCarouselComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "003fa565-c008-4334-a175-ae43fa5f5fbc",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "684348e3-5d76-4b39-9c3b-63ec7b34e848",
+          "Alias": "heroContent",
+          "DataType": "umb://data-type/f48ef600c7f9442690e80ec7cf5d0ca2",
+          "Description": "A brief paragraph to be displayed within the hero carousel.",
+          "Name": "Hero Content",
+          "SortOrder": 1
+        },
+        {
+          "Key": "a4a11581-7005-40dd-b474-b4fa4d7b24b7",
+          "Alias": "headline",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "A headline which appears within the Hero Carousel.",
+          "Name": "Headline"
+        },
+        {
+          "Key": "d59ade67-6b5b-4602-80ff-f7e89ea9420a",
+          "Alias": "heroImages",
+          "DataType": "umb://data-type/8d1243b8c08049bdb328064fe30445a0",
+          "Description": "Images to be displayed in the hero image carousel",
+          "Name": "Hero Images",
+          "SortOrder": 2
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/2aee85c06c864da396b922d63a950407",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/8d1243b8c08049bdb328064fe30445a0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/f48ef600c7f9442690e80ec7cf5d0ca2",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

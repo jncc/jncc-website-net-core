@@ -1,0 +1,54 @@
+{
+  "Name": "Science Details Section Image Gallery Schema",
+  "Alias": "scienceDetailsSectionImageGallerySchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-photo-album color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "A Science Details Section for authoring an Image Gallery.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+  "CompositionContentTypes": [
+    "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+    "umb://document-type/b44781dda6954950a5da2474796e070a"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "de4ff86f-d17a-49db-a429-4bfc144d7af7",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "fbad3bca-36cf-44cd-84e4-58592655ef7c",
+          "Alias": "images",
+          "DataType": "umb://data-type/8d1243b8c08049bdb328064fe30445a0",
+          "Description": "The images used for the image gallery.",
+          "Mandatory": true,
+          "Name": "Images",
+          "SortOrder": 2
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/d4506ede08e74f71aa7383e49e86c88d",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/8d1243b8c08049bdb328064fe30445a0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/b44781dda6954950a5da2474796e070a",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

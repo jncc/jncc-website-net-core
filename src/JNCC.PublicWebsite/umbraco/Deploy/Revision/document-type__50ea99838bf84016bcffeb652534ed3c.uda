@@ -1,0 +1,140 @@
+{
+  "Name": "About Us Page",
+  "Alias": "aboutUsPage",
+  "DefaultTemplate": "umb://template/7215d10d52bd40a7ac3c15d9b51e035e",
+  "AllowedTemplates": [
+    "umb://template/7215d10d52bd40a7ac3c15d9b51e035e"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-user-females color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A section page which contains information about JNCC.",
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18",
+      "umb://document-type/f446c13c75eb4970a311e29f3a91096c",
+      "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3",
+      "umb://document-type/5f83c74572b54fd3953d5f1504567a4e",
+      "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a",
+      "umb://document-type/098d59e990db47cba5c860f59a3339f7",
+      "umb://document-type/a08289f832154ddebb00d69cd16d7b1c"
+    ]
+  },
+  "Parent": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+    "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+    "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+    "umb://document-type/e7e93a2f706740bba19b7fc212604a32"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "366ba636-916b-410a-9da4-0c92f25bf343",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "a1188a8d-c755-4558-82cd-331c722152e8",
+          "Alias": "preamble",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "Introductory content regards JNCC.",
+          "Name": "Preamble",
+          "SortOrder": 2
+        },
+        {
+          "Key": "e1fec9bc-4022-4da6-a921-35eee00f8e18",
+          "Alias": "mainContent",
+          "DataType": "umb://data-type/4fae47b05a4543109ae27c8063487870",
+          "Description": "The main content of the page.",
+          "Mandatory": true,
+          "Name": "Main Content",
+          "SortOrder": 3
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/50ea99838bf84016bcffeb652534ed3c",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/4fae47b05a4543109ae27c8063487870",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/098d59e990db47cba5c860f59a3339f7"
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3"
+    },
+    {
+      "Udi": "umb://document-type/5f83c74572b54fd3953d5f1504567a4e"
+    },
+    {
+      "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18"
+    },
+    {
+      "Udi": "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/a08289f832154ddebb00d69cd16d7b1c"
+    },
+    {
+      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    },
+    {
+      "Udi": "umb://document-type/e7e93a2f706740bba19b7fc212604a32",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/f446c13c75eb4970a311e29f3a91096c"
+    },
+    {
+      "Udi": "umb://template/7215d10d52bd40a7ac3c15d9b51e035e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

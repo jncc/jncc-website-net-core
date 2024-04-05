@@ -1,0 +1,196 @@
+{
+  "Name": "Article Page",
+  "Alias": "ArticlePage",
+  "DefaultTemplate": "umb://template/901269c8d46f4e9387172347a1f7acf6",
+  "AllowedTemplates": [
+    "umb://template/901269c8d46f4e9387172347a1f7acf6"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-newspaper-alt color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page for news items & case studies.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+    "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+    "umb://document-type/e7e93a2f706740bba19b7fc212604a32"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "182bca7c-48df-4f29-b6cf-365f34043b5b",
+      "Name": "Landing Page",
+      "SortOrder": 51,
+      "Alias": "landingPage",
+      "PropertyTypes": [
+        {
+          "Key": "e6c2a0a8-3d65-4950-a103-7afcfb30a976",
+          "Alias": "landingPageContent",
+          "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+          "Description": "A brief paragraph describing this article when listed on the News and Insights Landing Page.\n(MAX 150 CHARACTERS)",
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "504ce2ba-1851-47b4-abf3-20d301d337fc",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "a9d9e7dc-2d99-4646-87cb-af4a68fe56ce",
+          "Alias": "showTableOfContents",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Show Table of Contents",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "ca0e51d0-9b6d-4429-a1df-7d0481c48e87",
+          "Alias": "mainContentBlocks",
+          "DataType": "umb://data-type/32e92739889144edb73b8e59544afcf4",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Main Content Blocks",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "d1e8aab2-2b23-412a-9e9d-7021643b01a7",
+          "Alias": "mainContent",
+          "DataType": "umb://data-type/b3254cb2d5d84bf5b46174bc93a0d16b",
+          "Description": "The main content for the page.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Main Content",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "5e0d367a-0051-40a1-9e10-f94f8f708c27",
+      "Name": "Categorisation",
+      "SortOrder": 1,
+      "Alias": "categorisation",
+      "PropertyTypes": [
+        {
+          "Key": "118dfd97-07d5-4294-9919-7c5e1921ddad",
+          "Alias": "articleThemes",
+          "DataType": "umb://data-type/05308cbfff414b2888eba30a54d0bf27",
+          "Description": "The theme(s) related to this article page.",
+          "MandatoryMessage": "",
+          "Name": "Themes",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "65045c36-4817-4498-8723-a1ecc7a24494",
+          "Alias": "articleType",
+          "DataType": "umb://data-type/70ad520f1e0f4335aca8b413762414c0",
+          "Description": "Classifies the article so it can be filtered by users.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Article Type",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "983d8b62-85f0-4ab6-985d-4e16ed014086",
+          "Alias": "publishDate",
+          "DataType": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+          "Description": "This is the displayed publish date of the page. It may also also be used for sorting the article chronologically.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Publish Date",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "c3bf71d0-91c4-423a-8090-50c451eb781f",
+          "Alias": "reviewedDate",
+          "DataType": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+          "Description": "The date the page last had a meaningful editorial review.",
+          "MandatoryMessage": "",
+          "Name": "Reviewed Date",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/cb35e9f10716438f822797d45c9dde36",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/05308cbfff414b2888eba30a54d0bf27",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/32e92739889144edb73b8e59544afcf4",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/70ad520f1e0f4335aca8b413762414c0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/b3254cb2d5d84bf5b46174bc93a0d16b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/e7e93a2f706740bba19b7fc212604a32",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/901269c8d46f4e9387172347a1f7acf6",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

@@ -1,0 +1,58 @@
+{
+  "Name": "Stacked Content: Science iFrame Section Sub Sections",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "84099b3e-4375-4f0c-b02f-77d095e6160a",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "cee98260-3c18-4a19-a8d1-7528d9e824a3",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "5be221e6-428a-4f3d-8879-f11ed7c5a484",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "e171450c-4294-47bd-9307-5a9f6d3e282a",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/0d96fcefbc654210962c7a6f370c7871",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/5be221e6428a4f3d8879f11ed7c5a484",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/84099b3e43754f0cb02f77d095e6160a",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/cee982603c184a19a8d17528d9e824a3",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/e171450c429447bd93075a9f6d3e282a",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

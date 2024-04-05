@@ -1,0 +1,98 @@
+{
+  "Name": "Staff Directory Page",
+  "Alias": "StaffDirectoryPage",
+  "DefaultTemplate": "umb://template/be3cf044fb5446039431e530699192c1",
+  "AllowedTemplates": [
+    "umb://template/be3cf044fb5446039431e530699192c1"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-folders color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A directory page for listing staff profile pages.",
+  "IsContainer": true,
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/c9f50924f7844ba2a9520f559db4cc55"
+    ]
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "1a1b2e6e-d840-49dd-b7ea-dec630888568",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "9b2f38dd-34e9-4ab0-aae5-89d4f1b77445",
+          "Alias": "preamble",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "Introductory content that appears before the staff directory profiles.",
+          "Name": "Preamble",
+          "SortOrder": 2
+        }
+      ]
+    },
+    {
+      "Key": "3c7be3fb-673c-4be6-88f1-1ddc9f219ed0",
+      "Name": "Directory Listing",
+      "SortOrder": 1,
+      "Alias": "directoryListing",
+      "PropertyTypes": [
+        {
+          "Key": "b4860e24-e08e-4c34-89b8-c2a902fdbe77",
+          "Alias": "profilesPerPage",
+          "DataType": "umb://data-type/d8afe33370ac4f7683ee729ef6815d8c",
+          "Description": "Determines how many profiles should be shown per page by default.",
+          "Name": "Profiles Per Page"
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/a08289f832154ddebb00d69cd16d7b1c",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/d8afe33370ac4f7683ee729ef6815d8c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/c9f50924f7844ba2a9520f559db4cc55"
+    },
+    {
+      "Udi": "umb://template/be3cf044fb5446039431e530699192c1",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}
