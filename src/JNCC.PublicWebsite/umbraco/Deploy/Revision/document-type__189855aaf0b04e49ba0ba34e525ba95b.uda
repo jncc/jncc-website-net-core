@@ -1,0 +1,58 @@
+{
+  "Name": "Science iFrame Section Base Schema",
+  "Alias": "scienceIframeSectionBaseSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "A base for all other Section Schemas for a Science iFrame Page. This should be considered an abstract and not used by authors.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "64f20f19-ede7-47aa-a31c-8f001e422475",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "5d93c6dc-7979-4426-953d-4b03c7d758dd",
+          "Alias": "headline",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The headline for the section. This is used in the generated Table of Contents.",
+          "Mandatory": true,
+          "Name": "Headline"
+        },
+        {
+          "Key": "e42b4237-ed0a-447d-b0ee-677bffa034bd",
+          "Alias": "hideHeadline",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "When selected, this will hide the headline from the table of contents and header of the block",
+          "Name": "Hide Headline?",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

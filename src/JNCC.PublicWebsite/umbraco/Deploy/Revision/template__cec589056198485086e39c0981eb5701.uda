@@ -1,0 +1,14 @@
+{
+  "Name": "Search Results Page",
+  "Alias": "SearchResultsPage",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/cec589056198485086e39c0981eb5701",
+  "Dependencies": [
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

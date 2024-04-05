@@ -1,0 +1,73 @@
+{
+  "Name": "Login Page",
+  "Alias": "loginPage",
+  "DefaultTemplate": "umb://template/251066bd78a4464491868d1bffd6e233",
+  "AllowedTemplates": [
+    "umb://template/251066bd78a4464491868d1bffd6e233"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-key color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page for users to login to secure areas of website.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "0508910f-c3ee-437c-90ac-35911fe5ab19",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "9e020501-01fe-46f7-9e66-545641778129",
+          "Alias": "resetPasswordPage",
+          "DataType": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+          "Description": "The page members who have forgotten their password can go to reset their password.",
+          "Name": "Reset Password Page",
+          "SortOrder": 2
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/f30c81ec37f040309fffd94cef6a7786",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/251066bd78a4464491868d1bffd6e233",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

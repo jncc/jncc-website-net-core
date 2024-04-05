@@ -1,0 +1,73 @@
+{
+  "Name": "Articulate Rich Text",
+  "Alias": "",
+  "EditorAlias": "Umbraco.TinyMCE",
+  "Configuration": {
+    "editor": {
+      "toolbar": [
+        "code",
+        "removeformat",
+        "undo",
+        "redo",
+        "cut",
+        "copy",
+        "paste",
+        "styleselect",
+        "bold",
+        "italic",
+        "alignleft",
+        "aligncenter",
+        "alignright",
+        "alignjustify",
+        "bullist",
+        "numlist",
+        "outdent",
+        "indent",
+        "link",
+        "unlink",
+        "anchor",
+        "umbmediapicker",
+        "umbmacro",
+        "table",
+        "umbembeddialog",
+        "hr",
+        "subscript",
+        "superscript",
+        "charmap"
+      ],
+      "stylesheets": [
+        "cms",
+        "floats",
+        "headings",
+        "highlighting"
+      ],
+      "dimensions": {
+        "height": 500
+      },
+      "maxImageSize": 500
+    },
+    "hideLabel": true,
+    "ignoreUserStartNodes": false
+  },
+  "Udi": "umb://data-type/dbcb0707021d4cd4ba8b5cc891516c28",
+  "Dependencies": [
+    {
+      "Udi": "umb://stylesheet/cms.css",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://stylesheet/floats.css",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://stylesheet/headings.css",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://stylesheet/highlighting.css",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

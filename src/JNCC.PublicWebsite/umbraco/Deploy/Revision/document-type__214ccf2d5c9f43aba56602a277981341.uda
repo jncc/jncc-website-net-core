@@ -1,0 +1,69 @@
+{
+  "Name": "Resources Collection Schema",
+  "Alias": "resourcesCollectionSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-thumbnails-small color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "A schema which represents a collection of resources.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "5200d19b-fa4e-4a23-8354-83b8c5a50a6a",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "26decdf6-edc8-4315-add9-768fcff2df33",
+          "Alias": "mainCategoryPage",
+          "DataType": "umb://data-type/4defdb0e21654f058d76ee484083ff44",
+          "Description": "This page contains all other science details pages for this resources collection.",
+          "Name": "Main Category Page",
+          "SortOrder": 2
+        },
+        {
+          "Key": "5116c39f-139d-4975-a931-31f42372dea1",
+          "Alias": "title",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The title of this resources collection.",
+          "Name": "Title"
+        },
+        {
+          "Key": "99f6da97-55ea-4979-824c-5d0a636f2714",
+          "Alias": "resources",
+          "DataType": "umb://data-type/c2857d47af8848ca98c7959a6a73988c",
+          "Description": "The key resources for this collection.",
+          "Name": "Resources",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/4defdb0e21654f058d76ee484083ff44",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c2857d47af8848ca98c7959a6a73988c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

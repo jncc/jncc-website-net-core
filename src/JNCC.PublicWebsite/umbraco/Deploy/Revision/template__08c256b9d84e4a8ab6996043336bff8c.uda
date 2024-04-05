@@ -1,0 +1,19 @@
+{
+  "Name": "News and Insights Landing Page",
+  "Alias": "NewsAndInsightsLandingPage",
+  "File": "umb://template-file/NewsAndInsightsLandingPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/08c256b9d84e4a8ab6996043336bff8c",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/NewsAndInsightsLandingPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

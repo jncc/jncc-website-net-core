@@ -1,0 +1,18 @@
+{
+  "Name": "Slider: Items Per Page (Generic Listing Page)",
+  "Alias": "",
+  "EditorAlias": "Umbraco.Slider",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "enableRange": false,
+    "initVal1": 10.0,
+    "initVal2": 0.0,
+    "minVal": 1.0,
+    "maxVal": 20.0,
+    "step": 1.0
+  },
+  "Udi": "umb://data-type/bb2cb8f7278d4a95b9207d78004dfc11",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

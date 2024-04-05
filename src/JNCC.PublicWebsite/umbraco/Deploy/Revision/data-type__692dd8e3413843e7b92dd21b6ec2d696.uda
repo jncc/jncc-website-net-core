@@ -1,0 +1,28 @@
+{
+  "Name": "Stacked Content: Resources Collections",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "214ccf2d-5c9f-43ab-a566-02a277981341",
+        "label": "{{title}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/692dd8e3413843e7b92dd21b6ec2d696",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

@@ -1,0 +1,19 @@
+{
+  "Name": "Science Details Page",
+  "Alias": "ScienceDetailsPage",
+  "File": "umb://template-file/ScienceDetailsPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/dc30e519ae7d4bd7b3f1904087d419de",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/ScienceDetailsPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

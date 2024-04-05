@@ -1,0 +1,132 @@
+{
+  "Name": "Biz Dev Service Page",
+  "Alias": "bizDevServicePage",
+  "DefaultTemplate": "umb://template/25f53633836a48c2ad01412e3639d6f4",
+  "AllowedTemplates": [
+    "umb://template/25f53633836a48c2ad01412e3639d6f4"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-briefcase color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "An page which highlights services for a specific area of business development.",
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18",
+      "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3",
+      "umb://document-type/5f83c74572b54fd3953d5f1504567a4e",
+      "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    ]
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+    "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+    "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+    "umb://document-type/e7e93a2f706740bba19b7fc212604a32"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "86ce3f2a-0d38-4958-ab02-1bf46f1caced",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "3c626f75-bb1e-462b-b04e-59d5685ca1f4",
+          "Alias": "mainContent",
+          "DataType": "umb://data-type/4fae47b05a4543109ae27c8063487870",
+          "Description": "The main content of the page.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Main Content",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "e0554876-f4a8-4d1c-8bde-2d57b339916a",
+          "Alias": "preamble",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "Introductory content explaining the nature of the service offered.",
+          "MandatoryMessage": "",
+          "Name": "Preamble",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/4fae47b05a4543109ae27c8063487870",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3"
+    },
+    {
+      "Udi": "umb://document-type/5f83c74572b54fd3953d5f1504567a4e"
+    },
+    {
+      "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18"
+    },
+    {
+      "Udi": "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    },
+    {
+      "Udi": "umb://document-type/e7e93a2f706740bba19b7fc212604a32",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/25f53633836a48c2ad01412e3639d6f4",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

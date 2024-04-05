@@ -1,0 +1,14 @@
+{
+  "Name": "Articulate Categories",
+  "Alias": "",
+  "EditorAlias": "Umbraco.Tags",
+  "Configuration": {
+    "group": "ArticulateCategories",
+    "storageType": "Csv",
+    "Delimiter": "\u0000"
+  },
+  "Udi": "umb://data-type/a72aeb125b284a47b99afde14d49c1ac",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

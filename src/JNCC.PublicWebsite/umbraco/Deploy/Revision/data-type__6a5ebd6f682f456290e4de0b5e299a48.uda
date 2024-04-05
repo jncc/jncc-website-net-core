@@ -1,0 +1,29 @@
+{
+  "Name": "Block List: Content Image Schema",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "e3575e32-22e7-4aaa-9d51-8523d1c1032d",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {
+      "max": 1
+    },
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/6a5ebd6f682f456290e4de0b5e299a48",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/e3575e3222e74aaa9d518523d1c1032d",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

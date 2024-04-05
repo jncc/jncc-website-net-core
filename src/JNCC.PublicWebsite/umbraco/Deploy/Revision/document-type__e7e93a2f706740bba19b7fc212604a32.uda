@@ -1,0 +1,61 @@
+{
+  "Name": "Related Items Composition",
+  "Alias": "relatedItemsComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "Settings related to authoring related items.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "b4af62bf-7e05-4653-9c88-4bf35267c71d",
+      "Name": "Related Items",
+      "SortOrder": 50,
+      "Alias": "relatedItems",
+      "PropertyTypes": [
+        {
+          "Key": "3b210ca2-b69c-444a-8ea6-fdbc1942ae93",
+          "Alias": "relatedItems",
+          "DataType": "umb://data-type/d9a98cd3d24e4e2ab6560cf9c64a3058",
+          "Description": "Provides related items for the current page. These items are manually authored. A maximum of 3 items can be authored.If less than 3 items are provided then a query will be made to find the remaining items needed.",
+          "MandatoryMessage": "",
+          "Name": "Items",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "c74d23f8-ae1e-454e-a913-8d6d50ab808a",
+          "Alias": "showRelatedItems",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Show Related Items",
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/e7e93a2f706740bba19b7fc212604a32",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/d9a98cd3d24e4e2ab6560cf9c64a3058",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

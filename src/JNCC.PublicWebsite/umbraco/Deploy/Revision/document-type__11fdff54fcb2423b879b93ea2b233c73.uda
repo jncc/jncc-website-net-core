@@ -1,0 +1,43 @@
+{
+  "Name": "Member Account Page",
+  "Alias": "memberAccountPage",
+  "DefaultTemplate": "umb://template/9b3169feee6a4d108b809940b10f0ca5",
+  "AllowedTemplates": [
+    "umb://template/9b3169feee6a4d108b809940b10f0ca5"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-edit color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page for a logged in member to see their account details and change their password on the website.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0"
+  ],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/11fdff54fcb2423b879b93ea2b233c73",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/9b3169feee6a4d108b809940b10f0ca5",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

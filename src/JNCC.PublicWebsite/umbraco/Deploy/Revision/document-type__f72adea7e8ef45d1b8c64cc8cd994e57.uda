@@ -1,0 +1,77 @@
+{
+  "Name": "Featured Resource Schema",
+  "Alias": "featuredResourceSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-blueprint color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "3a71fb68-b918-4ee1-b681-aaa227e50140",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "1b0267c9-a592-43de-971a-4cf0b0903ae3",
+          "Alias": "headline",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Headline of the content item to display above the paragraph content below",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Headline",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "3c9cea88-5222-4a9e-9dfc-be074c5c9c66",
+          "Alias": "content",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "A brief paragraph describing this resource item.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "dfb50172-4f00-4461-8aac-96db9dc77abc",
+          "Alias": "link",
+          "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+          "Description": "The link to the resource item. This could be an internal or external page.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Link",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/f72adea7e8ef45d1b8c64cc8cd994e57",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

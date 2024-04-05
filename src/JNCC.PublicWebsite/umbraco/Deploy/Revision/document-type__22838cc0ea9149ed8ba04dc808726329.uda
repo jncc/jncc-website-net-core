@@ -1,0 +1,57 @@
+{
+  "Name": "Get in Touch Composition",
+  "Alias": "getInTouchComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "Authoring properties for creating the optional \"Get in Touch\" section which features at the bottom of the main content for the page.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "01426db8-36d1-4386-a3f3-acf19c55d313",
+      "Name": "Get in Touch",
+      "SortOrder": 1,
+      "Alias": "getInTouch",
+      "PropertyTypes": [
+        {
+          "Key": "147af2f9-a0cb-4a01-a855-040a25c3ae7e",
+          "Alias": "getInTouchContent",
+          "DataType": "umb://data-type/513533c07c8949698adfc41e5b3de339",
+          "Description": "Optional content which appears below the main content of the page. This content is specifically for encouraging website users to navigate to the contact form.",
+          "Name": "Get In Touch Content"
+        },
+        {
+          "Key": "f0a9adab-e461-4d05-8417-f697394506ed",
+          "Alias": "getInTouchButton",
+          "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+          "Description": "The link & text for the Get in Touch button which accompanies the Get in Touch content below the main content of the page.",
+          "Name": "Get in Touch Button",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/513533c07c8949698adfc41e5b3de339",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

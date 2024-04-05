@@ -1,0 +1,53 @@
+{
+  "Name": "Articles Section Image Gallery Schema",
+  "Alias": "articlesSectionImageGallerySchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-photo-album color-black",
+  "Thumbnail": "folder.png",
+  "Description": "A Article Section for authoring an Image Gallery.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/e5ae390499f04c57abcab8a2edf8aeb6",
+  "CompositionContentTypes": [
+    "umb://document-type/117afd9156b748f98b05bf7fc5f62729",
+    "umb://document-type/e5ae390499f04c57abcab8a2edf8aeb6"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "0a21d118-9cc5-4156-ac82-c7e9d5de3647",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "d05f59b7-d625-41ce-b2ff-53d71c701cee",
+          "Alias": "images",
+          "DataType": "umb://data-type/8d1243b8c08049bdb328064fe30445a0",
+          "Mandatory": true,
+          "Name": "Images",
+          "SortOrder": 3
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/0142b36f7da549c590cf0868057dc985",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/8d1243b8c08049bdb328064fe30445a0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/117afd9156b748f98b05bf7fc5f62729",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/e5ae390499f04c57abcab8a2edf8aeb6",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

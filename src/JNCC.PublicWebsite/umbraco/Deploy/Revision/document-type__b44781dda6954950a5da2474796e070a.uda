@@ -1,0 +1,45 @@
+{
+  "Name": "Science Details Section Sub Sections Schema Composition",
+  "Alias": "scienceDetailsSectionSubSectionsSchemaComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "5e153325-f0a9-4e87-9023-9a566fb072b2",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "7e887778-ec13-4d6a-b0c8-e9a5dd49a7b0",
+          "Alias": "subSections",
+          "DataType": "umb://data-type/0964bb730522487ca8d2db6682070a79",
+          "Description": "Optional sub sections which will be rendered below the content of this section.",
+          "Name": "Sub Sections",
+          "SortOrder": 999
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/b44781dda6954950a5da2474796e070a",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0964bb730522487ca8d2db6682070a79",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

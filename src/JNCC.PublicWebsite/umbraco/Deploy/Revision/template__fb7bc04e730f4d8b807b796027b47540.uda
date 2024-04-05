@@ -1,0 +1,14 @@
+{
+  "Name": "Base",
+  "Alias": "Base",
+  "File": "umb://template-file/Base.cshtml",
+  "Udi": "umb://template/fb7bc04e730f4d8b807b796027b47540",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/Base.cshtml",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

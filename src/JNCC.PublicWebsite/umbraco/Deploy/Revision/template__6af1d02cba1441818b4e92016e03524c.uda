@@ -1,0 +1,19 @@
+{
+  "Name": "Science Landing Page",
+  "Alias": "ScienceLandingPage",
+  "File": "umb://template-file/ScienceLandingPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/6af1d02cba1441818b4e92016e03524c",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/ScienceLandingPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

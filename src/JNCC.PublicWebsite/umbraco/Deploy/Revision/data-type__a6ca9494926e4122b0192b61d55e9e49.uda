@@ -1,0 +1,19 @@
+{
+  "Name": "[MNTP] - Latest Updates - Science Details - Max 3",
+  "Alias": "",
+  "EditorAlias": "Umbraco.MultiNodeTreePicker",
+  "Configuration": {
+    "startNode": {
+      "type": "content"
+    },
+    "filter": "scienceDetailsPage,scienceCategoryPage",
+    "minNumber": 0,
+    "maxNumber": 3,
+    "showOpenButton": false,
+    "ignoreUserStartNodes": false
+  },
+  "Udi": "umb://data-type/a6ca9494926e4122b0192b61d55e9e49",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

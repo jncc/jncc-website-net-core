@@ -1,0 +1,57 @@
+{
+  "Name": "Articles Section Base Schema",
+  "Alias": "articlesSectionBaseSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "a812ad3c-ea12-4137-adff-a1a04de3a007",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "425dabb4-49c8-4c9e-b2b2-0cd7e53cad87",
+          "Alias": "headline",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The headline for the section. This is used in the generated Table of Contents.",
+          "Mandatory": true,
+          "Name": "Headline"
+        },
+        {
+          "Key": "7966f847-6ffd-4bb0-b573-eea5e3d5c3bc",
+          "Alias": "hideHeadline",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "When selected, this will hide the headline from the table of contents and header of the block",
+          "Name": "Hide Headline?",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/e5ae390499f04c57abcab8a2edf8aeb6",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

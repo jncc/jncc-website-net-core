@@ -1,0 +1,81 @@
+{
+  "Name": "Sidebar Composition",
+  "Alias": "sidebarComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "Settings related to sidebar properties.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "7b8c4ef7-ab48-42f1-b4df-8f86438c8f1b",
+      "Name": "Sidebar",
+      "SortOrder": 40,
+      "Alias": "sidebar",
+      "PropertyTypes": [
+        {
+          "Key": "23fa1221-e5a1-4b38-8565-8bd2c67dd2a3",
+          "Alias": "sidebarSeeAlsoLinks",
+          "DataType": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+          "Description": "Useful links to other internal & external web pages.",
+          "MandatoryMessage": "",
+          "Name": "See Also Links",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "8c96c39c-e90c-4b7a-9014-dd7307be1fe8",
+          "Alias": "sidebarElsewhereOnOurWebsite",
+          "DataType": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+          "Description": "Links to other internal web pages",
+          "MandatoryMessage": "",
+          "Name": "Elsewhere on our website links",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "8ffefac6-f48d-4bc8-beae-47c1996d036c",
+          "Alias": "sidebarOtherWebsites",
+          "DataType": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+          "Description": "Links to other external web pages",
+          "MandatoryMessage": "",
+          "Name": "Other websites",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "9a6257d7-aced-498e-97b5-3b6531e0385b",
+          "Alias": "sidebarPrimaryCallToActionButton",
+          "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+          "Description": "Link & Text for an optional Call to Action button.This could be various purposes, for example \"Get in Touch\" or \"Download Data\".",
+          "MandatoryMessage": "",
+          "Name": "Primary Call To Action Button",
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

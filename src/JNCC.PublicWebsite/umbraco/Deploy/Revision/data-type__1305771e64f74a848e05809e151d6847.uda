@@ -1,0 +1,68 @@
+{
+  "Name": "Stacked Content: Science Category Section Sub Sections",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "8a9eff86-f904-474e-9d2a-f82f5e21d79e",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "a1797505-33ee-4e59-8a9d-c21e8fe15fe4",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "4c25c5ed-8361-4aac-ad08-a6f063532bcc",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "5a0efac1-d74f-49c8-9bfe-263d6646815a",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "6eb1124a-1431-4b90-8df9-1f6d00d64638",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/1305771e64f74a848e05809e151d6847",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/4c25c5ed83614aacad08a6f063532bcc",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/5a0efac1d74f49c89bfe263d6646815a",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/6eb1124a14314b908df91f6d00d64638",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/8a9eff86f904474e9d2af82f5e21d79e",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/a179750533ee4e598a9dc21e8fe15fe4",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}
