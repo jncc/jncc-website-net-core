@@ -540,7 +540,7 @@ appsettings-schema.json
 src/JNCC.PublicWebsite/appsettings.json
 src/JNCC.PublicWebsite/appsettings.Development.json
 src/JNCC.PublicWebsite/Properties/launchSettings.json
-src/JNCC.PublicWebsite/wwwroot/media
+src/JNCC.PublicWebsite/wwwroot/media/*
 /src/JNCC.PublicWebsite/Smidge/Cache/DESKTOP-FJ0SI8R/36061b27b6ae1c5a7aea8c544f0e4b18b86d00c5
 src/JNCC.PublicWebsite/Smidge
 
