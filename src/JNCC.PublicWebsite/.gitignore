@@ -521,7 +521,7 @@ appsettings-schema.json
 /umbraco/Logs/
 
 # Media files
-/wwwroot/media/
+/wwwroot/media/*
 **/[Mm]edia/*
 
 #include default location for modelsbuilder output
