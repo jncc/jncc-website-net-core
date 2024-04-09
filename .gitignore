@@ -35,7 +35,7 @@ bld/
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 # Uncomment if you have tasks that create the project's static files in wwwroot
-#wwwroot/
+wwwroot/
 
 # Visual Studio 2017 auto generated files
 Generated\ Files/
@@ -528,6 +528,7 @@ appsettings-schema.json
 # Media files
 /wwwroot/media/*
 **/[Mm]edia/*
+!/wwwroot/media/.gitkeep
 
 #include default location for modelsbuilder output
 !**/umbraco/models
@@ -546,6 +547,7 @@ src/JNCC.PublicWebsite/appsettings.json
 src/JNCC.PublicWebsite/appsettings.Development.json
 src/JNCC.PublicWebsite/Properties/launchSettings.json
 src/JNCC.PublicWebsite/wwwroot/media/*
+!src/JNCC.PublicWebsite/wwwroot/media/.gitkeep
 /src/JNCC.PublicWebsite/Smidge/Cache/DESKTOP-FJ0SI8R/36061b27b6ae1c5a7aea8c544f0e4b18b86d00c5
 src/JNCC.PublicWebsite/Smidge
 
