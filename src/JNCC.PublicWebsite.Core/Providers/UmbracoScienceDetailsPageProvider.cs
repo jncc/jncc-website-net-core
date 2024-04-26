@@ -1,8 +1,6 @@
 ﻿using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.Interfaces.Providers;
-using System.Collections.Generic;
-using System.Linq;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Extensions;
 

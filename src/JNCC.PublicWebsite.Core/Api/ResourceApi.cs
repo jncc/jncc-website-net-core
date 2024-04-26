@@ -4,10 +4,6 @@ using JNCC.PublicWebsite.Core.Models.Custom;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading.Tasks;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Extensions;
 

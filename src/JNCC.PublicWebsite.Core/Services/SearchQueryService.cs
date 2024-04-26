@@ -4,10 +4,7 @@ using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using System;
-using System.Net.Http;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace JNCC.PublicWebsite.Core.Services
 {

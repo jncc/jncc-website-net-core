@@ -1,5 +1,4 @@
 ﻿using JNCC.PublicWebsite.Core.Models;
-using System.Linq;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace JNCC.PublicWebsite.Core.Extensions

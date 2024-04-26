@@ -1,7 +1,5 @@
-﻿using System;
-using JNCC.PublicWebsite.Core.Interfaces.Services;
+﻿using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
-using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models.PublishedContent;
 

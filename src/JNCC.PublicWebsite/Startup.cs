@@ -1,17 +1,9 @@
 using Amazon.SQS;
 using JNCC.PublicWebsite.Core.Notifications;
 using JNCC.PublicWebsite.Core.Options;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Rewrite;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using SEOChecker.Core.Notifications;
-using System;
-using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
-using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite
 {
@@ -108,7 +100,7 @@ namespace JNCC.PublicWebsite
                     u.UseBackOffice();
                     u.UseWebsite();
                     // This enables the Azure Blob storage middleware for media.
-                    u.UseAzureBlobMediaFileSystem();
+                    //u.UseAzureBlobMediaFileSystem();
                 })
                 .WithEndpoints(u =>
                 {

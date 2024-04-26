@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace JNCC.PublicWebsite.Core.Extensions
+﻿namespace JNCC.PublicWebsite.Core.Extensions
 {
     public static class ByteHelpers
     {

@@ -1,5 +1,4 @@
-﻿using System;
-using Umbraco.Cms.Core.Strings;
+﻿using Umbraco.Cms.Core.Strings;
 
 namespace JNCC.PublicWebsite.Core.ViewModels
 {

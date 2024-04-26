@@ -1,10 +1,7 @@
-﻿using System;
-using JNCC.PublicWebsite.Core.Interfaces.Services;
+﻿using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
-using JNCC.PublicWebsite.Core.Services;
 using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Core.Models.PublishedContent;
-using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite.Core.ViewComponents
 {

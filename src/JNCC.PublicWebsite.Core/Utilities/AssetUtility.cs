@@ -1,7 +1,5 @@
 ﻿using HeyRed.MarkdownSharp;
 using Microsoft.AspNetCore.Html;
-using System;
-using System.IO;
 
 namespace JNCC.PublicWebsite.Core.Utilities
 {

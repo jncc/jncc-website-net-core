@@ -10,8 +10,6 @@ using JNCC.PublicWebsite.Core.Options;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
-using System;
-using System.Threading.Tasks;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
@@ -27,7 +25,8 @@ namespace JNCC.PublicWebsite.Core.Services
             _jsonSettings = new JsonSerializerSettings()
             {
                 NullValueHandling = NullValueHandling.Ignore,
-                DefaultValueHandling = DefaultValueHandling.Ignore
+                DefaultValueHandling = DefaultValueHandling.Ignore,
+                PreserveReferencesHandling = PreserveReferencesHandling.Objects
             };
             _amazonServiceConfigurationOptions = amazonServiceConfigurationOptions;
             _logger = logger;

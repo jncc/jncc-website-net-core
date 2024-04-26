@@ -21,7 +21,7 @@ angular.module("umbraco")
         $scope.clearDialog = function () {
             var options = {
                 localizationKey: "seoCheckerBulkActions_bulkActionClearAllConfirmMessage",
-                view: "/app_plugins/seochecker/dialogs/confirm.html",
+                view: "/App_Plugins/seochecker/dialogs/confirm.html",
                 size: "small",
                 submit: function () {
                     seocheckerBackofficeResources.clearConfigurationIssues().then(function (res) {
@@ -76,7 +76,7 @@ angular.module("umbraco")
         $scope.deleteSelected = function () {
             var options = {
                 selectedItems:  seocheckerHelper.getSelectedItems($scope.model.data),
-                view: "/app_plugins/seochecker/dialogs/validation/deleteconfigurationissues.html",
+                view: "/App_Plugins/seochecker/dialogs/validation/deleteconfigurationissues.html",
                 size: "small",
                 submit: function () {
                     $scope.model.resetPaging = true;
@@ -470,7 +470,7 @@ angular.module("umbraco")
         $scope.deleteSelected = function () {
             var options = {
                 localizationKey: "seoCheckerBulkActions_bulkActionDeleteConfirmMessage",
-                view: "/app_plugins/seochecker/dialogs/confirm.html",
+                view: "/App_Plugins/seochecker/dialogs/confirm.html",
                 size: "small",
                 submit: function () {
                     var data = seocheckerHelper.getSelectedItems($scope.model.data);
@@ -550,7 +550,7 @@ angular.module("umbraco")
         $scope.deleteSelected = function () {
             var options = {
                 localizationKey: "seoCheckerBulkActions_bulkActionDeleteConfirmMessage",
-                view: "/app_plugins/seochecker/dialogs/confirm.html",
+                view: "/App_Plugins/seochecker/dialogs/confirm.html",
                 size: "small",
                 submit: function () {
                     var data = seocheckerHelper.getSelectedItems($scope.model.data);
@@ -630,7 +630,7 @@ angular.module("umbraco")
         $scope.deleteSelected = function () {
             var options = {
                 localizationKey: "seoCheckerBulkActions_bulkActionDeleteConfirmMessage",
-                view: "/app_plugins/seochecker/dialogs/confirm.html",
+                view: "/App_Plugins/seochecker/dialogs/confirm.html",
                 size: "small",
                 submit: function () {
                     var data = seocheckerHelper.getSelectedItems($scope.model.data);
@@ -714,7 +714,7 @@ angular.module("umbraco")
         $scope.deleteSelected = function () {
             var options = {
                 selectedItems: seocheckerHelper.getSelectedItems($scope.model.data),
-                view: "/app_plugins/seochecker/dialogs/redirects/deleteredirects.html",
+                view: "/App_Plugins/seochecker/dialogs/redirects/deleteredirects.html",
                 size: "small",
                 submit: function () {
                     $scope.model.resetPaging = true;
@@ -731,7 +731,7 @@ angular.module("umbraco")
         $scope.editRedirect = function (id) {
             var options = {
                 redirectid: id,
-                view: "/app_plugins/seochecker/dialogs/redirects/editredirects.html",
+                view: "/App_Plugins/seochecker/dialogs/redirects/editredirects.html",
                 size: "small",
                 submit: function () {
                     $scope.model.resetPaging = true;
@@ -795,7 +795,7 @@ angular.module("umbraco")
                     handler: function() {
                         var options = {
                             localizationKey: "seoCheckerBulkActions_bulkActionClearAllConfirmMessage",
-                            view: "/app_plugins/seochecker/dialogs/confirm.html",
+                            view: "/App_Plugins/seochecker/dialogs/confirm.html",
                             size: "small",
                             submit: function () {
                                 seocheckerBackofficeResources.clearInboundLinkIssues().then(function (res) {
@@ -953,7 +953,7 @@ angular.module("umbraco")
             $scope.deleteSelected = function () {
                 var options = {
                     selectedItems: seocheckerHelper.getSelectedItems($scope.model.data),
-                    view: "/app_plugins/seochecker/dialogs/redirects/deleteredirects.html",
+                    view: "/App_Plugins/seochecker/dialogs/redirects/deleteredirects.html",
                     size: "small",
                     submit: function () {
                         $scope.model.resetPaging = true;
@@ -970,7 +970,7 @@ angular.module("umbraco")
             $scope.editRedirect = function (id) {
                 var options = {
                     redirectid: id,
-                    view: "/app_plugins/seochecker/dialogs/redirects/editredirects.html",
+                    view: "/App_Plugins/seochecker/dialogs/redirects/editredirects.html",
                     size: "small",
                     submit: function () {
                         $scope.model.resetPaging = true;
@@ -1001,7 +1001,7 @@ angular.module("umbraco")
                         hotKeyWhenHidden: true,
                         handler: function () {
                             var options = {
-                                view: "/app_plugins/seochecker/dialogs/redirects/exportredirects.html",
+                                view: "/App_Plugins/seochecker/dialogs/redirects/exportredirects.html",
                                 size: "small",
                                 submit: function (model) {
                                     if (model != null) {
@@ -1022,7 +1022,7 @@ angular.module("umbraco")
                         hotKeyWhenHidden: true,
                         handler: function () {
                             var options = {
-                                view: "/app_plugins/seochecker/dialogs/redirects/importredirects.html",
+                                view: "/App_Plugins/seochecker/dialogs/redirects/importredirects.html",
                                 size: "small",
                                 submit: function () {
                                     $scope.model.resetPaging = true;
@@ -1144,7 +1144,7 @@ angular.module("umbraco")
         $scope.clearDialog = function () {
             var options = {
                 localizationKey: "seoCheckerBulkActions_bulkActionClearAllConfirmMessage",
-                view: "/app_plugins/seochecker/dialogs/confirm.html",
+                view: "/App_Plugins/seochecker/dialogs/confirm.html",
                 size: "small",
                 submit: function () {
                     seocheckerBackofficeResources.clearValidationIssues().then(function (res) {
@@ -1198,7 +1198,7 @@ angular.module("umbraco")
         $scope.deleteSelected = function () {
             var options = {
                 selectedItems:  seocheckerHelper.getSelectedItems($scope.model.data),
-                view: "/app_plugins/seochecker/dialogs/validation/deletevalidationissues.html",
+                view: "/App_Plugins/seochecker/dialogs/validation/deletevalidationissues.html",
                 size: "small",
                 submit: function () {
                     $scope.model.resetPaging = true;
@@ -1216,7 +1216,7 @@ angular.module("umbraco")
         $scope.revalidateSelected = function () {
             var options = {
                 selectedItems:  seocheckerHelper.getSelectedItems($scope.model.data),
-                view: "/app_plugins/seochecker/dialogs/validation/revalidatevalidationissues.html",
+                view: "/App_Plugins/seochecker/dialogs/validation/revalidatevalidationissues.html",
                 size: "small",
                 submit: function () {
                     $scope.model.resetPaging = true;
@@ -1273,7 +1273,7 @@ angular.module("umbraco")
         $scope.clearDialog = function () {
             var options = {
                 localizationKey: "seoCheckerValidationQueue_confirmMessage",
-                view: "/app_plugins/seochecker/dialogs/confirm.html",
+                view: "/App_Plugins/seochecker/dialogs/confirm.html",
                 size: "small",
                 submit: function () {
                     seocheckerBackofficeResources.clearValidationqueue($scope.model).then(function (res) {
@@ -1289,7 +1289,7 @@ angular.module("umbraco")
             editorService.open(options);
 
             //editorService.open({
-            //    template: '/app_plugins/seochecker/dialogs/confirm.html',
+            //    template: '/App_Plugins/seochecker/dialogs/confirm.html',
             //    callback: function (result) {
             //        if (result === true) {
 

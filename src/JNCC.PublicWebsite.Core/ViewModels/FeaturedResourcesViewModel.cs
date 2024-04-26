@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace JNCC.PublicWebsite.Core.ViewModels
+﻿namespace JNCC.PublicWebsite.Core.ViewModels
 {
     public class FeaturedResourcesViewModel
     {

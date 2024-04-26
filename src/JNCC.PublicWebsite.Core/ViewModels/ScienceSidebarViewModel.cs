@@ -1,6 +1,4 @@
 ﻿using JNCC.PublicWebsite.Core.Utilities;
-using System.Collections.Generic;
-using JNCC.PublicWebsite.Core.Models;
 
 namespace JNCC.PublicWebsite.Core.ViewModels
 {

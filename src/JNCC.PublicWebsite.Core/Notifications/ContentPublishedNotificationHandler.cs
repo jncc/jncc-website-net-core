@@ -4,14 +4,11 @@ using JNCC.PublicWebsite.Core.Options;
 using JNCC.PublicWebsite.Core.Services;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System;
 using System.Text;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.Routing;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
-using System.Linq;
 using JNCC.PublicWebsite.Core.Utilities;
 using Newtonsoft.Json.Linq;
 
