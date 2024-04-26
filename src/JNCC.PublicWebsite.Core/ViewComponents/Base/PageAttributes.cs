@@ -1,5 +1,4 @@
-﻿using System;
-using JNCC.PublicWebsite.Core.Interfaces.Services;
+﻿using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.ViewModels;
 using Microsoft.AspNetCore.Mvc;

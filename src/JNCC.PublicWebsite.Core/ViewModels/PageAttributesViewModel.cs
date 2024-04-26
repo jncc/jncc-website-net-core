@@ -1,6 +1,4 @@
-﻿using System.Globalization;
-
-namespace JNCC.PublicWebsite.Core.ViewModels
+﻿namespace JNCC.PublicWebsite.Core.ViewModels
 {
     public class PageAttributesViewModel
     {

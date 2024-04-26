@@ -7,7 +7,6 @@ using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Interfaces.Providers;
 using JNCC.PublicWebsite.Core.Providers;
 using JNCC.PublicWebsite.Core.Options;
-using Newtonsoft.Json;
 using JNCC.PublicWebsite.Core.Interfaces.Api;
 using JNCC.PublicWebsite.Core.Api;
 using Umbraco.Cms.Core.Routing;
@@ -61,7 +60,6 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IResourcesService, ResourcesService>();
 
             builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
-            builder.Services.AddSingleton<JsonSerializerSettings>();
             builder.Services.AddSingleton<AmazonSQSExtendedClient>();
 
             //Resource API client

@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using JNCC.PublicWebsite.Core.Services;
-
-namespace JNCC.PublicWebsite.Core.Options
+﻿namespace JNCC.PublicWebsite.Core.Options
 {
     public class AmazonServiceConfigurationOptions
     {

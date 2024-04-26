@@ -1,7 +1,5 @@
 ﻿using JNCC.PublicWebsite.Core.Converters;
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 
 namespace JNCC.PublicWebsite.Core.Models
 {

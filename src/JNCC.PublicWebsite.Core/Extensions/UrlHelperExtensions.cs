@@ -1,7 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
 using System.Collections.Specialized;
-using System.Linq;
 using System.Text;
 
 namespace JNCC.PublicWebsite.Core.Extensions

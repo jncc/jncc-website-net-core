@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace JNCC.PublicWebsite.Core.Configuration
+﻿namespace JNCC.PublicWebsite.Core.Configuration
 {
     internal interface ISearchConfiguration
     {

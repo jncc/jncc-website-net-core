@@ -3,13 +3,8 @@ using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.ViewModels;
 using Umbraco.Extensions;
-using System.Collections.Generic;
-using System.Linq;
 using Umbraco.Cms.Web.Common.Mvc;
-using Umbraco.Cms.Core.Strings;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
-using System;
-using System.Text.RegularExpressions;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace JNCC.PublicWebsite.Core.Services

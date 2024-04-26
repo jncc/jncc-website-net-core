@@ -4,7 +4,6 @@ using JNCC.PublicWebsite.Core.Options;
 using JNCC.PublicWebsite.Core.Services;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using System;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 

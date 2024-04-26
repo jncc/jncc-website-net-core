@@ -1,8 +1,5 @@
 ﻿using JNCC.PublicWebsite.Core.Models;
-using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.ViewModels;
-using System.Collections.Generic;
-using System.Linq;
 using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite.Core.Extensions

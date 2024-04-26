@@ -1,5 +1,4 @@
 ﻿using JNCC.PublicWebsite.Core.Models;
-using JNCC.PublicWebsite.Core.ViewModels;
 using Microsoft.AspNetCore.Http;
 
 namespace JNCC.PublicWebsite.Core.Interfaces.Services

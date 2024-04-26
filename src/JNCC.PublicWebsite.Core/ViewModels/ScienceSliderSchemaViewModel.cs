@@ -1,6 +1,4 @@
-﻿using System.Web;
-
-namespace JNCC.PublicWebsite.Core.ViewModels
+﻿namespace JNCC.PublicWebsite.Core.ViewModels
 {
     public class ScienceSliderSchemaViewModel
     {

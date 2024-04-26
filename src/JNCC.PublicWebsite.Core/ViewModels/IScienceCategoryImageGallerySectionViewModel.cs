@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace JNCC.PublicWebsite.Core.ViewModels
+﻿namespace JNCC.PublicWebsite.Core.ViewModels
 {
     public interface IScienceCategoryImageGallerySectionViewModel
     {

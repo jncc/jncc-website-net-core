@@ -2,7 +2,6 @@
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.ViewModels;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 namespace JNCC.PublicWebsite.Core.ViewComponents.Resources
 {

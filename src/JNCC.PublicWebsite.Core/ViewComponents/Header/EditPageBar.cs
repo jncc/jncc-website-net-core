@@ -1,12 +1,6 @@
 ﻿using JNCC.PublicWebsite.Core.Constants;
-using JNCC.PublicWebsite.Core.Interfaces.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Umbraco.Cms.Core.Models.PublishedContent;
 
 namespace JNCC.PublicWebsite.Core.ViewComponents.Header

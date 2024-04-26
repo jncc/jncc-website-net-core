@@ -248,18 +248,18 @@ span.snippetDescription {
 }
 
 .social-facebook {
-    background-image: url(/app_plugins/seochecker/images/facebook.png);
+    background-image: url(/App_Plugins/seochecker/images/facebook.png);
 }
 .social-facebook-active {
-    background-image: url(/app_plugins/seochecker/images/facebook-active.png);
+    background-image: url(/App_Plugins/seochecker/images/facebook-active.png);
 }
 
 .social-twitter {
-    background-image: url(/app_plugins/seochecker/images/twitter.png);
+    background-image: url(/App_Plugins/seochecker/images/twitter.png);
 }
 
 .social-twitter-active {
-    background-image: url(/app_plugins/seochecker/images/twitter-active.png);
+    background-image: url(/App_Plugins/seochecker/images/twitter-active.png);
 }
 .seoCheckerFaceBookImage {
     overflow: hidden;

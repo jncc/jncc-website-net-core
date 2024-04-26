@@ -1,7 +1,6 @@
 ﻿using JNCC.PublicWebsite.Core.Interfaces.Api;
 using SEOChecker.Core.Notifications;
 using SEOChecker.Core.XmlSitemap;
-using System.Linq;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Web;

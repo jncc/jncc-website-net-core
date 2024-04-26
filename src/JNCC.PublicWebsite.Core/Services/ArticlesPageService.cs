@@ -1,13 +1,8 @@
 ﻿using JNCC.PublicWebsite.Core.Constants;
-using JNCC.PublicWebsite.Core.Extensions;
-using JNCC.PublicWebsite.Core.Interfaces.Providers;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Models.Blocks;
 using Umbraco.Cms.Core.Models.PublishedContent;

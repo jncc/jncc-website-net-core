@@ -1,6 +1,4 @@
 ﻿using JNCC.PublicWebsite.Core.Models.Custom;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace JNCC.PublicWebsite.Core.Interfaces.Api
 {

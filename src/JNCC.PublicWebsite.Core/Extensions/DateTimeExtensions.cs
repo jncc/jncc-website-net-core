@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace JNCC.PublicWebsite.Core.Extensions
+﻿namespace JNCC.PublicWebsite.Core.Extensions
 {
     public static class DateTimeExtensions
     {

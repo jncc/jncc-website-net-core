@@ -4,7 +4,6 @@ using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Cms.Web.Common.Controllers;
 using JNCC.PublicWebsite.Core.Constants;
-using JNCC.PublicWebsite.Core.Interfaces.Api;
 using JNCC.PublicWebsite.Core.Models.Custom;
 using Umbraco.Cms.Core.Models.PublishedContent;
 using Umbraco.Cms.Core.Services;
