@@ -1,0 +1,34 @@
+<div class="ud-schema-mismatch-error ud-import-artifacts-error">
+  <h4>Issues to review</h4>
+  <div ng-if="exception.IgnoredEntityTypes.length > 0">
+    <h5>Ignored items</h5>
+    <p>The import contains items of a type that you either haven't selected or do not have permission to update. The following types will be ignored:</p>
+    <p ng-repeat="entityType in exception.IgnoredEntityTypes" class="ud-import-artifact-message-warning">
+      {{prettyEntityType(entityType)}}
+    </p>
+  </div>
+  <div ng-if="exception.Mismatches.length > 0">
+    <div ng-if="feedbackMessageLevel === 'Developer'">
+      <h5>Schema mismatch</h5>
+      <p>While trying to import we found potential schema mismatches for the items provided.</p>
+      <p>The following items should be reviewed:</p>
+      <div ng-repeat="mismatch in exception.Mismatches" class="ud-schema-mismatch-error__group">
+        <div class="ud-schema-mismatch-error__title">
+          {{prettyEntityType(mismatch.Udi)}} <strong>{{mismatch.Name}}</strong>
+          <span ng-if="mismatch.Alias">with alias '{{mismatch.Alias}}'</span><br />
+          <small>{{mismatch.Udi}}</small>
+        </div>
+        <ul class="ud-schema-mismatch-error__difference-group">
+          <li ng-repeat="diff in mismatch.Differences" class="ud-schema-mismatch-error__difference">
+            <span ng-class="{'ud-import-artifact-message-warning' : diff.Category === 'Warning', 'ud-import-artifact-message-error' : diff.Category === 'Error'}">{{diff.Title}}</span>
+            <span ng-if="diff.Text" class="ud-schema-mismatch-error__difference-text">: {{diff.Text}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div ng-if="feedbackMessageLevel !== 'Developer'">
+      <h4 class="bold">Sorry, the import can not be completed, because the import or current environment is missing items.</h4>
+      <p>Please contact your technical support to resolve the issue.</p>
+    </div>
+  </div>
+</div>

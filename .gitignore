@@ -582,6 +582,9 @@ FodyWeavers.xsd
 #include default location for modelsbuilder output
 !**/umbraco/models
 
+#include default location for Umbraco Deploy output
+!**/umbraco/Deploy
+
 #include default location for packages
 !**/umbraco/Data/packages
 

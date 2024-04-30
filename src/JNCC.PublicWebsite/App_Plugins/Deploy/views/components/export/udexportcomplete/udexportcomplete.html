@@ -1,0 +1,22 @@
+<div>
+  <h4 class="bold">Export complete</h4>
+
+  <p>The selected items have been exported to a zip archive file. Click to download and/or remove it from the server.</p>
+
+  <p>
+    <small><strong>Time:</strong> {{ timestamp }}</small>
+  </p>
+
+  <umb-button type="button"
+              button-style="success"
+              state="downloadButtonState"
+              action="onDownload()"
+              label="Download">
+  </umb-button>
+  <umb-button type="button"
+              button-style="danger"
+              action="onDelete()"
+              label="Delete">
+  </umb-button>
+
+</div>
