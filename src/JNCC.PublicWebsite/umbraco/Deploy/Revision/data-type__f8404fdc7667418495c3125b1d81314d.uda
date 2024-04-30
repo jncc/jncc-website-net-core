@@ -1,0 +1,15 @@
+{
+  "Name": "Articulate Tags",
+  "Alias": "",
+  "EditorAlias": "Umbraco.Tags",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "group": "ArticulateTags",
+    "storageType": "Csv",
+    "Delimiter": "\u0000"
+  },
+  "Udi": "umb://data-type/f8404fdc7667418495c3125b1d81314d",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

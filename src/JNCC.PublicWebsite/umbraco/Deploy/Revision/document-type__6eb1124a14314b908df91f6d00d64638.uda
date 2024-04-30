@@ -1,0 +1,102 @@
+{
+  "Name": "Science Category Sub Section Slider Schema",
+  "Alias": "scienceCategorySubSectionSliderSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-pictures-alt color-black",
+  "Thumbnail": "folder.png",
+  "Description": "A Science Category Sub-Section that offers a slider component to be built with multiple items.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/474df410efcb429ca8fb2d1d384a2e69",
+  "CompositionContentTypes": [
+    "umb://document-type/474df410efcb429ca8fb2d1d384a2e69"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "64062177-662d-4578-95f7-f5bc883a2c87",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "15aef74c-175d-4678-a778-af0b8798f827",
+          "Alias": "showGreyBackground",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "By setting this to \"True\" all slider items will have a grey background applied. By default no background will be applied.",
+          "MandatoryMessage": "",
+          "Name": "Show Grey Background",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "8e4fc6ce-62ff-4ae3-85af-ef789fd874e2",
+          "Alias": "subSections",
+          "DataType": "umb://data-type/1305771e64f74a848e05809e151d6847",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Sub Sections",
+          "SortOrder": 6,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "c479a661-3d5c-48dc-9100-ee2441b56219",
+          "Alias": "sliderItems",
+          "DataType": "umb://data-type/b138a19950a14cde856ae1a79a6f11d2",
+          "Description": "Section to create the slider items displayed, the order of these items will determine the order the items are displayed in the slider.",
+          "MandatoryMessage": "",
+          "Name": "Slider Items",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "cd539c17-6a1a-48c3-ad7a-6ea3f1800e4d",
+          "Alias": "content",
+          "DataType": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+          "Description": "Content to display above the image slider.",
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "e6201625-5a9e-4e4d-823b-bdd4b47d54d3",
+          "Alias": "showTimelineArrows",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "By setting this to \"True\" a timeline arrow will be added between the slider items. By default no timeline arrows will be applied.",
+          "MandatoryMessage": "",
+          "Name": "Show Timeline Arrows",
+          "SortOrder": 5,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/6eb1124a14314b908df91f6d00d64638",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/1305771e64f74a848e05809e151d6847",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/b138a19950a14cde856ae1a79a6f11d2",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/474df410efcb429ca8fb2d1d384a2e69",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

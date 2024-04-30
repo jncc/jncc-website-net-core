@@ -1,0 +1,261 @@
+{
+  "Name": "Articulate",
+  "Alias": "Articulate",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-voice color-blue",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedAtRoot": true,
+    "AllowedChildContentTypes": [
+      "umb://document-type/7eb6fdf4f4874f32b1c200822a4423a1",
+      "umb://document-type/93d3ec9b473f4f8fa077b940f9fd1afa"
+    ]
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "1a326112-67e8-4977-af5a-caff800060eb",
+      "Name": "Style",
+      "SortOrder": 2,
+      "Alias": "style",
+      "PropertyTypes": [
+        {
+          "Key": "0ec9b19c-15b8-4ef8-a208-89fbd05928f7",
+          "Alias": "theme",
+          "DataType": "umb://data-type/8b57d00e559345d3affe24203b239bd3",
+          "Description": "",
+          "Name": "Theme",
+          "SortOrder": 2
+        },
+        {
+          "Key": "53999474-f480-4dd3-b7c8-c87605e9994d",
+          "Alias": "blogBanner",
+          "DataType": "umb://data-type/c8f535ee27b84d16940dd6c523851bb1",
+          "Description": "Optional blog banner",
+          "Name": "Blog Banner"
+        },
+        {
+          "Key": "6c6b94f9-e27a-4a8d-8031-6f18bc09998d",
+          "Alias": "blogLogo",
+          "DataType": "umb://data-type/c8f535ee27b84d16940dd6c523851bb1",
+          "Description": "Optional logo",
+          "Name": "Blog Logo",
+          "SortOrder": 1
+        }
+      ]
+    },
+    {
+      "Key": "6952bb4e-c847-4a6a-a89f-cd7d7f4c55e1",
+      "Name": "Blog",
+      "Alias": "blog",
+      "PropertyTypes": [
+        {
+          "Key": "1fe2e4e6-30ff-47a3-ab35-69f9ccb87a38",
+          "Alias": "googleAnalyticsName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The site name associated with your Google Analytics (i.e. mysite.com )",
+          "Name": "Google Analytics Name",
+          "SortOrder": 5
+        },
+        {
+          "Key": "241ca471-aa9c-4d10-8dc4-31bcd1a3195c",
+          "Alias": "disqusShortname",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Name": "Disqus Shortname",
+          "SortOrder": 3
+        },
+        {
+          "Key": "4d0baf42-fa12-42d2-8191-507fd904cd92",
+          "Alias": "blogDescription",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "",
+          "Name": "Blog Description"
+        },
+        {
+          "Key": "5b00e391-3b33-4b0f-a7aa-f4345da68aa9",
+          "Alias": "commentsForm",
+          "DataType": "umb://data-type/d7e8c8fb892e42ecba2520298c88d1d1",
+          "Description": "The Umbraco Form used by website users to submit comments to blog posts in this blog. If no form is selected users will not be able to submit comments.",
+          "Name": "Comments Form",
+          "SortOrder": 6
+        },
+        {
+          "Key": "8b3336fc-8f39-4e59-b308-98055a4dec6d",
+          "Alias": "googleAnalyticsId",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Your Google Analytics Id (i.e. UA-123456789 )",
+          "Name": "Google Analytics Id",
+          "SortOrder": 4
+        },
+        {
+          "Key": "d1249415-b00f-4e43-9f72-6e24d4bfde5c",
+          "Alias": "blogTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Blog Title",
+          "SortOrder": 2
+        },
+        {
+          "Key": "db597307-05c7-4390-b1d8-00d4ecc31a38",
+          "Alias": "customRssFeedUrl",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Optional custom rss feed URL (i.e. if you use feedburner, etc...)",
+          "Name": "Custom RSS Feed Url",
+          "SortOrder": 1
+        }
+      ]
+    },
+    {
+      "Key": "ba4ed987-fa46-4756-8659-c7324cff0ce9",
+      "Name": "Customize",
+      "SortOrder": 1,
+      "Alias": "customize",
+      "PropertyTypes": [
+        {
+          "Key": "2167365a-ef28-4969-8ade-fc8043ee60d3",
+          "Alias": "useDateFormatForUrl",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "If specified, this will generate posts' urls in the /yyyy/mm/dd/slug format, ie 2017/06/09/codegarden-rocks",
+          "Name": "Use yyyy/mm/dd format for Url",
+          "SortOrder": 8
+        },
+        {
+          "Key": "2f017489-df9f-4c42-a7ee-a8626815347e",
+          "Alias": "redirectArchive",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "If specified this will redirect the Archive blog post container URL to this Articulate blog root",
+          "Name": "Redirect Archive",
+          "SortOrder": 7
+        },
+        {
+          "Key": "369d6af3-d84c-4a67-b5f7-6fa7f5939c3a",
+          "Alias": "tagsPageName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The page title for the tags listing",
+          "Name": "Tags Page Name",
+          "SortOrder": 3
+        },
+        {
+          "Key": "4a25d7f4-4c24-4389-b900-a3881f9b6553",
+          "Alias": "tagsUrlName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Tags Url Name",
+          "SortOrder": 4
+        },
+        {
+          "Key": "680d0bb7-5fb7-409d-96b9-e16833a54bff",
+          "Alias": "searchUrlName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Name": "Search Url Name",
+          "SortOrder": 6
+        },
+        {
+          "Key": "9511ba9c-5336-433f-8903-e2da9d7bef77",
+          "Alias": "searchPageName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The page title for the search results",
+          "Name": "Search Page Name",
+          "SortOrder": 5
+        },
+        {
+          "Key": "9f371a5e-eec5-4961-834c-fcee04ca0953",
+          "Alias": "categoriesUrlName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "Categories Url Name",
+          "SortOrder": 2
+        },
+        {
+          "Key": "ccba4cae-a8bd-425b-9c41-eb63ac75c5e0",
+          "Alias": "pageSize",
+          "DataType": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+          "Description": "",
+          "Mandatory": true,
+          "Name": "PageSize"
+        },
+        {
+          "Key": "ef5221ab-4c95-47af-96f6-de39f926da80",
+          "Alias": "categoriesPageName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "The page title for the categories listing",
+          "Name": "Categories Page Name",
+          "SortOrder": 1
+        },
+        {
+          "Key": "f3e04dd1-4038-49f5-831d-83fa8ab7d9b9",
+          "Alias": "enableComments",
+          "DataType": "umb://data-type/91c97a742e5244cba35aa2ca1fc10ee7",
+          "Description": "If this is disabled then comments will not be allowed within this blog regardless of individual blog post settings.",
+          "Name": "Enable Comments",
+          "SortOrder": 9
+        }
+      ]
+    },
+    {
+      "Key": "cfc76b3f-d7ea-4c7f-9926-63d5ad3addd3",
+      "Name": "MetaWeblog options",
+      "SortOrder": 3,
+      "Alias": "metaWeblogOptions",
+      "PropertyTypes": [
+        {
+          "Key": "eb62ae84-4d4a-414e-82b0-9888d0b38ded",
+          "Alias": "extractFirstImage",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "When Windows Live Writer (or compatible WebBlog API tool) is used to create blog posts, with this option enabled it will set the first image found in the blog post to the blog's image property if one is found.",
+          "Name": "Extract First Image to Property"
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/b37ad6e9609949659c6384b58b995225",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/2e6d3631066e44b8aec496f09099b2b5",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/8b57d00e559345d3affe24203b239bd3",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/91c97a742e5244cba35aa2ca1fc10ee7",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c8f535ee27b84d16940dd6c523851bb1",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/d7e8c8fb892e42ecba2520298c88d1d1",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/7eb6fdf4f4874f32b1c200822a4423a1"
+    },
+    {
+      "Udi": "umb://document-type/93d3ec9b473f4f8fa077b940f9fd1afa"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

@@ -1,0 +1,56 @@
+{
+  "Name": "Page Hero Composition",
+  "Alias": "pageHeroComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "Settings for the content to be display at the top of the page main content.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "3760be88-83bd-4e25-b621-113269ffa102",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "bc9af731-b272-42aa-8fff-4c291f3cd572",
+          "Alias": "headline",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "A headline that appears above the main content of the page.If no value is provided the page name will be used instead.If a hero image is also provided then this headline appears over the hero image. Otherwise it appears just above the main content.",
+          "Name": "Headline"
+        },
+        {
+          "Key": "fd8a8cd3-da63-4091-a7bc-fb8bd7950d4d",
+          "Alias": "heroImage",
+          "DataType": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+          "Description": "The hero image which is displayed above the main content of the page.",
+          "Name": "Hero Image",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

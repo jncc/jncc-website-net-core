@@ -1,0 +1,369 @@
+{
+  "Name": "Home Page",
+  "Alias": "homePage",
+  "DefaultTemplate": "umb://template/f18a137b72bc4c4294a84c0961bb99a7",
+  "AllowedTemplates": [
+    "umb://template/f18a137b72bc4c4294a84c0961bb99a7"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-home color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "The home page for the website. It also includes various settings used throughout the website.",
+  "Permissions": {
+    "AllowedAtRoot": true,
+    "AllowedChildContentTypes": [
+      "umb://document-type/50ea99838bf84016bcffeb652534ed3c",
+      "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18",
+      "umb://document-type/f446c13c75eb4970a311e29f3a91096c",
+      "umb://document-type/c13bce713a5d4370abc3e9c1aabce4ec",
+      "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3",
+      "umb://document-type/5f83c74572b54fd3953d5f1504567a4e",
+      "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a",
+      "umb://document-type/f30c81ec37f040309fffd94cef6a7786",
+      "umb://document-type/11fdff54fcb2423b879b93ea2b233c73",
+      "umb://document-type/098d59e990db47cba5c860f59a3339f7",
+      "umb://document-type/b435c3f8648447c2a099b4e7aec739f2",
+      "umb://document-type/8aa6b9d082d842029594c00e732813d6",
+      "umb://document-type/a591f2b082f9459abf2ab01e7c0745c2",
+      "umb://document-type/6f223ecf3ef54c33bb28029fd537b63f",
+      "umb://document-type/a08289f832154ddebb00d69cd16d7b1c"
+    ]
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/2aee85c06c864da396b922d63a950407",
+    "umb://document-type/3d1d1a13d38c456c99f13989ef447ca5",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "11abdc9f-0dac-4161-b4b2-d921cea4c8e6",
+      "Name": "Footer",
+      "SortOrder": 2,
+      "Alias": "footer",
+      "PropertyTypes": [
+        {
+          "Key": "0dde0faf-8826-4691-a21d-5739c9dbe5ab",
+          "Alias": "footerCategorisedLinks",
+          "DataType": "umb://data-type/21c2bc67675a4f16b7d1e1a5f1ac2d60",
+          "Description": "Links grouped into useful categories (e.g. About, Our Services, etc) to be displayed within the footer below the main content of the page.",
+          "MandatoryMessage": "",
+          "Name": "Categorised Links",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "4ac78dcd-ab55-411a-b18c-0197e138f9bc",
+          "Alias": "footerSocialMediaLinks",
+          "DataType": "umb://data-type/b4e3535a175347e28568602cf8cfee6f",
+          "Description": "Links to various social media channels.",
+          "MandatoryMessage": "",
+          "Name": "Social Media Links",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "851fbdf5-1951-4e95-a5d6-2814a2d96606",
+          "Alias": "footerUncategorisedLinks",
+          "DataType": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+          "Description": "Uncategorised links that appear at the very bottom of the footer.",
+          "MandatoryMessage": "",
+          "Name": "Uncategorised Links",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "d1f15054-3a04-4ed0-b1f8-7cc8e20ba0a5",
+          "Alias": "footerContent",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "A content area useful display for displaying legal & copyright information within the footer of the page.",
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "2cca42fa-10ef-4bdf-abeb-94f398fe1aa0",
+      "Name": "Latest News & Social Feed",
+      "SortOrder": 1,
+      "Alias": "latestNewsSocialFeed",
+      "PropertyTypes": [
+        {
+          "Key": "5a4d3cf1-3a05-4c5f-bd2a-69f165e72456",
+          "Alias": "showLatestNews",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Show Latest News",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "5b1548e6-6f1c-4ca3-8273-b12c077a10a6",
+          "Alias": "numberOfTweets",
+          "DataType": "umb://data-type/ac80f16e2a5947768f7b9180d7ccf870",
+          "Description": "Determines how many Tweets should be displayed in the Social Feed.",
+          "MandatoryMessage": "",
+          "Name": "Number of Tweets",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "718c5a78-7a4c-432e-8638-37bd81cbed30",
+          "Alias": "showSocialFeed",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Show Social Feed",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "e4be8404-e95b-4c3e-892a-e45bb66ae074",
+          "Alias": "twitterFeedURL",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "If no URL is authored, the Social Feed will not be displayed even if the \"Show Social Feed\" is enabled.URL format must begin with https://twitter.com/ followed by the Twitter account handle.Example: https://twitter.com/jncc_uk",
+          "MandatoryMessage": "",
+          "Name": "Twitter Feed URL",
+          "SortOrder": 2,
+          "Validation": "^https:\\/\\/(www\\.)?twitter\\.com\\/[a-zA-Z_0-9\\-]+(\\/)?$",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "3cf53edc-c029-48fe-96fd-08af0482071e",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "30551347-5020-4ef3-b4bb-160d36ade1db",
+          "Alias": "preamble",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Preamble",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "5c7ad90f-0cca-49ff-abd6-98a85cd8bb5c",
+          "Alias": "calloutCards",
+          "DataType": "umb://data-type/c2857d47af8848ca98c7959a6a73988c",
+          "Description": "Boxes for important information which will appear below the hero carousel.",
+          "MandatoryMessage": "",
+          "Name": "Callout Cards",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "6751d38f-5ce5-4469-86c0-9b34accb47ec",
+      "Name": "Related Items",
+      "SortOrder": 201,
+      "Alias": "relatedItems",
+      "PropertyTypes": [
+        {
+          "Key": "8489203b-8a67-4ea6-a4de-00d4fa26af6d",
+          "Alias": "relatedItemsFallbackImage",
+          "DataType": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+          "Description": "This is used by related items that do not have an image associated with them .",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Fallback Image",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "6d9040e2-89ad-483d-a879-9311f804c411",
+      "Name": "Secure Pages",
+      "SortOrder": 201,
+      "Alias": "securePages",
+      "PropertyTypes": [
+        {
+          "Key": "ead2c2d1-24d8-45d1-833b-aa72dac7368f",
+          "Alias": "memberAccountPage",
+          "DataType": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+          "Description": "The page logged in members will be able to manage their account.",
+          "MandatoryMessage": "",
+          "Name": "Member Account Page",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "bedfdf7c-b0ef-4149-83da-3c3d62a121cb",
+      "Name": "Alert",
+      "SortOrder": 150,
+      "Alias": "alert",
+      "PropertyTypes": [
+        {
+          "Key": "210e0974-badd-4df8-ab57-51562d62dbd5",
+          "Alias": "globalAlertContent",
+          "DataType": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+          "Description": "When populated this will be shown across all pages, below the Navigation.",
+          "MandatoryMessage": "",
+          "Name": "Global Alert content",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "d965df3c-0be2-408f-91d1-9dc658dac485",
+      "Name": "Resources",
+      "Alias": "resources",
+      "PropertyTypes": [
+        {
+          "Key": "28b4ef20-633d-4ce0-86d8-58af68fd52de",
+          "Alias": "resourcesTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "A title to be given to the resources section.",
+          "MandatoryMessage": "",
+          "Name": "Title",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "4fcdf865-82dc-4ff1-9a3b-5c71ffc7fe6e",
+          "Alias": "resourcesItems",
+          "DataType": "umb://data-type/acd5cba5a2494f2e9caa1398303ba80f",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Items",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/0ebc2fcd60aa43d4a48a960f90898768",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/21c2bc67675a4f16b7d1e1a5f1ac2d60",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/ac80f16e2a5947768f7b9180d7ccf870",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/acd5cba5a2494f2e9caa1398303ba80f",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/b4e3535a175347e28568602cf8cfee6f",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c2857d47af8848ca98c7959a6a73988c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/098d59e990db47cba5c860f59a3339f7"
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/11fdff54fcb2423b879b93ea2b233c73"
+    },
+    {
+      "Udi": "umb://document-type/2aee85c06c864da396b922d63a950407",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/3d1d1a13d38c456c99f13989ef447ca5",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/50ea99838bf84016bcffeb652534ed3c"
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3"
+    },
+    {
+      "Udi": "umb://document-type/5f83c74572b54fd3953d5f1504567a4e"
+    },
+    {
+      "Udi": "umb://document-type/6f223ecf3ef54c33bb28029fd537b63f"
+    },
+    {
+      "Udi": "umb://document-type/8aa6b9d082d842029594c00e732813d6"
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18"
+    },
+    {
+      "Udi": "umb://document-type/a08289f832154ddebb00d69cd16d7b1c"
+    },
+    {
+      "Udi": "umb://document-type/a591f2b082f9459abf2ab01e7c0745c2"
+    },
+    {
+      "Udi": "umb://document-type/b435c3f8648447c2a099b4e7aec739f2"
+    },
+    {
+      "Udi": "umb://document-type/c13bce713a5d4370abc3e9c1aabce4ec"
+    },
+    {
+      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    },
+    {
+      "Udi": "umb://document-type/f30c81ec37f040309fffd94cef6a7786"
+    },
+    {
+      "Udi": "umb://document-type/f446c13c75eb4970a311e29f3a91096c"
+    },
+    {
+      "Udi": "umb://template/f18a137b72bc4c4294a84c0961bb99a7",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

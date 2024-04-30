@@ -1,0 +1,60 @@
+{
+  "Name": "Vertical Accordion Menu Schema",
+  "Alias": "verticalAccordionMenu",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-console color-black",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "6e6e3c21-db88-4f6b-9007-859bde982592",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "37df9595-9be7-4e0f-b781-4bfa67f5264c",
+          "Alias": "items",
+          "DataType": "umb://data-type/fef70ce878e344d295da691757ed23bc",
+          "Description": "Select the pages to be rendered within this accordion tab/pane",
+          "MandatoryMessage": "",
+          "Name": "Items",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "7710e9be-b2bf-400b-8dec-e4d86f2060b0",
+          "Alias": "accordionTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Accordion Title",
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/f96288ffb81041b0bb28e8c29461442d",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/fef70ce878e344d295da691757ed23bc",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

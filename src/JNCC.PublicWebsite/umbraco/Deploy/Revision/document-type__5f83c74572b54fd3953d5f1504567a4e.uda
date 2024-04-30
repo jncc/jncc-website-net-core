@@ -1,0 +1,180 @@
+{
+  "Name": "iFrame Page",
+  "Alias": "iFramePage",
+  "DefaultTemplate": "umb://template/fd5dc6b711aa4626bb3fa6e404845dd6",
+  "AllowedTemplates": [
+    "umb://template/fd5dc6b711aa4626bb3fa6e404845dd6"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-frame color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page intended to display external content within an iFrame.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "27ebfe46-277e-4e88-b3c3-d4088753c517",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "01481a39-912b-4e9e-9e0d-b27730338616",
+          "Alias": "pageTitle",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Page Title",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "426fc07a-b31a-4b4e-98ea-af5f946827e3",
+          "Alias": "passthroughQuerystringParameters",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "Allows any querystrings being passed in via the URL to be appended to the source URL of the the iframe.",
+          "MandatoryMessage": "",
+          "Name": "Passthrough Querystring Parameters",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "4387241f-6a0f-46ec-93e4-60d03494697d",
+          "Alias": "sourceURL",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "The URL that displays within the iFrame.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Source URL",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "b508dae0-abd8-4fc5-bb30-37b2c8e12f23",
+          "Alias": "cookieDisabledError",
+          "DataType": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+          "Description": "This is the message displayed if the user has not accepted the cookies on the website",
+          "MandatoryMessage": "",
+          "Name": "Cookie Disabled Error",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "c63dfc11-d3f2-4774-98cd-61fb7f33c110",
+      "Name": "Header",
+      "SortOrder": 2,
+      "Alias": "header",
+      "PropertyTypes": [
+        {
+          "Key": "bb8ee27d-b514-4fd6-af27-222b188718cb",
+          "Alias": "navigation",
+          "DataType": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+          "Description": "An optional collection of navigation links which is independent of the main navigation and will only appear on this iFrame page.",
+          "MandatoryMessage": "",
+          "Name": "Navigation",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "e0dc61f8-f759-48cb-a8a0-2573761903b9",
+      "Name": "Fallback Content",
+      "SortOrder": 1,
+      "Alias": "fallbackContent",
+      "PropertyTypes": [
+        {
+          "Key": "390c6f18-3710-4a89-801e-c7b43a7dd427",
+          "Alias": "fallbackContent",
+          "DataType": "umb://data-type/e5cfd2f8b4ef4e86873edc979616d1f8",
+          "Description": "This content is a text alternative for the mapper page, this will be displayed on the devices set by the toggle switches below",
+          "MandatoryMessage": "",
+          "Name": "Fallback Content",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "85981f9e-1b68-4450-9f05-c5773a09ba78",
+          "Alias": "displayOnMediumDevices",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "Set to true, to display above fallback content on medium devices (Tablet)",
+          "MandatoryMessage": "",
+          "Name": "Display on Medium Devices ?",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "938971c9-7345-4caf-9bfa-96372b0ff86b",
+          "Alias": "displayOnSmallDevices",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "Set to true, to display above fallback content on small devices (Mobile)",
+          "MandatoryMessage": "",
+          "Name": "Display on Small Devices ?",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/5f83c74572b54fd3953d5f1504567a4e",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e5cfd2f8b4ef4e86873edc979616d1f8",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/fd5dc6b711aa4626bb3fa6e404845dd6",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

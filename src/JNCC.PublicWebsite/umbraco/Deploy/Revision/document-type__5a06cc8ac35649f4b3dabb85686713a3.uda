@@ -1,0 +1,137 @@
+{
+  "Name": "Generic Listing Page",
+  "Alias": "genericListingPage",
+  "DefaultTemplate": "umb://template/3f40a9076ea54deebe7fff56c3dfdd0f",
+  "AllowedTemplates": [
+    "umb://template/3f40a9076ea54deebe7fff56c3dfdd0f"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-bulleted-list color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page for listing child pages in a generic list",
+  "IsContainer": true,
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18",
+      "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3",
+      "umb://document-type/5f83c74572b54fd3953d5f1504567a4e",
+      "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    ]
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+    "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+    "umb://document-type/e7e93a2f706740bba19b7fc212604a32"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "289972d0-b749-4334-b9cc-9548e628adb4",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "0de180ca-3d6b-4b84-b54f-ec3c1b68a967",
+          "Alias": "preamble",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "Introductory content explaining the purpose of the page.",
+          "MandatoryMessage": "",
+          "Name": "Preamble",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "119aa44c-bd68-4822-be13-eb13be066dcf",
+          "Alias": "itemsPerPage",
+          "DataType": "umb://data-type/bb2cb8f7278d4a95b9207d78004dfc11",
+          "Description": "Determines how many pages should be shown per page by default.",
+          "MandatoryMessage": "",
+          "Name": "Items Per Page",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "392584f0-78f5-4860-8fd3-8d683aa16455",
+          "Alias": "postListingContent",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "Rich text content which will appear below the listing.",
+          "MandatoryMessage": "",
+          "Name": "Post-listing Content",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/bb2cb8f7278d4a95b9207d78004dfc11",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3"
+    },
+    {
+      "Udi": "umb://document-type/5f83c74572b54fd3953d5f1504567a4e"
+    },
+    {
+      "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18"
+    },
+    {
+      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    },
+    {
+      "Udi": "umb://document-type/e7e93a2f706740bba19b7fc212604a32",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/3f40a9076ea54deebe7fff56c3dfdd0f",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

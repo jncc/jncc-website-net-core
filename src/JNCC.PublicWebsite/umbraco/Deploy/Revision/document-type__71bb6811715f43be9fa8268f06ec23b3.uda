@@ -1,0 +1,197 @@
+{
+  "Name": "Articulate Post",
+  "Alias": "ArticulatePost",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-folder",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "06b7e24e-1ef8-4bad-bd7e-d390749b2427",
+      "Name": "Meta Tags",
+      "SortOrder": 3,
+      "Alias": "metaTags",
+      "PropertyTypes": [
+        {
+          "Key": "16e2e954-76e9-4c2a-8d05-8e97453a201d",
+          "Alias": "socialDescription",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "Open Graph Description - Describe the article in one or two lines.",
+          "MandatoryMessage": "",
+          "Name": "Social Description",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "3a0120a6-674b-4daf-9af6-43efe9fdce4c",
+      "Name": "Image",
+      "SortOrder": 2,
+      "Alias": "image",
+      "PropertyTypes": [
+        {
+          "Key": "a6059bc0-b00d-47d8-bd01-0627392182b8",
+          "Alias": "postImage",
+          "DataType": "umb://data-type/c8f535ee27b84d16940dd6c523851bb1",
+          "Description": "An optional image for your blog post",
+          "MandatoryMessage": "",
+          "Name": "Post Image",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "ec1a9888-8b92-40e7-b4a9-710e6cefeae4",
+      "Name": "Post Attributes",
+      "Alias": "postAttributes",
+      "PropertyTypes": [
+        {
+          "Key": "1bdccd02-647e-4163-bd3d-a384a032228e",
+          "Alias": "categories",
+          "DataType": "umb://data-type/a72aeb125b284a47b99afde14d49c1ac",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Categories",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "5a3a1c1a-2d43-42a6-835e-aeb90d3cf482",
+          "Alias": "umbracoUrlName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "If left blank then umbraco will auto-generate the URL name based on the node name",
+          "MandatoryMessage": "",
+          "Name": "Slug",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "5abbdabe-cf43-493a-be4a-ce3a1f9092be",
+          "Alias": "tags",
+          "DataType": "umb://data-type/f8404fdc7667418495c3125b1d81314d",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Tags",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "8d12ebba-e8f6-4249-aabb-6cb512a380f3",
+          "Alias": "excerpt",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Excerpt",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "a363f195-8658-4d55-b969-732274ef58a4",
+          "Alias": "enableComments",
+          "DataType": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Enable Comments",
+          "SortOrder": 7,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "a693e1ab-be4e-45aa-8d37-902487e838f9",
+          "Alias": "author",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Author",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "d9534d7a-70eb-4c94-b730-2e55e4463294",
+          "Alias": "publishedDate",
+          "DataType": "umb://data-type/e4d66c0fb935420081f0025f7256b89a",
+          "Description": "This is the date that the document will be shown as published on your website",
+          "MandatoryMessage": "",
+          "Name": "Published Date",
+          "SortOrder": 6,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "eaa23efa-9f7b-4a69-864a-d61ccfc1919f",
+          "Alias": "authorStaffProfilePage",
+          "DataType": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+          "Description": "The Staff Profile Page of the current author. This will link the author to their staff directory page.",
+          "MandatoryMessage": "",
+          "Name": "Author Staff Profile Page",
+          "SortOrder": 5,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [
+    {
+      "Key": "7a1dcd0a-fa48-4b3d-bd9f-4262b0b2e86f",
+      "Alias": "umbracoUrlAlias",
+      "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Description": "",
+      "MandatoryMessage": "",
+      "Name": "umbracoUrlAlias",
+      "ValidationMessage": ""
+    },
+    {
+      "Key": "a94c1a9a-ad86-4536-abd8-b52a94e1eeec",
+      "Alias": "importId",
+      "DataType": "umb://data-type/f0bc4bfbb49940d6ba86058885a5178c",
+      "Description": "Used during a blogml import process to ensure that re-importing does not create duplicate posts.",
+      "MandatoryMessage": "",
+      "Name": "Import Id",
+      "SortOrder": 1,
+      "ValidationMessage": ""
+    }
+  ],
+  "Udi": "umb://document-type/71bb6811715f43be9fa8268f06ec23b3",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/92897bc6a5f34ffeae27f2e7e33dda49",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/a72aeb125b284a47b99afde14d49c1ac",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/c8f535ee27b84d16940dd6c523851bb1",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e4d66c0fb935420081f0025f7256b89a",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/f0bc4bfbb49940d6ba86058885a5178c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/f8404fdc7667418495c3125b1d81314d",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/fd1e0da556064862b6795d0cf3a52a59",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

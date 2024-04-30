@@ -1,0 +1,19 @@
+{
+  "Name": "Science Category Page",
+  "Alias": "ScienceCategoryPage",
+  "File": "umb://template-file/ScienceCategoryPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/79fb48245474421bbfc9515e134f85b7",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/ScienceCategoryPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

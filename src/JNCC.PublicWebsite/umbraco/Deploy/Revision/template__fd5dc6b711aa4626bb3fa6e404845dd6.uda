@@ -1,0 +1,19 @@
+{
+  "Name": "iFrame Page",
+  "Alias": "iFramePage",
+  "File": "umb://template-file/iFramePage.cshtml",
+  "Master": "umb://template/fb7bc04e730f4d8b807b796027b47540",
+  "Udi": "umb://template/fd5dc6b711aa4626bb3fa6e404845dd6",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/iFramePage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/fb7bc04e730f4d8b807b796027b47540",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

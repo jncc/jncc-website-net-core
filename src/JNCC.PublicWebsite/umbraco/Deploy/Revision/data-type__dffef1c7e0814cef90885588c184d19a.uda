@@ -1,0 +1,68 @@
+{
+  "Name": "Stacked Content: Science Details Page",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "b156c059-8437-4bbd-ba16-801c6df1e399",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "d4506ede-08e7-4f71-aa73-83e49e86c88d",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "7fb46c31-de31-4c17-9f33-3bb35aa4f911",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "02cebb05-0996-4687-8450-de24454e03a7",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "396363d1-2912-4e1a-ace5-5a1b427dee42",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/dffef1c7e0814cef90885588c184d19a",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/02cebb05099646878450de24454e03a7",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/396363d129124e1aace55a1b427dee42",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/7fb46c31de314c179f333bb35aa4f911",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/b156c05984374bbdba16801c6df1e399",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/d4506ede08e74f71aa7383e49e86c88d",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

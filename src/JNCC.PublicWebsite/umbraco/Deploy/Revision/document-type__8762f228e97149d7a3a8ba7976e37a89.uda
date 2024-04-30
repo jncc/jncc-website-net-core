@@ -1,0 +1,47 @@
+{
+  "Name": "Alert Composition",
+  "Alias": "alertComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-alert color-black",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "55d767c4-0d23-4a45-b23f-b27bab77ef90",
+      "Name": "Alert",
+      "SortOrder": 150,
+      "Alias": "alert",
+      "PropertyTypes": [
+        {
+          "Key": "b98e47a8-2daf-48e8-85e9-adcf595f5824",
+          "Alias": "pageSpecificAlertContent",
+          "DataType": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+          "Description": "When populated this will show at the top of page body",
+          "MandatoryMessage": "",
+          "Name": "Alert Content",
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

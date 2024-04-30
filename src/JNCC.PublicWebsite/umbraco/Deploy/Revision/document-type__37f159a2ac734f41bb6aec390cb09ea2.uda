@@ -1,0 +1,223 @@
+{
+  "Name": "Individual Job Page",
+  "Alias": "individualJobPage",
+  "DefaultTemplate": "umb://template/aae74e80e6d54f6b894d2f79c24df419",
+  "AllowedTemplates": [
+    "umb://template/aae74e80e6d54f6b894d2f79c24df419"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-employee color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page for providing details of an individual job",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+    "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+    "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+    "umb://document-type/e7e93a2f706740bba19b7fc212604a32"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "0b49bcd7-318a-4a3e-b758-b906ae9d12a3",
+      "Name": "Post Duties",
+      "Alias": "postDuties",
+      "PropertyTypes": [
+        {
+          "Key": "31b4094e-9a2b-4bd6-bc22-196dd70ee1bc",
+          "Alias": "postDutiesContent",
+          "DataType": "umb://data-type/b3693d872f9b405d9ddf544a1002bf30",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "3fc83437-5236-4ac8-b333-9ab64cf43942",
+      "Name": "Background",
+      "Alias": "background",
+      "PropertyTypes": [
+        {
+          "Key": "3ac7c201-3816-44bf-82a4-42889fd0ef37",
+          "Alias": "backgroundContent",
+          "DataType": "umb://data-type/b3693d872f9b405d9ddf544a1002bf30",
+          "Description": "",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "5b4cf574-dd1d-4d4f-84bf-dbdf224b3eab",
+      "Name": "Salary & Benefits",
+      "Alias": "salaryBenefits",
+      "PropertyTypes": [
+        {
+          "Key": "d58733c6-ebef-4362-ae2b-088897e36516",
+          "Alias": "salaryBenefitsContent",
+          "DataType": "umb://data-type/b3693d872f9b405d9ddf544a1002bf30",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "bf3e44a7-7b46-4045-b757-20240dab1a3d",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "2d7b2571-996e-46fb-8302-9a53b313cb2d",
+          "Alias": "referenceNumber",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Reference Number",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "89e8a5a0-fcf9-486c-9503-8adde6c1dea6",
+          "Alias": "location",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Location",
+          "SortOrder": 5,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "9bf4fb16-abe7-4765-b9e9-21d96f561b3c",
+          "Alias": "team",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Team",
+          "SortOrder": 6,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "b348b21e-f157-4ac4-b86d-06551c1e58ac",
+          "Alias": "grade",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Grade",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "d335ac6c-48f7-4dd4-a4f0-3da7e2c213bb",
+          "Alias": "typeOfAppointment",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Type of Appointment",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "e7f78ddb-daae-4cfc-9b82-2b2495663968",
+          "Alias": "closingDate",
+          "DataType": "umb://data-type/e4d66c0fb935420081f0025f7256b89a",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Closing Date",
+          "SortOrder": 7,
+          "ValidationMessage": ""
+        }
+      ]
+    },
+    {
+      "Key": "e544e30d-4dec-42bd-b1ea-0f81ce3a3d62",
+      "Name": "Competences",
+      "Alias": "competences",
+      "PropertyTypes": [
+        {
+          "Key": "0ada9031-43b8-4df0-a086-38984bee3a7c",
+          "Alias": "competencesContent",
+          "DataType": "umb://data-type/b3693d872f9b405d9ddf544a1002bf30",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/b3693d872f9b405d9ddf544a1002bf30",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/e4d66c0fb935420081f0025f7256b89a",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/e7e93a2f706740bba19b7fc212604a32",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/aae74e80e6d54f6b894d2f79c24df419",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

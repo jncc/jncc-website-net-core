@@ -1,0 +1,127 @@
+{
+  "Name": "Careers Landing Page",
+  "Alias": "careersLandingPage",
+  "DefaultTemplate": "umb://template/49f3e41aa7ce4714811c937601669826",
+  "AllowedTemplates": [
+    "umb://template/49f3e41aa7ce4714811c937601669826"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-reception color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "An introductory page for displaying the latest job opportunities.",
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2",
+      "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    ]
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+    "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "38f6c407-5c5a-4284-9e51-464b8b99a0fa",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "4ad26d05-097f-4d5e-a376-f2ca8761e2b1",
+          "Alias": "preamble",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "Introductory content for careers section.",
+          "MandatoryMessage": "",
+          "Name": "Preamble",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "4b1ed650-72cf-43d5-91ff-a8f224820c5b",
+          "Alias": "mainContentHeading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Heading displayed under the Current Vacancies section and above the main content",
+          "MandatoryMessage": "",
+          "Name": "Main Content Heading",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "943fea27-0d92-4103-acc9-ae6433aa6c00",
+          "Alias": "mainContent",
+          "DataType": "umb://data-type/4fae47b05a4543109ae27c8063487870",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Main Content",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/f446c13c75eb4970a311e29f3a91096c",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/4fae47b05a4543109ae27c8063487870",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2"
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+    },
+    {
+      "Udi": "umb://template/49f3e41aa7ce4714811c937601669826",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}
