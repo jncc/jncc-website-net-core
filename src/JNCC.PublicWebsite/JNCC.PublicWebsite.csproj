@@ -1,231 +1,293 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
-    <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <Configurations>Debug;Release;Development;Staging</Configurations>
-    </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Configurations>Debug;Release;Development;Staging</Configurations>
+	</PropertyGroup>
 
-    <ItemGroup>
-      <None Remove="Views\ResourceDetailPage.cshtml~RF9d71bc8.TMP" />
-    </ItemGroup>
+	<ItemGroup>
+		<None Remove="Views\ResourceDetailPage.cshtml~RF9d71bc8.TMP" />
+	</ItemGroup>
 
-    <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
-        <PackageReference Include="SEOChecker" Version="10.0.5" />
-        <PackageReference Include="SEOChecker.Core" Version="10.0.5" />
-        <PackageReference Include="Umbraco.Cms" Version="10.8.5" />
-    </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
+		<PackageReference Include="SEOChecker" Version="10.0.5" />
+		<PackageReference Include="SEOChecker.Core" Version="10.0.5" />
+		<PackageReference Include="Umbraco.Cms" Version="10.8.5" />
+	</ItemGroup>
 
-    <!-- Force windows to use ICU. Otherwise Windows 10 2019H1+ will do it, but older windows 10 and most if not all winodws servers will run NLS -->
-    <ItemGroup>
-        <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
-        <PackageReference Include="Umbraco.Deploy.OnPrem" Version="10.4.0" />
-        <PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="10.0.1" />
-        <ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
-        <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
-    </ItemGroup>
-    
-    <ItemGroup>
-        <Content Include="App_Plugins\Deploy\assets\css\deploy.css">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\cs-CZ.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\da-DK.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\de-DE.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\en-GB.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\en-US.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\es-ES.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\fr-FR.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\he-IL.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\it-IT.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\ja-JP.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\ko-KR.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\nb-NO.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\nl-NL.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\pl-PL.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\pt-BR.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\ru-RU.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\sv-SE.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\lang\zh-CN.xml">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\components\deploy\uddeploycomplete\uddeploycomplete.html" />
-        <Content Include="App_Plugins\Deploy\views\components\deploy\uddeployprogress\uddeployprogress.html" />
-        <Content Include="App_Plugins\Deploy\views\components\deploy\uddeployqueue\uddeployqueue.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udbusyerror\udbusyerror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udchunkdecodingerror\udchunkdecodingerror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udcollisionerror\udcollisionerror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udcontenttypechangederror\udcontenttypechangederror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\uddepencencyerror\uddependencyerror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\uddeployschemamismatcherror\uddeployschemamismatcherror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udimportartifactserror\udimportartifactserror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udimportartifactsunhandlederror\udimportartifactsunhandlederror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udinvalidpatherror\udinvalidpatherror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udkabumerror\udkabumerror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udmergeconflicterror\udmergeconflicterror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udremoteapitimeouterror\udremoteapitimeouterror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udrestoreschemamismatcherror\udrestoreschemamismatcherror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udunauthorizedclienterror\udunauthorizedclienterror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\errors\udwebexceptionerror\udwebexceptionerror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\export\udexportcomplete\udexportcomplete.html" />
-        <Content Include="App_Plugins\Deploy\views\components\export\udexportprogress\udexportprogress.html" />
-        <Content Include="App_Plugins\Deploy\views\components\import\udimportcomplete\udimportcomplete.html" />
-        <Content Include="App_Plugins\Deploy\views\components\import\udimportprogress\udimportprogress.html" />
-        <Content Include="App_Plugins\Deploy\views\components\restore\udrestorecomplete\udrestorecomplete.html" />
-        <Content Include="App_Plugins\Deploy\views\components\restore\udrestoreprogress\udrestoreprogress.html" />
-        <Content Include="App_Plugins\Deploy\views\components\udconnectlocal\udconnectlocal.html" />
-        <Content Include="App_Plugins\Deploy\views\components\udcontentflow\udcontentflow.html" />
-        <Content Include="App_Plugins\Deploy\views\components\uderror\uderror.html" />
-        <Content Include="App_Plugins\Deploy\views\components\udinfobox\udinfobox.html" />
-        <Content Include="App_Plugins\Deploy\views\components\workspace\udworkspaceadd\udworkspaceadd.html" />
-        <Content Include="App_Plugins\Deploy\views\components\workspace\udworkspaceinfo\udworkspaceinfo.html" />
-        <Content Include="App_Plugins\Deploy\views\components\workspace\udworkspace\udworkspace.html" />
-        <Content Include="App_Plugins\Deploy\views\dashboards\management-dashboard.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dashboards\onprem-dashboard.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dashboards\overlays\schema-comparison-detail.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\addtoqueue.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\compare.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\deploy.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\export.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\import.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\partial-restore.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\restore.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\tree-export.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\dialogs\tree-restore.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\partials\add-workspace.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\partials\done-deploy.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\partials\flow.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\partials\progress.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\partials\queue.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\Deploy\views\partials\workspace-info.html">
-          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-        </Content>
-        <Content Include="App_Plugins\TwoFactorProviders\Authenticator.html" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <None Include="App_Plugins\Deploy\js\deploy.components.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\js\deploy.controllers.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\js\deploy.decorators.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\js\deploy.filters.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\js\deploy.modules.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\js\deploy.resources.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\js\deploy.services.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\js\nonodes.bootstrap.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\js\nonodes.modules.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\lib\signalr\signalr.min.js">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-      <None Include="App_Plugins\Deploy\package.manifest" />
-      <None Include="App_Plugins\TwoFactorProviders\Authenticator.controller.js" />
-      <None Include="App_Plugins\TwoFactorProviders\package.manifest" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <None Update="IISUrlRewrite.xml">
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </None>
-    </ItemGroup>
-    
+	<!-- Force windows to use ICU. Otherwise Windows 10 2019H1+ will do it, but older windows 10 and most if not all winodws servers will run NLS -->
+	<ItemGroup>
+		<PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
+		<PackageReference Include="Umbraco.Deploy.OnPrem" Version="10.4.0" />
+		<PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="10.0.1" />
+		<ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
+		<RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
+	</ItemGroup>
 
-    <PropertyGroup>
-        <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
-    </PropertyGroup>
+	<ItemGroup>
+		<Content Include="App_Plugins\Deploy\assets\css\deploy.css">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\cs-CZ.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\da-DK.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\de-DE.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\en-GB.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\en-US.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\es-ES.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\fr-FR.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\he-IL.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\it-IT.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\ja-JP.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\ko-KR.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\nb-NO.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\nl-NL.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\pl-PL.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\pt-BR.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\ru-RU.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\sv-SE.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\lang\zh-CN.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\deploy\uddeploycomplete\uddeploycomplete.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\deploy\uddeployprogress\uddeployprogress.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\deploy\uddeployqueue\uddeployqueue.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udbusyerror\udbusyerror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udchunkdecodingerror\udchunkdecodingerror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udcollisionerror\udcollisionerror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udcontenttypechangederror\udcontenttypechangederror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\uddepencencyerror\uddependencyerror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\uddeployschemamismatcherror\uddeployschemamismatcherror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udimportartifactserror\udimportartifactserror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udimportartifactsunhandlederror\udimportartifactsunhandlederror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udinvalidpatherror\udinvalidpatherror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udkabumerror\udkabumerror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udmergeconflicterror\udmergeconflicterror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udremoteapitimeouterror\udremoteapitimeouterror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udrestoreschemamismatcherror\udrestoreschemamismatcherror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udunauthorizedclienterror\udunauthorizedclienterror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\errors\udwebexceptionerror\udwebexceptionerror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\export\udexportcomplete\udexportcomplete.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\export\udexportprogress\udexportprogress.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\import\udimportcomplete\udimportcomplete.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\import\udimportprogress\udimportprogress.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\restore\udrestorecomplete\udrestorecomplete.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\restore\udrestoreprogress\udrestoreprogress.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\udconnectlocal\udconnectlocal.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\udcontentflow\udcontentflow.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\uderror\uderror.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\udinfobox\udinfobox.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\workspace\udworkspaceadd\udworkspaceadd.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\workspace\udworkspaceinfo\udworkspaceinfo.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\components\workspace\udworkspace\udworkspace.html" >
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dashboards\management-dashboard.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dashboards\onprem-dashboard.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dashboards\overlays\schema-comparison-detail.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\addtoqueue.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\compare.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\deploy.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\export.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\import.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\partial-restore.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\restore.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\tree-export.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\dialogs\tree-restore.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\partials\add-workspace.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\partials\done-deploy.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\partials\flow.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\partials\progress.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\partials\queue.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\Deploy\views\partials\workspace-info.html">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<Content Include="App_Plugins\TwoFactorProviders\Authenticator.html" />
+	</ItemGroup>
 
-    <!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
-    <PropertyGroup>
-        <RazorCompileOnBuild>false</RazorCompileOnBuild>
-        <RazorCompileOnPublish>false</RazorCompileOnPublish>
-        <UserSecretsId>f32089cc-cccc-44f5-8a1c-6a937ca44000</UserSecretsId>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+	<ItemGroup>
+		<None Include="App_Plugins\Deploy\js\deploy.components.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\js\deploy.controllers.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\js\deploy.decorators.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\js\deploy.filters.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\js\deploy.modules.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\js\deploy.resources.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\js\deploy.services.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\js\nonodes.bootstrap.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\js\nonodes.modules.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\lib\signalr\signalr.min.js">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Include="App_Plugins\Deploy\package.manifest" />
+		<None Include="App_Plugins\TwoFactorProviders\Authenticator.controller.js" />
+		<None Include="App_Plugins\TwoFactorProviders\package.manifest" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Update="IISUrlRewrite.xml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+	</ItemGroup>
+
+
+	<PropertyGroup>
+		<CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
+	</PropertyGroup>
+
+	<!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
+	<PropertyGroup>
+		<RazorCompileOnBuild>false</RazorCompileOnBuild>
+		<RazorCompileOnPublish>false</RazorCompileOnPublish>
+		<UserSecretsId>f32089cc-cccc-44f5-8a1c-6a937ca44000</UserSecretsId>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
 </Project>
