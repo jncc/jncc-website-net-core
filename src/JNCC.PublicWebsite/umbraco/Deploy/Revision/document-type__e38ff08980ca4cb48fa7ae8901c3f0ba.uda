@@ -24,13 +24,14 @@
           "DataType": "umb://data-type/90829ceec8df4fb69413cefe98060317",
           "Description": "The link & text for the button that links to a full web page for getting in touch about this content item.",
           "Name": "Get in Touch Button",
-          "SortOrder": 3
+          "SortOrder": 4
         },
         {
           "Key": "28ec743b-04d3-4bc3-8787-50ce21e97656",
           "Alias": "image",
           "DataType": "umb://data-type/6a5ebd6f682f456290e4de0b5e299a48",
-          "Name": "Image"
+          "Name": "Image",
+          "SortOrder": 1
         },
         {
           "Key": "2a9c608a-9f4b-42ae-9797-660ae75b7dc5",
@@ -39,7 +40,13 @@
           "Description": "The link & text for the button that links to the full web page for this content item.",
           "Mandatory": true,
           "Name": "Read More Button",
-          "SortOrder": 2
+          "SortOrder": 3
+        },
+        {
+          "Key": "39b077f8-56f3-4d01-b70e-94c5e4b8d364",
+          "Alias": "headline",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Name": "Headline"
         },
         {
           "Key": "7b65891a-b2f6-4378-9746-56a8e2e7ecc1",
@@ -48,7 +55,7 @@
           "Description": "A brief paragraph or two explaining this content item.",
           "Mandatory": true,
           "Name": "Content",
-          "SortOrder": 1
+          "SortOrder": 2
         }
       ]
     }
@@ -56,6 +63,10 @@
   "PropertyTypes": [],
   "Udi": "umb://document-type/e38ff08980ca4cb48fa7ae8901c3f0ba",
   "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
     {
       "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
       "Ordering": true

@@ -66,6 +66,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::Umbraco.Cms.Core.Models.Link GetInTouchButton => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "getInTouchButton");
 
 		///<summary>
+		/// Headline
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("headline")]
+		public virtual string Headline => this.Value<string>(_publishedValueFallback, "headline");
+
+		///<summary>
 		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
