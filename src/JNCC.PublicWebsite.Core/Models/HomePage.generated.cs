@@ -159,6 +159,14 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual bool ShowSocialFeed => this.Value<bool>(_publishedValueFallback, "showSocialFeed");
 
 		///<summary>
+		/// Test property
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
+		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
+		[ImplementPropertyType("testProperty")]
+		public virtual string TestProperty => this.Value<string>(_publishedValueFallback, "testProperty");
+
+		///<summary>
 		/// Twitter Feed URL: If no URL is authored, the Social Feed will not be displayed even if the "Show Social Feed" is enabled.URL format must begin with https://twitter.com/ followed by the Twitter account handle.Example: https://twitter.com/jncc_uk
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]

@@ -157,6 +157,12 @@
           "Name": "Callout Cards",
           "SortOrder": 4,
           "ValidationMessage": ""
+        },
+        {
+          "Key": "7887fe9b-b0e8-4da0-bc69-1d66384d02b3",
+          "Alias": "testProperty",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Name": "Test property"
         }
       ]
     },
