@@ -27,14 +27,95 @@
     </ItemGroup>
     
     <ItemGroup>
-      <Folder Include="App_Plugins\" />
-    </ItemGroup>
-    
-    <ItemGroup>
+        <Content Include="App_Plugins\Deploy\assets\css\deploy.css" />
+        <Content Include="App_Plugins\Deploy\lang\cs-CZ.xml" />
+        <Content Include="App_Plugins\Deploy\lang\da-DK.xml" />
+        <Content Include="App_Plugins\Deploy\lang\de-DE.xml" />
+        <Content Include="App_Plugins\Deploy\lang\en-GB.xml" />
+        <Content Include="App_Plugins\Deploy\lang\en-US.xml" />
+        <Content Include="App_Plugins\Deploy\lang\es-ES.xml" />
+        <Content Include="App_Plugins\Deploy\lang\fr-FR.xml" />
+        <Content Include="App_Plugins\Deploy\lang\he-IL.xml" />
+        <Content Include="App_Plugins\Deploy\lang\it-IT.xml" />
+        <Content Include="App_Plugins\Deploy\lang\ja-JP.xml" />
+        <Content Include="App_Plugins\Deploy\lang\ko-KR.xml" />
+        <Content Include="App_Plugins\Deploy\lang\nb-NO.xml" />
+        <Content Include="App_Plugins\Deploy\lang\nl-NL.xml" />
+        <Content Include="App_Plugins\Deploy\lang\pl-PL.xml" />
+        <Content Include="App_Plugins\Deploy\lang\pt-BR.xml" />
+        <Content Include="App_Plugins\Deploy\lang\ru-RU.xml" />
+        <Content Include="App_Plugins\Deploy\lang\sv-SE.xml" />
+        <Content Include="App_Plugins\Deploy\lang\zh-CN.xml" />
+        <Content Include="App_Plugins\Deploy\views\components\deploy\uddeploycomplete\uddeploycomplete.html" />
+        <Content Include="App_Plugins\Deploy\views\components\deploy\uddeployprogress\uddeployprogress.html" />
+        <Content Include="App_Plugins\Deploy\views\components\deploy\uddeployqueue\uddeployqueue.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udbusyerror\udbusyerror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udchunkdecodingerror\udchunkdecodingerror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udcollisionerror\udcollisionerror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udcontenttypechangederror\udcontenttypechangederror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\uddepencencyerror\uddependencyerror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\uddeployschemamismatcherror\uddeployschemamismatcherror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udimportartifactserror\udimportartifactserror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udimportartifactsunhandlederror\udimportartifactsunhandlederror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udinvalidpatherror\udinvalidpatherror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udkabumerror\udkabumerror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udmergeconflicterror\udmergeconflicterror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udremoteapitimeouterror\udremoteapitimeouterror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udrestoreschemamismatcherror\udrestoreschemamismatcherror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udunauthorizedclienterror\udunauthorizedclienterror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\errors\udwebexceptionerror\udwebexceptionerror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\export\udexportcomplete\udexportcomplete.html" />
+        <Content Include="App_Plugins\Deploy\views\components\export\udexportprogress\udexportprogress.html" />
+        <Content Include="App_Plugins\Deploy\views\components\import\udimportcomplete\udimportcomplete.html" />
+        <Content Include="App_Plugins\Deploy\views\components\import\udimportprogress\udimportprogress.html" />
+        <Content Include="App_Plugins\Deploy\views\components\restore\udrestorecomplete\udrestorecomplete.html" />
+        <Content Include="App_Plugins\Deploy\views\components\restore\udrestoreprogress\udrestoreprogress.html" />
+        <Content Include="App_Plugins\Deploy\views\components\udconnectlocal\udconnectlocal.html" />
+        <Content Include="App_Plugins\Deploy\views\components\udcontentflow\udcontentflow.html" />
+        <Content Include="App_Plugins\Deploy\views\components\uderror\uderror.html" />
+        <Content Include="App_Plugins\Deploy\views\components\udinfobox\udinfobox.html" />
+        <Content Include="App_Plugins\Deploy\views\components\workspace\udworkspaceadd\udworkspaceadd.html" />
+        <Content Include="App_Plugins\Deploy\views\components\workspace\udworkspaceinfo\udworkspaceinfo.html" />
+        <Content Include="App_Plugins\Deploy\views\components\workspace\udworkspace\udworkspace.html" />
+        <Content Include="App_Plugins\Deploy\views\dashboards\management-dashboard.html">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="App_Plugins\Deploy\views\dashboards\onprem-dashboard.html">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="App_Plugins\Deploy\views\dashboards\overlays\schema-comparison-detail.html">
+          <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Content>
+        <Content Include="App_Plugins\Deploy\views\dialogs\addtoqueue.html" />
+        <Content Include="App_Plugins\Deploy\views\dialogs\compare.html" />
+        <Content Include="App_Plugins\Deploy\views\dialogs\deploy.html" />
+        <Content Include="App_Plugins\Deploy\views\dialogs\export.html" />
+        <Content Include="App_Plugins\Deploy\views\dialogs\import.html" />
+        <Content Include="App_Plugins\Deploy\views\dialogs\partial-restore.html" />
+        <Content Include="App_Plugins\Deploy\views\dialogs\restore.html" />
+        <Content Include="App_Plugins\Deploy\views\dialogs\tree-export.html" />
+        <Content Include="App_Plugins\Deploy\views\dialogs\tree-restore.html" />
+        <Content Include="App_Plugins\Deploy\views\partials\add-workspace.html" />
+        <Content Include="App_Plugins\Deploy\views\partials\done-deploy.html" />
+        <Content Include="App_Plugins\Deploy\views\partials\flow.html" />
+        <Content Include="App_Plugins\Deploy\views\partials\progress.html" />
+        <Content Include="App_Plugins\Deploy\views\partials\queue.html" />
+        <Content Include="App_Plugins\Deploy\views\partials\workspace-info.html" />
         <Content Include="App_Plugins\TwoFactorProviders\Authenticator.html" />
     </ItemGroup>
     
     <ItemGroup>
+      <None Include="App_Plugins\Deploy\js\deploy.components.js" />
+      <None Include="App_Plugins\Deploy\js\deploy.controllers.js" />
+      <None Include="App_Plugins\Deploy\js\deploy.decorators.js" />
+      <None Include="App_Plugins\Deploy\js\deploy.filters.js" />
+      <None Include="App_Plugins\Deploy\js\deploy.modules.js" />
+      <None Include="App_Plugins\Deploy\js\deploy.resources.js" />
+      <None Include="App_Plugins\Deploy\js\deploy.services.js" />
+      <None Include="App_Plugins\Deploy\js\nonodes.bootstrap.js" />
+      <None Include="App_Plugins\Deploy\js\nonodes.modules.js" />
+      <None Include="App_Plugins\Deploy\lib\signalr\signalr.min.js" />
+      <None Include="App_Plugins\Deploy\package.manifest" />
       <None Include="App_Plugins\TwoFactorProviders\Authenticator.controller.js" />
       <None Include="App_Plugins\TwoFactorProviders\package.manifest" />
     </ItemGroup>
