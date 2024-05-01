@@ -1,0 +1,16 @@
+{
+  "Name": "Single Science Category Page Picker",
+  "Alias": "",
+  "EditorAlias": "Umbraco.MultiNodeTreePicker",
+  "Configuration": {
+    "filter": "scienceCategoryPage",
+    "minNumber": 0,
+    "maxNumber": 1,
+    "showOpenButton": false,
+    "ignoreUserStartNodes": false
+  },
+  "Udi": "umb://data-type/4defdb0e21654f058d76ee484083ff44",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

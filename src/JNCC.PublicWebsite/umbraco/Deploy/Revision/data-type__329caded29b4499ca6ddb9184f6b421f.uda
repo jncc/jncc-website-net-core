@@ -1,0 +1,38 @@
+{
+  "Name": "Stacked Content: Science Details - Image Text Individual Schema",
+  "Alias": "",
+  "EditorAlias": "Umbraco.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "65e36e8a-6155-4f52-b3e7-7a82ae80966f",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "contentElementTypeKey": "98d6304b-6aa3-4917-aec4-344790ade927",
+        "label": "{{headline}}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/329caded29b4499ca6ddb9184f6b421f",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/65e36e8a61554f52b3e77a82ae80966f",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/98d6304b6aa34917aec4344790ade927",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

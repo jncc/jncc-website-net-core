@@ -1,0 +1,47 @@
+{
+  "Name": "Articles Section Sub Sections Schema Composition",
+  "Alias": "articlesSectionSubSectionsSchemaComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "adef82ce-1502-4ab5-ab63-4dfc2f4fa7ac",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "b6d938c9-8d97-4782-ac39-fa7d465af4c9",
+          "Alias": "subSections",
+          "DataType": "umb://data-type/300e605e5cf542728ced762006f0a363",
+          "Description": "Optional sub sections which will be rendered below the content of this section.",
+          "MandatoryMessage": "",
+          "Name": "Sub Sections",
+          "SortOrder": 6,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/117afd9156b748f98b05bf7fc5f62729",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/300e605e5cf542728ced762006f0a363",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/c440e70548fd4a1fb0cf79df46828973",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

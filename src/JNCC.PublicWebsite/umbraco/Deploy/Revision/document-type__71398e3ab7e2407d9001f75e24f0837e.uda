@@ -1,0 +1,63 @@
+{
+  "Name": "Categorised Footer Links Schema",
+  "Alias": "categorisedFooterLinksSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-blueprint color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "A schema that represents a collection of links to be displayed in the website footer.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "0f9bb29a-fdf5-483c-9e7d-60446cfcdbaa",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "5301fccc-bf06-4a6a-b28b-9b325cec3c72",
+          "Alias": "links",
+          "DataType": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+          "Description": "",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Links",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "966636e9-1cc6-4f14-90a8-003a33b75774",
+          "Alias": "heading",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "A heading which represents the collection of links.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Heading",
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/71398e3ab7e2407d9001f75e24f0837e",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/9156deb37e3d46ff931a2badaa76407e",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

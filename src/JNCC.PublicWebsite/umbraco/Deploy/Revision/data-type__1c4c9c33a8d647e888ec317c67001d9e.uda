@@ -1,0 +1,12 @@
+{
+  "Name": "Science Slider Schema - Heading  Text - Text - Textarea",
+  "Alias": "",
+  "EditorAlias": "Umbraco.TextArea",
+  "Configuration": {
+    "maxChars": 160
+  },
+  "Udi": "umb://data-type/1c4c9c33a8d647e888ec317c67001d9e",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

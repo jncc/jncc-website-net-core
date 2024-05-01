@@ -1,0 +1,33 @@
+{
+  "Name": "Articulate Markdown",
+  "Alias": "ArticulateMarkdown",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-post-it color-blue",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/71bb6811715f43be9fa8268f06ec23b3",
+  "CompositionContentTypes": [
+    "umb://document-type/71bb6811715f43be9fa8268f06ec23b3"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "ac37d260-c565-458f-97fe-40a5bf02fa5f",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": []
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/6adcfc8336ec45a498b098aea7fa1fcf",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/71bb6811715f43be9fa8268f06ec23b3",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

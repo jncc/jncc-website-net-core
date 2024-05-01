@@ -1,0 +1,93 @@
+{
+  "Name": "Science Category Sub Section Image & Rich Text Schema",
+  "Alias": "scienceCategorySubSectionImageRichTextSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-edit color-black",
+  "Thumbnail": "folder.png",
+  "Description": "A Science Category Section that offers an Image picker & Rich Text editor for generic written content.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/474df410efcb429ca8fb2d1d384a2e69",
+  "CompositionContentTypes": [
+    "umb://document-type/474df410efcb429ca8fb2d1d384a2e69"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "bc2e4e6f-03d2-4abe-ae27-436b104077ec",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "06dc964e-f77c-4f6e-89dc-14bb5d603fce",
+          "Alias": "imagePosition",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "Accepted written positions are: 'Left', 'Right', 'Top'",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Image Position",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "3a6516ef-e87b-40ef-86a0-b41e5a5752bd",
+          "Alias": "content",
+          "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "ba11b548-1c3c-4245-be1f-31a284336ab9",
+          "Alias": "image",
+          "DataType": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Image",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "dc371b56-fe55-4bd4-a6ac-dd30c1b53485",
+          "Alias": "subSections",
+          "DataType": "umb://data-type/b417f081114f44d48500ef7764b11b4b",
+          "Description": "Optional sub sections which will be rendered below the content of this section.",
+          "MandatoryMessage": "",
+          "Name": "Sub Sections",
+          "SortOrder": 5,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/4c25c5ed83614aacad08a6f063532bcc",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/721586028a674e60b6b983f122f14a21",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/b417f081114f44d48500ef7764b11b4b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/474df410efcb429ca8fb2d1d384a2e69",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

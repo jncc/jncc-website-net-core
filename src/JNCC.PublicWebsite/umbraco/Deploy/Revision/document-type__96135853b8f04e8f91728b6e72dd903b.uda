@@ -1,0 +1,47 @@
+{
+  "Name": "Page Meta Information Composition",
+  "Alias": "pageMetaInformationComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "General Meta Information for pages.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "28bbe132-0a4a-4381-8ae3-a5fbb13be726",
+      "Name": "Meta Information",
+      "SortOrder": 5,
+      "Alias": "metaInformation",
+      "PropertyTypes": [
+        {
+          "Key": "24579b22-72bb-4000-bfc7-24a2373dd099",
+          "Alias": "publishedDate",
+          "DataType": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+          "Description": "The date is when the page was first published. This is a required property as a page with a Meta Information must have a published date.",
+          "Mandatory": true,
+          "Name": "Published Date",
+          "SortOrder": 1
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

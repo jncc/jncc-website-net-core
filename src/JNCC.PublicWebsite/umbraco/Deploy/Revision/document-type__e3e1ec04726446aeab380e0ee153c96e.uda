@@ -1,0 +1,65 @@
+{
+  "Name": "Science Details Sub Section Rich Text Schema",
+  "Alias": "scienceDetailsSubSectionRichTextSchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-edit color-grey",
+  "Thumbnail": "folder.png",
+  "Description": "A Science Details Sub Section that offers a Rich Text editor for generic written content.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+  "CompositionContentTypes": [
+    "umb://document-type/79a3f4992f234de492159cffca5a38a9"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "2928e280-2883-4642-94ae-8956264fd8ab",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "a11ad017-a6c1-460a-b59e-76326fb92ce5",
+          "Alias": "subSections",
+          "DataType": "umb://data-type/0964bb730522487ca8d2db6682070a79",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Sub Sections",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "e6429689-ea1d-42e4-90e3-38bb836c7fb6",
+          "Alias": "content",
+          "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
+          "Description": "The main content for the section.",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Content",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/e3e1ec04726446aeab380e0ee153c96e",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0964bb730522487ca8d2db6682070a79",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/721586028a674e60b6b983f122f14a21",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/79a3f4992f234de492159cffca5a38a9",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

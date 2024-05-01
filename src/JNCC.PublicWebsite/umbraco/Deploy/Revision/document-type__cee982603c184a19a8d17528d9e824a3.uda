@@ -1,0 +1,48 @@
+{
+  "Name": "Science iFrame Sub Section Image Gallery Schema",
+  "Alias": "scienceIFrameSubSectionImageGallerySchema",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-photo-album color-black",
+  "Thumbnail": "folder.png",
+  "Description": "A Science iFrame Sub Section for authoring an Image Gallery.",
+  "Permissions": {
+    "IsElementType": true,
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b",
+  "CompositionContentTypes": [
+    "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "310785ed-d81f-44c6-b130-3c1093681277",
+      "Name": "Section",
+      "Alias": "section",
+      "PropertyTypes": [
+        {
+          "Key": "43c0dc83-c457-4918-9ba1-1611a0fe9501",
+          "Alias": "images",
+          "DataType": "umb://data-type/8d1243b8c08049bdb328064fe30445a0",
+          "Description": "The images used for the image gallery.",
+          "Name": "Images",
+          "SortOrder": 2
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/cee982603c184a19a8d17528d9e824a3",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/8d1243b8c08049bdb328064fe30445a0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/189855aaf0b04e49ba0ba34e525ba95b",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

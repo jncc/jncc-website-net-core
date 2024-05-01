@@ -1,0 +1,19 @@
+{
+  "Name": "Custom Error Page",
+  "Alias": "CustomErrorPage",
+  "File": "umb://template-file/CustomErrorPage.cshtml",
+  "Master": "umb://template/f485a14953b4404cb8d067c47339ff08",
+  "Udi": "umb://template/1e5d77556ab741dc8e77f14da4d9a103",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/CustomErrorPage.cshtml",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/f485a14953b4404cb8d067c47339ff08",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

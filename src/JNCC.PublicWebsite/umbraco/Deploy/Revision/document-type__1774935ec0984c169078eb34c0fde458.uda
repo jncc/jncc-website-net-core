@@ -1,0 +1,44 @@
+{
+  "Name": "Science Page Categorisation Composition",
+  "Alias": "sciencePageCategorisationComposition",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-checkbox-dotted color-grey",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "a4b2f1b5-5581-4180-a41c-88cee7b7e982",
+      "Name": "Page Categorisation",
+      "SortOrder": 3,
+      "Alias": "pageCategorisation",
+      "PropertyTypes": [
+        {
+          "Key": "2ce5b0a7-64f4-47a7-bad7-2bf2aa34bba5",
+          "Alias": "categoryOrderingName",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "[Optional] Determines how the page is categorised on a Science Category Page. If no value is authored then the headline is used followed by the page name.",
+          "Name": "Category Ordering Name"
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/1774935ec0984c169078eb34c0fde458",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/3994816c3ab143c59668a1cb497539e5",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

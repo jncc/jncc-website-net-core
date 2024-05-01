@@ -1,0 +1,37 @@
+{
+  "Name": "Search Results Page",
+  "Alias": "searchResultsPage",
+  "DefaultTemplate": "umb://template/cec589056198485086e39c0981eb5701",
+  "AllowedTemplates": [
+    "umb://template/cec589056198485086e39c0981eb5701"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-search color-light-green",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64"
+  ],
+  "PropertyGroups": [],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/6f223ecf3ef54c33bb28029fd537b63f",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/cec589056198485086e39c0981eb5701",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

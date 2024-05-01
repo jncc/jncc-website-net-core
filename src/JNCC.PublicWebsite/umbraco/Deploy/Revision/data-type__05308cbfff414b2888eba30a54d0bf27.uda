@@ -1,0 +1,15 @@
+{
+  "Name": "Tags: Themes",
+  "Alias": "",
+  "EditorAlias": "Umbraco.Tags",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "group": "themes",
+    "storageType": "Json",
+    "Delimiter": "\u0000"
+  },
+  "Udi": "umb://data-type/05308cbfff414b2888eba30a54d0bf27",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

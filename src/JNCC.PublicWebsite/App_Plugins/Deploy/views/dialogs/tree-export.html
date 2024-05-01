@@ -1,0 +1,99 @@
+<div class="umb-dialog" ng-controller="UmbracoDeploy.ExportDialogController as vm" ui-view="tree-export">
+  <umb-load-indicator ng-if="vm.loading"></umb-load-indicator>
+  <div class="umb-dialog-body">
+    <div class="umb-pane" ng-cloak ng-if="vm.loading == false">
+      <div ng-if="vm.exportTriggered == false">
+        <localize key="dialogs_deployTreeExportDescription" tokens="[vm.item.name]"></localize>
+        <hr ng-if="vm.withBranch" />
+
+        <div ng-if="vm.withBranch" class="mb4">
+          <label><localize key="dialogs_deployExportIncludeChildPagesDescription" tokens="[vm.item.name]"></localize></label>
+          <umb-checkbox value="vm.includeDescendants"
+                        model="vm.includeDescendants"
+                        name="includeDescendants"
+                        label-key="dialogs_deployIncludeChildPages">
+          </umb-checkbox>
+        </div>
+
+        <div class="mb4">
+          <label><localize key="dialogs_deployExportIncludeDependenciesDescription"></localize></label>
+          <umb-checkbox value="vm.includeContentDependencies"
+                        model="vm.includeContentDependencies"
+                        name="includeContentDependencies"
+                        label-key="dialogs_deployExportIncludeContentDependencies">
+          </umb-checkbox>
+          <umb-checkbox value="vm.includeContentFileDependencies"
+                        model="vm.includeContentFileDependencies"
+                        name="includeContentFileDependencies"
+                        label-key="{{vm.allowSchemaExport ? 'dialogs_deployExportIncludeContentFileDependencies' : 'dialogs_deployExportIncludeContentFileDependenciesNoSchema'}}">
+          </umb-checkbox>
+          <div ng-if="vm.allowSchemaExport">
+            <umb-checkbox value="vm.includeSchemaDependencies"
+                          model="vm.includeSchemaDependencies"
+                          name="includeSchemaDependencies"
+                          label-key="dialogs_deployExportIncludeSchemaDependencies">
+            </umb-checkbox>
+            <umb-checkbox value="vm.includeSchemaFileDependencies"
+                          model="vm.includeSchemaFileDependencies"
+                          name="includeSchemaFileDependencies"
+                          label-key="dialogs_deployExportIncludeSchemaFileDependencies">
+            </umb-checkbox>
+          </div>
+        </div>
+
+        <umb-button type="button"
+                    button-style="success"
+                    action="vm.startExport()"
+                    label-key="actions_deployExport"
+                    state="vm.exportButtonState">
+        </umb-button>
+      </div>
+
+      <ud-export-progress ng-if="vm.export.status === 'inProgress'"
+                          progress="vm.export.exportProgress"
+                          current-activity="vm.export.currentActivity"
+                          timestamp="vm.export.timestamp">
+      </ud-export-progress>
+
+      <ud-export-complete ng-if="vm.export.status === 'completed'"
+                          on-download="vm.downloadExport()"
+                          on-delete="vm.deleteExport()"
+                          download-button-state="vm.downloadButtonState"
+                          timestamp="vm.export.timestamp">
+      </ud-export-complete>
+
+      <ud-error ng-if="vm.export.error.hasError"
+                comment="vm.export.error.comment"
+                log="vm.export.error.log"
+                exception="vm.export.error.exception"
+                status="vm.export.status"
+                operation="export"
+                on-back="vm.closeDialog()"
+                on-debug="vm.showDebug()"
+                timestamp="vm.export.timestamp"
+                server-timestamp="vm.export.serverTimestamp"
+                is-debug-info="vm.export.trace"
+                show-debug="vm.export.showDebug"
+                feedback-message-level="vm.feedbackMessageLevel">
+      </ud-error>
+
+      <div ng-if="vm.export.showDebug" class="umb-deploy-debug">
+        <div class="umb-deploy-debug-console-wrapper">
+          <div class="umb-deploy-debug-console" ng-bind-html="vm.export.trace | safe_html"></div>
+        </div>
+        <umb-button type="button"
+                    button-style="outline"
+                    action="vm.copyDebugToClipboard()"
+                    label="Copy to clipboard">
+        </umb-button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="umb-dialog-footer btn-toolbar umb-btn-toolbar">
+    <button type="button" class="btn btn-link" ng-click="vm.closeDialog()">
+      <localize key="general_close">Close</localize>
+    </button>
+  </div>
+</div>

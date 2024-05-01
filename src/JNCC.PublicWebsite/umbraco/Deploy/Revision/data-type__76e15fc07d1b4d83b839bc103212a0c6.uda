@@ -1,0 +1,15 @@
+{
+  "Name": "Tags: Teams",
+  "Alias": "",
+  "EditorAlias": "Umbraco.Tags",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "group": "teams",
+    "storageType": "Json",
+    "Delimiter": "\u0000"
+  },
+  "Udi": "umb://data-type/76e15fc07d1b4d83b839bc103212a0c6",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

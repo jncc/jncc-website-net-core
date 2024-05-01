@@ -1,0 +1,52 @@
+{
+  "Name": "Redirector",
+  "Alias": "redirector",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-redo color-black",
+  "Thumbnail": "folder.png",
+  "Description": "Used to redirect the current url of this page to an internal page or external site",
+  "Permissions": {
+    "AllowedChildContentTypes": [
+      "umb://document-type/b435c3f8648447c2a099b4e7aec739f2"
+    ]
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "de0f5c8f-70b0-4aa7-8da9-41ed3c61634e",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "70ee3c28-c487-4274-8af5-56e998d36e51",
+          "Alias": "redirect",
+          "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+          "Description": "Please choose either an internal page or external site",
+          "Mandatory": true,
+          "MandatoryMessage": "",
+          "Name": "Redirect",
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/b435c3f8648447c2a099b4e7aec739f2",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/b435c3f8648447c2a099b4e7aec739f2"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

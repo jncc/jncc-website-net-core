@@ -1,0 +1,15 @@
+{
+  "Name": "Tags: Locations",
+  "Alias": "",
+  "EditorAlias": "Umbraco.Tags",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "group": "Locations",
+    "storageType": "Json",
+    "Delimiter": "\u0000"
+  },
+  "Udi": "umb://data-type/f3150225716d431785187cdd1de21222",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "10.4.0+4e5b8f6"
+}

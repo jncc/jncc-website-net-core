@@ -1,0 +1,25 @@
+<div class="ud-import-artifacts-unhandled-error">
+  <h4>Unhandled exception</h4>
+  <p>{{exception.Detail}}</p>
+  <div ng-if="feedbackMessageLevel === 'Developer'">
+    <div class="umb-alert umb-alert--info">
+      <p>This could result in a partially completed import operation, where data is persisted, but caches, indexes and other components that depend on the updated data are not refreshed.</p>
+      <p><strong>Please inspect the error(s) below and the technical details to identify the root cause of the problem.</strong></p>
+      <p>If the imported artifacts are persisted (shown in the backoffice), ensure Umbraco is in a consistent state by:</p>
+      <ul class="mb0">
+        <li>Restarting the site to ensure any in-memory caches are cleared.</li>
+        <li>Rebuilding the Examine indexes: go to the Settings section, Examine Management dashboard, Indexes panel and rebuild each index (or at least ExternalIndex and InternalIndex).</li>
+        <li>Rebuilding the published content/media cache (NuCache): go to the Settings section, Published Status dashboard, Caches panel and rebuild the Database Cache, followed by reloading the Memory Cache.</li>
+        <li>Generating the strongly typed Models Builder models (if using SourceCodeAuto or SourceCodeManual): go to the Settings section, Models Builder dashboard and generate the models.</li>
+        <li>Clearing the Deploy cached signatures: go to the Settings section, Deploy dashboard, Deploy Operations panel and clear the signatures (you can optionally re-create them again by setting the signatures).</li>
+      </ul>
+    </div>
+    <div ng-repeat="innerException in exception.InnerExceptions" class="mb3">
+      <p><strong class="ud-import-artifact-message-error">{{innerException.Type}}:</strong> {{innerException.Detail}}</p>
+    </div>
+  </div>
+  <div ng-if="feedbackMessageLevel !== 'Developer'">
+    <h4 class="bold">Sorry, the import can not be completed, because an error occurred during import.</h4>
+    <p>Please contact your technical support to resolve the issue.</p>
+  </div>
+</div>
