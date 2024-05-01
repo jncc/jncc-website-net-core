@@ -58,15 +58,15 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::Umbraco.Cms.Core.Strings.IHtmlEncodedString Content => this.Value<global::Umbraco.Cms.Core.Strings.IHtmlEncodedString>(_publishedValueFallback, "content");
 
 		///<summary>
-		/// Headline: Headline of the content item to display above the paragraph content below
+		/// Get in Touch Button: The link & text for the button that links to a full web page for getting in touch about this content item.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("headline")]
-		public virtual string Headline => this.Value<string>(_publishedValueFallback, "headline");
+		[ImplementPropertyType("getInTouchButton")]
+		public virtual global::Umbraco.Cms.Core.Models.Link GetInTouchButton => this.Value<global::Umbraco.Cms.Core.Models.Link>(_publishedValueFallback, "getInTouchButton");
 
 		///<summary>
-		/// Image: An image which illustrates this content item.
+		/// Image
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
@@ -74,7 +74,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel Image => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "image");
 
 		///<summary>
-		/// Link To: Links to the full web page for this content item
+		/// Read More Button: The link & text for the button that links to the full web page for this content item.
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]

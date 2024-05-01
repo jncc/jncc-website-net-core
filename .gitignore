@@ -599,3 +599,13 @@ src/JNCC.PublicWebsite/Properties/launchSettings.json
 src/JNCC.PublicWebsite/wwwroot/media
 /src/JNCC.PublicWebsite/Smidge/Cache/DESKTOP-FJ0SI8R/36061b27b6ae1c5a7aea8c544f0e4b18b86d00c5
 src/JNCC.PublicWebsite/Smidge
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/backoffice
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/css
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/dashboard
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/datatypes
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/dialogs
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/fields
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/images
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/lang
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/mailtemplates
+/src/JNCC.PublicWebsite/App_Plugins/seochecker/package.manifest
