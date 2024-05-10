@@ -88,6 +88,8 @@ namespace JNCC.PublicWebsite
             //Content/MIME Sniffing Protection
             app.UseXContentTypeOptions();
 
+            app.UseReferrerPolicy(opts => opts.SameOrigin());
+
             //Cross-site scripting Protection (X-XSS-Protection header)
             app.UseXXssProtection(options => options.EnabledWithBlockMode());
 
