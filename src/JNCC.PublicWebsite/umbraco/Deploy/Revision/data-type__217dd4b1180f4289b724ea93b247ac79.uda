@@ -1,11 +1,11 @@
 {
-  "Name": "Stacked Content: Resources Collections",
+  "Name": "Block List - Callout card schema",
   "Alias": "",
   "EditorAlias": "Umbraco.BlockList",
   "Configuration": {
     "blocks": [
       {
-        "contentElementTypeKey": "214ccf2d-5c9f-43ab-a566-02a277981341",
+        "contentElementTypeKey": "0a5c3e8a-5355-4f10-ba12-92e2fb909fd3",
         "label": "{{title}}",
         "editorSize": "medium",
         "forceHideContentEditorInOverlay": false
@@ -14,12 +14,12 @@
     "validationLimit": {},
     "useSingleBlockMode": false,
     "useLiveEditing": false,
-    "useInlineEditingAsDefault": false
+    "useInlineEditingAsDefault": true
   },
-  "Udi": "umb://data-type/692dd8e3413843e7b92dd21b6ec2d696",
+  "Udi": "umb://data-type/217dd4b1180f4289b724ea93b247ac79",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341",
+      "Udi": "umb://document-type/0a5c3e8a53554f10ba1292e2fb909fd3",
       "Mode": "Exist"
     }
   ],

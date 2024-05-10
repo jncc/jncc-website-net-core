@@ -87,7 +87,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("resourcesCollections")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel ResourcesCollections => this.Value<global::Umbraco.Cms.Core.Models.Blocks.BlockListModel>(_publishedValueFallback, "resourcesCollections");
+		public virtual global::System.Collections.Generic.IEnumerable<global::JNCC.PublicWebsite.Core.Models.ResourcesCollectionSchema> ResourcesCollections => this.Value<global::System.Collections.Generic.IEnumerable<global::JNCC.PublicWebsite.Core.Models.ResourcesCollectionSchema>>(_publishedValueFallback, "resourcesCollections");
 
 		///<summary>
 		/// Alert Content: When populated this will show at the top of page body

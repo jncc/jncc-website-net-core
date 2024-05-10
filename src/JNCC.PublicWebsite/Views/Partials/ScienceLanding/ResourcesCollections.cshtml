@@ -23,7 +23,7 @@
                                             }
                                             <div class="card-section">
                                                 <h3>@resource.Title</h3>
-                                                @resource.Content
+                                                @Html.Raw(resource.Content)
                                             </div>
                                         </a>
                                     }
@@ -35,7 +35,7 @@
                                         }
                                         <div class="card-section">
                                             <h3>@resource.Title</h3>
-                                            @resource.Content
+                                            @Html.Raw(resource.Content)
                                         </div>
                                     }
                                 </div>

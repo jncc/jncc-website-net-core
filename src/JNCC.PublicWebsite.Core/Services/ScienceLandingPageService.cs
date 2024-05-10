@@ -138,7 +138,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
             foreach (var collection in model.ResourcesCollections)
             {
-                if (collection.Content is ResourcesCollectionSchema resourceItem)
+                if (collection is ResourcesCollectionSchema resourceItem)
                 {
                     var viewModel = new ResourcesCollectionViewModel()
                     {
