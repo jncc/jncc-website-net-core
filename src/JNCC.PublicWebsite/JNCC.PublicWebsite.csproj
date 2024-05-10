@@ -275,6 +275,12 @@
 		<None Update="IISUrlRewrite.xml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
+		<None Update="umbraco\Licenses\umbracoDeploy.lic">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
+		<None Update="umbraco\Licenses\umbracoForms.lic">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</None>
 	</ItemGroup>
 
 
