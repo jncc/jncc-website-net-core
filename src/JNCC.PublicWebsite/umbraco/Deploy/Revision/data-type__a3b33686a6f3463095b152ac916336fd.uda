@@ -1,26 +1,24 @@
 {
-  "Name": "Nested Content: Related Items",
+  "Name": "Nested Content: Resource Collection Schema",
   "Alias": "",
   "EditorAlias": "Umbraco.NestedContent",
   "Configuration": {
     "contentTypes": [
       {
-        "ncAlias": "relatedItemSchema",
+        "ncAlias": "resourcesCollectionSchema",
         "ncTabAlias": "Content",
         "nameTemplate": ""
       }
     ],
-    "minItems": 0,
-    "maxItems": 3,
     "confirmDeletes": true,
     "showIcons": true,
     "expandsOnLoad": true,
     "hideLabel": false
   },
-  "Udi": "umb://data-type/62f4873a48d949b59b14f8015f980661",
+  "Udi": "umb://data-type/a3b33686a6f3463095b152ac916336fd",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/3646b10c4c1f4c108ea6803b78d05e7d",
+      "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341",
       "Mode": "Exist"
     }
   ],

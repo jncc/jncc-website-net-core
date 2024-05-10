@@ -1,10 +1,10 @@
 {
   "Name": "Blog Comments Form Picker",
   "Alias": "",
-  "EditorAlias": "Umbraco.Label",
+  "EditorAlias": "UmbracoForms.FormPicker",
   "DatabaseType": "Nvarchar",
   "Configuration": {
-    "umbracoDataValueType": "STRING"
+    "allowedForms": []
   },
   "Udi": "umb://data-type/d7e8c8fb892e42ecba2520298c88d1d1",
   "Dependencies": [],
