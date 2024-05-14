@@ -26,6 +26,7 @@ namespace JNCC.PublicWebsite.Core.Services
             {
                 var link = _navigationItemService.GetViewModel<SocialMediaNavigationItemViewModel>(relatedLink);
                 link.IconClassSuffix = relatedLink.Name.ToLower();
+                if (link.IconClassSuffix == "twitter") { link.IconClassSuffix = "x"; }
 
                 links.Add(link);
             }

@@ -869,6 +869,13 @@
 	content: "\e902";
 }
 
+.icon-x:before {
+	content: url(/css/svgs/fi-x-twitter.svg);
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+
 .icon-facebook:before {
 	content: "\e906";
 }
