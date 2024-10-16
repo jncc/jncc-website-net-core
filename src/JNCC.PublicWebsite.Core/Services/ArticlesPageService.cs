@@ -381,7 +381,7 @@ namespace JNCC.PublicWebsite.Core.Services
                 Headline = schema.Headline
             };
 
-            var sectionHtmlId = schema.Headline.ToUrlSegment(_shortStringHelper);
+            var sectionHtmlId = schema.Key.ToString().ToUrlSegment(_shortStringHelper);
             model.HtmlId = sectionHtmlId;
 
             return model;

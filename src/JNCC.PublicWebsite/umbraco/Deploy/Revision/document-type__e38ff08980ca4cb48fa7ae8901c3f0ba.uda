@@ -38,7 +38,6 @@
           "Alias": "readMoreButton",
           "DataType": "umb://data-type/90829ceec8df4fb69413cefe98060317",
           "Description": "The link & text for the button that links to the full web page for this content item.",
-          "Mandatory": true,
           "Name": "Read More Button",
           "SortOrder": 3
         },
@@ -53,7 +52,6 @@
           "Alias": "content",
           "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
           "Description": "A brief paragraph or two explaining this content item.",
-          "Mandatory": true,
           "Name": "Content",
           "SortOrder": 2
         }
