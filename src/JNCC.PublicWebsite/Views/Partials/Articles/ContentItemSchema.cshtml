@@ -30,7 +30,7 @@
             {
                 <h2><a href="@Model.Content.ReadMoreButton?.Url" target="@Model.Content.ReadMoreButton?.Target">@Model.Headline</a></h2>
             }
-            else
+            else if (!string.IsNullOrEmpty(Model.Content.Headline))
             {
                 <h2>@Model.Content.Headline</h2>
             }    

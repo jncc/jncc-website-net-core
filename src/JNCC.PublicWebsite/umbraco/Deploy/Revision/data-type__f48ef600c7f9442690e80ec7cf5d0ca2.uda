@@ -5,6 +5,7 @@
   "Configuration": {
     "editor": {
       "toolbar": [
+        "ace",
         "removeformat",
         "undo",
         "redo",
@@ -14,6 +15,12 @@
         "styleselect",
         "bold",
         "italic",
+        "bullist",
+        "numlist",
+        "link",
+        "unlink",
+        "umbmediapicker",
+        "table",
         "subscript",
         "superscript",
         "charmap"
