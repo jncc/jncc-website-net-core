@@ -5,19 +5,24 @@
   "Configuration": {
     "editor": {
       "toolbar": [
+        "ace",
         "styleselect",
         "bold",
         "italic",
+        "underline",
         "alignleft",
         "aligncenter",
         "alignright",
+        "alignjustify",
         "bullist",
         "numlist",
         "outdent",
         "indent",
         "link",
+        "unlink",
         "umbmediapicker",
         "umbmacro",
+        "table",
         "umbembeddialog"
       ],
       "stylesheets": [

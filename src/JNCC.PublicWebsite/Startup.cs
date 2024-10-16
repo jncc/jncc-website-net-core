@@ -44,7 +44,7 @@ namespace JNCC.PublicWebsite
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
-                .AddAzureBlobMediaFileSystem()
+                .AddAzureBlobMediaFileSystem(true)
                 .AddNotificationHandler<ContentPublishedNotification, ContentPublishedNotificationHandler>()
                 .AddNotificationHandler<ContentUnpublishedNotification, ContentUnpublishedPublishedNotificationHandler>()
                 .AddNotificationHandler<ContentDeletedNotification, ContentDeletedNotificationHandler>()
