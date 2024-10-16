@@ -29,7 +29,7 @@
             {
                 <h2><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h2>
             }
-            else
+            else if (!string.IsNullOrEmpty(Model.Headline))
             {
                 <h2>@Model.Headline</h2>
             }    
