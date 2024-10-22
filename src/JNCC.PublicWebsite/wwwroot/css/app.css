@@ -3291,18 +3291,35 @@ a {
 	}
 
 .alert-container a,
-.card-section a,
+.resources a {
+	font-weight: normal;
+}
+
+.alert-container a,
+.articles-section a,
+.preamble a,
+.info-section a,
+a.news-header,
 .text-block a {
 	text-decoration: underline;
 }
 
+	.articles-section a.button{
+		text-decoration: none;
+	}
+
 	.alert-container a:hover,
 	.alert-container a:focus,
-	.card-section a:hover,
-	.card-section a:focus,
+	.articles-section a:hover,
+	.articles-section a:focus,
+	.preamble a:hover,
+	.preamble a:focus,
+	 a.news-header:hover,
+	 a.news-header:focus,
+	.info-section a:hover,
+	.info-section a:focus,
 	.text-block a:hover,
-	.text-block a:focus
-	{
+	.text-block a:focus {
 		font-weight: bold;
 	}
 	
@@ -8208,12 +8225,12 @@ a:hover > .label {
 	padding: .5625rem 1.6875rem .875rem;
 }
 
-.visual-section .text-block {
-	background: rgba(255, 255, 255, .8);
-	color: #7a869a;
-	font-size: .875rem;
-	padding: .5625rem 1rem;
-}
+	.visual-section .text-block {
+		background: rgba(255, 255, 255, .8);
+		color: #5A6477;
+		font-size: .875rem;
+		padding: .5625rem 1rem;
+	}
 
 .visual-section .text-block p {
 	line-height: 1.78571429;
@@ -8228,6 +8245,12 @@ a:hover > .label {
 #content > ul a,
 #content > ol a {
 	text-decoration: underline;
+}
+
+#content a:hover,
+#content a:focus
+{
+	font-weight: bold;
 }
 
 #content .button-group a.button {
@@ -9170,17 +9193,18 @@ header#header .row.expanded span.iframe-header-toggle-on > a::after {
 
 #footer a {
 	color: #fefefe;
+	text-decoration: underline;
 }
 
-#footer a:hover {
-	text-decoration: underline;
+#footer a:hover,
+#footer a:focus { 
+	font-weight:bold;
 }
 
 #footer h2,
 #footer .landing-page .featured-quote p,
 .landing-page .featured-quote #footer p {
-	font-size: 1.125rem;
-	text-transform: uppercase;
+	font-size: 1.4rem;
 	margin-bottom: 1.1875rem;
 	font-weight: 700;
 	letter-spacing: 1px;
@@ -9572,9 +9596,10 @@ html {
 		-ms-flex-positive: 0;
 		flex-grow: 0;
 		height: auto;
-        box-shadow: -2px 1px 13px -2px #4e4e4e;
-        position: relative;
-}
+		box-shadow: -2px 1px 13px -2px #4e4e4e;
+		position: relative;
+	}
+
 
 .news-holder .card .img-holder {
 	padding-top: 80%;
@@ -14274,6 +14299,8 @@ img.float-right,
 
 	.news-holder .card .card-section {
 		padding-bottom: 2.5rem;
+		display: flex;
+		flex-direction: column;
 	}
 
 	.news-holder h3,
@@ -14482,7 +14509,7 @@ img.float-right,
 	}
 
 	.news-holder .card {
-		width: calc(50% - 1.875rem);
+		width: calc(33% - 1.875rem);
 		margin-left: .9375rem;
 		margin-right: .9375rem;
 	}
