@@ -24,11 +24,18 @@
                     <ul class="articles-list no-bullet">
                         @foreach (var item in Model.MainContent)
                         {
-                            if (item.Content as ContentItemSchema != null)
+                            switch (item.Content)
                             {
-                                <li>
-                                    @(await Html.PartialAsync("~/Views/Partials/Shared/ContentItemSchema.cshtml", item.Content as ContentItemSchema))
-                                </li>
+                                case ContentItemSchema contentItemSchema:
+                                    <li>
+                                        @await Html.PartialAsync("~/Views/Partials/Shared/ContentItemSchema.cshtml", contentItemSchema)
+                                    </li>
+                                    break;
+                                case ContentVideoSchema contentVideoSchema:
+                                    <li>
+                                        @(await Html.PartialAsync("~/Views/Partials/Shared/ContentVideoSchema.cshtml", contentVideoSchema))
+                                    </li>
+                                    break;
                             }
                         }
                     </ul>

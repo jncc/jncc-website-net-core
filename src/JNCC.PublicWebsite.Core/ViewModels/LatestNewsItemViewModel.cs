@@ -11,5 +11,6 @@ namespace JNCC.PublicWebsite.Core.ViewModels
         public DateTime PublishDate { get; set; }
         public IHtmlEncodedString Description { get; set; }
         public string Url { get; set; }
+        public string ArticleType { get; set; }
     }
 }

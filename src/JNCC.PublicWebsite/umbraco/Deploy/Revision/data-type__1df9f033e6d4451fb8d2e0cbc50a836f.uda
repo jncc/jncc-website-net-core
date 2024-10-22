@@ -6,13 +6,23 @@
     "crops": [
       {
         "alias": "ListingThumbnail",
-        "width": 260,
-        "height": 210
+        "width": 346,
+        "height": 279
       },
       {
         "alias": "Square",
         "width": 200,
         "height": 200
+      },
+      {
+        "alias": "ResourcesListing",
+        "width": 340,
+        "height": 211
+      },
+      {
+        "alias": "HeroImage",
+        "width": 1519,
+        "height": 520
       }
     ]
   },

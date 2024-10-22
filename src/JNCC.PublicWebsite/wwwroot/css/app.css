@@ -3299,6 +3299,7 @@ a {
 .articles-section a,
 .preamble a,
 .info-section a,
+.job-detail a,
 a.news-header,
 .text-block a {
 	text-decoration: underline;
@@ -3314,8 +3315,10 @@ a.news-header,
 	.articles-section a:focus,
 	.preamble a:hover,
 	.preamble a:focus,
-	 a.news-header:hover,
-	 a.news-header:focus,
+	.job-detail a:hover,
+	.job-detail a:focus,
+	a.news-header:hover,
+	a.news-header:focus,
 	.info-section a:hover,
 	.info-section a:focus,
 	.text-block a:hover,
@@ -3868,8 +3871,8 @@ select[multiple] {
 	margin-right: 0;
 	margin-left: 0;
 }
-	.button.expanded:hover,
-	.button.expanded:focus {
+	.button:hover,
+	.button:focus {
 		text-decoration:underline;
 		color: white !important;
 	}
@@ -4402,10 +4405,6 @@ select[multiple] {
 	margin-left: 0;
 }
 
-a.button:hover,
-a.button:focus {
-	text-decoration: none;
-}
 
 .science-landing .accordion-item {
     margin-bottom: 2rem;
@@ -7965,15 +7964,16 @@ a:hover > .label {
 
 .button.prev,
 .button.next {
-	text-transform: none;
-	font-size: .875rem;
-	font-weight: 400;
+	/*text-transform: none;*/
+	font-size: 1rem;
+	/*font-weight: 400;*/
 	text-align: center;
 	padding-left: 1.875rem;
 	padding-right: 1.875rem;
 	position: relative;
-	border-radius: .1875rem;
+	/*border-radius: .1875rem;*/
 	min-width: 7.875rem;
+	letter-spacing:1px;
 }
 
 .button.prev:before,
@@ -8253,6 +8253,11 @@ a:hover > .label {
 	font-weight: bold;
 }
 
+#content a:hover p,
+#content a:focus p {
+	font-weight: normal;
+}
+
 #content .button-group a.button {
 	text-decoration: none;
 }
@@ -8450,10 +8455,15 @@ a:hover > .label {
 	margin-bottom: .8125rem;
 }
 
-.filtration-section .card .article-type {
+.filtration-section .card .article-type,
+.news-holder .card .article-type {
 	color: #1C4D19;
 	font-weight: 600;
 	margin-bottom: 0.5rem;
+}
+
+.news-holder .card .article-type {
+	font-size: .875rem;
 }
 
 .filtration-section .card .text {
@@ -12034,13 +12044,19 @@ img.float-right,
 	}
 
 		.article .text-holder {
-			padding:1.2em;
-			padding-top: 0;
+			padding:0 1.2em;
+			position: relative;
 		}
 
 		.article .text-holder p {
 			margin-bottom:0;
 		}
+
+			.article .text-holder a.button {
+				bottom: 0;
+				margin-top: 1.5rem;
+				margin-bottom: 0;
+			}
 
 	.article .text-holder strong {
 		font-size: 1.375rem;
@@ -14267,6 +14283,19 @@ img.float-right,
 		margin: 0 -1.0625rem;
 	}
 
+	.articles-section.careers-listing {
+		padding: 2rem 0 2rem;
+	}
+
+	.articles-section.careers-listing .columns {
+		padding-left: 1.375rem;
+		padding-right: 1.375rem;
+	}
+
+	.articles-section.careers-listing .card p {
+		font-size: 1.1rem;
+	}
+
 	.articles-section.resources {
 		padding: 7.4375rem 0 3.375rem;
 	}
@@ -15514,7 +15543,7 @@ img.float-right, .float-right img {
 	border-radius: 0 3px 3px 0;
 	user-select: none;
 	-webkit-user-select: none;
-	background-color: black;
+	/*background-color: black;*/
 }
 
 /* Position the "next button" to the right */

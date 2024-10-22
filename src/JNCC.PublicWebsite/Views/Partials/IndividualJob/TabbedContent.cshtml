@@ -4,7 +4,8 @@
 
 @if (Model?.Any() ?? false)
 {
-    <ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs" id="profile-tabs">
+    @*Converted to non tabs, keeping this code in case it's needed later*@
+    @* <ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs" id="profile-tabs">
         @foreach (IAccordionHeaderViewModel header in Model)
         {
             <li class="@(Model.IsFirst(header) ? " tabs-title is-active" : "tabs-title")"><a href="#@header.HtmlId">@header.Title</a></li>
@@ -14,6 +15,14 @@
         @foreach (var tab in Model)
         {
             <div class="@(Model.IsFirst(tab) ? " tabs-panel is-active" : "tabs-panel")" id="@tab.HtmlId">
+                @Html.Raw(tab.Content)
+            </div>
+        }
+    </div> *@
+    <div class="job-detail">
+        @foreach (var tab in Model) {
+            <h2 style="padding-top:1.5rem">@tab.Title</h2>
+            <div>
                 @Html.Raw(tab.Content)
             </div>
         }

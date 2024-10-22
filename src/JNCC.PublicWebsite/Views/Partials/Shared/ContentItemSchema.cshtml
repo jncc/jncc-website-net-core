@@ -27,13 +27,17 @@
         <div class="text-holder">
             @if(Model.ReadMoreButton != null)
             {
-                <h2><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h2>
+                <h3 style="margin:0" ><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h3>
             }
             else if (!string.IsNullOrEmpty(Model.Headline))
             {
-                <h2>@Model.Headline</h2>
+                <h3 style="margin:0">@Model.Headline</h3>
             }    
             @Html.Raw(Model.Content)
+            @if (Model.ReadMoreButton != null)
+            {
+                <a href="@Model.ReadMoreButton.Url" target="@Model.ReadMoreButton.Target" class="button expanded">Read More</a>
+            }
         </div>
     </article>
 }

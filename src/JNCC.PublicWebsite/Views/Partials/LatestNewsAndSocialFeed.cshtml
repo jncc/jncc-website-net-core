@@ -27,7 +27,8 @@
                                 }
 
                                 <div class="card-section">
-                                    <h3>@newsItem.Title</h3>
+                                    <div class="article-type">@newsItem.ArticleType</div>
+                                    <h3><a href="@newsItem.Url">@newsItem.Title</a></h3>
                                     <ul class="footer-list no-bullet">
                                         <li><time datetime="@newsItem.PublishDate.ToString("yyyy-MM-dd")">@newsItem.PublishDate.ToLongDateString()</time></li>
                                     </ul>
