@@ -79,7 +79,7 @@
         {
           "Key": "0a83bec0-9240-47be-85bd-85b7edc299bf",
           "Alias": "featuredQuote",
-          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+          "DataType": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
           "Description": "A featured quote which highlights the scientific research work done by JNCC.This is optional and if no quote is provided it will not be displayed on the page.",
           "MandatoryMessage": "",
           "Name": "Featured Quote",
@@ -115,7 +115,7 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
+      "Udi": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
       "Ordering": true
     },
     {
