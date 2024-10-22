@@ -133,8 +133,6 @@ namespace JNCC.PublicWebsite.Core.Services
 
             model.Content = schema.Content;
 
-            model.SubSections = GetSubSectionViewModels(schema.SubSections, model.HtmlId);
-
             return model;
         }
 
@@ -186,8 +184,6 @@ namespace JNCC.PublicWebsite.Core.Services
             var model = CreateSection<ArticlesImageGallerySectionViewModel>(schema);
 
             model.Images = CreateSectionImageGallery(schema.Images);
-
-            model.SubSections = GetSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
@@ -251,8 +247,6 @@ namespace JNCC.PublicWebsite.Core.Services
             }
             model.ImagePosition = schema.ImagePosition;
 
-            model.SubSections = GetSubSectionViewModels(schema.SubSections, model.HtmlId);
-
             return model;
         }
 
@@ -263,7 +257,6 @@ namespace JNCC.PublicWebsite.Core.Services
             model.Content = schema.Content;
             model.ImageCode = schema.ImageCode;
             model.ImagePosition = schema.ImagePosition;
-            model.SubSections = GetSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
@@ -276,7 +269,6 @@ namespace JNCC.PublicWebsite.Core.Services
             model.ShowBackground = schema.ShowGreyBackground;
             model.ShowTimelineArrows = schema.ShowTimelineArrows;
             model.SliderItems = GetSliderItemViewModels(schema.SliderItems);
-            model.SubSections = GetSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
@@ -405,8 +397,6 @@ namespace JNCC.PublicWebsite.Core.Services
             var model = CreateSection<ArticlesRichTextSubSectionViewModel>(schema, parentSectionHtmlId);
             model.Content = schema.Content;
 
-            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
-
             return model;
         }
 
@@ -415,7 +405,6 @@ namespace JNCC.PublicWebsite.Core.Services
             var model = CreateSection<ArticlesImageGallerySubSectionViewModel>(schema, parentSectionHtmlId);
 
             model.Images = CreateSectionImageGallery(schema.Images);
-            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
@@ -458,7 +447,6 @@ namespace JNCC.PublicWebsite.Core.Services
             model.Content = schema.Content;
             model.ImageCode = schema.ImageCode;
             model.ImagePosition = schema.ImagePosition;
-            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
 
             return model;
         }
@@ -471,7 +459,6 @@ namespace JNCC.PublicWebsite.Core.Services
             model.ShowBackground = schema.ShowGreyBackground;
             model.ShowTimelineArrows = schema.ShowTimelineArrows;
             model.SliderItems = GetSliderItemViewModels(schema.SliderItems);
-            model.SubSections = GetSubSubSectionViewModels(schema.SubSections, model.HtmlId);
             return model;
         }
 

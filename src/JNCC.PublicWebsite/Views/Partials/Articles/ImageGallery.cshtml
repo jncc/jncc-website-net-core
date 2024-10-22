@@ -5,7 +5,7 @@
 }
 
 
-<div class="row">
+<div class="row space-below">
     @foreach (var image in Model.Images)
     {
       counter += 1;
@@ -29,7 +29,7 @@
     {
         counter += 1;
         <div class="mySlides">
-          <img onclick="openModal();currentSlide(@counter)" src="@image.ThumbnailImageUrl" alt="@image.AlternativeText" title="@image.TitleText" class="image-model">
+          <img onclick="openModal();currentSlide(@counter)" src="@image.Url" alt="@image.AlternativeText" title="@image.TitleText" class="image-model">
         </div>
     }
     

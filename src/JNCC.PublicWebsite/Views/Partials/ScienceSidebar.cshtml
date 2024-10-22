@@ -70,7 +70,20 @@
 	    </nav>
     }
 
-@*    @if (Model.HasSeeAlsoLinks)
+	@if (Model.ElsewhereOnOurWebsiteLinks?.Any() == true)
+	{
+		<nav class="holder" aria-label="aside-navigation">
+			<span>Elsewhere on our website:</span>
+			<ul class="aside-nav no-bullet">
+				@foreach (var link in Model.ElsewhereOnOurWebsiteLinks)
+				{
+					<li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+				}
+			</ul>
+		</nav>
+	}
+
+   @if (Model.HasSeeAlsoLinks)
     {
         <nav class="holder" aria-label="aside-navigation">
             <span>See also:</span>
@@ -81,5 +94,5 @@
                 }
             </ul>
         </nav>
-    }*@
+    }
 </aside>

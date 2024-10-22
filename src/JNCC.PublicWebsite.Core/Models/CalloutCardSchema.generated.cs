@@ -50,7 +50,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		// properties
 
 		///<summary>
-		/// Content: A brief paragraph or two explaining this callout card.
+		/// Content: A brief paragraph or two explaining this callout card. Links cannot be added, as the callout card itself is a link
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]

@@ -3,11 +3,9 @@
 @if (string.IsNullOrWhiteSpace(Model.FeaturedQuote) == false)
 {
 	<div class="container">
-		<div class="featured-quote">
+		<div class="featured-quote text-block">
 			<div class="row">
-				
-					<p>@Model.FeaturedQuote</p>
-				
+				@Html.Raw(Model.FeaturedQuote)
 			</div>
 		</div>
 	</div>

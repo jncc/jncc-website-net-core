@@ -104,7 +104,7 @@ namespace JNCC.PublicWebsite.Core.Services
                         if (ExistenceUtility.IsNullOrWhiteSpace(scienceDetails.Preamble) == false)
                         {
 
-                            viewModel.Content = scienceDetails.Preamble;
+                            viewModel.Content = _htmlStringUtilities.Truncate(_htmlStringUtilities.StripHtmlTags(scienceDetails.Preamble.ToString(), new string[] { "a" }).ToString(), 200, true, false);
                         }
                     }
                 } 
@@ -116,7 +116,7 @@ namespace JNCC.PublicWebsite.Core.Services
                         if (ExistenceUtility.IsNullOrWhiteSpace(scienceCategoryPage.Preamble) == false)
                         {
 
-                            viewModel.Content = scienceCategoryPage.Preamble;
+                            viewModel.Content = _htmlStringUtilities.Truncate(_htmlStringUtilities.StripHtmlTags(scienceCategoryPage.Preamble.ToString(), new string[] { "a" }).ToString(), 200, true, false);
                         }
                     }
                 }

@@ -9,7 +9,7 @@
 
 		<div class="row collapse">
 			<div class="columns science-landing">
-				<ul class="accordion" data-accordion>
+				<ul class="accordion" data-accordion data-allow-all-closed="true">
 					@{
 						var accordionCount = 0;
 						var isActive = string.Empty;
@@ -21,7 +21,7 @@
 							<li class="accordion-item @isActive" data-accordion-item>
 								<a href="#" class="accordion-title">@accordionItem.AccordionTitle</a>
 								<div class="accordion-content science-landing-accordion-content" data-tab-content>
-									@if (accordionItem.Items.Any())
+									@if (accordionItem.Items?.Any() == true)
 									{
 										<ul>
 											@foreach (var sciencePage in accordionItem.Items.OrderBy(x => x.Name))

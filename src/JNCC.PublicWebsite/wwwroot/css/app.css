@@ -3301,6 +3301,7 @@ a {
 .info-section a,
 .job-detail a,
 a.news-header,
+.holder h2 a,
 .text-block a {
 	text-decoration: underline;
 }
@@ -3317,6 +3318,8 @@ a.news-header,
 	.preamble a:focus,
 	.job-detail a:hover,
 	.job-detail a:focus,
+	.holder h2 a:hover,
+	.holder h2 a:focus,
 	a.news-header:hover,
 	a.news-header:focus,
 	.info-section a:hover,
@@ -8261,6 +8264,15 @@ a:hover > .label {
 #content .button-group a.button {
 	text-decoration: none;
 }
+
+.news-tags{
+	padding-bottom:1.5rem;
+}
+
+	.news-tags a span {
+		padding: 0.4rem 0.7rem;
+		margin-right: 0.5rem;
+	}
 
 #sidebar .button.large {
 	font-size: 1rem;
