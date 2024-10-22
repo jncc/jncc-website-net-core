@@ -13,8 +13,8 @@
         <div class="row">
             @if (Model.LatestNews.Any())
             {
-                <div class="columns small-12 large-8">
-	                <h2><a href="/news/">Latest News</a></h2>
+                <div class="columns small-12 large-12">
+	                <h2><a class="news-header" href="/news/">Latest News</a></h2>
                     <div class="news-holder">
                         @foreach (var newsItem in Model.LatestNews)
                         {
