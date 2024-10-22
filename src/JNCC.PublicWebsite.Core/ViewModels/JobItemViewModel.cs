@@ -1,4 +1,6 @@
-﻿namespace JNCC.PublicWebsite.Core.ViewModels
+﻿using Umbraco.Cms.Core.Models;
+
+namespace JNCC.PublicWebsite.Core.ViewModels
 {
     public class JobItemViewModel
     {

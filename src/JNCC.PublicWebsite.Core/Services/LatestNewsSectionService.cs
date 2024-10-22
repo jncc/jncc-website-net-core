@@ -72,7 +72,8 @@ namespace JNCC.PublicWebsite.Core.Services
                     Title = string.IsNullOrWhiteSpace(newsItem.Headline) ? newsItem.Name : newsItem.Headline,
                     PublishDate = newsItem.PublishDate,
                     Description = newsItem.LandingPageContent,
-                    Url = newsItem.Url()
+                    Url = newsItem.Url(),
+                    ArticleType = newsItem.ArticleType
                 };
 
                 if (newsItem.HeroImage?.Content is Image heroImage)

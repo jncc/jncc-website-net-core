@@ -3,7 +3,53 @@
 @model IEnumerable<CareersListItemViewModel>
 @if (Model?.Any() ?? false)
 {
-    <ul class="articles-list no-bullet row gutter-medium">
+    <div class="articles-section careers-listing">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="columns small-12 medium-6">
+                        <article class="card">
+                            <div class="card-section">
+                                @if (item.Url != null)
+                                {
+                                    <h2><a href="@item.Url">@item.JobTitle</a></h2>
+                                }
+                                else
+                                {
+                                    <h2>@item.JobTitle</h2>
+                                }
+
+                                @if (!string.IsNullOrWhiteSpace(item.Grade))
+                                {
+                                    <p>Grade: @item.Grade</p>
+                                }
+
+                                @if (!string.IsNullOrWhiteSpace(item.Grade))
+                                {
+                                    <p>Location: @item.Location</p>
+                                }
+                                
+                                @if (!string.IsNullOrWhiteSpace(item.Grade))
+                                {
+                                    <p>Type: @item.Type</p>
+                                }
+
+                                @if (item.ClosingDate != DateTime.MinValue)
+                                {
+                                    <p>Closing Date: <time datetime="@item.ClosingDate.ToString("dd MMM yyyy")">@item.ClosingDate.ToString("dd/MM/yyyy")</time></p>
+                                }
+
+                                
+                            </div>
+                        </article>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    @* <ul class="articles-list no-bullet row gutter-medium">
         @foreach (var item in Model)
         {
             <li class="large-6 columns grid-padding-x" style="
@@ -47,5 +93,5 @@
                 </article>
             </li>
         }
-    </ul>
+    </ul> *@
 }
