@@ -17,5 +17,6 @@ namespace JNCC.PublicWebsite.Core.ViewModels
         }
 
         public string CurrentPageUrl { get; set; }
-    }
+        public string CurrentPageContentTypeAlias { get; set; }
+	}
 }
