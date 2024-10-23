@@ -138,7 +138,7 @@ function initScienceDetailsSlickCarousel() {
         }
     });
 
-    $('.science-details-image-gallery').on('click', '.pagination a, a.thumbnail', function (e) {
+    $('.science-details-image-gallery').on('click', '.pagination a, a.thumbnail-modal, a.thumbnail', function (e) {
         e.preventDefault();
     });
 }
@@ -446,7 +446,7 @@ function checkCookie(name) {
         return;
     }
 
-    $('.thumbnail').each(function (index, item) {
+    $('.thumbnail-modal').each(function (index, item) {
         var $item = $(item);
         var $img = $item.children('img');
 
@@ -458,7 +458,7 @@ function checkCookie(name) {
 
     });
 
-    $('.thumbnail').on('click', function (e) {
+    $('.thumbnail-modal').on('click', function (e) {
         e.preventDefault();
         var $this = $(this);
         var index = $this.data("index");
@@ -558,6 +558,14 @@ function openModal() {
 
 function closeModal() {
     document.getElementById("myModal").style.display = "none";
+}
+
+function openModalId(id) {
+    document.getElementById(id).style.display = "flex";
+}
+
+function closeModalId(id) {
+    document.getElementById(id).style.display = "none";
 }
 
 

@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="row collapse">
-                <div class="columns small-12">
+                <div class="columns small-12 text-block">
                     <p>@Html.Raw(Model.Content)</p>
                 </div>
             </div>
@@ -19,7 +19,7 @@
     }
     else if (string.Equals(Model.ImagePosition, "Right", StringComparison.OrdinalIgnoreCase))
     {
-        <div class="columns small-12 medium-6 small-order-2 medium-order-1 right-pad">
+        <div class="columns small-12 medium-6 small-order-2 medium-order-1 right-pad text-block">
             <p>@Html.Raw(Model.Content)</p>
         </div>
         <div class="columns small-12 medium-6 small-order-1 medium-order-2">
@@ -31,7 +31,7 @@
         <div class="columns small-12 medium-6 small-order-1 medium-order-1">
             <p>@Html.Raw(Model.ImageCode)</p>
         </div>
-        <div class="columns small-12 medium-6 small-order-2 medium-order-2 left-pad">
+        <div class="columns small-12 medium-6 small-order-2 medium-order-2 left-pad text-block">
             <p>@Html.Raw(Model.Content)</p>
         </div>
     }

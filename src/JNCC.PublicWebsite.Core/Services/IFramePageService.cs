@@ -218,6 +218,8 @@ namespace JNCC.PublicWebsite.Core.Services
         {
             var model = CreateSection<ScienceIFrameImageGallerySectionViewModel>(schema);
 
+            model.Key = schema.Key.ToString();
+
             model.Images = CreateSectionImageGallery(schema.Images);
 
             model.SubSections = GetSubSectionViewModels(schema.SubSections, model.HtmlId);
@@ -237,6 +239,7 @@ namespace JNCC.PublicWebsite.Core.Services
         private ScienceIFrameImageGallerySubSectionViewModel CreateImageGallerySubSection(ScienceIframeSubSectionImageGallerySchema schema, string parentSectionHtmlId)
         {
             var model = CreateSection<ScienceIFrameImageGallerySubSectionViewModel>(schema, parentSectionHtmlId);
+            model.Key = schema.Key.ToString();
 
             model.Images = CreateSectionImageGallery(schema.Images);
 
