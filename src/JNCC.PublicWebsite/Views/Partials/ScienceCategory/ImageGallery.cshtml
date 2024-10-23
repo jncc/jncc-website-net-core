@@ -3,12 +3,39 @@
 
 @if (Model.Images?.Any() ?? false)
 {
+    int counter = 1;
     <div class="science-details-image-gallery">
         <div class="row expand">
             @foreach (var image in Model.Images)
             {
-                <div class="columns small-6 medium-4 "><a href="#" class="thumbnail"><img src="@image.ThumbnailImageUrl" data-image-url="@image.Url" alt="@image.AlternativeText" title="@image.TitleText" /></a></div>
+                <div class="columns small-6 medium-4 ">
+                    <a href="#" onclick="openModalId('@(Model.Key)');currentSlide(@counter)" class="thumbnail">
+                        <img src="@image.ThumbnailImageUrl" alt="@image.AlternativeText" title="@image.TitleText" />
+                    </a>
+                </div>
+                counter++;
             }
+        </div>
+    </div>
+
+
+    counter = 1;
+
+    <div id="@Model.Key" class="modal">
+        <span class="close cursor" onclick="closeModalId('@(Model.Key)')">&times;</span>
+        <div class="modal-content">
+
+            @foreach (var image in Model.Images)
+            {
+                <div class="mySlides">
+                    <img onclick="openModalId('@(Model.Key)');currentSlide(@counter)" src="@image.Url" alt="@image.AlternativeText" title="@image.TitleText" class="image-model">
+                </div>
+                counter++;
+            }
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
         </div>
     </div>
 }
