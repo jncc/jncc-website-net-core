@@ -20,7 +20,7 @@ namespace JNCC.PublicWebsite.Core.Models
 {
 	/// <summary>Articles Section Image & Text Schema</summary>
 	[PublishedModel("articlesSectionImageTextSchema")]
-	public partial class ArticlesSectionImageTextSchema : ArticlesSectionBaseSchema, IArticlesSectionSubSectionsSchemaComposition
+	public partial class ArticlesSectionImageTextSchema : ArticlesSectionBaseSchema
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -72,13 +72,5 @@ namespace JNCC.PublicWebsite.Core.Models
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
 		[ImplementPropertyType("imagePosition")]
 		public virtual string ImagePosition => this.Value<string>(_publishedValueFallback, "imagePosition");
-
-		///<summary>
-		/// Sub Sections: Optional sub sections which will be rendered below the content of this section.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
-		[global::System.Diagnostics.CodeAnalysis.MaybeNull]
-		[ImplementPropertyType("subSections")]
-		public virtual global::Umbraco.Cms.Core.Models.Blocks.BlockListModel SubSections => global::JNCC.PublicWebsite.Core.Models.ArticlesSectionSubSectionsSchemaComposition.GetSubSections(this, _publishedValueFallback);
 	}
 }

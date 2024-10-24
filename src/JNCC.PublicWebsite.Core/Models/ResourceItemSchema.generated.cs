@@ -50,7 +50,7 @@ namespace JNCC.PublicWebsite.Core.Models
 		// properties
 
 		///<summary>
-		/// Content: A brief paragraph describing this resource item.
+		/// Content: A brief paragraph describing this resource item. Links cannot be added here, as the 'link' will serve as the link for the entire block
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "10.8.5+7e1d1a1")]
 		[global::System.Diagnostics.CodeAnalysis.MaybeNull]

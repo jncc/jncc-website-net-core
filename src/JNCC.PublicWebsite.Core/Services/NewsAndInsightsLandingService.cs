@@ -4,6 +4,7 @@ using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.ViewModels;
+using Microsoft.AspNetCore.Html;
 using System.Collections.Specialized;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Web.Common.Mvc;
@@ -115,7 +116,8 @@ namespace JNCC.PublicWebsite.Core.Services
             {
                 Title = string.IsNullOrWhiteSpace(content.Headline) ? content.Name : content.Headline,
                 PublishDate = content.PublishDate,
-                Description = _htmlStringUtilities.Truncate(content.LandingPageContent.ToString(), ItemContentLength, true, false),
+                Description = new HtmlString(content.LandingPageContent.ToString()),
+                //Description = _htmlStringUtilities.Truncate(content.LandingPageContent.ToString(), ItemContentLength, true, false),
                 Url = content.Url(),
                 ArticleType = content.ArticleType,
             };

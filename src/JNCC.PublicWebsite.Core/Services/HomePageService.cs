@@ -44,7 +44,7 @@ namespace JNCC.PublicWebsite.Core.Services
 
                 if (item.Image != null)
                 {
-                    viewModel.ImageUrl = item.Image.Url();
+                    viewModel.ImageUrl = item.Image.GetCropUrl("ResourcesListing");
                 }
 
                 viewModels.Add(viewModel);

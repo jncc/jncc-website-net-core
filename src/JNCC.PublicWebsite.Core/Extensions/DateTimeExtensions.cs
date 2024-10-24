@@ -50,6 +50,10 @@
             return string.Format("{4} on {0}{1} {2} {3}", value.Day, suffix, value.ToString("MMMM"), value.Year, value.ToString("HH:mm"));
         }
 
+        public static string ToJobExpirationDate(this DateTime value)
+        {
+            return value.ToString("HH:mm on dddd, MMMM dd, yyyy");
+        }
 
     }
 }

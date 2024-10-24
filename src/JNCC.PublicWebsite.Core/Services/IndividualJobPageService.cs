@@ -30,9 +30,13 @@ namespace JNCC.PublicWebsite.Core.Services
                 { "Grade", model.Grade },
                 { "Type of appointment", model.TypeOfAppointment },
                 { "Location",  model.Location },
-                { "Team", model.Team },
-                { "Closing Date", model.ClosingDate.LongDateWithTimeFormat() }
+                { "Team", model.Team },                
             };
+
+            if(model.ClosingDate != DateTime.MinValue)
+            {
+                keyData.Add("Closing Date", model.ClosingDate.ToJobExpirationDate());
+            }
 
             return keyData.Where(x => string.IsNullOrWhiteSpace(x.Value) == false)
                           .ToDictionary(x => x.Key, x => x.Value);

@@ -41,8 +41,8 @@
         {
           "Key": "c70fcf04-acb6-48c0-8b02-411b26d418ee",
           "Alias": "content",
-          "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
-          "Description": "A brief paragraph or two explaining this callout card.",
+          "DataType": "umb://data-type/e0ff14bdeb994c72b81681cbdcafed97",
+          "Description": "A brief paragraph or two explaining this callout card. Links cannot be added, as the callout card itself is a link",
           "Mandatory": true,
           "MandatoryMessage": "",
           "Name": "Content",
@@ -71,11 +71,11 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+      "Udi": "umb://data-type/8e1084a1a39f4701a2ff4c8789583cb5",
       "Ordering": true
     },
     {
-      "Udi": "umb://data-type/8e1084a1a39f4701a2ff4c8789583cb5",
+      "Udi": "umb://data-type/e0ff14bdeb994c72b81681cbdcafed97",
       "Ordering": true
     },
     {

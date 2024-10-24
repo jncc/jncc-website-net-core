@@ -19,8 +19,9 @@ namespace JNCC.PublicWebsite.Core.Services
             return new T
             {
                 PrimaryCallToActionButton = _navigationItemService.GetViewModel(composition.SidebarPrimaryCallToActionButton),
-                OtherWebsitesLinks = _navigationItemService.GetViewModels(composition.SidebarOtherWebsites),
-                SeeAlsoLinks = _navigationItemService.GetViewModels(composition.SidebarSeeAlsoLinks)
+                ElsewhereOnOurWebsiteLinks = _navigationItemService.GetViewModels(composition.SidebarElsewhereOnOurWebsite),
+				OtherWebsitesLinks = _navigationItemService.GetViewModels(composition.SidebarOtherWebsites),
+                SeeAlsoLinks = _navigationItemService.GetViewModels(composition.SidebarSeeAlsoLinks),                
             };
         }
 

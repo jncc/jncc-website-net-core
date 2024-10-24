@@ -21,7 +21,8 @@ namespace JNCC.PublicWebsite.Core.Services
             var viewModel = CreateViewModel<ScienceSidebarViewModel>(model);
             viewModel.Categories = GetCategoriesWithFeaturedPages(model);
             viewModel.RelatedCategories = GetRelatedCategoryPages(model);
-            return viewModel;
+			viewModel.CurrentPageContentTypeAlias = model.ContentType.Alias;
+			return viewModel;
         }
 
 
@@ -30,6 +31,7 @@ namespace JNCC.PublicWebsite.Core.Services
             var viewModel = CreateViewModel<ScienceSidebarViewModel>(model);
             viewModel.Categories = GetCategoriesWithFeaturedPages(model);
             viewModel.RelatedCategories = GetRelatedCategoriesPages(model);
+            viewModel.CurrentPageContentTypeAlias = model.ContentType.Alias;
             return viewModel;
         }
 
