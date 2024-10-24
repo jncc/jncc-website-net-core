@@ -9,18 +9,21 @@
 <aside id="sidebar">
     @if (Model.HasPrimaryCallToActionButton)
     {
-        <a href="@Model.PrimaryCallToActionButton.Url" class="button primary large medium-expanded" target="@Model.PrimaryCallToActionButton.Target">@Model.PrimaryCallToActionButton.Text</a>
+        <a href="@Model.PrimaryCallToActionButton.Url" class="button large medium-expanded" target="@Model.PrimaryCallToActionButton.Target">@Model.PrimaryCallToActionButton.Text</a>
     }
     @if (Model.HasCategories)
     {
         foreach (var category in Model.Categories)
-        {
-	        <nav class="holder" aria-label="aside-navigation">
-		        <span>
-                    This page is in the category:
-		        </span>
-		        <h2><a href="@category.Url">@category.Text</a></h2>
-		        @if (category.HasChildren)
+		{
+			<nav class="holder" aria-label="aside-navigation">
+				@if (Model.CurrentPageContentTypeAlias != JNCC.PublicWebsite.Core.Models.ScienceCategoryPage.ModelTypeAlias)
+				{
+					<span>
+						This page is in the category:
+					</span>
+					<h2><a href="@category.Url">@category.Text</a></h2>
+				}
+				@if (category.HasChildren)
 		        {
 			        <span>
                         Also in @category.Text:
@@ -70,7 +73,20 @@
 	    </nav>
     }
 
-@*    @if (Model.HasSeeAlsoLinks)
+	@if (Model.ElsewhereOnOurWebsiteLinks?.Any() == true)
+	{
+		<nav class="holder" aria-label="aside-navigation">
+			<span>Elsewhere on our website:</span>
+			<ul class="aside-nav no-bullet">
+				@foreach (var link in Model.ElsewhereOnOurWebsiteLinks)
+				{
+					<li><a href="@link.Url" target="@link.Target">@link.Text</a></li>
+				}
+			</ul>
+		</nav>
+	}
+
+   @if (Model.HasSeeAlsoLinks)
     {
         <nav class="holder" aria-label="aside-navigation">
             <span>See also:</span>
@@ -81,5 +97,5 @@
                 }
             </ul>
         </nav>
-    }*@
+    }
 </aside>

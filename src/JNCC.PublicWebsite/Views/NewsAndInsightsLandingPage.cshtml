@@ -14,7 +14,7 @@
                 <section class="staff-holder">
                     @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
                     @(await Html.PartialAsync("~/Views/Partials/PageAlert.cshtml", Model.PageSpecificAlertContent))
-                    @Html.Raw(Model.Preamble)
+                    <div class="text-block">@Html.Raw(Model.Preamble)</div>
                     @(await Component.InvokeAsync("Listing", new { model = Model }))
                 </section>
             </div>

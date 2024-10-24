@@ -21,6 +21,7 @@ namespace JNCC.PublicWebsite.Core.ViewComponents
 
             var viewModel = _scienceSidebarService.GetSidebarViewModel(model as ScienceDetailsPage);
             viewModel.CurrentPageUrl = model.Url();
+            viewModel.CurrentPageContentTypeAlias = model.ContentType.Alias;
 
             return View("~/Views/Partials/ScienceSidebar.cshtml", viewModel);
         }

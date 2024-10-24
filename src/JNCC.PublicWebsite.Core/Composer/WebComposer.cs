@@ -11,6 +11,7 @@ using JNCC.PublicWebsite.Core.Interfaces.Api;
 using JNCC.PublicWebsite.Core.Api;
 using Umbraco.Cms.Core.Routing;
 using JNCC.PublicWebsite.Core.ContentFinders;
+using Umbraco.Cms.Core.Configuration.Models;
 
 namespace JNCC.PublicWebsite.Core.Composers
 {
@@ -67,6 +68,13 @@ namespace JNCC.PublicWebsite.Core.Composers
 
             //Content finders
             builder.ContentFinders().InsertAfter<ContentFinderByUrl, ResourceContentFinder>();
+
+            //builder.Services.Configure<ContentSettings>(options =>
+            //{
+            //    options.AllowedUploadedFileExtensions = new[] { "pdf" };
+            //    options.DisallowedUploadedFileExtensions = new[] { "pdf" };
+            //});
+
         }
     }
 }

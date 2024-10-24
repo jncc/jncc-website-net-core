@@ -42,8 +42,8 @@
         {
           "Key": "c863b103-59a3-4813-adf4-96671a30dbd7",
           "Alias": "content",
-          "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
-          "Description": "A brief paragraph describing this resource item.",
+          "DataType": "umb://data-type/ec5605b3234d472db930765c7c11fb03",
+          "Description": "A brief paragraph describing this resource item. Links cannot be added here, as the 'link' will serve as the link for the entire block",
           "Mandatory": true,
           "MandatoryMessage": "",
           "Name": "Content",
@@ -56,15 +56,15 @@
   "Udi": "umb://document-type/b5be20f249094d2697efff291e26ce00",
   "Dependencies": [
     {
-      "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
-      "Ordering": true
-    },
-    {
       "Udi": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
       "Ordering": true
     },
     {
       "Udi": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/ec5605b3234d472db930765c7c11fb03",
       "Ordering": true
     },
     {
