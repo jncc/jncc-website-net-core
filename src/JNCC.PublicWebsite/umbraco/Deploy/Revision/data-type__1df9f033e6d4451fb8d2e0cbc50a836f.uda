@@ -23,6 +23,11 @@
         "alias": "HeroImage",
         "width": 1519,
         "height": 520
+      },
+      {
+        "alias": "ListingThumbnail2",
+        "width": 260,
+        "height": 210
       }
     ]
   },
