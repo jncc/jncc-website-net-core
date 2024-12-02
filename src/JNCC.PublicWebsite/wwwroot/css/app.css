@@ -8052,12 +8052,12 @@ a:hover > .label {
 	}
 
 		.card .card-section h2 a:after {
-            content: '';
+            /*content: '';
             position: absolute;
             left: 0;
             top: 0;
             right: 0;
-            bottom: 0;
+            bottom: 0;*/
 		}
 		.card .card-section h2 a:hover {
 			color: #1C4D19;
