@@ -8170,6 +8170,10 @@ a:hover > .label {
 	flex-wrap: wrap;
 }
 
+.article .text-holder a.button {
+	text-transform: none;
+}
+
 .aside-nav,
 #sidebar p {
 	font-size: 1rem;
@@ -12070,6 +12074,8 @@ img.float-right,
 				bottom: 0;
 				margin-top: 1.5rem;
 				margin-bottom: 0;
+				position: absolute;
+				width: 90%; /*this is far from a good solution*/
 			}
 
 	.article .text-holder strong {
