@@ -36,7 +36,8 @@
             @Html.Raw(Model.Content)
             @if (Model.ReadMoreButton != null)
             {
-                <a href="@Model.ReadMoreButton.Url" target="@Model.ReadMoreButton.Target" class="button expanded">Read More</a>
+                string text = !string.IsNullOrEmpty(Model.ReadMoreOverride) ? Model.ReadMoreOverride : "Read More";
+                <a href="@Model.ReadMoreButton.Url" target="@Model.ReadMoreButton.Target" class="button expanded">@text</a>
             }
         </div>
     </article>

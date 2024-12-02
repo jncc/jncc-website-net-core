@@ -42,7 +42,7 @@ namespace JNCC.PublicWebsite.Core.Notifications
                 {
                     NodeId = entity.Id,
                     Site = _site,
-                    Published = DateTime.Parse(entity.PublishDate.ToString()),
+                    Published = DateTime.Parse(entity.CreateDate.ToString()), //this date isn't actaully necessary to remove the item
                     Title = entity.Name                    
                 };
 
