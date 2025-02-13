@@ -20,6 +20,8 @@ namespace JNCC.PublicWebsite.Core.Services
         private readonly ILogger<SearchIndexingQueueService> _logger;
         private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
 
+        //reference https://docs.aws.amazon.com/sdk-for-net/v3/developer-guide/csharp_sqs_code_examples.html
+
         public SearchIndexingQueueService(ILogger<SearchIndexingQueueService> logger, IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions)
         {
             _jsonSettings = new JsonSerializerSettings()
