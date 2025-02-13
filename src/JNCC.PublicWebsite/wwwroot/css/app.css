@@ -12074,8 +12074,8 @@ img.float-right,
 				bottom: 0;
 				margin-top: 1.5rem;
 				margin-bottom: 0;
-				position: absolute;
-				width: 90%; /*this is far from a good solution*/
+				/*position: absolute;*/
+				/*width: 90%;*/ /*this is far from a good solution*/
 			}
 
 	.article .text-holder strong {
