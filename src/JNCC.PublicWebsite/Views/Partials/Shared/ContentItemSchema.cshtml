@@ -5,8 +5,9 @@
 @if (Model.Image != null)
 {
     <article class="article @(Model.ReadMoreButton != null ? "article-list" : "")">
+        @{bool hasImg = Model.Image?.Any() ?? false;}
 
-        @if (Model.Image?.Any() ?? false)
+        @if (hasImg)
         {
             foreach (BlockListItem image in Model.Image)
             {
@@ -24,7 +25,9 @@
 
         }
 
-        <div class="text-holder">
+        @{string stly = hasImg ? "" : "padding:0;"; }
+
+        <div class="text-holder" style="@stly" >
             @if(Model.ReadMoreButton != null)
             {
                 <h3 style="margin:0" ><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h3>

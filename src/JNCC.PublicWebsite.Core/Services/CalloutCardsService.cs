@@ -33,7 +33,7 @@ namespace JNCC.PublicWebsite.Core.Services
                     ReadMoreButton = _navigationItemService.GetViewModel(card.ReadMoreButton)
                 };
 
-                if (card.Image?.First() is ContentImageSchema imageSchema)
+                if (card.Image?.FirstOrDefault() is ContentImageSchema imageSchema)
                 {
                     if(imageSchema.Image?.Content is Image image)
                     {
