@@ -3889,7 +3889,7 @@ select[multiple] {
 
 	.button.primary:hover,
 	.button.primary:focus {
-		background-color: #fefefe;
+		/*background-color: #fefefe;*/
 		color: #1C4D19;
 		box-shadow: -2px 1px 13px -2px #4e4e4e;
 	}
@@ -8051,6 +8051,10 @@ a:hover > .label {
         text-decoration: none !important;
 	}
 
+		.careers-listing .card .card-section h2, .card .card-section h2 a {
+			text-decoration: underline !important;
+		}
+
 		.card .card-section h2 a:after {
             /*content: '';
             position: absolute;
@@ -9113,6 +9117,7 @@ header#header .row.expanded span.iframe-header-toggle {
 
 .iframe-header-holder {
 	margin-top: 0;
+	padding-bottom: 1rem;
 }
 .iframe-header-holder-on {
 	margin-top: 2rem;
@@ -12070,13 +12075,17 @@ img.float-right,
 			margin-bottom:0;
 		}
 
-			.article .text-holder a.button {
-				bottom: 0;
-				margin-top: 1.5rem;
-				margin-bottom: 0;
-				/*position: absolute;*/
-				/*width: 90%;*/ /*this is far from a good solution*/
-			}
+		.article .text-holder p a {
+			text-decoration:underline;
+		}
+
+		.article .text-holder a.button {
+			bottom: 0;
+			margin-top: 1.5rem;
+			margin-bottom: 0;
+			/*position: absolute;*/
+			/*width: 90%;*/ /*this is far from a good solution*/
+		}
 
 	.article .text-holder strong {
 		font-size: 1.375rem;
@@ -15371,11 +15380,11 @@ img.float-right,
 }
 
 .padding-left-0 {
-	padding-left: 0px;
+	padding-left: 0px !important;
 }
 
 .padding-right-0 {
-	padding-left: 0px;
+	padding-left: 0px !important;
 }
 
 /* Alert functionality */
