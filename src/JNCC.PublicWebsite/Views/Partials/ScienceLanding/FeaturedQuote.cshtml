@@ -1,6 +1,6 @@
 ﻿@using JNCC.PublicWebsite.Core.Models
 @model ScienceLandingPage
-@if (string.IsNullOrWhiteSpace(Model.FeaturedQuote) == false)
+@if (string.IsNullOrWhiteSpace(Model.FeaturedQuote?.ToString()) == false)
 {
 	<div class="container">
 		<div class="featured-quote text-block">
