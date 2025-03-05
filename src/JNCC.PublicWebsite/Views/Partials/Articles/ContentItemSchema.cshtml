@@ -3,7 +3,11 @@
 @using Umbraco.Cms.Core.Models.Blocks
 @model ArticlesContentItemSchemaSectionViewModel
 
-@if (Model.Content?.Image != null)
+@*Don't replicate code mate*@
+@await Html.PartialAsync("~/Views/Partials/Shared/ContentItemSchema.cshtml", Model.Content)
+
+
+@* @if (Model.Content?.Image != null)
 {
     <article class="article @(Model.Content.ReadMoreButton != null ? "article-list" : "")">
 
@@ -37,4 +41,4 @@
             @Html.Raw(Model.Content.Content)
         </div>
     </article>
-}
+} *@
