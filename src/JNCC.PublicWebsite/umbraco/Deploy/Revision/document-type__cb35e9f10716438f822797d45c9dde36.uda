@@ -32,7 +32,7 @@
           "Key": "e6c2a0a8-3d65-4950-a103-7afcfb30a976",
           "Alias": "landingPageContent",
           "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
-          "Description": "A brief paragraph describing this article when listed on the News and Insights Landing Page.",
+          "Description": "A brief paragraph describing this article when listed on the News and Insights Landing Page.\n(MAX 150 CHARACTERS)",
           "MandatoryMessage": "",
           "Name": "Content",
           "ValidationMessage": ""
@@ -192,5 +192,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "10.4.1+b70c703"
 }
