@@ -5,24 +5,19 @@
   "Configuration": {
     "editor": {
       "toolbar": [
-        "ace",
         "styleselect",
         "bold",
         "italic",
-        "underline",
         "alignleft",
         "aligncenter",
         "alignright",
-        "alignjustify",
         "bullist",
         "numlist",
         "outdent",
         "indent",
         "link",
-        "unlink",
         "umbmediapicker",
         "umbmacro",
-        "table",
         "umbembeddialog"
       ],
       "stylesheets": [
@@ -56,5 +51,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "10.4.1+b70c703"
 }
