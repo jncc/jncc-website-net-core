@@ -63,7 +63,7 @@
         {
           "Key": "f85d8016-9701-4d77-89c5-d36c46cd12d1",
           "Alias": "resourcesCollections",
-          "DataType": "umb://data-type/a3b33686a6f3463095b152ac916336fd",
+          "DataType": "umb://data-type/692dd8e3413843e7b92dd21b6ec2d696",
           "Description": "Key resource collections to be rendered on the page the below Latest Updates section.",
           "MandatoryMessage": "",
           "Name": "Collections",
@@ -79,7 +79,7 @@
         {
           "Key": "0a83bec0-9240-47be-85bd-85b7edc299bf",
           "Alias": "featuredQuote",
-          "DataType": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+          "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
           "Description": "A featured quote which highlights the scientific research work done by JNCC.This is optional and if no quote is provided it will not be displayed on the page.",
           "MandatoryMessage": "",
           "Name": "Featured Quote",
@@ -103,7 +103,7 @@
   "Udi": "umb://document-type/a591f2b082f9459abf2ab01e7c0745c2",
   "Dependencies": [
     {
-      "Udi": "umb://data-type/a3b33686a6f3463095b152ac916336fd",
+      "Udi": "umb://data-type/692dd8e3413843e7b92dd21b6ec2d696",
       "Ordering": true
     },
     {
@@ -115,7 +115,7 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://data-type/ca90c9500aff4e72b976a30b1ac57dad",
+      "Udi": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
       "Ordering": true
     },
     {
@@ -164,5 +164,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "10.4.1+b70c703"
 }

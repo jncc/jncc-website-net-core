@@ -24,7 +24,7 @@
         <span class="ud-workspace__description" ng-switch="type" ng-if="!current">
             <small ng-switch-when="local">Work locally</small>
             <small ng-switch-when="inactive">Add a workspace</small>
-            <small ng-switch-default>{{ name }} workspace</small>
+            <small ng-switch-default>{{ type.charAt(0).toUpperCase() + type.substr(1) }} workspace</small>
         </span>
 
         <span ng-if="current" class="ud-workspace__current">

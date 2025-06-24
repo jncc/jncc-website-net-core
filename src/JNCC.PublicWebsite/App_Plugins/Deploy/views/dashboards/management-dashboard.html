@@ -293,7 +293,7 @@
                                       </td>
                                       <td>
                                           <p>Optionally entity types can be excluded from deployment operations.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#excludedentitytypes" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#excludedentitytypes" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -304,7 +304,7 @@
                                           <p>When restoring or transferring content, Umbraco Deploy will make checks to ensure that any dependent content, media or other items are either present in the target environment, or can be deployed from the source environment.</p>
                                           <p>For example, if you have a media picker on a content item, that references a media item that's been deleted or is in the recycle bin, you'll get an error and the deploy won't complete until the issue is resolved (by removing the reference to the deleted media item).</p>
                                           <p>You can configure deploy to ignore these issues and proceed with the operation without warning, by amending this setting.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#ignore-broken-dependencies" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#ignore-broken-dependencies" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -315,7 +315,6 @@
                                           <p>When restoring or transferring content, Umbraco Deploy throw an exception if the media file contains a path that is too long for the file system.</p>
                                           <p>You can configure deploy to ignore these issues and proceed with the operation, by amending this setting. The media item will still be created or updated, but the associated file will not be deployed.</p>
                                           <p>The detail about media files skipped will be written to the logs.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#ignore-media-file-path-too-long-exception" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -334,7 +333,7 @@
                                       </td>
                                       <td>
                                           <p>Umbraco Deploy has a few built-in timeouts, which on larger sites might need to be modified.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#timeout-settings" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#timeout-settings" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -345,7 +344,7 @@
                                           <p>Platform limits can be reached when transferring large amounts of content or media. To try to avoid this, batch sizes for deploy operations can be configured.</p>
                                           <p>When set, this setting controls how many items are selected per batch to transfer to an upstream environment, potentially resulting in multiple deployments.</p>
                                           <p>This will take effect only for transfers to upstream environments (not for restores) and when multiple items are queued for transfer, such as a single media folder containing many files (queued using 'Include all items below'). Each batch will still include all determined dependencies and relations to successfully complete the deployment.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#batch-settings" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#batch-settings" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -363,7 +362,7 @@
                                       <td><b>{{vm.configurationDetails.transferFormsAsContent}}</b></td>
                                       <td>
                                           <p>Forms can be transferred as schema (i.e. serialized to .uda files on disk) or as content via the backoffice.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#transfer-forms-data-as-content" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#transfer-forms-data-as-content" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -372,7 +371,7 @@
                                       <td><b>{{vm.configurationDetails.transferDictionaryAsContent}}</b></td>
                                       <td>
                                           <p>Dictionary items can be transferred as schema (i.e. serialized to .uda files on disk) or as content via the backoffice.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#transfer-dictionary-items-as-content" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#transfer-dictionary-items-as-content" target="_blank">Read more</a></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -401,7 +400,7 @@
                                       <td><b>{{vm.configurationDetails.exportMemberGroups}}</b></td>
                                       <td>
                                           <p>By default, member groups are transferred as schema items unless they are disabled via this configuration.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#exporting-member-groups" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#exporting-member-groups" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -413,7 +412,7 @@
                                       </td>
                                       <td>
                                           <p>Members, and optionally also member groups, can be transferred via the backoffice if the feature is enabled using these settings.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#transfer-members" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#transfer-members" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -429,7 +428,7 @@
                                               <li><b>Hostname</b> - values defined under "Domains" with a full host name, e.g. "en.mysite.com"</li>
                                           </ul>
                                           <p>Combinations of settings can be applied, e.g. <b>Hostname,AbsolutePath</b></p>                 
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#deployment-of-culture--hostnames-settings" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#deployment-of-culture--hostnames-settings" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -445,7 +444,7 @@
                                             <li><b>Remove</b> - public access rules removed a source environment will be removed in the destination</li>
                                             <li><b>All</b> - all public access information will be transferred</li>
                                         </ul>
-                                        <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#deployment-of-public-access-settings" target="_blank">Read more</a></p>
+                                        <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#deployment-of-public-access-settings" target="_blank">Read more</a></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -461,7 +460,7 @@
                                             <li><b>Import</b> - trashed content will be processed and moved to the recycle bin on import</li>
                                             <li><b>All</b> - trashed content will be included in an export, processed and moved to the recycle bin on import</li>
                                         </ul>
-                                        <p><a href="https://docs.umbraco.com/umbraco-deploy/getting-started/deploy-settings#deployment-of-trashed-content" target="_blank">Read more</a></p>
+                                        <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#deployment-of-trashed-content" target="_blank">Read more</a></p>
                                     </td>
                                 </tr>
                                 <tr>
@@ -472,7 +471,7 @@
                                           <p>Some customers have reported sporadic issues with Umbraco's memory cache following deploy operations where schema information in Umbraco is updated from the serialized .uda files.</p>
                                           <p>These can be resolved manually by reloading the memory cache via the <i>Settings &gt; Published Status &gt; Caches </i> dashboard.</p>
                                           <p>This configuration option can be used to enable an automated reload of this cache.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#exporting-member-groups" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#memory-cache-reload" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -482,7 +481,7 @@
                                       <td>
                                           <p>By default the first bytes of a media file's content are used to create a checksum value, which in turn is used for comparisons between files in different environments.</p>
                                           <p>A faster approach is to use the file's metadata, with the small risk of increasing the chance of a file that has changed being considered the same and so not included in a deployment operation.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#media-file-checksum-calculation-method" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#media-file-checksum-calculation-method" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
@@ -492,7 +491,7 @@
                                       <td>
                                           <p>When processing a large number of items in a deploy operation, rather than looking up each relation individually in the database, it can be quicker to retrieve all into memory and cache them for processing.</p>
                                           <p>This setting determines the cut-off for when this option is used.</p>
-                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/deploy-settings#number-of-signatures-to-use-all-relation-cache" target="_blank">Read more</a></p>
+                                          <p><a href="https://docs.umbraco.com/umbraco-deploy/10.latest/getting-started/deploy-settings#number-of-signatures-to-use-all-relation-cache" target="_blank">Read more</a></p>
                                       </td>
                                   </tr>
                                   <tr>
