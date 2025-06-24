@@ -24,10 +24,8 @@
           "DataType": "umb://data-type/8dae3e09a3b14a28b678574a7febac0b",
           "Description": "",
           "Mandatory": true,
-          "MandatoryMessage": "",
           "Name": "Links",
-          "SortOrder": 1,
-          "ValidationMessage": ""
+          "SortOrder": 1
         },
         {
           "Key": "966636e9-1cc6-4f14-90a8-003a33b75774",
@@ -35,9 +33,7 @@
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
           "Description": "A heading which represents the collection of links.",
           "Mandatory": true,
-          "MandatoryMessage": "",
-          "Name": "Heading",
-          "ValidationMessage": ""
+          "Name": "Heading"
         }
       ]
     }
@@ -59,5 +55,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "10.4.1+b70c703"
 }

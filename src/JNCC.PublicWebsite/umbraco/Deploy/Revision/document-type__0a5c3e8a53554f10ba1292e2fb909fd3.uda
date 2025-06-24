@@ -22,39 +22,35 @@
           "Alias": "title",
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
           "Description": "The title for this callout card.",
-          "MandatoryMessage": "",
-          "Name": "Title",
-          "ValidationMessage": ""
+          "Mandatory": true,
+          "Name": "Title"
         },
         {
           "Key": "be688dbc-bd18-4cf3-b2e4-34a21cc236e9",
           "Alias": "readMoreButton",
           "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
           "Description": "The link & text for the button that links to the full web page for this callout card.",
-          "MandatoryMessage": "",
+          "Mandatory": true,
           "Name": "Read More Button",
-          "SortOrder": 3,
-          "ValidationMessage": ""
+          "SortOrder": 3
         },
         {
           "Key": "c70fcf04-acb6-48c0-8b02-411b26d418ee",
           "Alias": "content",
-          "DataType": "umb://data-type/e0ff14bdeb994c72b81681cbdcafed97",
-          "Description": "A brief paragraph or two explaining this callout card. Links cannot be added, as the callout card itself is a link",
-          "MandatoryMessage": "",
+          "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
+          "Description": "A brief paragraph or two explaining this callout card.",
+          "Mandatory": true,
           "Name": "Content",
-          "SortOrder": 2,
-          "ValidationMessage": ""
+          "SortOrder": 2
         },
         {
           "Key": "f051e607-21ce-4670-aa0d-937fd161a483",
           "Alias": "image",
           "DataType": "umb://data-type/8e1084a1a39f4701a2ff4c8789583cb5",
           "Description": "An image which illustrates this callout card.",
-          "MandatoryMessage": "",
+          "Mandatory": true,
           "Name": "Image",
-          "SortOrder": 1,
-          "ValidationMessage": ""
+          "SortOrder": 1
         }
       ]
     }
@@ -67,11 +63,11 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://data-type/8e1084a1a39f4701a2ff4c8789583cb5",
+      "Udi": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
       "Ordering": true
     },
     {
-      "Udi": "umb://data-type/e0ff14bdeb994c72b81681cbdcafed97",
+      "Udi": "umb://data-type/8e1084a1a39f4701a2ff4c8789583cb5",
       "Ordering": true
     },
     {
@@ -84,5 +80,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "10.4.1+b70c703"
 }
