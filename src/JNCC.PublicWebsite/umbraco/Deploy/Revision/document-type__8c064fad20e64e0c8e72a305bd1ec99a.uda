@@ -23,10 +23,8 @@
           "Alias": "readMoreButton",
           "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
           "Description": "An optional link & text for the button that links to the full web page for this carousel item.",
-          "MandatoryMessage": "",
           "Name": "Read More Button",
-          "SortOrder": 3,
-          "ValidationMessage": ""
+          "SortOrder": 3
         },
         {
           "Key": "939b6e3e-b1ec-4472-90d2-1a82be5ec98f",
@@ -34,9 +32,7 @@
           "DataType": "umb://data-type/c6bac0dd4ab945b18e30e4b619ee5da3",
           "Description": "A headline to be displayed over the image.",
           "Mandatory": true,
-          "MandatoryMessage": "",
-          "Name": "Headline",
-          "ValidationMessage": ""
+          "Name": "Headline"
         },
         {
           "Key": "c500b8c3-069b-400c-adea-991c1b53ff2c",
@@ -44,20 +40,16 @@
           "DataType": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
           "Description": "An image to be used in the background for this carousel item.",
           "Mandatory": true,
-          "MandatoryMessage": "",
           "Name": "Image",
-          "SortOrder": 1,
-          "ValidationMessage": ""
+          "SortOrder": 1
         },
         {
           "Key": "f7e458c8-f54a-41b8-8cb5-e326dc6af796",
           "Alias": "description",
           "DataType": "umb://data-type/0f382dde6b164cf7b8348e4dc6a0da00",
           "Description": "An optional short paragraph to describe this carousel item.",
-          "MandatoryMessage": "",
           "Name": "Description",
-          "SortOrder": 2,
-          "ValidationMessage": ""
+          "SortOrder": 2
         }
       ]
     }
@@ -87,5 +79,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "10.4.1+b70c703"
 }

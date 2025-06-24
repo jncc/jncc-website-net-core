@@ -436,7 +436,9 @@
   color: #3544b1;
 }
 .ud-workspace__description {
+  display: inline-block;
   white-space: nowrap;
+  padding: 2px;
 }
 .ud-workspace__current {
   font-size: 12px;

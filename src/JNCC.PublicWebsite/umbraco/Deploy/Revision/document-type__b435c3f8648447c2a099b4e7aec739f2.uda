@@ -11,7 +11,7 @@
       "umb://document-type/b435c3f8648447c2a099b4e7aec739f2"
     ]
   },
-  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "Parent": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
   "CompositionContentTypes": [],
   "PropertyGroups": [
     {
@@ -25,9 +25,7 @@
           "DataType": "umb://data-type/e7b059c49afa41d89dfb06e70fa617aa",
           "Description": "Please choose either an internal page or external site",
           "Mandatory": true,
-          "MandatoryMessage": "",
-          "Name": "Redirect",
-          "ValidationMessage": ""
+          "Name": "Redirect"
         }
       ]
     }
@@ -40,7 +38,7 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Udi": "umb://document-type-container/c33e272bf2c74153ab09ef6565899457",
       "Ordering": true
     },
     {
@@ -48,5 +46,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "10.4.1+b70c703"
 }
