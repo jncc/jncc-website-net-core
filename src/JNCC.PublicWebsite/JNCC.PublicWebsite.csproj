@@ -14,13 +14,13 @@
 		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
 		<PackageReference Include="SEOChecker" Version="10.0.6" />
 		<PackageReference Include="SEOChecker.Core" Version="10.0.6" />
-		<PackageReference Include="Umbraco.Cms" Version="10.8.7" />
+		<PackageReference Include="Umbraco.Cms" Version="10.8.11" />
 <PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />	</ItemGroup>
 
 	<!-- Force windows to use ICU. Otherwise Windows 10 2019H1+ will do it, but older windows 10 and most if not all winodws servers will run NLS -->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
-		<PackageReference Include="Umbraco.Deploy.OnPrem" Version="10.4.0" />
+		<PackageReference Include="Umbraco.Deploy.OnPrem" Version="10.4.1" />
 		<PackageReference Include="Umbraco.Forms" Version="10.5.7" />
 		<PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="10.0.1" />
 		<ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />

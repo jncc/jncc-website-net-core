@@ -96,7 +96,7 @@ namespace JNCC.PublicWebsite.Core.Services
             return new PageHeroViewModel()
             {
                 Headline = headline,
-                ImageUrl = pageHeroComposition.HeroImage.GetCropUrl("HeroImage"),
+                ImageUrl = pageHeroComposition.HeroImage.GetCropUrl(),
                 ImageCopyrightText = pageHeroComposition.HeroImage.Value<string>("titleText"),
                 ShowResourceSearch = pageHeroComposition is ResourcesPage
             };
