@@ -6,6 +6,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="appsettings.Development.json" />
+	  <Content Remove="appsettings.Release.json" />
+	  <Content Remove="appsettings.Staging.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<None Remove="Views\ResourceDetailPage.cshtml~RF9d71bc8.TMP" />
 	</ItemGroup>
 
@@ -236,6 +242,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<None Include="appsettings.Development.json">
+		  <IsTransformFile>true</IsTransformFile>
+		  <DependentUpon>appsettings.json</DependentUpon>
+		</None>
+		<None Include="appsettings.Release.json">
+		  <IsTransformFile>true</IsTransformFile>
+		  <DependentUpon>appsettings.json</DependentUpon>
+		</None>
+		<None Include="appsettings.Staging.json">
+		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		  <IsTransformFile>true</IsTransformFile>
+		  <DependentUpon>appsettings.json</DependentUpon>
+		</None>
 		<None Include="App_Plugins\Deploy\js\deploy.components.js">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
@@ -272,10 +293,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Update="appsettings.Staging.json">
-	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	    <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-	    <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+	  <Content Update="appsettings.json">
+	    <TransformOnBuild>true</TransformOnBuild>
 	  </Content>
 	  <Content Update="wwwroot\css\svgs\fi-x-twitter.svg">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
