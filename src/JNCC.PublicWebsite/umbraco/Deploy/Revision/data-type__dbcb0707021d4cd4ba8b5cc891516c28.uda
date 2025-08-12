@@ -5,7 +5,7 @@
   "Configuration": {
     "editor": {
       "toolbar": [
-        "code",
+        "ace",
         "removeformat",
         "undo",
         "redo",
@@ -35,39 +35,19 @@
         "superscript",
         "charmap"
       ],
-      "stylesheets": [
-        "cms",
-        "floats",
-        "headings",
-        "highlighting"
-      ],
+      "stylesheets": [],
       "dimensions": {
         "height": 500
       },
-      "maxImageSize": 500
+      "maxImageSize": 500,
+      "mode": "classic"
     },
+    "overlaySize": "small",
     "hideLabel": true,
     "ignoreUserStartNodes": false
   },
   "Udi": "umb://data-type/dbcb0707021d4cd4ba8b5cc891516c28",
-  "Dependencies": [
-    {
-      "Udi": "umb://stylesheet/cms.css",
-      "Mode": "Exist"
-    },
-    {
-      "Udi": "umb://stylesheet/floats.css",
-      "Mode": "Exist"
-    },
-    {
-      "Udi": "umb://stylesheet/headings.css",
-      "Mode": "Exist"
-    },
-    {
-      "Udi": "umb://stylesheet/highlighting.css",
-      "Mode": "Exist"
-    }
-  ],
+  "Dependencies": [],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
   "__version": "10.4.1+b70c703"
 }

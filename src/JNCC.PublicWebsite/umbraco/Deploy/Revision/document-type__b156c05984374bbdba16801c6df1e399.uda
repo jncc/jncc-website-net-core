@@ -26,7 +26,6 @@
           "Alias": "content",
           "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
           "Description": "The main content for the section.",
-          "Mandatory": true,
           "Name": "Content",
           "SortOrder": 2
         }

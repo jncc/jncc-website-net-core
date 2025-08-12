@@ -21,12 +21,13 @@
 					<span>
 						This page is in the category:
 					</span>
-					<h2><a href="@category.Url">@category.Text</a></h2>
-				}
+                }
+				<h2><a href="@category.Url">@category.Text</a></h2>
+				
 				@if (category.HasChildren)
 		        {
 			        <span>
-                        Also in @category.Text:
+                        Pages in @category.Text:
 			        </span>
 			        <ul class="aside-nav no-bullet">
 				        @foreach (var link in category.Children)

@@ -5,6 +5,7 @@
   "Configuration": {
     "editor": {
       "toolbar": [
+        "ace",
         "styleselect",
         "bold",
         "italic",
