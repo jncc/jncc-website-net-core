@@ -20,9 +20,11 @@
 	                }
                 </div>
 
-                @Html.Raw(Model.MainContent)
+                <div class="clearfix">
+                    @Html.Raw(Model.MainContent)
                 
-                @(await Component.InvokeAsync("ArticlesSections", new { model = Model }))
+                    @(await Component.InvokeAsync("ArticlesSections", new { model = Model }))
+                </div>
 
                 <div id="meta" class="callout secondary">
                     <div class="row collapse">
