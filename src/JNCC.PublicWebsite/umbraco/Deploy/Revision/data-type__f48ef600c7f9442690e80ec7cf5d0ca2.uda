@@ -5,6 +5,7 @@
   "Configuration": {
     "editor": {
       "toolbar": [
+        "ace",
         "removeformat",
         "undo",
         "redo",
