@@ -52,30 +52,22 @@
 @section Header {
     <div class="">
         <div id="hide-button" class="row expanded">
-             <span class="iframe-header-toggle iframe-toggle-button"><a href="#" class="openMenu hide-for-small-only">Hide</a></span>
-        </div>
-        <div id="iframe-header-holder" class="row iframe-header-holder">
-            <div class="iframe-menu iframe-inner-holder">
-                <strong class="logo" style="float:left;">
-                    <a href="/" accesskey="1">
-                        <img src="~/images/logo.png" class="iframe-logo" alt="JNCC">
-                    </a>
-                </strong>
-                    @if(!string.IsNullOrEmpty(Model.PageTitle)){
-                        <h1>@Model.PageTitle</h1>
-                    }        
+            <div class="small-1 small-offset-11">
+                <span class="float-right iframe-header-toggle"><a href="#" class="openMenu @iFrameCss">Hide</a></span>
             </div>
         </div>
-
         <div class="row">
             <div class="large-offset-1 large-2 medium-3 small-12 columns iframe-header-logo iframe-menu">
+                <strong class="logo">
+                    <a href="/" accesskey="1"><img src="~/images/logo.png" alt="JNCC"></a>
+                </strong>
                 <div class="show-for-small-only iframe-toggle-menu-holder">
                     <div class="title-bar iframe-toggle-menu" data-responsive-toggle="menu" data-hide-for="medium">
                         <button type="button" class="nav-opener" data-toggle="menu" data-responsive-toggle="menu" aria-label="navigation-opener"><span></span></button>
                     </div>
                 </div>
             </div>
-            <div class="large-9 medium-9 small-12 columns iframe-header-nav iframe-menu" style="position:relative; z-index:auto;">
+            <div class="large-9 medium-9 small-12 columns iframe-header-nav iframe-menu">
                 @(await Component.InvokeAsync("IFrameNavigation", new { model = Model }))
             </div>
         </div>
