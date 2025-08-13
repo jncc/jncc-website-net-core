@@ -96,6 +96,8 @@ namespace JNCC.PublicWebsite
             //Use the IIS Rewrite Middleware
             app.UseRewriter(new RewriteOptions().AddIISUrlRewrite(env.ContentRootFileProvider, "IISUrlRewrite.xml"));
 
+            app.UseStatusCodePagesWithReExecute("/UrlDoesntExist");
+
             app.UseUmbraco()
                 .WithMiddleware(u =>
                 {
