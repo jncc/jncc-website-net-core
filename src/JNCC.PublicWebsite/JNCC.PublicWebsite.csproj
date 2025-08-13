@@ -238,6 +238,63 @@
 		<Content Include="App_Plugins\Deploy\views\partials\workspace-info.html">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\configurationissues.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\definitionsettings.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\delete.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\domainsettings.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\emailsettings.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\generalsettings.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\ignoredconfigurationissues.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\ignoredinboundlinkissues.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\ignoredvalidationissues.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\inboundlinkissues.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\notifications.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\permissionsettings.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\redirectmanager.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\validate.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\validationissues.html" />
+		<Content Include="App_Plugins\seochecker\backoffice\seochecker\validationqueue.html" />
+		<Content Include="App_Plugins\seochecker\css\seochecker-propertyeditors.css" />
+		<Content Include="App_Plugins\seochecker\css\seochecker.css" />
+		<Content Include="App_Plugins\seochecker\dashboard\seocheckerdashboard.html" />
+		<Content Include="App_Plugins\seochecker\datatypes\redirects\redirectseditor.html" />
+		<Content Include="App_Plugins\seochecker\datatypes\robotstxteditor\robotstxteditor.html" />
+		<Content Include="App_Plugins\seochecker\datatypes\seochecker\seoCheckerPropertyEditor.html" />
+		<Content Include="App_Plugins\seochecker\datatypes\social\seocheckersocialpropertyeditor.html" />
+		<Content Include="App_Plugins\seochecker\datatypes\xmlsitemapeditor\xmlsitemapeditor.html" />
+		<Content Include="App_Plugins\seochecker\dialogs\confirm.html" />
+		<Content Include="App_Plugins\seochecker\dialogs\redirects\deleteredirects.html" />
+		<Content Include="App_Plugins\seochecker\dialogs\redirects\editredirects.html" />
+		<Content Include="App_Plugins\seochecker\dialogs\redirects\exportredirects.html" />
+		<Content Include="App_Plugins\seochecker\dialogs\redirects\importredirects.html" />
+		<Content Include="App_Plugins\seochecker\dialogs\validation\deleteconfigurationissues.html" />
+		<Content Include="App_Plugins\seochecker\dialogs\validation\deletevalidationissues.html" />
+		<Content Include="App_Plugins\seochecker\dialogs\validation\revalidatevalidationissues.html" />
+		<Content Include="App_Plugins\seochecker\fields\autovalidationoptions.html" />
+		<Content Include="App_Plugins\seochecker\fields\booleancheckbox.html" />
+		<Content Include="App_Plugins\seochecker\fields\checkboxlist.html" />
+		<Content Include="App_Plugins\seochecker\fields\dropdownselector.html" />
+		<Content Include="App_Plugins\seochecker\fields\ignorecheckbox.html" />
+		<Content Include="App_Plugins\seochecker\fields\imagepropertydropdown.html" />
+		<Content Include="App_Plugins\seochecker\fields\notfoundpageselector.html" />
+		<Content Include="App_Plugins\seochecker\fields\propertydropdown.html" />
+		<Content Include="App_Plugins\seochecker\fields\propertyselector.html" />
+		<Content Include="App_Plugins\seochecker\fields\radiobuttonlist.html" />
+		<Content Include="App_Plugins\seochecker\fields\robotstxtpreview.html" />
+		<Content Include="App_Plugins\seochecker\fields\seocontentpicker.html" />
+		<Content Include="App_Plugins\seochecker\fields\textbox.html" />
+		<Content Include="App_Plugins\seochecker\fields\timeselector.html" />
+		<Content Include="App_Plugins\seochecker\fields\uploadfield.html" />
+		<Content Include="App_Plugins\seochecker\fields\xmlsitemappreview.html" />
+		<Content Include="App_Plugins\seochecker\images\facebook-active.png" />
+		<Content Include="App_Plugins\seochecker\images\facebook.png" />
+		<Content Include="App_Plugins\seochecker\images\twitter-active.png" />
+		<Content Include="App_Plugins\seochecker\images\twitter.png" />
+		<Content Include="App_Plugins\seochecker\lang\da-DK.xml" />
+		<Content Include="App_Plugins\seochecker\lang\de-DE.xml" />
+		<Content Include="App_Plugins\seochecker\lang\en-GB.xml" />
+		<Content Include="App_Plugins\seochecker\lang\en-US.xml" />
+		<Content Include="App_Plugins\seochecker\lang\nl-NL.xml" />
 		<Content Include="App_Plugins\TwoFactorProviders\Authenticator.html" />
 	</ItemGroup>
 
@@ -288,6 +345,11 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 		<None Include="App_Plugins\Deploy\package.manifest" />
+		<None Include="App_Plugins\seochecker\backoffice\seochecker.js" />
+		<None Include="App_Plugins\seochecker\backoffice\seochecker\min.js" />
+		<None Include="App_Plugins\seochecker\mailtemplates\notification-mail.cshtml" />
+		<None Include="App_Plugins\seochecker\mailtemplates\scheduledtask-mail.cshtml" />
+		<None Include="App_Plugins\seochecker\package.manifest" />
 		<None Include="App_Plugins\TwoFactorProviders\Authenticator.controller.js" />
 		<None Include="App_Plugins\TwoFactorProviders\package.manifest" />
 	</ItemGroup>
