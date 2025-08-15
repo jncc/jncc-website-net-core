@@ -364,6 +364,7 @@ nofollow: Links nicht folgen</key>
 	<key alias="reportIssueBrokenLink999">Der Link zur Adresse &lt;strong&gt;{0}&lt;/strong&gt; ist fehlerhaft.&lt;br /&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink500">The url &lt;strong&gt;{0}&lt;/strong&gt; throws an exception.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink502">Der Link zur Adresse &lt;strong&gt;{0}&lt;/strong&gt; ist fehlerhaft.&lt;br /&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;&lt;br /&gt;Stellen Sie sicher, dass die Domain korrekt ist.</key>
+  <key alias="reportIssueBrokenLink503">The url &lt;strong&gt;{0}&lt;/strong&gt; throws an exception.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>    
 	<key alias="reportIssueBrokenMedia404">Die Verlinkung zum Medien-Objekt &lt;strong&gt;{0}&lt;/strong&gt; ist fehlerhaft.</key>
 	<key alias="reportIssueH1Empty">Auf dieser Seite fehlt eine h1-Überschrift.</key>
 	<key alias="reportIssueInlineCSSValidator">Die Vorlage enhält eingebettetes CSS.</key>
