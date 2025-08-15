@@ -19,7 +19,6 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
 		<PackageReference Include="SEOChecker" Version="10.0.6" />
-		<PackageReference Include="SEOChecker.Core" Version="10.0.6" />
 		<PackageReference Include="Umbraco.Cms" Version="10.8.11" />
 <PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />	</ItemGroup>
 
@@ -349,7 +348,6 @@
 		<None Include="App_Plugins\seochecker\backoffice\seochecker\min.js" />
 		<None Include="App_Plugins\seochecker\mailtemplates\notification-mail.cshtml" />
 		<None Include="App_Plugins\seochecker\mailtemplates\scheduledtask-mail.cshtml" />
-		<None Include="App_Plugins\seochecker\package.manifest" />
 		<None Include="App_Plugins\TwoFactorProviders\Authenticator.controller.js" />
 		<None Include="App_Plugins\TwoFactorProviders\package.manifest" />
 	</ItemGroup>
