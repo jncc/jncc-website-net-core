@@ -369,6 +369,7 @@ nofollow will not follow the links.&lt;br/&gt;</key>
 <key alias="reportIssueBrokenLink999">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 		<key alias="reportIssueBrokenLink500">The url &lt;strong&gt;{0}&lt;/strong&gt; throws an exception.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 		<key alias="reportIssueBrokenLink502">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt; &lt;br/&gt;Make sure  the domain is correct</key>
+    <key alias="reportIssueBrokenLink503">The url &lt;strong&gt;{0}&lt;/strong&gt; throws an exception.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>    
 		<key alias="reportIssueBrokenMedia404">The reference to media item &lt;strong&gt;{0}&lt;/strong&gt; is broken.</key>
 		<key alias="reportIssueH1Empty">The H1 tag for this page is empty.</key>
 		<key alias="reportIssueInlineCSSValidator">The template contains inline CSS.</key>

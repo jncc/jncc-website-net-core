@@ -211,8 +211,10 @@ namespace JNCC.PublicWebsite.Core.Models.Custom
     /// </summary>
     public class ResourceSitemapResonse
     {
+        [JsonProperty("count")]
         public int Count { get; set; }
 
+        [JsonProperty("items")]
         public List<ResourceSitemap> Items { get; set; }
     }
 
