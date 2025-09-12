@@ -15570,14 +15570,19 @@ img.float-right, .float-right img {
 	width: auto;
 	padding: 16px;
 	margin-top: -50px;
-	color: black;
+	color: white;
 	font-weight: bold;
 	font-size: 20px;
 	transition: 0.6s ease;
 	border-radius: 0 3px 3px 0;
 	user-select: none;
 	-webkit-user-select: none;
-	/*background-color: black;*/
+}
+
+/* Next & previous buttons */
+#myModel .modal-content .prev,
+#myModel .modal-content .next {
+	color: black;
 	text-shadow:
 		1px 1px 0 #FFFFFF55,
 		-1px 1px 0 #FFFFFF55,
@@ -15593,6 +15598,12 @@ img.float-right, .float-right img {
 
 	.prev:hover,
 	.next:hover {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+
+	#myModel .modal-content .prev:hover,
+	#myModel .modal-content .next:hover {
+		background-color: inherit;
 		color: #555;
 	}
 
