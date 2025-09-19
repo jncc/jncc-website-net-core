@@ -39,8 +39,6 @@
     <a class="accessibility" href="#wrapper">Back to top</a>
     @RenderSection("EndOfBodyIncludes", false)
     <script src="~/js/app.js?v=1.4"></script>
-    <script src="https://jncc.gov.uk/Cookie/Config/cookie-consent.js"></script>
-    <link rel="stylesheet" href="~/css/cookie-consent.css">
     @(await Component.InvokeAsync("BodyIncludes", new { model = Model }))
 </body>
 </html>
