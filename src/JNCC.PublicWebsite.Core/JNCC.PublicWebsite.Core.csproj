@@ -12,7 +12,7 @@
     <PackageReference Include="Aws4RequestSigner" Version="1.0.3" />
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2" />
     <PackageReference Include="GoogleAuthenticator" Version="3.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
     <PackageReference Include="SEOChecker.Core" Version="10.0.6" />
     <PackageReference Include="Umbraco.Cms.Core" Version="10.8.11" />
     <PackageReference Include="Umbraco.Cms.Infrastructure" Version="10.8.11" />
