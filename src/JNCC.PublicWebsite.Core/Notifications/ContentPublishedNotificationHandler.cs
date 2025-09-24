@@ -11,9 +11,35 @@ using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
 using JNCC.PublicWebsite.Core.Utilities;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 
 namespace JNCC.PublicWebsite.Core.Notifications
 {
+    internal class UmbracoBlocklistJsonModel
+    {
+        [JsonProperty(PropertyName = "contentUdi")]
+        internal string ContentUdi { get; set; } = string.Empty;
+    }
+
+    internal class LayoutJsonModel
+    {
+        [JsonProperty(PropertyName = "Umbraco.BlockList")]
+        internal List<UmbracoBlocklistJsonModel> UmbracoBlockList { get; set; } = new List<UmbracoBlocklistJsonModel>();
+
+    }
+
+    internal class BlocklistJsonModel
+    {
+        [JsonProperty(PropertyName = "layout")]
+        internal LayoutJsonModel Layout { get; set; } = new LayoutJsonModel();
+
+        [JsonProperty(PropertyName = "contentData")]
+        internal JArray ContentData { get; set; } = new JArray();
+
+        [JsonProperty(PropertyName = "settingsData")]
+        internal List<object> SettingsData { get; set; } = new List<object>();
+    }
+
     public class ContentPublishedNotificationHandler : INotificationHandler<ContentPublishedNotification>
     {
         private readonly ISearchIndexingQueueService _searchIndexingQueueService;
@@ -74,10 +100,10 @@ namespace JNCC.PublicWebsite.Core.Notifications
                                     //Check if it has a value and append it
                                     if (string.IsNullOrEmpty(contentFieldValueString) == false)
                                     {
-                                        if (contentFieldValueString.DetectIsJson() && JsonUtility.TryParseJson(contentFieldValueString, out object parsedJson))
+                                        if (contentFieldValueString.DetectIsJson() && JsonUtility.TryParseJson<BlocklistJsonModel>(contentFieldValueString, out BlocklistJsonModel bljm))
                                         {
                                             _logger.LogInformation("Value is JSON");
-                                            var processedJsonValue = ProcessJsonValue(parsedJson);
+                                            var processedJsonValue = ProcessJsonValue(bljm);
                                             _logger.LogInformation($"Parsed value is: {processedJsonValue}");
 
                                             if (string.IsNullOrEmpty(processedJsonValue) == false)
@@ -126,159 +152,33 @@ namespace JNCC.PublicWebsite.Core.Notifications
             }
         }
 
-        private string ProcessJsonValueSubSection(string value)
-        {
-            if (value.DetectIsJson() && JsonUtility.TryParseJson(value, out object parsedJson))
-            {
-               return ProcessJsonValue(parsedJson);
-            }
+        private static List<string> nestedIndexFields = new List<string> { "headline", "title", "description", "content" };
 
-            return string.Empty;
-        }
-
-
-        private string ProcessJsonValue(object obj)
+        private string ProcessJsonValue(BlocklistJsonModel bljm)
         {
             var processedValue = new StringBuilder();
-            var objType = obj.GetType();
+            var objType = bljm.ContentData.GetType();
 
-            if (objType == typeof(JObject))
+            foreach (var contentItem in bljm.ContentData)
             {
-                var jObj = obj as JObject;
-                if (jObj != null)
+                if (contentItem.GetType() == typeof(JObject))
                 {
-                    foreach (var field in _amazonServiceConfigurationOptions.Value.NestedIndexFields.Split(','))
+                    var ci = contentItem as JObject;
+                    foreach (var field in nestedIndexFields)
                     {
-                        var nestedField = jObj[field];
-                        if (nestedField == null)
+                        var contentItemField = ci![field];
+                        if (
+                            contentItemField is not null &&
+                            contentItemField is JValue &&
+                            (contentItemField as JValue)!.Value is string &&
+                            !string.IsNullOrWhiteSpace((contentItemField as JValue)!.Value as string)
+                        )
                         {
-                            continue;
-                        }
+                            var sanitisedValue = ((contentItemField as JValue)!.Value! as string)!.StripHtml().Trim();
 
-                        var valueType = nestedField.GetType();
-
-                        if (valueType == typeof(JArray))
-                        {
-                            var jArr = nestedField as JArray;
-                            if (jArr != null)
+                            if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
                             {
-                                for (var i = 0; i < jArr.Count; i++)
-                                {
-                                    var item = jArr[i];
-
-                                    foreach (var jField in _amazonServiceConfigurationOptions.Value.NestedIndexFields.Split(','))
-                                    {
-                                        var nestedJField = item[jField];
-
-                                        if (nestedJField == null)
-                                        {
-                                            continue;
-                                        }
-
-                                        var valueJType = nestedField.GetType();
-                                        var valueJ = nestedJField.Value<string>();
-
-                                        if (jField == "contentData" || jField == "subSections")
-                                        {
-                                            var innerValue = ProcessJsonValueSubSection(valueJ);
-
-                                            if (string.IsNullOrWhiteSpace(innerValue) == false)
-                                            {
-                                                processedValue.AppendLine(innerValue);
-                                            }
-                                        }
-                                        else if(jField == "content")
-                                        {
-                                            var sanitisedValue = valueJ.StripHtml().Trim();
-
-                                            if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
-                                            {
-                                                processedValue.AppendLine(sanitisedValue);
-                                            }
-                                        }
-                                        else
-                                        {
-                                            if (string.IsNullOrWhiteSpace(valueJ) == false)
-                                            {
-                                                processedValue.AppendLine(valueJ);
-                                            }
-                                        }
-                                    }
-
-                                }
-                            }
-                        }
-                        else
-                        {
-                            var value = nestedField.Value<string>();
-
-                            if (typeof(JContainer).IsAssignableFrom(valueType))
-                            {
-                                var innerValue = ProcessJsonValue(value);
-
-                                if (string.IsNullOrWhiteSpace(innerValue) == false)
-                                {
-                                    processedValue.AppendLine(innerValue);
-                                }
-                            }
-                            else
-                            {
-                                var sanitisedValue = value.StripHtml().Trim();
-
-                                if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
-                                {
-                                    processedValue.AppendLine(sanitisedValue);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            else if (objType == typeof(JArray))
-            {
-                var jArr = obj as JArray;
-                if (jArr != null)
-                {
-                    for (var i = 0; i < jArr.Count; i++)
-                    {
-                        var item = jArr[i];
-
-                        foreach (var field in _amazonServiceConfigurationOptions.Value.NestedIndexFields.Split(','))
-                        {
-                            var nestedField = item[field];
-
-                            if (nestedField == null)
-                            {
-                                continue;
-                            }
-
-                            var valueType = nestedField.GetType();
-                            var value = nestedField.Value<string>();
-
-                            if (field == "contentData" || field == "subSections")
-                            {
-                                var innerValue = ProcessJsonValueSubSection(value);
-
-                                if (string.IsNullOrWhiteSpace(innerValue) == false)
-                                {
-                                    processedValue.AppendLine(innerValue);
-                                }
-                            }
-                            else if (field == "content")
-                            {
-                                var sanitisedValue = value.StripHtml().Trim();
-
-                                if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
-                                {
-                                    processedValue.AppendLine(sanitisedValue);
-                                }
-                            }
-                            else
-                            {
-                                if (string.IsNullOrWhiteSpace(value) == false)
-                                {
-                                    processedValue.AppendLine(value);
-                                }
+                                processedValue.AppendLine(sanitisedValue);
                             }
                         }
                     }
