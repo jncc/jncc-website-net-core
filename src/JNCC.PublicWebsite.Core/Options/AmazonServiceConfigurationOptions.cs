@@ -15,8 +15,6 @@
         public string AWSSQSEndpoint { get; set; } = string.Empty;
         public string AWSSQSPayloadBucket { get; set; } = string.Empty;
         public bool EnableIndexing { get; set; } = false;
-        public string IndexFields { get; set; }
-
-        public string NestedIndexFields { get; set; }
+        public string IndexFields { get; set; } = string.Empty;
     }
 }
