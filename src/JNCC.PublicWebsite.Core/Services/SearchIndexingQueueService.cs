@@ -39,20 +39,30 @@ namespace JNCC.PublicWebsite.Core.Services
 
         public void QueueUpsert(SearchIndexDocumentModel document)
         {
-            if (string.IsNullOrWhiteSpace(document.Content))
+            try
             {
-                _logger.LogInformation("Skipping Queue Upsert for node (ID: {0}, Title: {1}). Reason: Content is Null or WhiteSpace.",document.NodeId, document.Title);
-                return;
+                if (string.IsNullOrWhiteSpace(document.Content))
+                {
+                    _logger.LogInformation("Skipping Queue Upsert for node (ID: {0}, Title: {1}). Reason: Content is Null or WhiteSpace.", document.NodeId, document.Title);
+                    return;
+                }
+
+                _logger.LogInformation("Running upsert. Document has content");
+                var request = new SearchIndexQueueRequestModel
+                {
+                    Verb = SearchIndexingVerbs.Upsert,
+                    Index = _amazonServiceConfigurationOptions.Value.AWSESIndex,
+                    Document = document
+                };
+
+                _logger.LogInformation("Sending upsert request");
+                QueueRequest(request);
+                _logger.LogInformation("Completed upsert request");
             }
-
-            var request = new SearchIndexQueueRequestModel
+            catch (Exception ex)
             {
-                Verb = SearchIndexingVerbs.Upsert,
-                Index = _amazonServiceConfigurationOptions.Value.AWSESIndex,
-                Document = document
-            };
-
-            QueueRequest(request);
+                _logger.LogError(ex, "Exception occurred in SearchIndexingQueueService QueueUpsert function");
+            }
         }
 
         public void QueueDelete(SearchIndexDocumentModel document)
@@ -74,37 +84,42 @@ namespace JNCC.PublicWebsite.Core.Services
 
         private void QueueRequest(SearchIndexQueueRequestModel request)
         {
-            var message = JsonConvert.SerializeObject(request, Formatting.None, _jsonSettings);
-
-            if (!string.IsNullOrEmpty(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint))
+            try
             {
-                var sendRequest = new SendMessageRequest(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint, message);
+                var message = JsonConvert.SerializeObject(request, Formatting.None, _jsonSettings);
 
-                if (_sqsExtendedClient != null)
+                if (!string.IsNullOrEmpty(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint))
                 {
-                    var response = _sqsExtendedClient.SendMessageAsync(sendRequest).Result;
+                    var sendRequest = new SendMessageRequest(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint, message);
 
-                    if (response.HttpStatusCode != System.Net.HttpStatusCode.OK)
+                    if (_sqsExtendedClient != null)
                     {
-                        _logger.LogWarning("[Failure] Document Request (ID: {0}, Title: {1}) has not been pushed up to SQS. Response HTTP Status Code: {2}. MD5 of message attributes: {3}. MD5 of message body: {4}.", request.Document.NodeId, request.Document.Title, response.HttpStatusCode, response.MD5OfMessageAttributes, response.MD5OfMessageBody);
+                        var response = _sqsExtendedClient.SendMessageAsync(sendRequest).Result;
+
+                        if (response.HttpStatusCode != System.Net.HttpStatusCode.OK)
+                        {
+                            _logger.LogWarning("[Failure] Document Request (ID: {0}, Title: {1}) has not been pushed up to SQS. Response HTTP Status Code: {2}. MD5 of message attributes: {3}. MD5 of message body: {4}.", request.Document.NodeId, request.Document.Title, response.HttpStatusCode, response.MD5OfMessageAttributes, response.MD5OfMessageBody);
+                        }
+                        else
+                        {
+                            _logger.LogInformation("[Success] Document Request (ID: {0}, Title: {1}) has been pushed up to SQS.", request.Document.NodeId, request.Document.Title);
+                        }
                     }
                     else
                     {
-                        _logger.LogInformation("[Success] Document Request (ID: {0}, Title: {1}) has been pushed up to SQS.", request.Document.NodeId, request.Document.Title);
+                        _logger.LogWarning("[Failure] Amazon SQS Extended Client could not be created.");
                     }
+
                 }
                 else
                 {
-                    _logger.LogWarning("[Failure] Amazon SQS Extended Client could not be created.");
+                    _logger.LogWarning("[Failure] AWS SQS Endpoint not supplied.");
                 }
-
             }
-            else
+            catch (Exception ex)
             {
-                _logger.LogWarning("[Failure] AWS SQS Endpoint not supplied.");
+                _logger.LogError(ex, "Exception occurred in SearchIndexingQueueService QueueRequest function");
             }
-
-           
         }
 
         private async Task QueueRequestAsync(SearchIndexQueueRequestModel request)

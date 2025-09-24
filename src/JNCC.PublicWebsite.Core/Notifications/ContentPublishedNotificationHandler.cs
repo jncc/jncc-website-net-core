@@ -33,20 +33,26 @@ namespace JNCC.PublicWebsite.Core.Notifications
 
         public void Handle(ContentPublishedNotification notification)
         {
-            if (!_amazonServiceConfigurationOptions.Value.EnableIndexing)
+            try
             {
-                _logger.LogWarning("Amazon indexing disabled");
-            }
-            else
-            {
-                _logger.LogWarning("Handling send to Amazon");
+                if (!_amazonServiceConfigurationOptions.Value.EnableIndexing)
+                {
+                    _logger.LogWarning("Amazon indexing disabled");
+                    return;
+                }
 
-                _umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext);
+                _logger.LogInformation("Sending updated content to Amazon for indexing");
 
-                string leftPartUrl = umbracoContext.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
+                if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext) || umbracoContext is null)
+                {
+                    _logger.LogError("Could not get Umbraco Context");
+                }
+
+                string leftPartUrl = umbracoContext!.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
 
                 foreach (var entity in notification.PublishedEntities)
                 {
+                    _logger.LogInformation($"Preparing to send index fields for {entity.Name}");
                     var contentBuilder = new StringBuilder();
 
                     var fieldsToIndex = entity.Properties.Where(p => _amazonServiceConfigurationOptions.Value.IndexFields.Contains(p.Alias));
@@ -63,14 +69,16 @@ namespace JNCC.PublicWebsite.Core.Notifications
                                 {
                                     var contentFieldValueString = contentFieldValue.PublishedValue.ToString();
 
-                                    _logger.LogInformation("{{alias} - {value}", contentField.Alias, contentFieldValueString);
+                                    _logger.LogInformation($"Alias: {contentField.Alias}; Value: {contentFieldValueString}");
 
                                     //Check if it has a value and append it
                                     if (string.IsNullOrEmpty(contentFieldValueString) == false)
                                     {
                                         if (contentFieldValueString.DetectIsJson() && JsonUtility.TryParseJson(contentFieldValueString, out object parsedJson))
                                         {
+                                            _logger.LogInformation("Value is JSON");
                                             var processedJsonValue = ProcessJsonValue(parsedJson);
+                                            _logger.LogInformation($"Parsed value is: {processedJsonValue}");
 
                                             if (string.IsNullOrEmpty(processedJsonValue) == false)
                                             {
@@ -79,7 +87,9 @@ namespace JNCC.PublicWebsite.Core.Notifications
                                         }
                                         else
                                         {
+                                            _logger.LogInformation("Value is not JSON");
                                             var sanitisedValue = contentFieldValueString.StripHtml().Trim();
+                                            _logger.LogInformation($"Sanitised value is: {sanitisedValue}");
 
                                             if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
                                             {
@@ -88,32 +98,32 @@ namespace JNCC.PublicWebsite.Core.Notifications
                                         }
                                     }
                                 }
-
                             }
                         }
-
-                       
-
                     }
 
                     string content = contentBuilder.ToString().Trim();
+                    _logger.LogInformation($"Content to index: {content}");
 
                     var document = new SearchIndexDocumentModel()
                     {
                         NodeId = entity.Id,
                         Site = _site,
-                        Published = DateTime.Parse(entity.PublishDate.ToString()),
-                        Title = entity.Name,
-                        Url = leftPartUrl + umbracoContext.Content.GetById(entity.Id).Url(),
+                        Published = entity.PublishDate ?? DateTime.Now,
+                        Title = entity.Name ?? "",
+                        Url = leftPartUrl + umbracoContext!.Content!.GetById(entity.Id)!.Url(),
                         Content = content
                     };
 
-
+                    _logger.LogInformation("Beginning upsert");
                     _searchIndexingQueueService.QueueUpsert(document);
+                    _logger.LogInformation("Upsert complete");
                 }
             }
-
-          
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Exception occurred in ContentPublishedNotificationHandler Handle function");
+            }
         }
 
         private string ProcessJsonValueSubSection(string value)
