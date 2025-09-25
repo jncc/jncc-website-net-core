@@ -23,12 +23,18 @@ namespace JNCC.PublicWebsite.Core.Notifications
 
         public void Handle(ContentCacheRefresherNotification notification)
         {
-            _logger.LogInformation($"Message type: {notification.MessageType.ToString()}");
-            _logger.LogInformation($"Message Object type: {notification.MessageObject.GetType()}");
-            //// We only want to handle the RefreshByPayload message type.
-            //if (notification.MessageType != MessageType.RefreshByPayload)
+            // We only want to handle the RefreshByPayload message type.
+            if (notification.MessageType != MessageType.RefreshByPayload)
+            {
+                _logger.LogInformation($"Unhandled message type: {notification.MessageType.ToString()}");
+                return;
+            }
+
+            //(notification.MessageType == MessageType.RefreshByPayload)
             //{
-            //    return;
+            //    Create
+            //    Save
+            //    Save&Publish
             //}
 
             if (notification.MessageObject is not ContentCacheRefresher.JsonPayload[])
@@ -41,6 +47,7 @@ namespace JNCC.PublicWebsite.Core.Notifications
             // Handle each content item in the payload.
             foreach (ContentCacheRefresher.JsonPayload item in payload)
             {
+                _logger.LogInformation($"Message type: {item.ChangeTypes.ToString()}");
                 // Retrieve the content item.
                 var contentItemId = item.Id;
                 IContent? contentItem = _contentService.GetById(contentItemId);
