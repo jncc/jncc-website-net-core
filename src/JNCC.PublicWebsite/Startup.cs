@@ -51,6 +51,7 @@ namespace JNCC.PublicWebsite
                 .AddNotificationHandler<MediaDeletedNotification, MediaDeletedNotificationHandler>()
                 .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
                 .AddNotificationHandler<XmlSitemapGeneratedNotification, SitemapGeneratedNotificationHandler>()
+                .AddNotificationHandler<ContentCacheRefresherNotification, ContentCacheRefresherNotificationHandler>()
                 .Build();
 
 
