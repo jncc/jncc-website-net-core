@@ -60,6 +60,16 @@ namespace JNCC.PublicWebsite.Core.Notifications
                     return;
                 }
 
+                _logger.LogInformation($"CreateDate: {contentItem.CreateDate.ToString("yyyy-MM-dd HH-mm-ss")}");
+                _logger.LogInformation($"DeleteDate: {(contentItem.DeleteDate is not null ? contentItem.DeleteDate.Value.ToString("yyyy-MM-dd HH-mm-ss") : "NULL DATA")}");
+                _logger.LogInformation($"PublishDate: {(contentItem.PublishDate is not null ? contentItem.PublishDate.Value.ToString("yyyy-MM-dd HH-mm-ss") : "NULL DATA")}");
+                _logger.LogInformation($"IsEdited: {contentItem.Edited}");
+                _logger.LogInformation($"IsDirty: {contentItem.IsDirty()}");
+                _logger.LogInformation($"IsPublished: {contentItem.Published}");
+                _logger.LogInformation($"PublishedState: {contentItem.PublishedState.ToString()}");
+                _logger.LogInformation($"IsTrashed: {contentItem.Trashed}");
+                _logger.LogInformation($"UpdateDate: {contentItem.UpdateDate.ToString("yyyy-MM-dd HH-mm-ss")}");
+
                 // Do something with the content item. Here we'll just log some details.
                 _logger.LogInformation(
                     "ContentCacheRefresherNotification handled for type {MessageType} and id {Id}. " +
