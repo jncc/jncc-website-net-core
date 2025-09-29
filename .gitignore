@@ -610,3 +610,4 @@ src/JNCC.PublicWebsite/Smidge
 /src/JNCC.PublicWebsite/App_Plugins/seochecker/mailtemplates
 /src/JNCC.PublicWebsite/App_Plugins/seochecker/package.manifest
 **/umbraco/Licenses/*.lic
+.DS_Store
