@@ -2,11 +2,7 @@
 {
     internal interface ISearchConfiguration
     {
-        string AWSESAccessKey { get; set; }
-        string AWSESSecretKey { get; set; }
         string AWSESRegion { get; set; }
-        string AWSService { get; set; }
-        string AWSESEndpoint { get; set; }
         string AWSESIndex { get; set; }
         string AWSSQSEndpoint { get; set; }
         string AWSSQSPayloadBucket { get; set; }

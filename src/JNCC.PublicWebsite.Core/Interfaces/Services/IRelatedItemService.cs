@@ -7,7 +7,5 @@ namespace JNCC.PublicWebsite.Core.Interfaces.Services
     public interface IRelatedItemService
     {
         IEnumerable<RelatedItemViewModel> RenderRelatedItems(IPublishedContent model);
-
-        IEnumerable<RelatedItemViewModel> GetViewModels(IRelatedItemsComposition composition, HomePage homePage);
     }
 }

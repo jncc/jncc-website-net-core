@@ -10,20 +10,6 @@ namespace JNCC.PublicWebsite.Core.Services
 {
     internal sealed class RelatedItemsService : IRelatedItemService
     {
-        private const int MaximumRelatedItems = 3;
-        private const int MaximumNumberOfSearchResults = 6;
-        private readonly ISearchQueryService _searchQueryService;
-
-        //private readonly ISeoMetaDataService _seoMetaDataService;
-        //private readonly UmbracoHelper _umbracoHelper;
-
-        public RelatedItemsService(ISearchQueryService searchQueryService)
-        {
-            _searchQueryService = searchQueryService ?? throw new ArgumentNullException(nameof(RelatedItemsService));
-            //_seoMetaDataService = new SeoMetaDataService();
-            //_relatedItemsService = new RelatedItemsService(_seoMetaDataService, _searchQueryService, Umbraco);
-        }
-
         public IEnumerable<RelatedItemViewModel> RenderRelatedItems(IPublishedContent model)
         {
             if (model is IRelatedItemsComposition == false)
@@ -41,7 +27,7 @@ namespace JNCC.PublicWebsite.Core.Services
             return viewModels;
         }
 
-        public IEnumerable<RelatedItemViewModel> GetViewModels(IRelatedItemsComposition composition, HomePage homePage)
+        private IEnumerable<RelatedItemViewModel> GetViewModels(IRelatedItemsComposition composition, HomePage homePage)
         {
             var viewModels = new List<RelatedItemViewModel>();
 
