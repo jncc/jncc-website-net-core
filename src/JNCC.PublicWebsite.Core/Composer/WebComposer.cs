@@ -43,7 +43,6 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<ICareersSidebarService, CareersSidebarService>();
             builder.Services.AddSingleton<ICalloutCardsService, CalloutCardsService>();
             builder.Services.AddSingleton<ILatestNewsSectionService, LatestNewsSectionService>();
-            builder.Services.AddSingleton<ISearchQueryService, SearchQueryService>();
             builder.Services.AddSingleton<IQueryService, QueryService>();
             builder.Services.AddSingleton<INewsAndInsightsLandingFilteringService, NewsAndInsightsLandingFilteringService>();
             builder.Services.AddSingleton<ISeoMetaDataService, SeoMetaDataService>();
