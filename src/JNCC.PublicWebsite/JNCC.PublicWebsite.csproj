@@ -6,12 +6,6 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <Content Remove="appsettings.Development.json" />
-	  <Content Remove="appsettings.Release.json" />
-	  <Content Remove="appsettings.Staging.json" />
-	</ItemGroup>
-
-	<ItemGroup>
 		<None Remove="Views\ResourceDetailPage.cshtml~RF9d71bc8.TMP" />
 	</ItemGroup>
 
@@ -20,7 +14,8 @@
 		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
 		<PackageReference Include="SEOChecker" Version="10.0.6" />
 		<PackageReference Include="Umbraco.Cms" Version="10.8.11" />
-<PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />	</ItemGroup>
+		<PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />
+	</ItemGroup>
 
 	<!-- Force windows to use ICU. Otherwise Windows 10 2019H1+ will do it, but older windows 10 and most if not all winodws servers will run NLS -->
 	<ItemGroup>
@@ -298,21 +293,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Include="appsettings.Development.json">
-		  <IsTransformFile>true</IsTransformFile>
-		  <DependentUpon>appsettings.json</DependentUpon>
-		</None>
-		<None Include="appsettings.Release.json">
-		  <IsTransformFile>true</IsTransformFile>
-		  <DependentUpon>appsettings.json</DependentUpon>
-		</None>
-		<None Include="appsettings.Staging.json">
-		  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		  <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-		  <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-		  <IsTransformFile>true</IsTransformFile>
-		  <DependentUpon>appsettings.json</DependentUpon>
-		</None>
 		<None Include="App_Plugins\Deploy\js\deploy.components.js">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
@@ -353,12 +333,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Content Update="appsettings.json">
-	    <TransformOnBuild>true</TransformOnBuild>
-	  </Content>
-	  <Content Update="wwwroot\css\svgs\fi-x-twitter.svg">
-	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
+		<Content Update="wwwroot\css\svgs\fi-x-twitter.svg">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -366,10 +343,10 @@
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 		<None Update="umbraco\Licenses\umbracoDeploy.lic">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 		<None Update="umbraco\Licenses\umbracoForms.lic">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 
