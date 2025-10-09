@@ -1,19 +1,19 @@
 ﻿using JNCC.PublicWebsite.Core.Constants;
+using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
+using JNCC.PublicWebsite.Core.Notifications;
 using JNCC.PublicWebsite.Core.Options;
-using JNCC.PublicWebsite.Core.Services;
+using JNCC.PublicWebsite.Core.Utilities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Text;
-using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Notifications;
+using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
 using Umbraco.Extensions;
-using JNCC.PublicWebsite.Core.Utilities;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json;
 
-namespace JNCC.PublicWebsite.Core.Notifications
+namespace JNCC.PublicWebsite.Core.Services
 {
     internal class UmbracoBlocklistJsonModel
     {
@@ -40,16 +40,21 @@ namespace JNCC.PublicWebsite.Core.Notifications
         internal List<object> SettingsData { get; set; } = new List<object>();
     }
 
-    public class ContentPublishedNotificationHandler : INotificationHandler<ContentPublishedNotification>
+    public class ContentIndexService : IContentIndexService
     {
         private readonly ISearchIndexingQueueService _searchIndexingQueueService;
         private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
-        private readonly ILogger<ContentPublishedNotificationHandler> _logger;
+        private readonly ILogger<ContentIndexService> _logger;
         private readonly IUmbracoContextAccessor _umbracoContextAccessor;
         private const string _site = SearchIndexingSites.Website;
 
 
-        public ContentPublishedNotificationHandler(ISearchIndexingQueueService searchIndexingQueueService, IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions, ILogger<ContentPublishedNotificationHandler> logger, IUmbracoContextAccessor umbracoContextAccessor)
+        public ContentIndexService(
+            ISearchIndexingQueueService searchIndexingQueueService,
+            IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions,
+            ILogger<ContentIndexService> logger,
+            IUmbracoContextAccessor umbracoContextAccessor
+        )
         {
             _searchIndexingQueueService = searchIndexingQueueService;
             _amazonServiceConfigurationOptions = amazonServiceConfigurationOptions;
@@ -57,7 +62,7 @@ namespace JNCC.PublicWebsite.Core.Notifications
             _umbracoContextAccessor = umbracoContextAccessor;
         }
 
-        public void Handle(ContentPublishedNotification notification)
+        public void Handle(IContent publishedEntity)
         {
             try
             {
@@ -76,75 +81,73 @@ namespace JNCC.PublicWebsite.Core.Notifications
 
                 string leftPartUrl = umbracoContext!.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
 
-                foreach (var entity in notification.PublishedEntities)
+                _logger.LogInformation($"Preparing to send index fields for {publishedEntity.Name}");
+                var contentBuilder = new StringBuilder();
+
+                var fieldsToIndex = publishedEntity.Properties.Where(p => _amazonServiceConfigurationOptions.Value.IndexFields.Contains(p.Alias));
+
+                foreach (var contentField in fieldsToIndex)
                 {
-                    _logger.LogInformation($"Preparing to send index fields for {entity.Name}");
-                    var contentBuilder = new StringBuilder();
+                    var contentFieldValues = contentField.Values;
 
-                    var fieldsToIndex = entity.Properties.Where(p => _amazonServiceConfigurationOptions.Value.IndexFields.Contains(p.Alias));
-
-                    foreach (var contentField in fieldsToIndex)
+                    if (contentFieldValues != null && contentFieldValues.Any())
                     {
-                        var contentFieldValues = contentField.Values;
-
-                        if (contentFieldValues != null && contentFieldValues.Any())
+                        foreach (var contentFieldValue in contentFieldValues)
                         {
-                            foreach (var contentFieldValue in contentFieldValues)
+                            if (contentFieldValue != null && contentFieldValue.PublishedValue != null)
                             {
-                                if (contentFieldValue != null && contentFieldValue.PublishedValue != null)
+                                var contentFieldValueString = contentFieldValue.PublishedValue.ToString();
+
+                                _logger.LogInformation($"Alias: {contentField.Alias}; Value: {contentFieldValueString}");
+
+                                //Check if it has a value and append it
+                                if (string.IsNullOrEmpty(contentFieldValueString) == false)
                                 {
-                                    var contentFieldValueString = contentFieldValue.PublishedValue.ToString();
-
-                                    _logger.LogInformation($"Alias: {contentField.Alias}; Value: {contentFieldValueString}");
-
-                                    //Check if it has a value and append it
-                                    if (string.IsNullOrEmpty(contentFieldValueString) == false)
+                                    if (contentFieldValueString.DetectIsJson() && contentFieldValueString.TryParseJson(out BlocklistJsonModel bljm))
                                     {
-                                        if (contentFieldValueString.DetectIsJson() && JsonUtility.TryParseJson<BlocklistJsonModel>(contentFieldValueString, out BlocklistJsonModel bljm))
-                                        {
-                                            _logger.LogInformation("Value is JSON");
-                                            var processedJsonValue = ProcessJsonValue(bljm);
-                                            _logger.LogInformation($"Parsed value is: {processedJsonValue}");
+                                        _logger.LogInformation("Value is JSON");
+                                        var processedJsonValue = ProcessJsonValue(bljm);
+                                        _logger.LogInformation($"Parsed value is: {processedJsonValue}");
 
-                                            if (string.IsNullOrEmpty(processedJsonValue) == false)
-                                            {
-                                                contentBuilder.AppendLine(processedJsonValue);
-                                            }
+                                        if (string.IsNullOrEmpty(processedJsonValue) == false)
+                                        {
+                                            contentBuilder.AppendLine(processedJsonValue);
                                         }
-                                        else
-                                        {
-                                            _logger.LogInformation("Value is not JSON");
-                                            var sanitisedValue = contentFieldValueString.StripHtml().Trim();
-                                            _logger.LogInformation($"Sanitised value is: {sanitisedValue}");
+                                    }
+                                    else
+                                    {
+                                        _logger.LogInformation("Value is not JSON");
+                                        var sanitisedValue = contentFieldValueString.StripHtml().Trim();
+                                        _logger.LogInformation($"Sanitised value is: {sanitisedValue}");
 
-                                            if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
-                                            {
-                                                contentBuilder.AppendLine(sanitisedValue);
-                                            }
+                                        if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
+                                        {
+                                            contentBuilder.AppendLine(sanitisedValue);
                                         }
                                     }
                                 }
                             }
                         }
                     }
-
-                    string content = contentBuilder.ToString().Trim();
-                    _logger.LogInformation($"Content to index: {content}");
-
-                    var document = new SearchIndexDocumentModel()
-                    {
-                        NodeId = entity.Id,
-                        Site = _site,
-                        Published = entity.PublishDate ?? DateTime.Now,
-                        Title = entity.Name ?? "",
-                        Url = leftPartUrl + umbracoContext!.Content!.GetById(entity.Id)!.Url(),
-                        Content = content
-                    };
-
-                    _logger.LogInformation("Beginning upsert");
-                    _searchIndexingQueueService.QueueUpsert(document);
-                    _logger.LogInformation("Upsert complete");
                 }
+
+                string content = contentBuilder.ToString().Trim();
+                _logger.LogInformation($"Content to index: {content}");
+
+                var document = new SearchIndexDocumentModel()
+                {
+                    NodeId = publishedEntity.Id,
+                    Site = _site,
+                    Published = publishedEntity.PublishDate ?? DateTime.Now,
+                    Title = publishedEntity.Name ?? "",
+                    Url = leftPartUrl + umbracoContext!.Content!.GetById(publishedEntity.Id)!.Url(),
+                    Content = content
+                };
+
+                _logger.LogInformation("Beginning upsert");
+                _searchIndexingQueueService.QueueUpsert(document);
+                _logger.LogInformation("Upsert complete");
+
             }
             catch (Exception ex)
             {

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using JNCC.PublicWebsite.Core.Interfaces.Services;
+using Microsoft.Extensions.Logging;
 using Umbraco.Cms.Core.Cache;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models;
@@ -10,13 +11,20 @@ namespace JNCC.PublicWebsite.Core.Notifications
 {
     public class ContentCacheRefresherNotificationHandler : INotificationHandler<ContentCacheRefresherNotification>
     {
+        private readonly IContentIndexService _contentIndexService;
+        private readonly IContentRemoveIndexService _contentRemoveIndexService;
+
         private readonly ILogger<ContentCacheRefresherNotificationHandler> _logger;
         private readonly IContentService _contentService;
 
         public ContentCacheRefresherNotificationHandler(
+            IContentIndexService contentIndexService,
+            IContentRemoveIndexService contentRemoveIndexService,
             ILogger<ContentCacheRefresherNotificationHandler> logger,
             IContentService contentService)
         {
+            _contentIndexService = contentIndexService;
+            _contentRemoveIndexService = contentRemoveIndexService;
             _logger = logger;
             _contentService = contentService;
         }
@@ -29,13 +37,6 @@ namespace JNCC.PublicWebsite.Core.Notifications
                 _logger.LogInformation($"Unhandled message type: {notification.MessageType.ToString()}");
                 return;
             }
-
-            //(notification.MessageType == MessageType.RefreshByPayload)
-            //{
-            //    Create
-            //    Save
-            //    Save&Publish
-            //}
 
             if (notification.MessageObject is not ContentCacheRefresher.JsonPayload[])
             {
@@ -60,24 +61,22 @@ namespace JNCC.PublicWebsite.Core.Notifications
                     return;
                 }
 
-                _logger.LogInformation($"CreateDate: {contentItem.CreateDate.ToString("yyyy-MM-dd HH-mm-ss")}");
-                _logger.LogInformation($"DeleteDate: {(contentItem.DeleteDate is not null ? contentItem.DeleteDate.Value.ToString("yyyy-MM-dd HH-mm-ss") : "NULL DATA")}");
-                _logger.LogInformation($"PublishDate: {(contentItem.PublishDate is not null ? contentItem.PublishDate.Value.ToString("yyyy-MM-dd HH-mm-ss") : "NULL DATA")}");
-                _logger.LogInformation($"IsEdited: {contentItem.Edited}");
-                _logger.LogInformation($"IsDirty: {contentItem.IsDirty()}");
-                _logger.LogInformation($"IsPublished: {contentItem.Published}");
-                _logger.LogInformation($"PublishedState: {contentItem.PublishedState.ToString()}");
-                _logger.LogInformation($"IsTrashed: {contentItem.Trashed}");
-                _logger.LogInformation($"UpdateDate: {contentItem.UpdateDate.ToString("yyyy-MM-dd HH-mm-ss")}");
-
-                // Do something with the content item. Here we'll just log some details.
-                _logger.LogInformation(
-                    "ContentCacheRefresherNotification handled for type {MessageType} and id {Id}. " +
-                    "Key: {Key}, Name: {Name}",
-                    notification.MessageType,
-                    contentItemId,
-                    contentItem.Key,
-                    contentItem.Name);
+                if (!contentItem.Edited && contentItem.Published && contentItem.PublishedState == PublishedState.Published && !contentItem.Trashed)
+                {
+                    _logger.LogInformation($"Published (update index)");
+                    _contentIndexService.Handle(contentItem);
+                    return;
+                }
+                if (
+                    (contentItem.PublishedState == PublishedState.Unpublished && !contentItem.Trashed) ||
+                    contentItem.Trashed
+                )
+                {
+                    _logger.LogInformation($"Unpublished (Try remove from index)");
+                    _contentRemoveIndexService.Handle(contentItem);
+                    return;
+                }
+                _logger.LogInformation($"No index change needed");
             }
         }
     }
