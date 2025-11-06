@@ -151,7 +151,7 @@ namespace JNCC.PublicWebsite.Core.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Exception occurred in ContentPublishedNotificationHandler Handle function");
+                _logger.LogError(ex, "Exception occurred in ContentIndexService Handle function");
             }
         }
 
