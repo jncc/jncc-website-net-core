@@ -65,9 +65,8 @@ namespace JNCC.PublicWebsite.Core.Notifications
                 if (mediaItem is null)
                 {
                     _logger.LogWarning(
-                        "MediaCacheRefresherNotification handled for type {MessageType} but media item with Id {Id} could not be found.",
-                        notification.MessageType,
-                        mediaItemId);
+                        $"MediaCacheRefresherNotification handled for type {notification.MessageType} but media item with Id {mediaItemId} could not be found."
+                    );
                     return;
                 }
 

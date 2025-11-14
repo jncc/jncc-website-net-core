@@ -31,6 +31,7 @@ namespace JNCC.PublicWebsite.Core.Services
             if (!_amazonServiceConfigurationOptions.Value.EnableIndexing)
             {
                 _logger.LogWarning("Amazon indexing disabled");
+                return;
             }
 
             if (!string.IsNullOrWhiteSpace(fileName))
