@@ -55,6 +55,10 @@ namespace JNCC.PublicWebsite.Core.Composers
             builder.Services.AddSingleton<IUmbracoArticleTypesProvider, UmbracoArticleTypesProvider>();
             builder.Services.AddSingleton<IUmbracoArticlePageTagsProvider, UmbracoArticlePageTagsProvider>();
 
+            builder.Services.AddSingleton<IContentIndexService, ContentIndexService>();
+            builder.Services.AddSingleton<IContentRemoveIndexService, ContentRemoveIndexService>();
+            builder.Services.AddSingleton<IMediaIndexService, MediaIndexService>();
+            builder.Services.AddSingleton<IMediaRemoveIndexService, MediaRemoveIndexService>();
             builder.Services.AddSingleton<ISearchIndexingQueueService, SearchIndexingQueueService>();
 
             builder.Services.AddSingleton<IResourcesService, ResourcesService>();

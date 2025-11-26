@@ -9423,7 +9423,7 @@ html {
 	display: block;
 }
 
-.toc ol > li:first-child {
+.toc ol {
 	counter-reset: item;
 }
 

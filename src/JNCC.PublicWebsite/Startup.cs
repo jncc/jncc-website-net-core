@@ -45,12 +45,9 @@ namespace JNCC.PublicWebsite
                 .AddWebsite()
                 .AddComposers()
                 .AddAzureBlobMediaFileSystem(true)
-                .AddNotificationHandler<ContentPublishedNotification, ContentPublishedNotificationHandler>()
-                .AddNotificationHandler<ContentUnpublishedNotification, ContentUnpublishedPublishedNotificationHandler>()
-                .AddNotificationHandler<ContentDeletedNotification, ContentDeletedNotificationHandler>()
-                .AddNotificationHandler<MediaDeletedNotification, MediaDeletedNotificationHandler>()
-                .AddNotificationHandler<MediaSavedNotification, MediaSavedNotificationHandler>()
                 .AddNotificationHandler<XmlSitemapGeneratedNotification, SitemapGeneratedNotificationHandler>()
+                .AddNotificationHandler<ContentCacheRefresherNotification, ContentCacheRefresherNotificationHandler>()
+                .AddNotificationHandler<MediaCacheRefresherNotification, MediaCacheRefresherNotificationHandler>()
                 .Build();
 
 
