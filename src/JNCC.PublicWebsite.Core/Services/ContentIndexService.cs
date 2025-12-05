@@ -1,4 +1,5 @@
-﻿using JNCC.PublicWebsite.Core.Constants;
+﻿using DocumentFormat.OpenXml.Office2010.Excel;
+using JNCC.PublicWebsite.Core.Constants;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Notifications;
@@ -9,8 +10,10 @@ using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Text;
+using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
+using Umbraco.Cms.Web.Common.UmbracoContext;
 using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite.Core.Services
@@ -45,7 +48,8 @@ namespace JNCC.PublicWebsite.Core.Services
         private readonly ISearchIndexingQueueService _searchIndexingQueueService;
         private readonly IOptions<AmazonServiceConfigurationOptions> _amazonServiceConfigurationOptions;
         private readonly ILogger<ContentIndexService> _logger;
-        private readonly IUmbracoContextAccessor _umbracoContextAccessor;
+        private readonly IUmbracoContextFactory _umbracoContextFactory;
+        private readonly IOptionsMonitor<WebRoutingSettings> _webRoutingSettings;
         private const string _site = SearchIndexingSites.Website;
 
 
@@ -53,13 +57,15 @@ namespace JNCC.PublicWebsite.Core.Services
             ISearchIndexingQueueService searchIndexingQueueService,
             IOptions<AmazonServiceConfigurationOptions> amazonServiceConfigurationOptions,
             ILogger<ContentIndexService> logger,
-            IUmbracoContextAccessor umbracoContextAccessor
+            IUmbracoContextFactory umbracoContextFactory,
+            IOptionsMonitor<WebRoutingSettings> webRoutingSettings
         )
         {
             _searchIndexingQueueService = searchIndexingQueueService;
             _amazonServiceConfigurationOptions = amazonServiceConfigurationOptions;
             _logger = logger;
-            _umbracoContextAccessor = umbracoContextAccessor;
+            _umbracoContextFactory = umbracoContextFactory;
+            _webRoutingSettings = webRoutingSettings;
         }
 
         public void Handle(IContent publishedEntity)
@@ -74,12 +80,33 @@ namespace JNCC.PublicWebsite.Core.Services
 
                 _logger.LogInformation("Sending updated content to Amazon for indexing");
 
-                if (!_umbracoContextAccessor.TryGetUmbracoContext(out var umbracoContext) || umbracoContext is null)
+                using var umbracoContextReference = _umbracoContextFactory.EnsureUmbracoContext();
+                if (umbracoContextReference is null)
                 {
-                    _logger.LogError("Could not get Umbraco Context");
+                    _logger.LogError("Could not get Umbraco Context Reference");
+                    return;
                 }
 
-                string leftPartUrl = umbracoContext!.OriginalRequestUrl.GetLeftPart(UriPartial.Authority);
+                var umbracoContext = umbracoContextReference.UmbracoContext;
+                if (umbracoContext is null)
+                {
+                    _logger.LogError("Could not get Umbraco Context");
+                    return;
+                }
+
+                var publishedContent = umbracoContext.Content;
+                if (publishedContent is null)
+                {
+                    _logger.LogError("Could not get published content");
+                    return;
+                }
+
+                var umbracoApplicationUrl = _webRoutingSettings.CurrentValue.UmbracoApplicationUrl;
+                if (string.IsNullOrWhiteSpace(umbracoApplicationUrl))
+                {
+                    _logger.LogError("UmbracoApplicationUrl has does not exist in appsettings.json");
+                    return;
+                }
 
                 _logger.LogInformation($"Preparing to send index fields for {publishedEntity.Name}");
                 var contentBuilder = new StringBuilder();
@@ -134,13 +161,20 @@ namespace JNCC.PublicWebsite.Core.Services
                 string content = contentBuilder.ToString().Trim();
                 _logger.LogInformation($"Content to index: {content}");
 
+                var fullUrl = $"{umbracoApplicationUrl}/{publishedContent.GetById(publishedEntity.Id)!.Url()}";
+                // umbracoApplicationUrl may or may not have a trailing slash. Umbraco's Url function almost
+                // certainly prefixes the url part with a slash. But I don't trust it so I've added a safety
+                // slash between the parts. The following removes all extra slashes with a split and rejoins
+                // with just one slash.
+                fullUrl = $"{string.Join('/', fullUrl.Split('/', StringSplitOptions.RemoveEmptyEntries))}/";
+
                 var document = new SearchIndexDocumentModel()
                 {
                     NodeId = publishedEntity.Id,
                     Site = _site,
                     Published = publishedEntity.PublishDate ?? DateTime.Now,
                     Title = publishedEntity.Name ?? "",
-                    Url = leftPartUrl + umbracoContext!.Content!.GetById(publishedEntity.Id)!.Url(),
+                    Url = fullUrl,
                     Content = content
                 };
 
