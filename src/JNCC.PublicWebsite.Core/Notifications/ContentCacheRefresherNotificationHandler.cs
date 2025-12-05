@@ -17,16 +17,20 @@ namespace JNCC.PublicWebsite.Core.Notifications
         private readonly ILogger<ContentCacheRefresherNotificationHandler> _logger;
         private readonly IContentService _contentService;
 
+        private readonly AppCaches _appCaches;
+
         public ContentCacheRefresherNotificationHandler(
             IContentIndexService contentIndexService,
             IContentRemoveIndexService contentRemoveIndexService,
             ILogger<ContentCacheRefresherNotificationHandler> logger,
-            IContentService contentService)
+            IContentService contentService,
+            AppCaches appCaches)
         {
             _contentIndexService = contentIndexService;
             _contentRemoveIndexService = contentRemoveIndexService;
             _logger = logger;
             _contentService = contentService;
+            _appCaches = appCaches;
         }
 
         public void Handle(ContentCacheRefresherNotification notification)
@@ -58,14 +62,14 @@ namespace JNCC.PublicWebsite.Core.Notifications
                         "ContentCacheRefresherNotification handled for type {MessageType} but content item with Id {Id} could not be found.",
                         notification.MessageType,
                         contentItemId);
-                    return;
+                    break;
                 }
 
                 if (!contentItem.Edited && contentItem.Published && contentItem.PublishedState == PublishedState.Published && !contentItem.Trashed)
                 {
                     _logger.LogInformation($"Published (update index)");
                     _contentIndexService.Handle(contentItem);
-                    return;
+                    break;
                 }
                 if (
                     (contentItem.PublishedState == PublishedState.Unpublished && !contentItem.Trashed) ||
@@ -74,10 +78,14 @@ namespace JNCC.PublicWebsite.Core.Notifications
                 {
                     _logger.LogInformation($"Unpublished (Try remove from index)");
                     _contentRemoveIndexService.Handle(contentItem);
-                    return;
+                    break;
                 }
                 _logger.LogInformation($"No index change needed");
             }
+
+            _logger.LogInformation($"Content cache refresher notification handled. Clearing runtime cache...");
+            _appCaches.RuntimeCache.Clear();
+            _logger.LogInformation($"Runtime cache cleared");
         }
     }
 }

@@ -1,7 +1,5 @@
-﻿using DocumentFormat.OpenXml.Office2010.PowerPoint;
-using JNCC.PublicWebsite.Core.Constants;
+﻿using JNCC.PublicWebsite.Core.Constants;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
-using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Services;
 using JNCC.PublicWebsite.Core.Utilities;
 using Microsoft.Extensions.Logging;
@@ -11,8 +9,6 @@ using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Notifications;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Sync;
-using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common;
 using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite.Core.Notifications
@@ -24,8 +20,6 @@ namespace JNCC.PublicWebsite.Core.Notifications
 
         private readonly ILogger<MediaCacheRefresherNotificationHandler> _logger;
         private readonly IMediaService _mediaService;
-
-        private const string _site = SearchIndexingSites.Website;
 
         public MediaCacheRefresherNotificationHandler(
             IMediaIndexService mediaIndexService,
