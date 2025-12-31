@@ -122,24 +122,6 @@ namespace JNCC.PublicWebsite.Core.Services
             }
         }
 
-        private async Task QueueRequestAsync(SearchIndexQueueRequestModel request)
-        {
-            var message = JsonConvert.SerializeObject(request, Formatting.None, _jsonSettings);
-
-            var sendRequest = new SendMessageRequest(_amazonServiceConfigurationOptions.Value.AWSSQSEndpoint, message);
-
-            var response = await _sqsExtendedClient.SendMessageAsync(sendRequest);
-
-            if (response.HttpStatusCode != System.Net.HttpStatusCode.OK)
-            {
-                _logger.LogWarning("[Failure] Document Request (ID: {0}, Title: {1}) has not been pushed up to SQS. Response HTTP Status Code: {2}. MD5 of message attributes: {3}. MD5 of message body: {4}.", request.Document.NodeId, request.Document.Title, response.HttpStatusCode, response.MD5OfMessageAttributes, response.MD5OfMessageBody);
-            }
-            else
-            {
-                _logger.LogInformation("[Success] Document Request (ID: {0}, Title: {1}) has been pushed up to SQS.", request.Document.NodeId, request.Document.Title);
-            }
-        }
-
         private AmazonSQSExtendedClient CreateExtendedClient()
         {
             if (!string.IsNullOrEmpty(_amazonServiceConfigurationOptions.Value.AWSSQSAccessKey) 

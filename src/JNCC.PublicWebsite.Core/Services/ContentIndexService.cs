@@ -1,8 +1,6 @@
-﻿using DocumentFormat.OpenXml.Office2010.Excel;
-using JNCC.PublicWebsite.Core.Constants;
+﻿using JNCC.PublicWebsite.Core.Constants;
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
-using JNCC.PublicWebsite.Core.Notifications;
 using JNCC.PublicWebsite.Core.Options;
 using JNCC.PublicWebsite.Core.Utilities;
 using Microsoft.Extensions.Logging;
@@ -13,7 +11,6 @@ using System.Text;
 using Umbraco.Cms.Core.Configuration.Models;
 using Umbraco.Cms.Core.Models;
 using Umbraco.Cms.Core.Web;
-using Umbraco.Cms.Web.Common.UmbracoContext;
 using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite.Core.Services
