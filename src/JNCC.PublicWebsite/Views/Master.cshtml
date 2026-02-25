@@ -9,8 +9,6 @@
         <strong class="logo">
             <a href="/" accesskey="1"><img src="~/images/logo.png" alt="JNCC"></a>
         </strong>
-        @(await Component.InvokeAsync("Search", new { model = Model }))
-
         <div class="show-for-small-only">
             <div class="title-bar" data-responsive-toggle="search-form" data-hide-for="medium">
                 <button type="button" class="search-opener" data-toggle="search-form" aria-label="search-opener"><i class="icon-search"></i></button>
@@ -19,6 +17,8 @@
                 <button type="button" class="nav-opener" data-toggle="menu" data-responsive-toggle="menu" aria-label="navigation-opener"><span></span></button>
             </div>
         </div>
+
+        @(await Component.InvokeAsync("Search", new { model = Model }))
     </div>
     @(await Component.InvokeAsync("MainNavigation", new { model = Model }))
 }

@@ -5,7 +5,7 @@
     return;
 }
 <div class="global-alert-row @Html.If(Model.HasPageHero == false, "no-page-hero")">
-    <nav class="top-bar nav @Html.If(Model.HasPageHero == false, "no-page-hero")" id="menu" data-animate="hinge-in-from-top spin-out" aria-label="main-navigation">
+    <nav class="top-bar nav @Html.If(Model.HasPageHero == false, "no-page-hero")" id="menu" data-animate="hinge-in-from-top spin-out" aria-label="main-navigation" role="navigation">
         <div class="container mobileNavContainer">
             <ul class="vertical medium-horizontal dropdown menu" data-dropdown-menu data-click-open data-alignment="left">
                 @foreach (var navigationItem in Model.Items)
