@@ -9,6 +9,7 @@ $(document).ready(function () {
     $('.openMenu').click(function (evt) {
         evt.preventDefault();
         evt.stopPropagation();
+
         $('.iframe-menu').slideToggle();
         if ($(this).text() == 'Hide') {
             $(this).text('Show');
@@ -55,20 +56,52 @@ $(document).ready(function () {
 });
 
 function initFoundation() {
-    jQuery(document).foundation();
+    $(document).foundation();
 
-    jQuery('#search-form, #menu').each(function () {
-        var holder = jQuery(this);
-        var opener = jQuery('[data-responsive-toggle="' + holder.attr('id') + '"]');
+    var searchNav = $('#search-form');
+    var mobileNav = $('#menu');
 
-        jQuery(document).on('click', function (e) {
-            var target = jQuery(e.target);
+    if (searchNav.length === 1) {
+        var opener = $('[data-responsive-toggle="' + searchNav.attr('id') + '"]');
+        opener.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-            if (!target.is(holder) && !target.closest(holder).length && holder.is(':visible')) {
+            if (opener.is(":visible")) {
                 opener.foundation('toggleMenu');
             }
         });
-    });
+    }
+
+    if (mobileNav.length === 1) {
+        var opener = $('[data-responsive-toggle="' + mobileNav.attr('id') + '"]');
+        opener.on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (opener.is(":visible")) {
+                opener.foundation('toggleMenu');
+            }
+        });
+
+        opener.on('keyup', function (e) {
+            if (e.which == 27 && mobileNav.is(":visible")) {
+                opener.foundation('toggleMenu');
+            }
+        });
+
+        mobileNav.on('focusout', function (e) {
+            if ($(e.relatedTarget).parents('#menu').length === 0 && mobileNav.is(":visible")) {
+                opener.foundation('toggleMenu');
+            };
+        });
+
+        mobileNav.on('keyup', function (e) {
+            if (e.which == 27) {
+                opener.foundation('toggleMenu');
+            }
+        });
+    }
 }
 
 
