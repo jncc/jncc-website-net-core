@@ -62,43 +62,43 @@ function initFoundation() {
     var mobileNav = $('#menu');
 
     if (searchNav.length === 1) {
-        var opener = $('[data-responsive-toggle="' + searchNav.attr('id') + '"]');
-        opener.on('click', function (e) {
+        var searchNavOpener = $('[data-responsive-toggle="' + searchNav.attr('id') + '"]');
+        searchNavOpener.on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
 
-            if (opener.is(":visible")) {
-                opener.foundation('toggleMenu');
+            if (searchNavOpener.is(":visible")) {
+                searchNavOpener.foundation('toggleMenu');
             }
         });
     }
 
     if (mobileNav.length === 1) {
-        var opener = $('[data-responsive-toggle="' + mobileNav.attr('id') + '"]');
-        opener.on('click', function (e) {
+        var mobileNavOpener = $('[data-responsive-toggle="' + mobileNav.attr('id') + '"]');
+        mobileNavOpener.on('click', function (e) {
             e.preventDefault();
             e.stopPropagation();
 
-            if (opener.is(":visible")) {
-                opener.foundation('toggleMenu');
+            if (mobileNavOpener.is(":visible")) {
+                mobileNavOpener.foundation('toggleMenu');
             }
         });
 
-        opener.on('keyup', function (e) {
+        mobileNavOpener.on('keyup', function (e) {
             if (e.which == 27 && mobileNav.is(":visible")) {
-                opener.foundation('toggleMenu');
+                mobileNavOpener.foundation('toggleMenu');
             }
         });
 
         mobileNav.on('focusout', function (e) {
             if ($(e.relatedTarget).parents('#menu').length === 0 && mobileNav.is(":visible")) {
-                opener.foundation('toggleMenu');
+                mobileNavOpener.foundation('toggleMenu');
             };
         });
 
         mobileNav.on('keyup', function (e) {
             if (e.which == 27) {
-                opener.foundation('toggleMenu');
+                mobileNavOpener.foundation('toggleMenu');
             }
         });
     }
