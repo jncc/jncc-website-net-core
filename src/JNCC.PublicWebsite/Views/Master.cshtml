@@ -13,12 +13,11 @@
             <div class="title-bar" data-responsive-toggle="search-form" data-hide-for="medium">
                 <button type="button" class="search-opener" data-toggle="search-form" aria-label="search-opener"><i class="icon-search"></i></button>
             </div>
+            @(await Component.InvokeAsync("Search", new { model = Model }))
             <div class="title-bar" data-responsive-toggle="menu" data-hide-for="medium">
                 <button type="button" class="nav-opener" data-toggle="menu" data-responsive-toggle="menu" aria-label="navigation-opener"><span></span></button>
             </div>
         </div>
-
-        @(await Component.InvokeAsync("Search", new { model = Model }))
     </div>
     @(await Component.InvokeAsync("MainNavigation", new { model = Model }))
 }
