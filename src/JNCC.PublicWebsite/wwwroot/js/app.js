@@ -70,6 +70,20 @@ function initFoundation() {
         mobileNavOpener = $('[data-responsive-toggle="' + mobileNav.attr('id') + '"]');
     }
 
+    $('ul.vertical.dropdown.menu li.is-dropdown-submenu-parent')
+        .on("mouseenter", (meEvent) => {
+            $(window).on('keyup', function (kuEvent) {
+                if (kuEvent.which == 27) {
+                    var liElm = $(meEvent.target).parent();
+                    liElm.removeClass('is-active');
+                    liElm.find('ul.is-dropdown-submenu').removeClass('js-dropdown-active');
+                }
+            });
+        })
+        .on("mouseleave", (mlEvent) => {
+            $(window).off('keyup');
+        });
+
     $(window).on('toggled.zf.responsiveToggle', (e) => {
         if (e.target.dataset.responsiveToggle == 'search-form') {
             if (searchNav.is(":visible")) {
