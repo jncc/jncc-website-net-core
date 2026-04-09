@@ -15863,3 +15863,7 @@ for details on configuring this project to bundle and minify static web assets. 
 	width: 100%;
 	display: inline-flex;
 }
+
+.is-display-inline-block {
+	display: inline-block;
+}
