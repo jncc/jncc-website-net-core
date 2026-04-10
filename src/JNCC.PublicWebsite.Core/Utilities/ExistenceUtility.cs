@@ -8,7 +8,7 @@ namespace JNCC.PublicWebsite.Core.Utilities
         {
             return htmlString == null || string.IsNullOrWhiteSpace(htmlString.ToHtmlString());
         }
-        public static bool IsNullOrEmpty<T>(IEnumerable<T> enumerable)
+        public static bool IsNullOrEmpty<T>(IEnumerable<T>? enumerable)
         {
             return enumerable == null || enumerable.Any() == false;
         }

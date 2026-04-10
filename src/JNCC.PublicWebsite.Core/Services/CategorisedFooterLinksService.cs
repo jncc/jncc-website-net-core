@@ -1,6 +1,7 @@
 ﻿using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.ViewModels;
+using Umbraco.Cms.Core.Models.Blocks;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
@@ -13,24 +14,28 @@ namespace JNCC.PublicWebsite.Core.Services
             _navigationItemService = navigationItemService ?? throw new ArgumentNullException(nameof(navigationItemService)); ;
         }
 
-        public IEnumerable<CategorisedFooterLinksViewModel> GetViewModels(IEnumerable<CategorisedFooterLinksSchema> schemas)
+        public IEnumerable<CategorisedFooterLinksViewModel> GetViewModels(BlockListModel schemas)
         {
-            var viewModels = new List<CategorisedFooterLinksViewModel>();
-
             if (schemas == null)
             {
-                return viewModels;
+                return new List<CategorisedFooterLinksViewModel>();
             }
+
+            //IEnumerable<CategorisedFooterLinksSchema>
+            var viewModels = new List<CategorisedFooterLinksViewModel>();
 
             foreach (var schema in schemas)
             {
-                var categoryViewModel = new CategorisedFooterLinksViewModel()
+                if (schema.Content is CategorisedFooterLinksSchema categorisedFooterLinks)
                 {
-                    Heading = schema.Heading,
-                    Links = _navigationItemService.GetViewModels(schema.Links)
-                };
+                    var categoryViewModel = new CategorisedFooterLinksViewModel()
+                    {
+                        Heading = categorisedFooterLinks.Heading ?? "",
+                        Links = _navigationItemService.GetViewModels(categorisedFooterLinks.Links)
+                    };
 
-                viewModels.Add(categoryViewModel);
+                    viewModels.Add(categoryViewModel);
+                }
             }
 
             return viewModels;

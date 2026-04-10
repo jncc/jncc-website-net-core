@@ -129,20 +129,20 @@ namespace JNCC.PublicWebsite.Core.Services
 
         public IEnumerable<ResourcesCollectionViewModel> GetResourcesCollections(ScienceLandingPage model)
         {
-            var viewModels = new List<ResourcesCollectionViewModel>();
-
-            if (ExistenceUtility.IsNullOrEmpty(model.ResourcesCollections))
+            if (model.ResourcesCollections is null)
             {
-                return viewModels;
+                return new List<ResourcesCollectionViewModel>();
             }
+            
+            var viewModels = new List<ResourcesCollectionViewModel>();
 
             foreach (var collection in model.ResourcesCollections)
             {
-                if (collection is ResourcesCollectionSchema resourceItem)
+                if (collection.Content is ResourcesCollectionSchema resourceItem)
                 {
                     var viewModel = new ResourcesCollectionViewModel()
                     {
-                        Title = resourceItem.Title,
+                        Title = resourceItem.Title ?? "",
                         Resources = _calloutCardsService.GetCalloutCards(resourceItem.Resources),
                         ReadMoreLink = GetViewModelReadMoreLink(resourceItem)
                     };
@@ -158,14 +158,14 @@ namespace JNCC.PublicWebsite.Core.Services
         {
             if (collection.MainCategoryPage == null)
             {
-                return null;
+                new NavigationItemViewModel();
             }
 
             var mainCategoryPageContent = collection.MainCategoryPage.FirstChildOfType("scienceCategoryPage") as ScienceCategoryPage;
 
             if (mainCategoryPageContent == null)
             {
-                return null;
+                new NavigationItemViewModel();
             }
 
             return new NavigationItemViewModel()

@@ -1,7 +1,8 @@
 ﻿using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
-using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.ViewModels;
+using Umbraco.Cms.Core.Models.Blocks;
+using Umbraco.Cms.Core.Strings;
 using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite.Core.Services
@@ -15,36 +16,41 @@ namespace JNCC.PublicWebsite.Core.Services
             _navigationItemService = navigationItemService ?? throw new ArgumentNullException(nameof(navigationItemService));
         }
 
-        public IEnumerable<CalloutCardViewModel> GetCalloutCards(IEnumerable<CalloutCardSchema> cards)
+        public IEnumerable<CalloutCardViewModel> GetCalloutCards(BlockListModel? cards)
         {
-            var viewModels = new List<CalloutCardViewModel>();
-
-            if (ExistenceUtility.IsNullOrEmpty(cards))
+            if (cards is null)
             {
-                return viewModels;
+                return new List<CalloutCardViewModel>();
             }
+
+            var viewModels = new List<CalloutCardViewModel>();
 
             foreach (var card in cards)
             {
+                if (card?.Content is not CalloutCardSchema calloutCard)
+                {
+                    continue;
+                }
                 var viewModel = new CalloutCardViewModel()
                 {
-                    Title = card.Title,
-                    Content = card.Content,
-                    ReadMoreButton = _navigationItemService.GetViewModel(card.ReadMoreButton)
+                    Title = calloutCard.Title ?? "",
+                    Content = calloutCard.Content ?? new HtmlEncodedString(""),
+                    ReadMoreButton = _navigationItemService.GetViewModel<NavigationItemViewModel>(calloutCard.ReadMoreButton)
                 };
 
-                if (card.Image?.FirstOrDefault() is ContentImageSchema imageSchema)
+                if (calloutCard.Image?.FirstOrDefault()?.Content is ContentImageSchema imageSchema)
                 {
-                    if(imageSchema.Image?.Content is Image image)
+                    if (imageSchema.Image?.Content is Image image)
                     {
                         viewModel.Image = new ImageViewModel()
                         {
                             Url = image.Url(),
-                            AlternativeText = image.AltText.IsNullOrWhiteSpace() ? image.AltText : image.Name,
-                            TitleText = image.TitleText,
+                            AlternativeText = image.AltText?.Trim() ?? image.Name ?? "",
+                            TitleText = image.TitleText ?? "",
                         };
                     }
-                };
+                }
+                ;
 
                 viewModels.Add(viewModel);
             }

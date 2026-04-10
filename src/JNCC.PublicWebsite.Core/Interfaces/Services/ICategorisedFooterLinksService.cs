@@ -1,10 +1,10 @@
-﻿using JNCC.PublicWebsite.Core.Models;
-using JNCC.PublicWebsite.Core.ViewModels;
+﻿using JNCC.PublicWebsite.Core.ViewModels;
+using Umbraco.Cms.Core.Models.Blocks;
 
 namespace JNCC.PublicWebsite.Core.Interfaces.Services
 {
     public interface ICategorisedFooterLinksService
     {
-        IEnumerable<CategorisedFooterLinksViewModel> GetViewModels(IEnumerable<CategorisedFooterLinksSchema> schemas);
+        IEnumerable<CategorisedFooterLinksViewModel> GetViewModels(BlockListModel schemas);
     }
 }

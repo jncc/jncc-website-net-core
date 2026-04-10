@@ -25,6 +25,8 @@
 		<PackageReference Include="Umbraco.Deploy.OnPrem" Version="10.4.1" />
 		<PackageReference Include="Umbraco.Forms" Version="10.5.7" />
 		<PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="10.0.1" />
+		<PackageReference Include="uSync" Version="10.7.3" />
+		<PackageReference Include="uSync.Migrations" Version="4.0.0-phase.5.2" />
 		<ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
 		<RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
 	</ItemGroup>
