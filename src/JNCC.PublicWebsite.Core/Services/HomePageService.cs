@@ -2,6 +2,7 @@
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.Utilities;
 using JNCC.PublicWebsite.Core.ViewModels;
+using Umbraco.Cms.Core.Strings;
 using Umbraco.Extensions;
 
 namespace JNCC.PublicWebsite.Core.Services
@@ -19,7 +20,7 @@ namespace JNCC.PublicWebsite.Core.Services
         {
             ResourcesViewModel viewModel = new ResourcesViewModel()
             {
-                ResourceTitle = content.ResourcesTitle,
+                ResourceTitle = content.ResourcesTitle ?? "",
                 Resources = GetResourcesItems(content),
             };
             return viewModel;
@@ -27,24 +28,29 @@ namespace JNCC.PublicWebsite.Core.Services
 
         public IEnumerable<ResourceItemViewModel> GetResourcesItems(HomePage content)
         {
-            var viewModels = new List<ResourceItemViewModel>();
-
-            if (ExistenceUtility.IsNullOrEmpty(content.ResourcesItems))
+            if (content?.ResourcesItems is null)
             {
-                return viewModels;
+                return new List<ResourceItemViewModel>();
             }
+
+            var viewModels = new List<ResourceItemViewModel>();
 
             foreach (var item in content.ResourcesItems)
             {
+                if (item.Content is not ResourceItemSchema resourceItem)
+                {
+                    continue;
+                }
+
                 var viewModel = new ResourceItemViewModel()
                 {
-                    Content = item.Content,
-                    ReadMoreButton = _navigationItemService.GetViewModel(item.Link)
+                    Content = resourceItem.Content ?? new HtmlEncodedString(""),
+                    ReadMoreButton = _navigationItemService.GetViewModel(resourceItem.Link)
                 };
 
-                if (item.Image != null)
+                if (resourceItem.Image is not null)
                 {
-                    viewModel.ImageUrl = item.Image.GetCropUrl("ResourcesListing");
+                    viewModel.ImageUrl = resourceItem.Image.GetCropUrl("ResourcesListing") ?? "";
                 }
 
                 viewModels.Add(viewModel);
@@ -53,29 +59,30 @@ namespace JNCC.PublicWebsite.Core.Services
             return viewModels;
         }
 
-        public CarouselViewModel GetCarouselViewModel(IPageHeroCarouselComposition content)
+        public CarouselViewModel? GetCarouselViewModel(IPageHeroCarouselComposition content)
         {
             if (ExistenceUtility.IsNullOrEmpty(content.HeroImages))
             {
                 return null;
             }
 
-            var viewModel = new CarouselViewModel();
-
-            viewModel.Headline = content.Headline;
-            viewModel.Text = content.HeroContent;
+            var viewModel = new CarouselViewModel()
+            {
+                Headline = content.Headline ?? "",
+                Text = content.HeroContent ?? new HtmlEncodedString(""),
+            };
 
             List<ImageViewModel> images = new List<ImageViewModel>();
 
-            foreach (var image in content.HeroImages)
+            foreach (var image in content.HeroImages!)
             {
-                if(image?.Content is Image heroImage)
+                if (image?.Content is Image heroImage)
                 {
                     ImageViewModel imageModel = new ImageViewModel()
                     {
                         Url = heroImage.Url(),
-                        AlternativeText = heroImage.AltText,
-                        TitleText = heroImage.TitleText,
+                        AlternativeText = heroImage.AltText ?? "",
+                        TitleText = heroImage.TitleText ?? "",
                     };
                     images.Add(imageModel);
                 }
