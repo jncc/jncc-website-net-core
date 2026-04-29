@@ -158,12 +158,10 @@ namespace JNCC.PublicWebsite.Core.Services
                 string content = contentBuilder.ToString().Trim();
                 _logger.LogInformation($"Content to index: {content}");
 
-                var fullUrl = $"{umbracoApplicationUrl}/{publishedContent.GetById(publishedEntity.Id)!.Url()}";
+                var fullUrl = $"{umbracoApplicationUrl.TrimEnd('/')}/{(publishedContent.GetById(publishedEntity.Id)!.Url()).TrimStart('/')}";
                 // umbracoApplicationUrl may or may not have a trailing slash. Umbraco's Url function almost
-                // certainly prefixes the url part with a slash. But I don't trust it so I've added a safety
-                // slash between the parts. The following removes all extra slashes with a split and rejoins
-                // with just one slash.
-                fullUrl = $"{string.Join('/', fullUrl.Split('/', StringSplitOptions.RemoveEmptyEntries))}/";
+                // certainly prefixes the url part with a slash. But I don't trust it so we trim any slashes
+                // from the parts of the URL we're looking to join and manually add one in between.
 
                 var document = new SearchIndexDocumentModel()
                 {
