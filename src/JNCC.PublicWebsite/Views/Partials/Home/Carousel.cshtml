@@ -29,7 +29,7 @@
                 }
             </style>
             <div class="main-slider">
-                @foreach (var image in Model.Images.Select((x, i) => new { Value = x, Index = i })))
+                @foreach (var image in Model.Images.Select((x, i) => new { Value = x, Index = i }))
                 {
                     <div class="slide">
                         <div class="slider-image slider-image-@image.Index"></div>
