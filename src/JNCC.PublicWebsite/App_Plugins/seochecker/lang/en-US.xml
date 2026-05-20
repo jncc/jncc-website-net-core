@@ -46,7 +46,13 @@
 		<key alias="TreeSettingsDomain">Domain settings</key>
 		<key alias="TreeSettingsDocumenttype">Document type settings</key>
 		<key alias="TreeSettingsSecuritySettings">Usertype permissions</key>
+    <key alias="clearcache">Clear cache</key>
 	</area>
+  <area alias="seoCheckerClearCache">
+    <key alias="title">Clear cache</key>
+    <key alias="description">Clear all cache, also on other servers in case of a load balanced environment</key>
+    <key alias="cleared">Cache is cleared</key>
+  </area>
 	<area alias="seoCheckerValidate">
 		<key alias="validationTitle">Validate pages</key>
 		<key alias="scheduledValidationTitle">Scheduled validation</key>
@@ -366,6 +372,9 @@ nofollow will not follow the links.&lt;br/&gt;</key>
 		<key alias="reportIssueUrlKeywordValidator">The url doesn't contain the focus keyword</key>
 		<key alias="reportIssueBrokenLink400">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 		<key alias="reportIssueBrokenLink404">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+		<key alias="reportIssueBrokenLink412">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+		<key alias="reportIssueBrokenLink403">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated it is forbidden to crawl.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+		<key alias="reportIssueBrokenLink429">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated it is accessed to many times.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 <key alias="reportIssueBrokenLink999">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 		<key alias="reportIssueBrokenLink500">The url &lt;strong&gt;{0}&lt;/strong&gt; throws an exception.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 		<key alias="reportIssueBrokenLink502">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt; &lt;br/&gt;Make sure  the domain is correct</key>
@@ -479,6 +488,7 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
 		<key alias="overviewIssueCategory">Category</key>
 		<key alias="ignoredTitle">Ignored validation issues</key>
 		<key alias="ignorednoResult">No ignored validation issues found</key>
+		<key alias="overviewIssueCulture">Culture</key>
 	</area>
 	<area alias="seoCheckerConfigurationIssues">
 		<key alias="title">Configuration issues</key>
@@ -503,6 +513,7 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
 		<key alias="overviewIntro">Create, edit or delete redirects for this page.</key>
 		<key alias="overviewUrlHeader">Url</key>
 		<key alias="overviewRedirectHeader">Redirect to</key>
+		<key alias="overviewCultureHeader">Culture</key>
 		<key alias="overviewLastReferer">Last Referer</key>
 		<key alias="overviewAccessedHeader">Accessed</key>
 		<key alias="overviewLastTimeAccessedHeader">Last time accessed</key>
@@ -529,6 +540,8 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
 		<key alias="editUrlRequiredError">Old url is required</key>
 		<key alias="editRedirectRequiredError">A url where you want to redirect to is required. Pick one using the url picker, or add a url to the  redirect to url field</key>
 		<key alias="editUrlExistsError">The old url already exists in the database, you can only specify the old url once</key>
+		<key alias="culture">Culture</key>
+		<key alias="cultureDescription">Select a culture if you want to redirect for a specific language otherwise use Invariant(default) and the redirect will apply to all languages.</key>
 	</area>
 	<area alias="seoCheckerExportRedirects">
 		<key alias="exportOptionButton">Export redirects</key>
@@ -571,6 +584,8 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
 		<key alias="ImportedResult">Imported redirects</key>
 		<key alias="ImportedErrors">Import errors</key>
 		<key alias="ImportedErrorsDescription">The number of redirects that could not be imported. Use the 'Export errors' button to export the errors to a new Excel file.</key>
+		<key alias="mappingCultureColumn">Culture</key>
+		<key alias="mappingCultureColumnDescription">Choose the column from the datasource you want to use to indicate the Culture (ISO Code) you want to import.</key>
 	</area>
 	<area alias="seoCheckerBulkActions">
 		<key alias="bulkActionClearAllButton">Delete all</key>
@@ -593,6 +608,9 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
 		<key alias="configurationErrorsSuccesMessage">Yeah no configuration errors to fix!</key>
 		<key alias="configurationErrorsFailedMessage">Uh Oh still some configuration errors to fix. Go to the issues section of SEOChecker and fix them there.</key>
 	</area>
+	<area alias="seoCheckerCultureSwitcher">
+		<key alias="invariant">Invariant</key>
+	</area>	
 </language>
 
 

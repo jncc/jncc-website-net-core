@@ -46,23 +46,26 @@
                                 <div class="umb-table-cell"><input type="checkbox" ng-model="model.selectAll" ng-change="handleSelectAll()" /></div>
                                 <div class="umb-table-cell" ng-click="sort('url')">
                                     <localize key="seoCheckerRedirectManager_overviewUrlHeader"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('url', 'asc'), 'icon-navigation-down': isSortDirection('url', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('url', 'asc'), 'icon-navigation-up': isSortDirection('url', 'desc')}"></i>
                                 </div>
                                 <div class="umb-table-cell">
                                     <localize key="redirectDataType_overviewRedirectHeader"></localize>
                                 </div>
-                                
-                                <div class="umb-table-cell " ng-click="sort('lastReferrer')" ng-if="model.includeStats">
+                                <div class="umb-table-cell " ng-click="sort('culture')" ng-if="model.showCulture">
+                                    <localize key="seoCheckerRedirectManager_overviewCultureHeader"></localize>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('culture', 'asc'), 'icon-navigation-up': isSortDirection('culture', 'desc')}"></i>
+                                </div>
+                                <div class="umb-table-cell " ng-click="sort('referrer')" ng-if="model.includeStats">
                                     <localize key="seoCheckerRedirectManager_overviewLastReferer"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('lastReferrer', 'asc'), 'icon-navigation-down': isSortDirection('lastReferrer', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('referrer', 'asc'), 'icon-navigation-up': isSortDirection('lastReferrer', 'desc')}"></i>
                                 </div>
                                 <div class="umb-table-cell " ng-click="sort('accessed')" ng-if="model.includeStats">
                                     <localize key="seoCheckerRedirectManager_overviewAccessedHeader"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('accessed', 'asc'), 'icon-navigation-down': isSortDirection('accessed', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('accessed', 'asc'), 'icon-navigation-up': isSortDirection('accessed', 'desc')}"></i>
                                 </div>
-                                <div class="umb-table-cell " ng-click="sort('lastAccessed')" ng-if="model.includeStats">
+                                <div class="umb-table-cell " ng-click="sort('lasttimeaccessed')" ng-if="model.includeStats">
                                     <localize key="seoCheckerRedirectManager_overviewLastTimeAccessedHeader"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('lastAccessed', 'asc'), 'icon-navigation-down': isSortDirection('lastAccessed', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('lasttimeaccessed', 'asc'), 'icon-navigation-up': isSortDirection('lasttimeaccessed', 'desc')}"></i>
                                 </div>
                                 <div class="umb-table-cell seocheckerActionColumns">&nbsp;</div>
                             </div>
@@ -72,6 +75,7 @@
                                 <div class="umb-table-cell"><input type="checkbox" ng-model="entry.selected" ng-checked="entry.selected" /></div>
                                 <div class="umb-table-cell"> <a href="{{entry.url}}" target="_blank" title="{{entry.displayUrl}}">{{entry.displayUrl}}</a> </div>
                                 <div class="umb-table-cell"><div class="seocheckerdialogPickerContainer"><span class="seocheckerdialogPickerSelected" ng-show="entry.redirectTo.id>0">{{entry.redirectTo.name}}</span> <span ng-click="clear(entry.redirectTo)" ng-show="entry.redirectTo.id>0" class="seocheckerdialogPickerDelete">Delete</span>  <span ng-click="showDialog(entry.redirectTo)" class="seocheckerdialogPickerSelecteButton">Select.....</span></div></div>
+                                <div class="umb-table-cell" ng-if="model.showCulture"> {{entry.culture}}</div>
                                 <div class="umb-table-cell" ng-if="model.includeStats"> {{entry.referrer}}</div>
                                 <div class="umb-table-cell " ng-if="model.includeStats">{{entry.accessed}}</div>
                                 <div class="umb-table-cell " ng-if="model.includeStats">{{entry.lastTimeAccessed}}</div>

@@ -42,7 +42,13 @@
 	<key alias="TreeSettingsDomain">Domain settings</key>
 	<key alias="TreeSettingsDocumenttype">Document type settings</key>
 	<key alias="TreeSettingsSecuritySettings">Usertype permissions</key>
-  </area>
+   <key alias="clearcache">Clear cache</key>
+ </area>
+ <area alias="seoCheckerClearCache">
+   <key alias="title">Clear cache</key>
+   <key alias="description">Clear all cache, also on other servers in case of a load balanced environment</key>
+   <key alias="cleared">Cache is cleared</key>
+ </area>
   <area alias="seoCheckerValidate">
     <key alias="validationTitle">Validate pages</key>
 	<key alias="scheduledValidationTitle">Scheduled validation</key>
@@ -360,6 +366,9 @@ noindex vil ikke følge links&lt;br/&gt;</key>
 	<key alias="reportIssueUrlKeywordValidator">Url'en indeholder ikke fokus nøgleordet</key>
 	<key alias="reportIssueBrokenLink400">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink404">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+	<key alias="reportIssueBrokenLink412">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+		<key alias="reportIssueBrokenLink403">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated it is forbidden to crawl.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+		<key alias="reportIssueBrokenLink429">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated it is accessed to many times.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>		
 	<key alias="reportIssueBrokenLink999">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink500">The url &lt;strong&gt;{0}&lt;/strong&gt; throws an exception.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink502">The link to url &lt;strong&gt;{0}&lt;/strong&gt; is broken.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt; &lt;br/&gt;Make sure  the domain is correct</key>
@@ -470,6 +479,7 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
   <key alias="validationQueueMessage">SEOChecker is still validating pages. Currently there are &lt;strong&gt;{0} pages&lt;/strong&gt; in the validation queue.</key>
   <key alias="ignoredTitle">Ignored validation issues</key>
   <key alias="ignorednoResult">No ignored validation issues found</key>
+	  <key alias="overviewIssueCulture">Culture</key>
   </area>
    <area alias="seoCheckerConfigurationIssues">
   <key alias="title"></key>
@@ -494,6 +504,7 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
   <key alias="overviewIntro">Opret, rediger eller slet redirects for denne side.</key>
   <key alias="overviewUrlHeader">Url</key>
   <key alias="overviewRedirectHeader">Redirect til</key>
+  <key alias="overviewCultureHeader">Culture</key>
   <key alias="overviewLastReferer">Sidste referer</key>
   <key alias="overviewAccessedHeader">Tilgået</key>
   <key alias="overviewLastTimeAccessedHeader">Sidste gang tilgået</key>
@@ -520,6 +531,8 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
   <key alias="editUrlRequiredError">Gammel url er obligatorik</key>
   <key alias="editRedirectRequiredError">En url hvor du vil redirecte til er obligatorisk. Vælg en ved at benytte url vælgeren, eller ved at tilføje en url til redirect til feltet</key>
   <key alias="editUrlExistsError">Den gamle url eksisterer allerede i databasen, du kan kun angive den gamle url en gang</key>
+	  <key alias="culture">Culture</key>
+	  <key alias="cultureDescription">Select a culture if you want to redirect for a specific language otherwise use Invariant(default) and the redirect will apply to all languages.</key>
   </area>
   <area alias="seoCheckerExportRedirects">
   <key alias="exportOptionButton">Export redirects</key>
@@ -561,6 +574,8 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
    <key alias="ImportedResult"></key>
    <key alias="ImportedErrors"></key>
    <key alias="ImportedErrorsDescription"></key>
+	   <key alias="mappingCultureColumn">Culture</key>
+	   <key alias="mappingCultureColumnDescription">Choose the column from the datasource you want to use to indicate the Culture (ISO Code) you want to import.</key>
    </area>
   <area alias="seoCheckerBulkActions">
   <key alias="bulkActionClearAllButton">Delete all</key>
@@ -583,4 +598,7 @@ And doesn't contain any &lt;strong&gt;Allow&lt;/strong&gt; element to index a sp
 		<key alias="configurationErrorsSuccesMessage">Yeah no configuration errors to fix!</key>
 		<key alias="configurationErrorsFailedMessage">Uh Oh still some configuration errors to fix. Go to the issues section of SEOChecker and fix them there.</key>
 	</area>
-  </language>
+	<area alias="seoCheckerCultureSwitcher">
+		<key alias="invariant">Invariant</key>
+	</area>
+</language>

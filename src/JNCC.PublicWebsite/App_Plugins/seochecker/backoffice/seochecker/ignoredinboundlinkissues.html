@@ -46,11 +46,11 @@
                                 <div class="umb-table-cell"><input type="checkbox" ng-model="model.selectAll" ng-change="handleSelectAll()" /></div>
                                 <div class="umb-table-cell" ng-click="sort('url')">
                                     <localize key="seoCheckerRedirectManager_overviewUrlHeader"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('url', 'asc'), 'icon-navigation-down': isSortDirection('url', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('url', 'asc'), 'icon-navigation-up': isSortDirection('url', 'desc')}"></i>
                                 </div>
                                 <div class="umb-table-cell " ng-click="sort('displayError')">
                                     <localize key="seoCheckerValidationIssues_overviewIssueDescription"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('redirecturl', 'asc'), 'icon-navigation-down': isSortDirection('redirecturl', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('displayError', 'asc'), 'icon-navigation-up': isSortDirection('displayError', 'desc')}"></i>
                                 </div>
                             </div>
                         </div>

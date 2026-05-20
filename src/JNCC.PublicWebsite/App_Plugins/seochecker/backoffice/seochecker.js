@@ -763,7 +763,7 @@ angular.module("umbraco")
                 },
                 idType: "int"
             };
-            if (item.contentType === 'media') {
+            if (item.contentType.toLowerCase() === 'media') {
                 editorService.mediaPicker(dialogOptions);
 
             } else {
@@ -1230,8 +1230,12 @@ angular.module("umbraco")
             editorService.open(options);
         };
 
-        $scope.openDocument = function (id) {
-            window.open('/umbraco/#/content/content/edit/' + id, '_blank', 'width = 900, height = 800');
+        $scope.openDocument = function (id, culture) {
+            var cultureString = '';
+            if(culture !== '*'){
+                cultureString = '?cculture=' + culture;
+            }
+            window.open('/umbraco/#/content/content/edit/' + id + cultureString, '_blank', 'width = 900, height = 800');
         };
         $scope.openTemplate = function (id) {
             window.open('/umbraco#/settings/templates/edit/' + id, '_blank', 'width = 900, height = 800');
@@ -1369,6 +1373,34 @@ angular.module("umbraco").controller("seoChecker.ConfirmDialogController", funct
         //Initialize
         $scope.initializeConfirm();
     });
+
+angular.module("umbraco").controller("seoChecker.ClearCacheDialogController", function ($scope, localizationService, seocheckerBackofficeResources, navigationService, seocheckerHelper) {
+
+    $scope.initializeConfirm = function () {
+        localizationService.localize('seoCheckerClearCache_description').then(function (value) {
+            $scope.confirmCaption = value;
+        });
+    };
+
+    $scope.confirm = function () {
+        seocheckerBackofficeResources.clearCache().then(function (res) {
+            seocheckerHelper.showNotification(res.data);
+        },
+            function (data) {
+                seocheckerHelper.showServerError();
+            });
+        navigationService.allowHideDialog(true);
+        navigationService.hideDialog();
+    };
+
+    $scope.cancel = function () {
+        navigationService.allowHideDialog(true);
+        navigationService.hideDialog();
+    };
+
+    //Initialize
+    $scope.initializeConfirm();
+});
 angular.module("umbraco").controller("seoChecker.DeleteRedirectsController", function ($scope, localizationService, seocheckerBackofficeResources, seocheckerHelper) {
     $scope.initializeConfirm = function () {
         $scope.parentModel = $scope.model;
@@ -1421,6 +1453,8 @@ angular.module("umbraco").controller("seoChecker.EditRedirectsController", funct
     $scope.save = function () {
         seocheckerBackofficeResources.saveRedirect($scope.model).then(function (res) {
             var result = res.data;
+            $scope.isInValid = result.isInValid;
+            $scope.validationMessages = result.validationMessages;
             if (!result.isInValid) {
                 seocheckerHelper.showNotification(result.notificationStatus);
                 if($scope.parentModel && $scope.parentModel.submit) {
@@ -1848,10 +1882,26 @@ angular.module("umbraco")
 
     });
 angular.module("umbraco")
+    .controller("seoChecker.seoCultureSwitcherController",
+        function ($scope, $routeParams, seocheckerHelper) {
+          
+            $scope.cultureChanged = function (item) {
+                $routeParams.cculture = item.value.selectedItem;
+            };
+            
+            if(!seocheckerHelper.isNullOrUndefined($scope.model.value.selectedItem)){
+                $routeParams.cculture = $scope.model.value.selectedItem;
+            }
+        });
+
+angular.module("umbraco")
     .controller("seoChecker.seocontentPickerController",
     function ($scope, $routeParams, notificationsService, editorService) {
 
         $scope.showDialog = function () {
+            if( $scope.model.value.isCulturePicker ===true){
+                $routeParams.cculture = $scope.model.value.culture;    
+            }
             var dialogOptions = {
                 multiPicker: false,
                 startNodeId: null,
@@ -1865,7 +1915,7 @@ angular.module("umbraco")
                 },
                 idType: "int"
             };
-            if ($scope.model.value.contentType === 'media') {
+            if ($scope.model.value.contentType.toLowerCase() === 'media') {
                 editorService.mediaPicker(dialogOptions);
 
             } else {
@@ -1917,8 +1967,8 @@ angular.module("umbraco")
     });
 angular.module("umbraco")
 	.controller("seoChecker.redirectsController",
-		function ($scope, $routeParams, $http, editorService, notificationsService, localizationService) {
-			var nodeId = $routeParams.id;
+		function ($scope, $routeParams, $http, editorService, notificationsService, localizationService,editorState) {
+			var nodeId = editorState.getCurrent().id;
 		  
 			$scope.bindData = function () {
 				$http.get('backoffice/SEOChecker/SEOCheckerApi/GetRedirects?id=' + nodeId).then(function (res) {
@@ -2020,6 +2070,10 @@ angular.module("umbraco")
 angular.module("umbraco.resources")
     .factory("seocheckerBackofficeResources", function ($http) {
         return {
+            //clearcache
+            clearCache: function () {
+                return $http.post("backoffice/seochecker/seocheckercacherefreshapi/refreshall");
+            },
             //LicenseInfo
             getLicenseInfo: function () {
                 return $http.get("backoffice/seochecker/seocheckerlicenseinfoapi/licenseinfo");
@@ -2101,7 +2155,7 @@ angular.module("umbraco.resources")
             },
             //validation issues
             removeIgnoredInboundLinkIssues: function (model) {
-                return $http.post("backoffice/seochecker/redirectmanagementapi/removefromignorelist", model);
+                return $http.post("backoffice/seochecker/ignoredinboundlinkerrorsapi/removefromignorelist", model);
             },
 
             getContentTypeOfRedirectUrl: function (oldUrl) {
@@ -2523,7 +2577,7 @@ angular.module('umbraco.services')
                 navigationService.syncTree({ tree: 'seochecker', path: path });
             },
             isSortDirection: function (columnName, sortDirection, currentSortColumn, currentSortDirection) {
-                return columnName === currentSortColumn && sortDirection === currentSortDirection;
+                return columnName === currentSortColumn && sortDirection.toLowerCase() === currentSortDirection.toLowerCase();
             }
             ,
             handleSelectAll: function (selected, items) {

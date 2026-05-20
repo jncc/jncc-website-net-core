@@ -47,23 +47,27 @@
                       <div class="umb-table-cell"><input type="checkbox" ng-model="model.selectAll" ng-change="handleSelectAll()" /></div>
                       <div class="umb-table-cell" ng-click="sort('url')">
                         <localize key="seoCheckerRedirectManager_overviewUrlHeader"></localize>
-                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('url', 'asc'), 'icon-navigation-down': isSortDirection('url', 'desc')}"></i>
+                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('url', 'asc'), 'icon-navigation-up': isSortDirection('url', 'desc')}"></i>
                       </div>
                       <div class="umb-table-cell " ng-click="sort('redirecturl')">
                         <localize key="seoCheckerRedirectManager_overviewRedirectHeader"></localize>
-                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('redirecturl', 'asc'), 'icon-navigation-down': isSortDirection('redirecturl', 'desc')}"></i>
+                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('redirecturl', 'asc'), 'icon-navigation-up': isSortDirection('redirecturl', 'desc')}"></i>
                       </div>
-                      <div class="umb-table-cell " ng-click="sort('lastReferrer')" ng-if="model.includeStats">
+                        <div class="umb-table-cell seocheckersmallColumn" ng-click="sort('culture')" ng-if="model.showCulture">
+                            <localize key="seoCheckerRedirectManager_overviewCultureHeader"></localize>
+                            <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('culture', 'asc'), 'icon-navigation-up': isSortDirection('culture', 'desc')}"></i>
+                        </div>
+                      <div class="umb-table-cell " ng-click="sort('referrer')" ng-if="model.includeStats">
                         <localize key="seoCheckerRedirectManager_overviewLastReferer"></localize>
-                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('lastReferrer', 'asc'), 'icon-navigation-down': isSortDirection('lastReferrer', 'desc')}"></i>
+                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('referrer', 'asc'), 'icon-navigation-up': isSortDirection('referrer', 'desc')}"></i>
                       </div>
                       <div class="umb-table-cell seocheckersmallColumn" ng-click="sort('accessed')" ng-if="model.includeStats">
                         <localize key="seoCheckerRedirectManager_overviewAccessedHeader"></localize>
-                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('accessed', 'asc'), 'icon-navigation-down': isSortDirection('accessed', 'desc')}"></i>
+                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('accessed', 'asc'), 'icon-navigation-up': isSortDirection('accessed', 'desc')}"></i>
                       </div>
-                      <div class="umb-table-cell seocheckersmallColumn" ng-click="sort('lastAccessed')" ng-if="model.includeStats">
+                      <div class="umb-table-cell seocheckersmallColumn" ng-click="sort('lasttimeaccessed')" ng-if="model.includeStats">
                         <localize key="seoCheckerRedirectManager_overviewLastTimeAccessedHeader"></localize>
-                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('lastAccessed', 'asc'), 'icon-navigation-down': isSortDirection('lastAccessed', 'desc')}"></i>
+                        <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('lasttimeaccessed', 'asc'), 'icon-navigation-up': isSortDirection('lasttimeaccessed', 'desc')}"></i>
                       </div>
                       <div class="umb-table-cell seocheckerActionColumns">&nbsp;</div>
                     </div>
@@ -74,7 +78,8 @@
                       <div class="umb-table-cell"> <a href="{{entry.url}}" target="_blank" title="{{entry.displayUrl}}">{{entry.displayUrl}}</a> </div>
                       <div class="umb-table-cell" ng-hide="{{entry.redirectUrl === '#'}}"> <a href="{{entry.redirectUrl}}" target="_blank" title="{{entry.redirectUrl}}">{{entry.redirectUrl}}</a> </div>
                       <div class="umb-table-cell" ng-show="{{entry.redirectUrl === '#'}}">{{entry.redirectTitle}}</div>
-                      <div class="umb-table-cell" ng-if="model.includeStats"> {{entry.referrer}}</div>
+                      <div class="umb-table-cell seocheckersmallColumn" ng-if="model.showCulture"> {{entry.culture}}</div>
+                        <div class="umb-table-cell" ng-if="model.includeStats">{{entry.referrer}}</div>
                       <div class="umb-table-cell seocheckersmallColumn" ng-if="model.includeStats">{{entry.accessed}}</div>
                       <div class="umb-table-cell seocheckersmallColumn " ng-if="model.includeStats">{{entry.lastTimeAccessed}}</div>
                       <div class="umb-table-cell seocheckerActionColumns">
