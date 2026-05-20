@@ -25,6 +25,7 @@
 		<PackageReference Include="Umbraco.Deploy.OnPrem" Version="13.4.3" />
 		<PackageReference Include="Umbraco.Forms" Version="13.9.6" />
 		<PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="13.1.0" />
+		<PackageReference Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="13.1.0" />
 		<ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
 		<RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
 	</ItemGroup>
