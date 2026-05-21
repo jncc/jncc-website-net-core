@@ -53,15 +53,19 @@
                                 <div class="umb-table-cell"><input type="checkbox" ng-model="model.selectAll" ng-change="handleSelectAll()" /></div>
                                 <div class="umb-table-cell" ng-click="sort('documentTitle')">
                                     <localize key="seoCheckerValidationIssues_overviewIssueDocument"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('documentTitle', 'asc'), 'icon-navigation-down': isSortDirection('documentTitle', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('documentTitle', 'asc'), 'icon-navigation-up': isSortDirection('documentTitle', 'desc')}"></i>
                                 </div>
                                 <div class="umb-table-cell " ng-click="sort('errorDescription')">
                                     <localize key="seoCheckerValidationIssues_overviewIssueDescription"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('errorDescription', 'asc'), 'icon-navigation-down': isSortDirection('errorDescription', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('errorDescription', 'asc'), 'icon-navigation-up': isSortDirection('errorDescription', 'desc')}"></i>
+                                </div>
+                                <div class="umb-table-cell seocheckersmallColumn" ng-click="sort('culture')" ng-if="model.showCulture">
+                                    <localize key="seoCheckerValidationIssues_overviewIssueCulture"></localize>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('culture', 'asc'), 'icon-navigation-up': isSortDirection('culture', 'desc')}"></i>
                                 </div>
                                 <div class="umb-table-cell seocheckersmallColumn" ng-click="sort('category')">
                                     <localize key="seoCheckerValidationIssues_overviewIssueCategory"></localize>
-                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-up': isSortDirection('category', 'asc'), 'icon-navigation-down': isSortDirection('category', 'desc')}"></i>
+                                    <i class="umb-table-head__icon icon" ng-class="{'icon-navigation-down': isSortDirection('category', 'asc'), 'icon-navigation-up': isSortDirection('category', 'desc')}"></i>
                                 </div>
                                 <div class="umb-table-cell seocheckerActionColumns">&nbsp;</div>
                             </div>
@@ -73,11 +77,12 @@
                                 <div class="umb-table-cell">
                                     <div class="seocheckerMultilineTableColumn" ng-bind-html="entry.errorDescription"></div>
                                 </div>
+                                <div class="umb-table-cell seocheckersmallColumn" ng-if="model.showCulture">{{entry.culture}}</div>
                                 <div class="umb-table-cell seocheckersmallColumn">{{entry.category}}</div>
                                 <div class="umb-table-cell seocheckerActionColumns">
                                     <div class="seocheckerActionColumn">
                                         <div class="seocheckerOverviewButton">
-                                            <a  ng-click="openDocument(entry.documentId)" localize="title" title="@edit"><i class="icon icon-edit"></i></a>
+                                            <a  ng-click="openDocument(entry.documentId,entry.culture)" localize="title" title="@edit"><i class="icon icon-edit"></i></a>
                                         </div>
                                         <div class="seocheckerOverviewButton">
                                             <a ng-click="openTemplate(entry.templateId)"><i class="icon icon-code"></i></a>

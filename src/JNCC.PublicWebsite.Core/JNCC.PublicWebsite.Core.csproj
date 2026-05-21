@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Configurations>Debug;Release;Development;Staging;Localhost</Configurations>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -10,14 +10,15 @@
   <ItemGroup>
     <PackageReference Include="Amazon.SQS.ExtendedClient" Version="1.5.0" />
     <PackageReference Include="Aws4RequestSigner" Version="1.0.3" />
-    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.2" />
-    <PackageReference Include="GoogleAuthenticator" Version="3.0.0" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.400" />
+    <PackageReference Include="GoogleAuthenticator" Version="3.2.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
-    <PackageReference Include="SEOChecker.Core" Version="10.0.6" />
-    <PackageReference Include="Umbraco.Cms.Core" Version="10.8.11" />
-    <PackageReference Include="Umbraco.Cms.Infrastructure" Version="10.8.11" />
-    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="10.8.11" />
-    <PackageReference Include="Umbraco.Cms.Web.Common" Version="10.8.11" />
-<PackageReference Include="System.Text.Encodings.Web" Version="8.0.0" />  </ItemGroup>
+    <PackageReference Include="SEOChecker.Core" Version="13.6.2" />
+    <PackageReference Include="Umbraco.Cms.Core" Version="13.14.0" />
+    <PackageReference Include="Umbraco.Cms.Infrastructure" Version="13.14.0" />
+    <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.14.0" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" Version="13.14.0" />
+    <PackageReference Include="System.Text.Encodings.Web" Version="10.0.8" />
+  </ItemGroup>
 
 </Project>

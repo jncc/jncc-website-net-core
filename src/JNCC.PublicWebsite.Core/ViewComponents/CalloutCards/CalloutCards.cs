@@ -16,12 +16,10 @@ namespace JNCC.PublicWebsite.Core.ViewComponents
 
         public IViewComponentResult Invoke(IPublishedContent model)
         {
+            var homepage = model as HomePage;
+            var viewModel = _calloutCardsService.GetCalloutCards(homepage?.CalloutCards);
 
-           var homepage = model as HomePage;
-           var viewModel = _calloutCardsService.GetCalloutCards(homepage?.CalloutCards);
-
-           return View("~/Views/Partials/CalloutCards.cshtml", viewModel);
-            
+            return View("~/Views/Partials/CalloutCards.cshtml", viewModel);
         }
     }
 }

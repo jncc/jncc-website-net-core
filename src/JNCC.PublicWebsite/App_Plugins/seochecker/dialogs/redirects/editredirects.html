@@ -15,9 +15,9 @@
       <umb-editor-container>
         <div class="umb-expansion-panel">
           <div class="umb-expansion-panel__content">
-            <div class="alert alert-error" ng-if="model.isInValid">
+            <div class="alert alert-error" ng-if="isInValid">
               <ul>
-                <li ng-repeat="validationMessage in model.validationMessages">{{validationMessage}}</li>
+                <li ng-repeat="validationMessage in validationMessages">{{validationMessage}}</li>
               </ul>
             </div>
             <umb-tabs-content class="form-horizontal" view="true">

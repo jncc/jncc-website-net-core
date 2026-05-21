@@ -46,7 +46,13 @@
 		<key alias="TreeSettingsDomain">Domain Einstellungen</key>
 		<key alias="TreeSettingsDocumenttype">Einstellungen für Dokumenttypen</key>
 		<key alias="TreeSettingsSecuritySettings">Usertype permissions</key>
-	</area>
+    <key alias="clearcache">Clear cache</key>
+  </area>
+  <area alias="seoCheckerClearCache">
+    <key alias="title">Clear cache</key>
+    <key alias="description">Clear all cache, also on other servers in case of a load balanced environment</key>
+    <key alias="cleared">Cache is cleared</key>
+  </area>
 	<area alias="seoCheckerValidate">
 		<key alias="validationTitle">Seiten überprüfen</key>
 		<key alias="scheduledValidationTitle">Geplante Überprüfung</key>
@@ -361,6 +367,9 @@ nofollow: Links nicht folgen</key>
 	<key alias="reportIssueUrlKeywordValidator">Die Url enthält das Haupt-Keyword nicht</key>
 	<key alias="reportIssueBrokenLink400">Der Link zur Adresse &lt;strong&gt;{0}&lt;/strong&gt; ist fehlerhaft.&lt;br /&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink404">Der Link zur Adresse &lt;strong&gt;{0}&lt;/strong&gt; ist fehlerhaft.&lt;br /&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+	<key alias="reportIssueBrokenLink412">Der Link zur Adresse &lt;strong&gt;{0}&lt;/strong&gt; ist fehlerhaft.&lt;br /&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+		<key alias="reportIssueBrokenLink403">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated it is forbidden to crawl.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
+		<key alias="reportIssueBrokenLink429">The link to url &lt;strong&gt;{0}&lt;/strong&gt; can't be validated it is accessed to many times.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink999">Der Link zur Adresse &lt;strong&gt;{0}&lt;/strong&gt; ist fehlerhaft.&lt;br /&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink500">The url &lt;strong&gt;{0}&lt;/strong&gt; throws an exception.&lt;br/&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;</key>
 	<key alias="reportIssueBrokenLink502">Der Link zur Adresse &lt;strong&gt;{0}&lt;/strong&gt; ist fehlerhaft.&lt;br /&gt;Link: &lt;a href="{0}" target="_blank"&gt;{1}&lt;/a&gt;&lt;br /&gt;Stellen Sie sicher, dass die Domain korrekt ist.</key>
@@ -474,6 +483,7 @@ Außerdem ist kein &lt;strong&gt;Allow&lt;/strong&gt;-Eintrag für einen speziel
 		<key alias="overviewIssueCategory">Category</key>
 		<key alias="ignoredTitle">Ignorierte Validierungsfehler</key>
 		<key alias="ignorednoResult">Keine igonrierten Validierungsprobleme gefunden.</key>
+		<key alias="overviewIssueCulture">Culture</key>
 	</area>
 	<area alias="seoCheckerConfigurationIssues">
 		<key alias="title">Konfigurationsprobleme</key>
@@ -498,6 +508,7 @@ Außerdem ist kein &lt;strong&gt;Allow&lt;/strong&gt;-Eintrag für einen speziel
 		<key alias="overviewIntro">Erstellen, bearbeiten oder löschen Sie Weiterleitungen für diese Seite.</key>
 		<key alias="overviewUrlHeader">URL</key>
 		<key alias="overviewRedirectHeader">Weiterleten zu</key>
+		<key alias="overviewCultureHeader">Culture</key>
 		<key alias="overviewLastReferer">Letzte Herkunft</key>
 		<key alias="overviewAccessedHeader">Aufgerufen</key>
 		<key alias="overviewLastTimeAccessedHeader">Letzter Aufruf</key>
@@ -524,6 +535,8 @@ Außerdem ist kein &lt;strong&gt;Allow&lt;/strong&gt;-Eintrag für einen speziel
 		<key alias="editUrlRequiredError">Die alte URL wird benötigt</key>
 		<key alias="editRedirectRequiredError">Eine URL auf die Sie weiterleiten möchten wird benötigt. Wählen Sie eine Seite aus oder tragen Sie eine Adresse in das Textfeld ein.</key>
 		<key alias="editUrlExistsError">Die alte URL existiert bereits in der Datenbank. Sie können eine URL nur einmal angeben.</key>
+		<key alias="culture">Culture</key>
+		<key alias="cultureDescription">Select a culture if you want to redirect for a specific language otherwise use Invariant(default) and the redirect will apply to all languages.</key>
 	</area>
 	<area alias="seoCheckerExportRedirects">
 		<key alias="exportOptionButton">Weiterleitungen exportieren</key>
@@ -566,6 +579,8 @@ Außerdem ist kein &lt;strong&gt;Allow&lt;/strong&gt;-Eintrag für einen speziel
 		<key alias="ImportedResult">Die Weiterleitungen werden importiert.</key>
 		<key alias="ImportedErrors">Import Fehler</key>
 		<key alias="ImportedErrorsDescription">Anzahl der Weiterleitungen, die nicht importiert werden konnten. Verwenden Sie den 'Fehler exportieren' Button um die Fehler in eine neue Excel Datei zu exportieren.</key>
+		<key alias="mappingCultureColumn">Culture</key>
+		<key alias="mappingCultureColumnDescription">Choose the column from the datasource you want to use to indicate the Culture (ISO Code) you want to import.</key>
 	</area>
 	<area alias="seoCheckerBulkActions">
 		<key alias="bulkActionClearAllButton">Delete all</key>
@@ -587,5 +602,8 @@ Außerdem ist kein &lt;strong&gt;Allow&lt;/strong&gt;-Eintrag für einen speziel
 		<key alias="validationErrorsFailedMessage">Uh Oh still some validation errors to fix. Go to the issues section of SEOChecker and fix them there.</key>
 		<key alias="configurationErrorsSuccesMessage">Yeah no configuration errors to fix!</key>
 		<key alias="configurationErrorsFailedMessage">Uh Oh still some configuration errors to fix. Go to the issues section of SEOChecker and fix them there.</key>
+	</area>
+	<area alias="seoCheckerCultureSwitcher">
+		<key alias="invariant">Invariant</key>
 	</area>
 </language>

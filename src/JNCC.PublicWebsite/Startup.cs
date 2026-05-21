@@ -44,7 +44,8 @@ namespace JNCC.PublicWebsite
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
-                .AddAzureBlobMediaFileSystem(true)
+                .AddAzureBlobMediaFileSystem()
+                .AddAzureBlobImageSharpCache()
                 .AddNotificationHandler<XmlSitemapGeneratedNotification, SitemapGeneratedNotificationHandler>()
                 .AddNotificationHandler<ContentCacheRefresherNotification, ContentCacheRefresherNotificationHandler>()
                 .AddNotificationHandler<MediaCacheRefresherNotification, MediaCacheRefresherNotificationHandler>()
@@ -85,7 +86,7 @@ namespace JNCC.PublicWebsite
             //Content/MIME Sniffing Protection
             app.UseXContentTypeOptions();
 
-            app.UseReferrerPolicy(opts => opts.SameOrigin());
+            app.UseReferrerPolicy(opts => opts.StrictOrigin());
 
             //Cross-site scripting Protection (X-XSS-Protection header)
             app.UseXXssProtection(options => options.EnabledWithBlockMode());
