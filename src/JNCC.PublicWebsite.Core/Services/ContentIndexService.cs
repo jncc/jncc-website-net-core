@@ -19,6 +19,9 @@ namespace JNCC.PublicWebsite.Core.Services
     {
         [JsonProperty(PropertyName = "contentUdi")]
         internal string ContentUdi { get; set; } = string.Empty;
+
+        [JsonProperty(PropertyName = "settingsUdi")]
+        internal string? SettingsUdi { get; set; } = null;
     }
 
     internal class LayoutJsonModel
@@ -38,6 +41,15 @@ namespace JNCC.PublicWebsite.Core.Services
 
         [JsonProperty(PropertyName = "settingsData")]
         internal List<object> SettingsData { get; set; } = new List<object>();
+    }
+
+    internal class TinyMceJsonModel
+    {
+        [JsonProperty(PropertyName = "markup")]
+        internal string Markup { get; set; } = string.Empty;
+
+        [JsonProperty(PropertyName = "blocks")]
+        internal JObject Blocks { get; set; } = new JObject();
     }
 
     public class ContentIndexService : IContentIndexService
@@ -206,7 +218,14 @@ namespace JNCC.PublicWebsite.Core.Services
                             !string.IsNullOrWhiteSpace((contentItemField as JValue)!.Value as string)
                         )
                         {
-                            var sanitisedValue = ((contentItemField as JValue)!.Value! as string)!.StripHtml().Trim();
+                            var workingData = ((contentItemField as JValue)!.Value as string)!;
+
+                            if (workingData.DetectIsJson() && workingData.TryParseJson(out TinyMceJsonModel tmjm))
+                            {
+                                workingData = tmjm.Markup;
+                            }
+
+                            var sanitisedValue = workingData.StripHtml().Trim();
 
                             if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
                             {
