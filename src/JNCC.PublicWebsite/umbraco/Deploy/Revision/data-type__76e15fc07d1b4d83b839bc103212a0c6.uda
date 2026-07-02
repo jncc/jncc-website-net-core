@@ -2,7 +2,6 @@
   "Name": "Tags: Teams",
   "Alias": "",
   "EditorAlias": "Umbraco.Tags",
-  "DatabaseType": "Nvarchar",
   "Configuration": {
     "group": "teams",
     "storageType": "Json",

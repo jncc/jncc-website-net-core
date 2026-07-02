@@ -2,7 +2,6 @@
   "Name": "Articulate Categories",
   "Alias": "",
   "EditorAlias": "Umbraco.Tags",
-  "DatabaseType": "Nvarchar",
   "Configuration": {
     "group": "ArticulateCategories",
     "storageType": "Csv",

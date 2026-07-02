@@ -2,7 +2,6 @@
   "Name": "Tags: Themes",
   "Alias": "",
   "EditorAlias": "Umbraco.Tags",
-  "DatabaseType": "Nvarchar",
   "Configuration": {
     "group": "themes",
     "storageType": "Json",

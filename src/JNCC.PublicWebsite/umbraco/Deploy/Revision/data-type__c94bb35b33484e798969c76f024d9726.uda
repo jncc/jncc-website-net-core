@@ -1,25 +1,25 @@
 {
   "Name": "Nested Content: Featured Resources",
   "Alias": "",
-  "EditorAlias": "Umbraco.NestedContent",
+  "EditorAlias": "Umbraco.BlockList",
   "Configuration": {
-    "contentTypes": [
+    "blocks": [
       {
-        "ncAlias": "featuredResourceSchema",
-        "ncTabAlias": "Content",
-        "nameTemplate": "{{headline}}"
+        "contentElementTypeKey": "f72adea7-e8ef-45d1-b8c6-4cc8cd994e57",
+        "label": "{{headline}}",
+        "forceHideContentEditorInOverlay": false
       }
     ],
-    "confirmDeletes": true,
-    "showIcons": true,
-    "expandsOnLoad": true,
-    "hideLabel": false
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": true,
+    "maxPropertyWidth": "100%"
   },
   "Udi": "umb://data-type/c94bb35b33484e798969c76f024d9726",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/f72adea7e8ef45d1b8c64cc8cd994e57",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/f72adea7e8ef45d1b8c64cc8cd994e57"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",

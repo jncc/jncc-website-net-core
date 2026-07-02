@@ -1,27 +1,25 @@
 {
   "Name": "Nested Content: Callout Cards",
   "Alias": "",
-  "EditorAlias": "Umbraco.NestedContent",
+  "EditorAlias": "Umbraco.BlockList",
   "Configuration": {
-    "contentTypes": [
+    "blocks": [
       {
-        "ncAlias": "calloutCardSchema",
-        "ncTabAlias": "Content",
-        "nameTemplate": "{{title}}"
+        "contentElementTypeKey": "0a5c3e8a-5355-4f10-ba12-92e2fb909fd3",
+        "label": "{{title}}",
+        "forceHideContentEditorInOverlay": false
       }
     ],
-    "minItems": 0,
-    "maxItems": 0,
-    "confirmDeletes": true,
-    "showIcons": true,
-    "expandsOnLoad": true,
-    "hideLabel": false
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": true,
+    "maxPropertyWidth": "100%"
   },
   "Udi": "umb://data-type/c2857d47af8848ca98c7959a6a73988c",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/0a5c3e8a53554f10ba1292e2fb909fd3",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/0a5c3e8a53554f10ba1292e2fb909fd3"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",

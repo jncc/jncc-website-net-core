@@ -188,9 +188,10 @@
     },
     {
       "Udi": "umb://template/901269c8d46f4e9387172347a1f7acf6",
-      "Ordering": true
+      "Ordering": true,
+      "Mode": "Exist"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

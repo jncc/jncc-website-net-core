@@ -43,26 +43,21 @@
   "Udi": "umb://data-type/dffef1c7e0814cef90885588c184d19a",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/02cebb05099646878450de24454e03a7",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/02cebb05099646878450de24454e03a7"
     },
     {
-      "Udi": "umb://document-type/396363d129124e1aace55a1b427dee42",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/396363d129124e1aace55a1b427dee42"
     },
     {
-      "Udi": "umb://document-type/7fb46c31de314c179f333bb35aa4f911",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/7fb46c31de314c179f333bb35aa4f911"
     },
     {
-      "Udi": "umb://document-type/b156c05984374bbdba16801c6df1e399",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/b156c05984374bbdba16801c6df1e399"
     },
     {
-      "Udi": "umb://document-type/d4506ede08e74f71aa7383e49e86c88d",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/d4506ede08e74f71aa7383e49e86c88d"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

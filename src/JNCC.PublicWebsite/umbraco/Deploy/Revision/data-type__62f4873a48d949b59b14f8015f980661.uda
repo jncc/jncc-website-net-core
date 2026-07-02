@@ -1,27 +1,27 @@
 {
   "Name": "Nested Content: Related Items",
   "Alias": "",
-  "EditorAlias": "Umbraco.NestedContent",
+  "EditorAlias": "Umbraco.BlockList",
   "Configuration": {
-    "contentTypes": [
+    "blocks": [
       {
-        "ncAlias": "relatedItemSchema",
-        "ncTabAlias": "Content",
-        "nameTemplate": ""
+        "contentElementTypeKey": "3646b10c-4c1f-4c10-8ea6-803b78d05e7d",
+        "label": "",
+        "forceHideContentEditorInOverlay": false
       }
     ],
-    "minItems": 0,
-    "maxItems": 3,
-    "confirmDeletes": true,
-    "showIcons": true,
-    "expandsOnLoad": true,
-    "hideLabel": false
+    "validationLimit": {
+      "max": 3
+    },
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": true,
+    "maxPropertyWidth": "100%"
   },
   "Udi": "umb://data-type/62f4873a48d949b59b14f8015f980661",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/3646b10c4c1f4c108ea6803b78d05e7d",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/3646b10c4c1f4c108ea6803b78d05e7d"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",

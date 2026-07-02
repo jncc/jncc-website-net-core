@@ -96,7 +96,8 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2"
+      "Udi": "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2",
+      "Mode": "Exist"
     },
     {
       "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
@@ -115,13 +116,15 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a"
+      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a",
+      "Mode": "Exist"
     },
     {
       "Udi": "umb://template/49f3e41aa7ce4714811c937601669826",
-      "Ordering": true
+      "Ordering": true,
+      "Mode": "Exist"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }
