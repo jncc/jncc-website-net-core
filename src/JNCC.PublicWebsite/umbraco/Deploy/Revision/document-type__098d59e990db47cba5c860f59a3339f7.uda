@@ -95,13 +95,15 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://document-type/cb35e9f10716438f822797d45c9dde36"
+      "Udi": "umb://document-type/cb35e9f10716438f822797d45c9dde36",
+      "Mode": "Exist"
     },
     {
       "Udi": "umb://template/08c256b9d84e4a8ab6996043336bff8c",
-      "Ordering": true
+      "Ordering": true,
+      "Mode": "Exist"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

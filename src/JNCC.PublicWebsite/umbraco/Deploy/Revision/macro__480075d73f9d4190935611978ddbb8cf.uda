@@ -5,6 +5,13 @@
   "UseInEditor": true,
   "Properties": [
     {
+      "Key": "2b134a1a-aaee-42b1-8277-ad8ffdcc70a3",
+      "Alias": "RedirectToPageId",
+      "Name": "Go to page",
+      "SortOrder": 3,
+      "EditorAlias": "Umbraco.ContentPicker"
+    },
+    {
       "Key": "2d5fdda2-e19f-4103-b43e-269186fda969",
       "Alias": "ExcludeScripts",
       "Name": "Exclude Scripts",
@@ -34,5 +41,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.MacroArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

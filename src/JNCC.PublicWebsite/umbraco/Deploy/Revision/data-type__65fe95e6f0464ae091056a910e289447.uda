@@ -25,14 +25,12 @@
   "Udi": "umb://data-type/65fe95e6f0464ae091056a910e289447",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/17012e7cdbc84aa4be1bab4c20e5c4f6",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/17012e7cdbc84aa4be1bab4c20e5c4f6"
     },
     {
-      "Udi": "umb://document-type/cf5463290c7e4cfe8e62e711cd5e9775",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/cf5463290c7e4cfe8e62e711cd5e9775"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

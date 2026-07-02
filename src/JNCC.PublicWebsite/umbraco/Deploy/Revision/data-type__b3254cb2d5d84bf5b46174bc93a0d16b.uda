@@ -12,7 +12,7 @@
         "cut",
         "copy",
         "paste",
-        "styleselect",
+        "styles",
         "bold",
         "italic",
         "alignleft",
@@ -40,12 +40,14 @@
         "/css/headings.css",
         "/css/highlighting.css"
       ],
-      "dimensions": {
-        "height": 500
-      },
       "maxImageSize": 500,
-      "mode": "classic"
+      "mode": "classic",
+      "dimensions": {
+        "height": null
+      }
     },
+    "blocks": [],
+    "useLiveEditing": false,
     "overlaySize": "small",
     "hideLabel": false,
     "ignoreUserStartNodes": false
@@ -66,5 +68,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

@@ -7,13 +7,15 @@
   "Dependencies": [
     {
       "Udi": "umb://template-file/iFramePage.cshtml",
-      "Ordering": true
+      "Ordering": true,
+      "Mode": "Exist"
     },
     {
       "Udi": "umb://template/fb7bc04e730f4d8b807b796027b47540",
-      "Ordering": true
+      "Ordering": true,
+      "Mode": "Exist"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

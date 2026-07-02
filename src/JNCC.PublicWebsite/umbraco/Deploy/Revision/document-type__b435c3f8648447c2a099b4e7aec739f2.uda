@@ -42,9 +42,10 @@
       "Ordering": true
     },
     {
-      "Udi": "umb://document-type/b435c3f8648447c2a099b4e7aec739f2"
+      "Udi": "umb://document-type/b435c3f8648447c2a099b4e7aec739f2",
+      "Mode": "Exist"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

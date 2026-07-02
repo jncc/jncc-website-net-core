@@ -7,30 +7,63 @@
       "toolbar": [
         "ace",
         "removeformat",
-        "styleselect",
+        "undo",
+        "redo",
+        "cut",
+        "copy",
+        "paste",
+        "styles",
         "bold",
         "italic",
         "alignleft",
         "aligncenter",
         "alignright",
+        "alignjustify",
         "bullist",
         "numlist",
         "outdent",
         "indent",
+        "link",
+        "unlink",
+        "anchor",
         "umbmediapicker",
         "umbmacro",
-        "umbembeddialog"
+        "table",
+        "umbembeddialog",
+        "hr",
+        "subscript",
+        "superscript",
+        "charmap"
       ],
-      "stylesheets": [],
+      "stylesheets": [
+        "/css/floats.css",
+        "/css/headings.css",
+        "/css/highlighting.css"
+      ],
       "maxImageSize": 500,
       "mode": "classic"
     },
+    "blocks": [],
+    "useLiveEditing": false,
     "overlaySize": "small",
     "hideLabel": false,
     "ignoreUserStartNodes": false
   },
   "Udi": "umb://data-type/e0ff14bdeb994c72b81681cbdcafed97",
-  "Dependencies": [],
+  "Dependencies": [
+    {
+      "Udi": "umb://stylesheet/floats.css",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://stylesheet/headings.css",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://stylesheet/highlighting.css",
+      "Mode": "Exist"
+    }
+  ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "13.4.3"
 }

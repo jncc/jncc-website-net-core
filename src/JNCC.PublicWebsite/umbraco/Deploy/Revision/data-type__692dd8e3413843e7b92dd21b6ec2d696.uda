@@ -19,10 +19,9 @@
   "Udi": "umb://data-type/692dd8e3413843e7b92dd21b6ec2d696",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }

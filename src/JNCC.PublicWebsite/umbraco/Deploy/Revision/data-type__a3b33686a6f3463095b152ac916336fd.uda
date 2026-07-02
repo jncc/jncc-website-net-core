@@ -1,27 +1,27 @@
 {
   "Name": "Nested Content: Resource Collection Schema",
   "Alias": "",
-  "EditorAlias": "Umbraco.NestedContent",
+  "EditorAlias": "Umbraco.BlockList",
   "Configuration": {
-    "contentTypes": [
+    "blocks": [
       {
-        "ncAlias": "resourcesCollectionSchema",
-        "ncTabAlias": "Content",
-        "nameTemplate": ""
+        "contentElementTypeKey": "214ccf2d-5c9f-43ab-a566-02a277981341",
+        "label": "",
+        "forceHideContentEditorInOverlay": false
       }
     ],
-    "confirmDeletes": true,
-    "showIcons": true,
-    "expandsOnLoad": true,
-    "hideLabel": false
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": true,
+    "maxPropertyWidth": "100%"
   },
   "Udi": "umb://data-type/a3b33686a6f3463095b152ac916336fd",
   "Dependencies": [
     {
-      "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341",
-      "Mode": "Exist"
+      "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341"
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "13.4.3"
 }

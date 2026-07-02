@@ -12,24 +12,38 @@
         "cut",
         "copy",
         "paste",
-        "styleselect",
+        "styles",
         "bold",
         "italic",
+        "alignleft",
+        "aligncenter",
+        "alignright",
+        "bullist",
+        "numlist",
+        "outdent",
+        "indent",
+        "link",
+        "unlink",
+        "anchor",
+        "umbmediapicker",
+        "umbmacro",
+        "table",
+        "umbembeddialog",
+        "hr",
         "subscript",
         "superscript",
         "charmap"
       ],
       "stylesheets": [
-        "/css/highlighting.css",
+        "/css/floats.css",
         "/css/headings.css",
-        "/css/floats.css"
+        "/css/highlighting.css"
       ],
-      "dimensions": {
-        "height": 500
-      },
       "maxImageSize": 500,
       "mode": "classic"
     },
+    "blocks": [],
+    "useLiveEditing": false,
     "overlaySize": "small",
     "hideLabel": false,
     "ignoreUserStartNodes": false
@@ -50,5 +64,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.1+b70c703"
+  "__version": "13.4.3"
 }
