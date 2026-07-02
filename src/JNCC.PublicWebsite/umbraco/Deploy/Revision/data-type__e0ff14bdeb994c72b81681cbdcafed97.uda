@@ -25,6 +25,7 @@
       "maxImageSize": 500,
       "mode": "classic"
     },
+    "useLiveEditing": false,
     "overlaySize": "small",
     "hideLabel": false,
     "ignoreUserStartNodes": false
@@ -32,5 +33,5 @@
   "Udi": "umb://data-type/e0ff14bdeb994c72b81681cbdcafed97",
   "Dependencies": [],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
-  "__version": "10.4.0+4e5b8f6"
+  "__version": "13.4.3"
 }
