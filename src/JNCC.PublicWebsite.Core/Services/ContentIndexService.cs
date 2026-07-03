@@ -119,8 +119,9 @@ namespace JNCC.PublicWebsite.Core.Services
 
                 _logger.LogInformation($"Preparing to send index fields for {publishedEntity.Name}");
                 var contentBuilder = new StringBuilder();
+                var IndexFieldList = _amazonServiceConfigurationOptions.Value.IndexFields.Split(',', StringSplitOptions.RemoveEmptyEntries).ToList();
 
-                var fieldsToIndex = publishedEntity.Properties.Where(p => _amazonServiceConfigurationOptions.Value.IndexFields.Contains(p.Alias));
+                var fieldsToIndex = publishedEntity.Properties.Where(p => IndexFieldList.Contains(p.Alias));
 
                 foreach (var contentField in fieldsToIndex)
                 {
@@ -139,15 +140,34 @@ namespace JNCC.PublicWebsite.Core.Services
                                 //Check if it has a value and append it
                                 if (string.IsNullOrEmpty(contentFieldValueString) == false)
                                 {
-                                    if (contentFieldValueString.DetectIsJson() && contentFieldValueString.TryParseJson(out BlocklistJsonModel bljm))
+                                    if (contentFieldValueString.DetectIsJson())
                                     {
                                         _logger.LogInformation("Value is JSON");
-                                        var processedJsonValue = ProcessJsonValue(bljm);
-                                        _logger.LogInformation($"Parsed value is: {processedJsonValue}");
-
-                                        if (string.IsNullOrEmpty(processedJsonValue) == false)
+                                        if (contentFieldValueString.TryParseJson(out BlocklistJsonModel bljm))
                                         {
-                                            contentBuilder.AppendLine(processedJsonValue);
+                                            _logger.LogInformation("JSON is BlockListJsonModel");
+                                            var processedJsonValue = ProcessBlocklistJsonValue(bljm);
+                                            _logger.LogInformation($"Parsed value is: {processedJsonValue}");
+
+                                            if (string.IsNullOrEmpty(processedJsonValue) == false)
+                                            {
+                                                contentBuilder.AppendLine(processedJsonValue);
+                                            }
+                                        }
+                                        else if (contentFieldValueString.TryParseJson(out TinyMceJsonModel tmjm))
+                                        {
+                                            _logger.LogInformation("JSON is TinyMceJsonModel");
+                                            var processedJsonValue = ProcessTinyMceJsonValue(tmjm);
+                                            _logger.LogInformation($"Parsed value is: {processedJsonValue}");
+
+                                            if (string.IsNullOrEmpty(processedJsonValue) == false)
+                                            {
+                                                contentBuilder.AppendLine(processedJsonValue);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            _logger.LogError("Unable to parse content. Value is JSON but object is neither JSON is BlocklistJsonModel or TinyMceJsonModel");
                                         }
                                     }
                                     else
@@ -198,10 +218,9 @@ namespace JNCC.PublicWebsite.Core.Services
 
         private static List<string> nestedIndexFields = new List<string> { "headline", "title", "description", "content" };
 
-        private string ProcessJsonValue(BlocklistJsonModel bljm)
+        private string ProcessBlocklistJsonValue(BlocklistJsonModel bljm)
         {
             var processedValue = new StringBuilder();
-            var objType = bljm.ContentData.GetType();
 
             foreach (var contentItem in bljm.ContentData)
             {
@@ -222,18 +241,28 @@ namespace JNCC.PublicWebsite.Core.Services
 
                             if (workingData.DetectIsJson() && workingData.TryParseJson(out TinyMceJsonModel tmjm))
                             {
-                                workingData = tmjm.Markup;
+                                processedValue.AppendLine(ProcessTinyMceJsonValue(tmjm));
                             }
-
-                            var sanitisedValue = workingData.StripHtml().Trim();
-
-                            if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
+                            else
                             {
-                                processedValue.AppendLine(sanitisedValue);
+                                _logger.LogError("Unable to parse content. Value is BlocklistJsonModel but does not contain a TinyMceJsonModel");
                             }
                         }
                     }
                 }
+            }
+
+            return processedValue.ToString().Trim();
+        }
+
+        private string ProcessTinyMceJsonValue(TinyMceJsonModel tmjm)
+        {
+            var processedValue = new StringBuilder();
+            var sanitisedValue = tmjm.Markup.StripHtml().Trim();
+
+            if (string.IsNullOrWhiteSpace(sanitisedValue) == false)
+            {
+                processedValue.AppendLine(sanitisedValue);
             }
 
             return processedValue.ToString().Trim();
