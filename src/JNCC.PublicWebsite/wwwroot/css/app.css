@@ -15867,3 +15867,61 @@ for details on configuring this project to bundle and minify static web assets. 
 .is-display-inline-block {
 	display: inline-block;
 }
+
+#resource-search {
+	position: static;
+	max-width: 100%;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.overflow-scroll {
+	overflow: scroll;
+}
+
+.accordion-title {
+	margin-bottom: 2rem;
+}
+
+.no-top-padding {
+	padding-top: 0px;
+}
+
+.bottom-two-rem {
+	margin-bottom: 2rem;
+}
+
+.no-margin {
+	margin: 0;
+}
+
+.display-block {
+	display: block;
+}
+
+.overflow-visible {
+	overflow: visible;
+}
+
+.bottom-one-rem {
+	margin-bottom: 1rem;
+}
+
+.right-point-three-rem {
+	margin-right: 0.3rem;
+}
+
+.right-point-one-em {
+	margin-right: 0.1em;
+}
+
+.resource-filesize {
+	word-spacing: -0.3em;
+	margin-right: 0.6em;
+}
+
+.resource-filename-display {
+	overflow-wrap: break-word;
+}
