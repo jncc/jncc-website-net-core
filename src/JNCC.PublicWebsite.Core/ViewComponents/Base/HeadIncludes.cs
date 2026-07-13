@@ -19,7 +19,7 @@ namespace JNCC.PublicWebsite.Core.ViewComponents
 
         public HtmlString Invoke(IPublishedContent model)
         {
-            return new HtmlString(_pageIncludesService.GetHeadIncludes(model.Root() as IGlobalIncludesComposition, model as IPageSpecificIncludesComposition));
+            return new HtmlString(_pageIncludesService.GetHeadIncludes(model.Root() as IGlobalIncludesComposition, model as IPageSpecificIncludesComposition, HttpContext));
         }
     }
 }

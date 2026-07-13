@@ -2,13 +2,22 @@
 using JNCC.PublicWebsite.Core.Interfaces.Services;
 using JNCC.PublicWebsite.Core.Models;
 using JNCC.PublicWebsite.Core.ViewModels;
+using Microsoft.AspNetCore.Http;
 using System.Globalization;
 using System.Text;
+using Umbraco.Community.CSPManager.Services;
 
 namespace JNCC.PublicWebsite.Core.Services
 {
     internal sealed class PageIncludesService : IPageIncludesService
     {
+        private readonly ICspService _cspService;
+
+        public PageIncludesService(ICspService cspService)
+        {
+            _cspService = cspService ?? throw new ArgumentNullException(nameof(cspService));
+        }
+
 
         public PageAttributesViewModel GetPageAttributesViewModel(IPageSpecificIncludesComposition pageSpecificIncludesComposition)
         {
@@ -27,7 +36,7 @@ namespace JNCC.PublicWebsite.Core.Services
             return viewmodel;
         }
 
-        public string GetHeadIncludes(IGlobalIncludesComposition globalIncludes, IPageSpecificIncludesComposition pageSpecificIncludes)
+        public string GetHeadIncludes(IGlobalIncludesComposition globalIncludes, IPageSpecificIncludesComposition pageSpecificIncludes, HttpContext context)
         {
             var includesBuilder = new StringBuilder();
 
@@ -46,10 +55,10 @@ namespace JNCC.PublicWebsite.Core.Services
                 }
             }
 
-            return includesBuilder.ToString();
+            return AddNonces(includesBuilder.ToString(), context);
         }
 
-        public string GetBodyIncludes(IGlobalIncludesComposition globalIncludes, IPageSpecificIncludesComposition pageSpecificIncludes)
+        public string GetBodyIncludes(IGlobalIncludesComposition globalIncludes, IPageSpecificIncludesComposition pageSpecificIncludes, HttpContext context)
         {
             var includesBuilder = new StringBuilder();
 
@@ -65,7 +74,26 @@ namespace JNCC.PublicWebsite.Core.Services
             }
 
 
-            return includesBuilder.ToString();
+            return AddNonces(includesBuilder.ToString(), context);
+        }
+
+        private string AddNonces(string includes, HttpContext context)
+        {
+            if (includes.Contains("<script>", StringComparison.OrdinalIgnoreCase))
+            {
+                var nonce = _cspService.GetCspScriptNonce(context);
+
+                includes = includes.Replace("<script>", $"<script nonce=\"{nonce}\">");
+            }
+
+            if (includes.Contains("<style>", StringComparison.OrdinalIgnoreCase))
+            {
+                var nonce = _cspService.GetCspStyleNonce(context);
+
+                includes = includes.Replace("<style>", $"<style nonce=\"{nonce}\">");
+            }
+
+            return includes;
         }
     }
 }

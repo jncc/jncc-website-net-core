@@ -19,6 +19,7 @@
     <PackageReference Include="Umbraco.Cms.Web.BackOffice" Version="13.14.0" />
     <PackageReference Include="Umbraco.Cms.Web.Common" Version="13.14.0" />
     <PackageReference Include="System.Text.Encodings.Web" Version="10.0.8" />
+    <PackageReference Include="Umbraco.Community.CSPManager" Version="1.4.2" />
   </ItemGroup>
 
 </Project>
