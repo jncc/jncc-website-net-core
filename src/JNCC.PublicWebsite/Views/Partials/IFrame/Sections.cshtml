@@ -7,7 +7,7 @@
         {
             if (!section.HideHeadline)
             {
-                <h2 id="@(section.HtmlId)" style="display: block">@(section.Headline)</h2>
+                <h2 id="@(section.HtmlId)" class="display-block">@(section.Headline)</h2>
             }
             @(await Html.PartialAsync(string.Format("~/Views/Partials/IFrame/{0}.cshtml", section.PartialViewName), section))
             if (section.SubSections.Any())

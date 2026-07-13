@@ -12,7 +12,12 @@
                         <div class="card">
                             @if (string.IsNullOrWhiteSpace(item.ImageUrl) == false)
                             {
-                                <div class="img-holder" style="background-image: url(@item.ImageUrl);"></div>
+                                <style csp-manager-add-nonce="true">
+                                    #hp-resource-title {
+                                        background-image: url(@item.ImageUrl);
+                                    }
+                                </style>
+                                <div class="img-holder" id="hp-resource-title"></div>
                             }
                             <div class="card-section">
                                 @Html.Raw(item.Content)

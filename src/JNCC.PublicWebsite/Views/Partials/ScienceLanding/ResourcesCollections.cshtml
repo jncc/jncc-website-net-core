@@ -2,13 +2,15 @@
 @model List<ResourcesCollectionViewModel>
 @if (Model?.Any() ?? false)
 {
+    var collectionCount = 0;
     foreach (var collection in Model)
     {
         <section class="articles-section resources science-group">
             <div class="container">
-                <h2 style="margin-bottom:2rem">@collection.Title</h2>
+                <h2 class="bottom-two-rem">@collection.Title</h2>
                 @if (collection.Resources.Any())
                 {
+                    var resourceCount = 0;
                     <div class="row row1">
                         @foreach (var resource in collection.Resources)
                         {
@@ -19,7 +21,12 @@
                                         <a href="@resource.ReadMoreButton.Url">
                                             @if (resource.Image != null)
                                             {
-                                                <div class="img-holder" style="background-image: url(@resource.Image.Url);"></div>
+                                                <style csp-manager-add-nonce="true">
+                                                    .resource-@collectionCount-@resourceCount {
+                                                        background-image: url(@resource.Image.Url);
+                                                    }
+                                                </style>
+                                                <div class="img-holder resource-@collectionCount-@resourceCount"></div>
                                             }
                                             <div class="card-section">
                                                 <h3>@resource.Title</h3>
@@ -31,7 +38,12 @@
                                     {
                                         @if (resource.Image != null)
                                         {
-                                            <div class="img-holder" style="background-image: url(@resource.Image.Url);"></div>
+                                            <style csp-manager-add-nonce="true">
+                                                .resource-@collectionCount-@resourceCount {
+                                                    background-image: url(@resource.Image.Url);
+                                                }
+                                            </style>
+                                            <div class="img-holder resource-@collectionCount-@resourceCount"></div>
                                         }
                                         <div class="card-section">
                                             <h3>@resource.Title</h3>
@@ -42,6 +54,7 @@
                             </div>
                         }
                     </div>
+                    resourceCount++;
                 }
             </div>
         </section>
@@ -53,5 +66,6 @@
                 </div>
             </div>
         }
+        collectionCount++;
     }
 }

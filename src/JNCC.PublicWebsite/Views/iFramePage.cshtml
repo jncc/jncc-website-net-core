@@ -11,7 +11,7 @@
 
     string fallbackCss = "";
     string iFrameCss = "";
-    <script>
+    <script csp-manager-add-nonce="true">
         var w = window.innerWidth;
     </script>
 
@@ -19,7 +19,7 @@
     {
         fallbackCss = "hide-for-large";
         iFrameCss = "hide-for-small-only hide-for-medium-only";
-        <script>
+        <script csp-manager-add-nonce="true">
             if (w >= 1023) { $("body").css("overflow", "hidden") }
         </script>
     }
@@ -27,7 +27,7 @@
     {
         fallbackCss = "show-for-medium-only hide-for-large";
         iFrameCss = "hide-for-medium-only";
-        <script>
+        <script csp-manager-add-nonce="true">
             if (w >= 1023) { $("body").css("overflow", "hidden") }
             if (w < 768) { $("body").css("overflow", "hidden") }
         </script>
@@ -36,14 +36,14 @@
     {
         fallbackCss = "show-for-small-only hide-for-large";
         iFrameCss = "hide-for-small-only";
-        <script>
+        <script csp-manager-add-nonce="true">
             if (w >= 768) { $("body").css("overflow", "hidden") }
         </script>
     }
     else
     {
         fallbackCss = "hide";
-        <script>
+        <script csp-manager-add-nonce="true">
             $("body").css("overflow", "hidden")
         </script>
     }
@@ -73,7 +73,7 @@
         </div>
     </div>
 }
-<main id="main" style="overflow:scroll">
+<main id="main" class="overflow-scroll">
     <div class="container @fallbackCss">
         @(await Component.InvokeAsync("IFrameSections", new { model = Model }))
     </div>
@@ -82,7 +82,7 @@
     @*TODO: Update to new cookie control
         @if (cookiePolicyAcceptance == "true")
         {*@
-    <script>
+    <script csp-manager-add-nonce="true">
         $(document).ready(mapFrame);
         $(window).on('resize', mapFrame);
         function mapFrame() {
@@ -97,7 +97,7 @@
         @(await Component.InvokeAsync("IFrameSourceUrl", new { model = Model }))
     </div>
 
-    <script>
+    <script csp-manager-add-nonce="true">
         function getSearchParameters() {
             var prmstr = window.location.search.substr(1);
             return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
@@ -151,8 +151,8 @@
             {
                 <div class="@iFrameCss">
                     <p> </p>
-                    <h2 style="text-align: center;">Mapper Disabled</h2>
-                    <p style="text-align: center;">The mapper cannot be displayed because cookies are needed to display the map. Please <button class="buttonLink" onclick="CookieAgreement()"> click here</button>, to enable cookies.</p>
+                    <h2 class="text-center">Mapper Disabled</h2>
+                    <p class="text-center">The mapper cannot be displayed because cookies are needed to display the map. Please <button class="buttonLink" onclick="CookieAgreement()"> click here</button>, to enable cookies.</p>
                 </div>
             }
         }*@

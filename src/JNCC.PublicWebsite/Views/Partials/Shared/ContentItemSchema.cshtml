@@ -25,16 +25,16 @@
 
         }
 
-        @{string stly = hasImg ? "" : "padding:0;"; }
+        @{string stly = hasImg ? null : "no-padding"; }
 
-        <div class="text-holder" style="@stly" >
+        <div class="text-holder" class="@stly" >
             @if(Model.ReadMoreButton != null)
             {
-                <h3 style="margin:0" ><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h3>
+                <h3 class="no-margin" ><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h3>
             }
             else if (!string.IsNullOrEmpty(Model.Headline))
             {
-                <h3 style="margin:0">@Model.Headline</h3>
+                <h3 class="no-margin">@Model.Headline</h3>
             }    
             <div>
                 @Html.Raw(Model.Content)
