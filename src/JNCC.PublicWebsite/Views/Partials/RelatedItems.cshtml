@@ -2,6 +2,7 @@
 @model IEnumerable<RelatedItemViewModel>
 @if (Model?.Any() ?? false)
 {
+    var count = 0;
     <section class="links-section">
         <div class="container">
             <h2>Related links</h2>
@@ -12,11 +13,17 @@
                         <a href="@item.Url" class="card">
                             @if (string.IsNullOrWhiteSpace(item.ImageUrl) == false)
                             {
-                                <span class="img-holder" style="background-image: url(@item.ImageUrl);"></span>
+                                <style csp-manager-add-nonce="true">
+                                    .related-link-@count {
+                                        background-image: url(@item.ImageUrl);
+                                    }
+                                </style>
+                                <span class="img-holder related-link-@count"></span>
                             }
                             <span class="card-section"><strong>@item.Title</strong> @Html.Raw(item.Content)</span>
                         </a>
                     </div>
+                    count++;
                 }
             </div>
         </div>
