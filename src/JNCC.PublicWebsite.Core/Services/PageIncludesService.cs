@@ -79,18 +79,18 @@ namespace JNCC.PublicWebsite.Core.Services
 
         private string AddNonces(string includes, HttpContext context)
         {
-            if (includes.Contains("<script>", StringComparison.OrdinalIgnoreCase))
+            if (includes.Contains("<script", StringComparison.OrdinalIgnoreCase))
             {
                 var nonce = _cspService.GetCspScriptNonce(context);
 
-                includes = includes.Replace("<script>", $"<script nonce=\"{nonce}\">");
+                includes = includes.Replace("<script", $"<script nonce=\"{nonce}\"");
             }
 
-            if (includes.Contains("<style>", StringComparison.OrdinalIgnoreCase))
+            if (includes.Contains("<style", StringComparison.OrdinalIgnoreCase))
             {
                 var nonce = _cspService.GetCspStyleNonce(context);
 
-                includes = includes.Replace("<style>", $"<style nonce=\"{nonce}\">");
+                includes = includes.Replace("<style", $"<style nonce=\"{nonce}\"");
             }
 
             return includes;
