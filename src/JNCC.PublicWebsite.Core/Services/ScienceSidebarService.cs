@@ -10,10 +10,12 @@ namespace JNCC.PublicWebsite.Core.Services
     internal sealed class ScienceSidebarService : SidebarServiceBase, IScienceSidebarService
     {
         private readonly ISciencePageCategoriesProvider _sciencePageCategoriesProvider;
+        private readonly ISimpleSciencePageCategoriesProvider _simpleSciencePageCategoriesProvider;
 
-        public ScienceSidebarService(INavigationItemService navigationItemService, ISciencePageCategoriesProvider sciencePageCategoriesProvider) : base(navigationItemService)
+        public ScienceSidebarService(INavigationItemService navigationItemService, ISciencePageCategoriesProvider sciencePageCategoriesProvider, ISimpleSciencePageCategoriesProvider simpleSciencePageCategoriesProvider) : base(navigationItemService)
         {
             _sciencePageCategoriesProvider = sciencePageCategoriesProvider ?? throw new ArgumentNullException(nameof(sciencePageCategoriesProvider));
+            _simpleSciencePageCategoriesProvider = simpleSciencePageCategoriesProvider ?? throw new ArgumentNullException(nameof(simpleSciencePageCategoriesProvider));
         }
 
         public ScienceSidebarViewModel GetSidebarViewModel(ScienceDetailsPage model)
@@ -21,6 +23,15 @@ namespace JNCC.PublicWebsite.Core.Services
             var viewModel = CreateViewModel<ScienceSidebarViewModel>(model);
             viewModel.Categories = GetCategoriesWithFeaturedPages(model);
             viewModel.RelatedCategories = GetRelatedCategoryPages(model);
+            viewModel.CurrentPageContentTypeAlias = model.ContentType.Alias;
+            return viewModel;
+        }
+
+        public ScienceSidebarViewModel GetSidebarViewModel(SimpleScienceDetailsPage model)
+        {
+            var viewModel = CreateViewModel<ScienceSidebarViewModel>(model);
+            viewModel.Categories = GetCategoriesWithFeaturedPages(model);
+            viewModel.RelatedCategories = new List<MainNavigationItemViewModel>();
 			viewModel.CurrentPageContentTypeAlias = model.ContentType.Alias;
 			return viewModel;
         }
@@ -44,6 +55,13 @@ namespace JNCC.PublicWebsite.Core.Services
         private IEnumerable<MainNavigationItemViewModel> GetCategoriesWithFeaturedPages(ScienceDetailsPage model)
         {
             var categories = _sciencePageCategoriesProvider.GetCategories(model);
+
+            return GetCategoriesWithFeaturedPages(categories);
+        }
+
+        private IEnumerable<MainNavigationItemViewModel> GetCategoriesWithFeaturedPages(SimpleScienceDetailsPage model)
+        {
+            var categories = _simpleSciencePageCategoriesProvider.GetCategories(model);
 
             return GetCategoriesWithFeaturedPages(categories);
         }

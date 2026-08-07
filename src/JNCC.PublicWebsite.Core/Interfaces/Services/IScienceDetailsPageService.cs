@@ -8,6 +8,7 @@ namespace JNCC.PublicWebsite.Core.Interfaces.Services
     public interface IScienceDetailsPageService
     {
         IEnumerable<NavigationItemViewModel> GetCategories(ScienceDetailsPage model);
+        IEnumerable<NavigationItemViewModel> GetCategories(SimpleScienceDetailsPage model);
         IEnumerable<ScienceDetailsSectionViewModel> GetSectionViewModels(BlockListModel mainContent);
         IEnumerable<ScienceDetailsSectionViewModel> GetImageTextSectionViewModels(BlockListModel imageTextSection);
         IEnumerable<ScienceDetailsSubSectionViewModel> GetSubSectionViewModels(BlockListModel subSections, string parentHtmlId);
