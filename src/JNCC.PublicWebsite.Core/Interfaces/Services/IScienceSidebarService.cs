@@ -7,6 +7,8 @@ namespace JNCC.PublicWebsite.Core.Interfaces.Services
     {
         ScienceSidebarViewModel GetSidebarViewModel(ScienceDetailsPage model);
 
+        ScienceSidebarViewModel GetSidebarViewModel(SimpleScienceDetailsPage model);
+
         ScienceSidebarViewModel GetSidebarViewModel(ScienceCategoryPage model);
 
         SidebarViewModel GetSidebarViewModel(ScienceAtoZpage model);

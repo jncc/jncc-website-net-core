@@ -17,9 +17,11 @@ namespace JNCC.PublicWebsite.Core.Services
         private readonly INavigationItemService _navigationItemService;
         private readonly IShortStringHelper _shortStringHelper;
         private readonly ISciencePageCategoriesProvider _sciencePageCategoriesProvider;
-        public ScienceDetailsPageService(ISciencePageCategoriesProvider sciencePageCategoriesProvider, INavigationItemService navigationItemService, IShortStringHelper shortStringHelper)
+        private readonly ISimpleSciencePageCategoriesProvider _simpleSciencePageCategoriesProvider;
+        public ScienceDetailsPageService(ISciencePageCategoriesProvider sciencePageCategoriesProvider, ISimpleSciencePageCategoriesProvider simpleSciencePageCategoriesProvider, INavigationItemService navigationItemService, IShortStringHelper shortStringHelper)
         {
             _sciencePageCategoriesProvider = sciencePageCategoriesProvider;
+            _simpleSciencePageCategoriesProvider = simpleSciencePageCategoriesProvider;
             _navigationItemService = navigationItemService ?? throw new ArgumentNullException(nameof(navigationItemService));
             _shortStringHelper = shortStringHelper ?? throw new ArgumentNullException(nameof(shortStringHelper));
         }
@@ -27,6 +29,18 @@ namespace JNCC.PublicWebsite.Core.Services
         public IEnumerable<NavigationItemViewModel> GetCategories(ScienceDetailsPage model)
         {
             var categories = _sciencePageCategoriesProvider.GetCategories(model);
+
+            if (ExistenceUtility.IsNullOrEmpty(categories))
+            {
+                return Enumerable.Empty<NavigationItemViewModel>();
+            }
+
+            return _navigationItemService.GetViewModels(categories);
+        }
+
+        public IEnumerable<NavigationItemViewModel> GetCategories(SimpleScienceDetailsPage model)
+        {
+            var categories = _simpleSciencePageCategoriesProvider.GetCategories(model);
 
             if (ExistenceUtility.IsNullOrEmpty(categories))
             {

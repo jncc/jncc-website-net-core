@@ -1,0 +1,127 @@
+{
+  "Name": "Simple Science Details Page",
+  "Alias": "simpleScienceDetailsPage",
+  "DefaultTemplate": "umb://template/3204e37dcd11402e8081f7201df5d2ec",
+  "AllowedTemplates": [
+    "umb://template/3204e37dcd11402e8081f7201df5d2ec"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-microscope color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page for displaying detailed scientific resources.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+    "umb://document-type/96135853b8f04e8f91728b6e72dd903b"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "271f6b78-d8c5-41bd-a79e-12bd1d0b441d",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "1e8c4e27-3acf-46d4-ae11-efd1cad651e7",
+          "Alias": "mainContent",
+          "DataType": "umb://data-type/721586028a674e60b6b983f122f14a21",
+          "Description": "The main content for the page. Each section added here will be used to create an entry in the table of contents.If no sections are authored then no table of content will be created.",
+          "MandatoryMessage": "",
+          "Name": "Main Content",
+          "SortOrder": 1,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "3f9a1108-23f5-4805-a430-d53b0af89f61",
+          "Alias": "headline",
+          "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "Description": "A headline that appears above the main content of the page. If no value is provided the page name will be used instead.",
+          "Name": "Headline"
+        }
+      ]
+    },
+    {
+      "Key": "9c1774a2-065f-4b44-8e19-50b43c3fc02b",
+      "Name": "Meta Information",
+      "SortOrder": 5,
+      "Alias": "metaInformation",
+      "PropertyTypes": [
+        {
+          "Key": "3ae24b8a-3a1a-4850-b42b-3fc5905a6bac",
+          "Alias": "categories",
+          "DataType": "umb://data-type/457d8757650d45c98fa60c97856b9a4b",
+          "Description": "",
+          "MandatoryMessage": "",
+          "Name": "Categories",
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "746814ad-f12f-438d-be4a-478d53fdcd49",
+          "Alias": "reviewedDate",
+          "DataType": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+          "Description": "The date the page last had a meaningful editorial review.",
+          "MandatoryMessage": "",
+          "Name": "Reviewed Date",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/6062aed7ada740afb888fe2755ef8b40",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/457d8757650d45c98fa60c97856b9a4b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/5046194e4237453ca54715db3a07c4e1",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/721586028a674e60b6b983f122f14a21",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/3204e37dcd11402e8081f7201df5d2ec",
+      "Ordering": true,
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "13.4.3"
+}
