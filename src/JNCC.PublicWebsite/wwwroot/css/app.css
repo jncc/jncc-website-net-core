@@ -876,6 +876,13 @@
 	display: block;
 }
 
+.icon-bluesky:before {
+	content: url(/css/svgs/fi-bluesky.svg);
+	width: 20px;
+	height: 20px;
+	display: block;
+}
+
 .icon-facebook:before {
 	content: "\e906";
 }
