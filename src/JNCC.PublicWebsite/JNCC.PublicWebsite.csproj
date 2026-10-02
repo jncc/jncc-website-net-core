@@ -361,8 +361,6 @@
 
 	<!-- Set this to true if ModelsBuilder mode is not InMemoryAuto-->
 	<PropertyGroup>
-		<RazorCompileOnBuild>false</RazorCompileOnBuild>
-		<RazorCompileOnPublish>false</RazorCompileOnPublish>
 		<UserSecretsId>f32089cc-cccc-44f5-8a1c-6a937ca44000</UserSecretsId>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>

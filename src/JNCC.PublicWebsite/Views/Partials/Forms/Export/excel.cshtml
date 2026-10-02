@@ -1,5 +1,5 @@
 ﻿@model Umbraco.Forms.Core.Searchers.EntrySearchResultCollection
-@foreach (var header in Model.schema)
+@foreach (var header in Model.Schema)
 {<text>"</text>@Html.Raw(header.Name)<text>",</text>}
 
 @foreach (var row in Model.Results)
