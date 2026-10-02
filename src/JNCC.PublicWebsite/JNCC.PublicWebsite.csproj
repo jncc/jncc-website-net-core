@@ -12,6 +12,7 @@
 	<ItemGroup>
 		<PackageReference Include="ClosedXML" Version="0.105.0" />
 		<PackageReference Include="CMSImport" Version="13.2.0" />
+		<PackageReference Include="Diplo.GodMode" Version="13.1.0" />
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
 		<PackageReference Include="SEOChecker" Version="13.6.2" />

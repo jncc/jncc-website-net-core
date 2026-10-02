@@ -11,12 +11,6 @@
     "AllowedChildContentTypes": [
       "umb://document-type/50ea99838bf84016bcffeb652534ed3c",
       "umb://document-type/cb35e9f10716438f822797d45c9dde36",
-      "umb://document-type/7eb6fdf4f4874f32b1c200822a4423a1",
-      "umb://document-type/93265f0038e64cfaa5dce7f125d3bc4f",
-      "umb://document-type/93d3ec9b473f4f8fa077b940f9fd1afa",
-      "umb://document-type/6adcfc8336ec45a498b098aea7fa1fcf",
-      "umb://document-type/71bb6811715f43be9fa8268f06ec23b3",
-      "umb://document-type/297dda1fbe114ab787d218b49d089a5a",
       "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18",
       "umb://document-type/f446c13c75eb4970a311e29f3a91096c",
       "umb://document-type/c13bce713a5d4370abc3e9c1aabce4ec",
@@ -56,10 +50,6 @@
       "Mode": "Exist"
     },
     {
-      "Udi": "umb://document-type/297dda1fbe114ab787d218b49d089a5a",
-      "Mode": "Exist"
-    },
-    {
       "Udi": "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2",
       "Mode": "Exist"
     },
@@ -76,23 +66,11 @@
       "Mode": "Exist"
     },
     {
-      "Udi": "umb://document-type/6adcfc8336ec45a498b098aea7fa1fcf",
-      "Mode": "Exist"
-    },
-    {
       "Udi": "umb://document-type/6f223ecf3ef54c33bb28029fd537b63f",
       "Mode": "Exist"
     },
     {
-      "Udi": "umb://document-type/71bb6811715f43be9fa8268f06ec23b3",
-      "Mode": "Exist"
-    },
-    {
       "Udi": "umb://document-type/7c435c3931f0450f87663a3a1bb90143",
-      "Mode": "Exist"
-    },
-    {
-      "Udi": "umb://document-type/7eb6fdf4f4874f32b1c200822a4423a1",
       "Mode": "Exist"
     },
     {
@@ -109,14 +87,6 @@
     },
     {
       "Udi": "umb://document-type/91a95559dc334e0386fbddfb0a26b4ca",
-      "Mode": "Exist"
-    },
-    {
-      "Udi": "umb://document-type/93265f0038e64cfaa5dce7f125d3bc4f",
-      "Mode": "Exist"
-    },
-    {
-      "Udi": "umb://document-type/93d3ec9b473f4f8fa077b940f9fd1afa",
       "Mode": "Exist"
     },
     {

@@ -33,54 +33,8 @@ namespace JNCC.PublicWebsite.Core.Services
                 return GetPageHeroViewModel(publishedContent as IPageHeroComposition);
             }
 
-            //TODO: Decide whether to remove this if not using Articulate
-            //if (publishedContent is ArticulatePost)
-            //{
-            //    return GetBlogPostViewModel(publishedContent as ArticulatePost);
-            //}
-            //else
-            //{
-            //    var blogRoot = publishedContent.AncestorOrSelf<ArticulateModel>();
-
-            //    if (blogRoot != null)
-            //    {
-            //        return GetBlogViewModel(blogRoot);
-            //    }
-            //}
-
             return null;
         }
-
-        //TODO: Decide whether to remove this if not using Articulate
-        //private PageHeroViewModel GetBlogViewModel(ArticulateModel articulate)
-        //{
-        //    if (articulate.BlogBanner == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    return new PageHeroViewModel()
-        //    {
-        //        Headline = articulate.Name,
-        //        ImageUrl = articulate.GetCropUrl("blogBanner", "wide"),
-        //        //ImageCopyrightText = ?,
-        //    };
-        //}
-
-        //private PageHeroViewModel GetBlogPostViewModel(ArticulatePost articulatePost)
-        //{
-        //    if (articulatePost.PostImage == null)
-        //    {
-        //        return null;
-        //    }
-
-        //    return new PageHeroViewModel()
-        //    {
-        //        Headline = articulatePost.Name,
-        //        ImageUrl = articulatePost.GetCropUrl("postImage", "wide")
-        //        //ImageCopyrightText = ?;
-        //    };
-        //}
 
         private PageHeroViewModel GetPageHeroViewModel(IPageHeroComposition pageHeroComposition)
         {
@@ -107,11 +61,6 @@ namespace JNCC.PublicWebsite.Core.Services
             var isPageHeroComposition = currentPage is IPageHeroComposition;
             var isPageHeroCarouselComposition = currentPage is IPageHeroCarouselComposition;
            
-            //TODO: Decide whether to remove this if not using Articulate
-            //var isArticulatePost = currentPage is ArticulatePost;
-            //var blogRoot = currentPage.AncestorOrSelf<ArticulateModel>();
-            //var hasBlogRoot = blogRoot != null;
-
             if (currentPage is VirtualResourceModel)
             {
                 return false;
@@ -126,30 +75,6 @@ namespace JNCC.PublicWebsite.Core.Services
             {
                 return (currentPage as IPageHeroComposition).HasPageHeroImage();
             }
-
-            //if (isArticulatePost)
-            //{
-            //    var post = (currentPage as ArticulatePost);
-            //    var postImage = post.PostImage;
-
-            //    if (postImage == null)
-            //    {
-            //        return false;
-            //    }
-
-            //    return postImage.HasCrop("wide");
-            //}
-            //else if (hasBlogRoot)
-            //{
-            //    var blogBanner = blogRoot.BlogBanner;
-
-            //    if (blogBanner == null)
-            //    {
-            //        return false;
-            //    }
-
-            //    return blogBanner.HasCrop("wide");
-            //}
 
             if (isPageHeroCarouselComposition)
             {
