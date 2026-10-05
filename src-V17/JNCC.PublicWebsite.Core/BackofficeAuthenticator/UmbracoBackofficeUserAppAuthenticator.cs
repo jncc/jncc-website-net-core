@@ -14,7 +14,7 @@ namespace JNCC.PublicWebsite.Core.BackofficeAuthenticator
         /// <summary>
         /// The unique name of the ITwoFactorProvider. This is saved in a constant for reusability.
         /// </summary>
-        public const string Name = "JNCC Backoffice Authenticator";
+        public const string Name = "UmbracoBackofficeUserAppAuthenticator";
 
         /// <summary>
         /// Initializes a new instance of the <see cref="UmbracoAppAuthenticator"/> class.

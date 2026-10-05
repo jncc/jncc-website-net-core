@@ -6,28 +6,31 @@
     <CompressionEnabled>false</CompressionEnabled> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
     <Configurations>Debug;Release;Development;Staging;Localhost</Configurations>
   </PropertyGroup>
+  <ItemGroup>
+    <Content Include="App_Plugins\TwoFactor\umbraco-package.json" />
+  </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="ClosedXML"/>
-    <PackageReference Include="CMSImport"/>
-    <PackageReference Include="Diplo.GodMode"/>
-    <PackageReference Include="Newtonsoft.Json"/>
-    <PackageReference Include="NWebsec.AspNetCore.Middleware"/>
-    <PackageReference Include="SEOChecker"/>
-    <PackageReference Include="System.Text.Encodings.Web"/>
-    <PackageReference Include="Umbraco.Cms"/>
+    <PackageReference Include="ClosedXML" />
+    <PackageReference Include="CMSImport" />
+    <PackageReference Include="Diplo.GodMode" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="NWebsec.AspNetCore.Middleware" />
+    <PackageReference Include="SEOChecker" />
+    <PackageReference Include="System.Text.Encodings.Web" />
+    <PackageReference Include="Umbraco.Cms" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
-    <PackageReference Include="Microsoft.ICU.ICU4C.Runtime"/>
-    <PackageReference Include="Umbraco.Community.CSPManager"/>
-    <PackageReference Include="Umbraco.Deploy.OnPrem"/>
-    <PackageReference Include="Umbraco.Forms"/>
-    <PackageReference Include="Umbraco.StorageProviders.AzureBlob"/>
-    <PackageReference Include="Umbraco.StorageProviders.AzureBlob.ImageSharp"/>
-    <ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj"/>
-    <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))"/>
+    <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" />
+    <PackageReference Include="Umbraco.Community.CSPManager" />
+    <PackageReference Include="Umbraco.Deploy.OnPrem" />
+    <PackageReference Include="Umbraco.Forms" />
+    <PackageReference Include="Umbraco.StorageProviders.AzureBlob" />
+    <PackageReference Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" />
+    <ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
+    <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
   </ItemGroup>
 
   <ItemGroup>
