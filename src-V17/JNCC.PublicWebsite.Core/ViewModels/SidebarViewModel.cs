@@ -1,0 +1,26 @@
+﻿using JNCC.PublicWebsite.Core.Utilities;
+
+namespace JNCC.PublicWebsite.Core.ViewModels
+{
+    public sealed class SidebarViewModel : BasicSidebarViewModel
+    {
+        public IEnumerable<NavigationItemViewModel> InThisSectionLinks { get; set; } = [];
+        public bool HasInThisSectionLinks
+        {
+            get
+            {
+                return ExistenceUtility.IsNullOrEmpty(InThisSectionLinks) == false;
+            }
+        }
+
+        public string AlsoInLinksTitle { get; set; } = string.Empty;
+        public IEnumerable<NavigationItemViewModel> AlsoInLinks { get; set; } = [];
+        public bool HasAlsoInLinks
+        {
+            get
+            {
+                return ExistenceUtility.IsNullOrEmpty(AlsoInLinks) == false;
+            }
+        }
+    }
+}

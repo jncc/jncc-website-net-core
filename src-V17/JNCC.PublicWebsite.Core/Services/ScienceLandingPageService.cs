@@ -1,0 +1,180 @@
+﻿using JNCC.PublicWebsite.Core.Extensions;
+using JNCC.PublicWebsite.Core.Models;
+using JNCC.PublicWebsite.Core.Utilities;
+using JNCC.PublicWebsite.Core.ViewModels;
+using Umbraco.Extensions;
+using Umbraco.Cms.Web.Common.Mvc;
+using JNCC.PublicWebsite.Core.Interfaces.Services;
+using Umbraco.Cms.Core.Models.PublishedContent;
+
+namespace JNCC.PublicWebsite.Core.Services
+{
+    internal sealed class ScienceLandingPageService : IScienceLandingPageService
+    {
+        private const int NumberOfLatestUpdatesItems = 3;
+        private const int LatestUpdateItemContentLength = 75;
+
+        private readonly HtmlStringUtilities _htmlStringUtilities;
+        private readonly ICalloutCardsService _calloutCardsService;
+        private readonly INavigationItemService _navigationItemService;
+        public ScienceLandingPageService(ICalloutCardsService calloutCardsService, INavigationItemService navigationItemService)
+        {
+            _htmlStringUtilities = new HtmlStringUtilities();
+            _calloutCardsService = calloutCardsService ?? throw new ArgumentNullException(nameof(calloutCardsService));
+            _navigationItemService = navigationItemService ?? throw new ArgumentNullException(nameof(navigationItemService));
+        }
+
+        public ScienceLatestUpdatesSectionViewModel GetLatestUpdates(ScienceLandingPage model)
+        {
+            var viewModel = new ScienceLatestUpdatesSectionViewModel()
+            {
+                Pages = GetLatestUpdatedPages(model),
+                AToZPageLink = _navigationItemService.GetViewModel(model.AToZpageLink)
+            };
+
+            return viewModel;
+        }
+
+        private IEnumerable<ScienceLatestUpdatedPageItemViewModel> GetLatestUpdatedPages(ScienceLandingPage model)
+        {
+            var viewModels = new List<ScienceLatestUpdatedPageItemViewModel>();
+            var pages = model.Children(x => x.ContentType.Alias == ScienceCategoryPage.ModelTypeAlias || x.ContentType.Alias == ScienceDetailsPage.ModelTypeAlias);
+
+            if (ExistenceUtility.IsNullOrEmpty(pages))
+            {
+                return viewModels;
+            }
+
+            List<IPublishedContent> latestPages;
+
+            if (model.LatestUpdates != null && model.LatestUpdates.Any())
+            {
+                //use overridden latest updates
+                var selectedPages = model.LatestUpdates.OfType<IPublishedContent>();
+                switch (model.LatestUpdates.Count())
+                {
+                    case 2:
+                        latestPages = selectedPages.OrderByDescending(x => x.UpdateDate)
+                            .Take(2)
+                            .ToList();
+
+                        var onePage = pages.OrderByDescending(x => x.UpdateDate)
+                            .Take(1)
+                            .ToList();
+                        latestPages.AddRange(onePage);
+                        break;
+                    case 1:
+                        latestPages = selectedPages.OrderByDescending(x => x.UpdateDate)
+                            .Take(1)
+                            .ToList();
+
+                        var twoPages = pages.OrderByDescending(x => x.UpdateDate)
+                            .Take(2)
+                            .ToList();
+                        latestPages.AddRange(twoPages);
+                        break;
+                    default:
+                        latestPages = selectedPages.OrderByDescending(x => x.UpdateDate)
+                            .Take(NumberOfLatestUpdatesItems)
+                            .ToList();
+                        break;
+                }
+            }
+            else
+            {
+                //use auto top 3
+                latestPages = pages.OrderByDescending(x => x.UpdateDate)
+                    .Take(NumberOfLatestUpdatesItems)
+                    .ToList();
+            }
+            
+            foreach (var page in latestPages)
+            {
+                var viewModel = new ScienceLatestUpdatedPageItemViewModel()
+                {
+                    Title = page.GetHeadline(),
+                    ReadMoreLink = _navigationItemService.GetViewModel(page)
+                };
+
+                if(page.ContentType.Alias == ScienceDetailsPage.ModelTypeAlias)
+                {
+                    var scienceDetails = page as ScienceDetailsPage;
+                    if (scienceDetails != null)
+                    {
+                        if (ExistenceUtility.IsNullOrWhiteSpace(scienceDetails.Preamble) == false)
+                        {
+
+                            viewModel.Content = _htmlStringUtilities.Truncate(_htmlStringUtilities.StripHtmlTags(scienceDetails.Preamble.ToString(), new string[] { "a" }).ToString(), 200, true, false);
+                        }
+                    }
+                } 
+                else if (page.ContentType.Alias == ScienceCategoryPage.ModelTypeAlias)
+                {
+                    var scienceCategoryPage = page as ScienceCategoryPage;
+                    if (scienceCategoryPage != null)
+                    {
+                        if (ExistenceUtility.IsNullOrWhiteSpace(scienceCategoryPage.Preamble) == false)
+                        {
+
+                            viewModel.Content = _htmlStringUtilities.Truncate(_htmlStringUtilities.StripHtmlTags(scienceCategoryPage.Preamble.ToString(), new string[] { "a" }).ToString(), 200, true, false);
+                        }
+                    }
+                }
+
+                viewModels.Add(viewModel);
+            }
+
+            return viewModels;
+        }
+
+        public IEnumerable<ResourcesCollectionViewModel> GetResourcesCollections(ScienceLandingPage model)
+        {
+            if (model.ResourcesCollections is null)
+            {
+                return new List<ResourcesCollectionViewModel>();
+            }
+            
+            var viewModels = new List<ResourcesCollectionViewModel>();
+
+            foreach (var collection in model.ResourcesCollections)
+            {
+                if (collection.Content is ResourcesCollectionSchema resourceItem)
+                {
+                    var viewModel = new ResourcesCollectionViewModel()
+                    {
+                        Title = resourceItem.Title ?? "",
+                        Resources = _calloutCardsService.GetCalloutCards(resourceItem.Resources),
+                        ReadMoreLink = GetViewModelReadMoreLink(resourceItem)
+                    };
+
+                    viewModels.Add(viewModel);
+                }
+            }
+
+            return viewModels;
+        }
+
+        private NavigationItemViewModel GetViewModelReadMoreLink(ResourcesCollectionSchema collection)
+        {
+            if (collection.MainCategoryPage == null)
+            {
+                new NavigationItemViewModel();
+            }
+
+            var mainCategoryPageContent = collection.MainCategoryPage.FirstChildOfType("scienceCategoryPage") as ScienceCategoryPage;
+
+            if (mainCategoryPageContent == null)
+            {
+                new NavigationItemViewModel();
+            }
+
+            return new NavigationItemViewModel()
+            {
+                Text = string.Format("All References Resources in {0}", mainCategoryPageContent.GetHeadline()),
+                Url = mainCategoryPageContent.Url(),
+            };
+
+
+        }
+    }
+}

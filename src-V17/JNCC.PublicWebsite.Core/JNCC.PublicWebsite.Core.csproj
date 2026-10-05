@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Configurations>Debug;Release;Development;Staging;Localhost</Configurations>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Amazon.SQS.ExtendedClient" />
+    <PackageReference Include="Aws4RequestSigner" />
+    <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" />
+    <PackageReference Include="GoogleAuthenticator" />
+    <PackageReference Include="Newtonsoft.Json" />
+    <PackageReference Include="SEOChecker.Core" />
+    <PackageReference Include="SEOChecker.Library" />
+    <PackageReference Include="System.Text.Encodings.Web" />
+    <PackageReference Include="Umbraco.Cms.Core" />
+    <PackageReference Include="Umbraco.Cms.Infrastructure" />
+    <PackageReference Include="Umbraco.Cms.Web.Common" />
+    <PackageReference Include="Umbraco.Community.CSPManager" />
+  </ItemGroup>
+
+</Project>

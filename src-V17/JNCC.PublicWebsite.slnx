@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path="Directory.Packages.props" />
+  </Folder>
+  <Project Path="JNCC.PublicWebsite.Core/JNCC.PublicWebsite.Core.csproj" Id="b9f48db2-bcc4-4c8e-953a-37bb3ef77236" />
+</Solution>
