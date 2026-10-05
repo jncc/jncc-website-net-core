@@ -64,9 +64,8 @@ namespace JNCC.PublicWebsite.Core.Composers
 
             builder.Services.AddSingleton<IResourcesService, ResourcesService>();
 
-            //TODO: TIM - CAUSES BUILD FAILURE, INVESTIGATE WHY
-            //builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
-            //builder.Services.AddSingleton<AmazonSQSExtendedClient>();
+            builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
+            builder.Services.AddSingleton<AmazonSQSExtendedClient>();
 
             //Resource API client
             builder.Services.AddSingleton<IResourceApi, ResourceApi>();

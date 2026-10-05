@@ -1,10 +1,14 @@
 
+using Amazon.SQS;
 using JNCC.PublicWebsite.Core.Notifications;
+using JNCC.PublicWebsite.Core.Options;
 using Microsoft.AspNetCore.Rewrite;
 using SEOChecker.Core.Notifications;
 using Umbraco.Cms.Core.Notifications;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAWSService<IAmazonSQS>();
 
 builder.CreateUmbracoBuilder()
     .AddBackOffice()
@@ -17,8 +21,9 @@ builder.CreateUmbracoBuilder()
     .AddNotificationHandler<MediaCacheRefresherNotification, MediaCacheRefresherNotificationHandler>()
     .Build();
 
-WebApplication app = builder.Build();
+builder.Services.Configure<AmazonServiceConfigurationOptions>(builder.Configuration.GetSection(AmazonServiceConfigurationOptions.AmazonServiceConfiguration));
 
+WebApplication app = builder.Build();
 
 await app.BootUmbracoAsync();
 
