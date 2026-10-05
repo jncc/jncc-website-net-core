@@ -1,0 +1,87 @@
+{
+  "Name": "Stacked Content: Science Category Section Sub Sections",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "8a9eff86-f904-474e-9d2a-f82f5e21d79e",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "a1797505-33ee-4e59-8a9d-c21e8fe15fe4",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "4c25c5ed-8361-4aac-ad08-a6f063532bcc",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "5a0efac1-d74f-49c8-9bfe-263d6646815a",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "6eb1124a-1431-4b90-8df9-1f6d00d64638",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/1305771e64f74a848e05809e151d6847",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/4c25c5ed83614aacad08a6f063532bcc"
+    },
+    {
+      "Udi": "umb://document-type/5a0efac1d74f49c89bfe263d6646815a"
+    },
+    {
+      "Udi": "umb://document-type/6eb1124a14314b908df91f6d00d64638"
+    },
+    {
+      "Udi": "umb://document-type/8a9eff86f904474e9d2af82f5e21d79e"
+    },
+    {
+      "Udi": "umb://document-type/a179750533ee4e598a9dc21e8fe15fe4"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

@@ -1,0 +1,15 @@
+{
+  "Name": "Tags: Locations",
+  "EditorAlias": "Umbraco.Tags",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Tags",
+  "Configuration": {
+    "group": "Locations",
+    "storageType": "Json",
+    "umbMigrationV14": "2026-10-05T14:01:16.8645542\u002B00:00",
+    "delimiter": "\u0000"
+  },
+  "Udi": "umb://data-type/f3150225716d431785187cdd1de21222",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

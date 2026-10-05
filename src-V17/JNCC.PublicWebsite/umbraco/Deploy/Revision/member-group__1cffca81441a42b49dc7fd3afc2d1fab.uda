@@ -1,0 +1,7 @@
+{
+  "Name": "__umbracoRole_loginuser",
+  "Udi": "umb://member-group/1cffca81441a42b49dc7fd3afc2d1fab",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.MemberGroupArtifact",
+  "__version": "17.3.1"
+}

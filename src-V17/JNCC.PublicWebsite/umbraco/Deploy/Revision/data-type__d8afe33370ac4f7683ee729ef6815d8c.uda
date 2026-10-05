@@ -1,0 +1,18 @@
+{
+  "Name": "Slider: Items Per Page",
+  "EditorAlias": "Umbraco.Slider",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Slider",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "enableRange": false,
+    "initVal1": 6,
+    "initVal2": 0,
+    "minVal": 3,
+    "maxVal": 30,
+    "step": 3
+  },
+  "Udi": "umb://data-type/d8afe33370ac4f7683ee729ef6815d8c",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

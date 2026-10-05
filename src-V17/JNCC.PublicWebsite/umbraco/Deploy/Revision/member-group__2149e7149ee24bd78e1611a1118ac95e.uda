@@ -1,0 +1,7 @@
+{
+  "Name": "Test Protected Group",
+  "Udi": "umb://member-group/2149e7149ee24bd78e1611a1118ac95e",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.MemberGroupArtifact",
+  "__version": "17.3.1"
+}

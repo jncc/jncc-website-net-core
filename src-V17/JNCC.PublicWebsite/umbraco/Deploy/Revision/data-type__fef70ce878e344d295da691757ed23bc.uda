@@ -1,0 +1,31 @@
+{
+  "Name": "[MNTP] - Vertical Accordion Menu - Science Category  Science Detail",
+  "EditorAlias": "Umbraco.MultiNodeTreePicker",
+  "EditorUiAlias": "Umb.PropertyEditorUi.ContentPicker",
+  "Configuration": {
+    "startNode": {
+      "type": "content",
+      "id": null,
+      "dynamicRoot": null
+    },
+    "filter": "91a95559-dc33-4e03-86fb-ddfb0a26b4ca,81786f6a-7603-40b4-910e-7b6c1c937249",
+    "minNumber": 0,
+    "maxNumber": 0,
+    "showOpenButton": false,
+    "ignoreUserStartNodes": false,
+    "umbMigrationV14": "2026-10-05T14:01:16.8765787\u002B00:00"
+  },
+  "Udi": "umb://data-type/fef70ce878e344d295da691757ed23bc",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/81786f6a760340b4910e7b6c1c937249",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/91a95559dc334e0386fbddfb0a26b4ca",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

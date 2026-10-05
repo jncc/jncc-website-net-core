@@ -1,0 +1,27 @@
+{
+  "Name": "Stacked Content: Vertical Accordion Menu",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "f96288ff-b810-41b0-bb28-e8c29461442d",
+        "label": "{=accordionTitle}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/b5572a56e77e4f8f886739533449d377",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/f96288ffb81041b0bb28e8c29461442d"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

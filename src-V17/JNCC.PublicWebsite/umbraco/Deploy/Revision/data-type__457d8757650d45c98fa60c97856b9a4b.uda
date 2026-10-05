@@ -1,0 +1,26 @@
+{
+  "Name": "Science Category Page Picker",
+  "EditorAlias": "Umbraco.MultiNodeTreePicker",
+  "EditorUiAlias": "Umb.PropertyEditorUi.ContentPicker",
+  "Configuration": {
+    "startNode": {
+      "type": "content",
+      "id": null,
+      "dynamicRoot": null
+    },
+    "filter": "91a95559-dc33-4e03-86fb-ddfb0a26b4ca",
+    "minNumber": "",
+    "maxNumber": "",
+    "showOpenButton": false,
+    "umbMigrationV14": "2026-10-05T14:01:16.8677866\u002B00:00"
+  },
+  "Udi": "umb://data-type/457d8757650d45c98fa60c97856b9a4b",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/91a95559dc334e0386fbddfb0a26b4ca",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

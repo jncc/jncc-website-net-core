@@ -1,0 +1,30 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@using JNCC.PublicWebsite.Core.Extensions
+@model IEnumerable<AccordionItemViewModel>
+
+@if (Model?.Any() ?? false)
+{
+    @*Converted to non tabs, keeping this code in case it's needed later*@
+    @* <ul class="tabs" data-responsive-accordion-tabs="tabs small-accordion medium-tabs" id="profile-tabs">
+        @foreach (IAccordionHeaderViewModel header in Model)
+        {
+            <li class="@(Model.IsFirst(header) ? " tabs-title is-active" : "tabs-title")"><a href="#@header.HtmlId">@header.Title</a></li>
+        }
+    </ul>
+    <div class="tabs-content" data-tabs-content="profile-tabs">
+        @foreach (var tab in Model)
+        {
+            <div class="@(Model.IsFirst(tab) ? " tabs-panel is-active" : "tabs-panel")" id="@tab.HtmlId">
+                @Html.Raw(tab.Content)
+            </div>
+        }
+    </div> *@
+    <div class="job-detail">
+        @foreach (var tab in Model) {
+            <h2 class="top-pad-onepointfive-rem">@tab.Title</h2>
+            <div>
+                @Html.Raw(tab.Content)
+            </div>
+        }
+    </div>
+}

@@ -1,0 +1,73 @@
+{
+  "Name": "Stacked Content: Science iFrame Page",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "6dc5420d-c0d3-4e59-8fc6-875838466834",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "aa2a0570-0d98-4842-bcee-d6ddf9cf95b5",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "98c2a3c5-880b-429d-bc1b-0924ed94d907",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "3df010b6-c57b-47be-8f12-335c807958d8",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/e5cfd2f8b4ef4e86873edc979616d1f8",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/3df010b6c57b47be8f12335c807958d8"
+    },
+    {
+      "Udi": "umb://document-type/6dc5420dc0d34e598fc6875838466834"
+    },
+    {
+      "Udi": "umb://document-type/98c2a3c5880b429dbc1b0924ed94d907"
+    },
+    {
+      "Udi": "umb://document-type/aa2a05700d984842bceed6ddf9cf95b5"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

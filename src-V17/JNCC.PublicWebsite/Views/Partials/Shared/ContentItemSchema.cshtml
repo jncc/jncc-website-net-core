@@ -1,0 +1,49 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@using Umbraco.Cms.Core.Models.Blocks
+@model ContentItemSchema
+
+@if (Model.Image != null)
+{
+    <article class="article @(Model.ReadMoreButton != null ? "article-list" : "")">
+        @{bool hasImg = Model.Image?.Any() ?? false;}
+
+        @if (hasImg)
+        {
+            foreach (BlockListItem image in Model.Image)
+            {
+                if (image.Content is ContentImageSchema mediaItem)
+                {
+                    if (mediaItem.Image?.Content is Image media && media != null)
+                    {
+                        var altText = media.AltText.IsNullOrWhiteSpace() ? media.Name : media.AltText;
+                        <div class="img-holder">
+                            <img src="@media.Url()" alt="@altText" title="@(media.TitleText)">
+                        </div>
+                    }
+                }
+            }
+
+        }
+
+        @{string stly = hasImg ? null : "no-padding"; }
+
+        <div class="text-holder" class="@stly" >
+            @if(Model.ReadMoreButton != null)
+            {
+                <h3 class="no-margin" ><a href="@Model.ReadMoreButton?.Url" target="@Model.ReadMoreButton?.Target">@Model.Headline</a></h3>
+            }
+            else if (!string.IsNullOrEmpty(Model.Headline))
+            {
+                <h3 class="no-margin">@Model.Headline</h3>
+            }    
+            <div>
+                @Html.Raw(Model.Content)
+            </div>
+            @if (Model.ReadMoreButton != null)
+            {
+                string text = (!string.IsNullOrEmpty(Model.ReadMoreButton?.Name) ? Model.ReadMoreButton.Name : "Read More");
+                <a href="@Model.ReadMoreButton.Url" target="@Model.ReadMoreButton.Target" class="button ">@text</a>
+            }
+        </div>
+    </article>
+}

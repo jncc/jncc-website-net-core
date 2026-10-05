@@ -1,0 +1,12 @@
+{
+  "Name": "Related links: Single Item",
+  "EditorAlias": "Umbraco.MultiUrlPicker",
+  "EditorUiAlias": "Umb.PropertyEditorUi.MultiUrlPicker",
+  "Configuration": {
+    "max": "1"
+  },
+  "Udi": "umb://data-type/f68e38ac222346f59ba267af9107c3b7",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

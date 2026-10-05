@@ -1,0 +1,34 @@
+{
+  "Name": "Callout Card Schema - Content - Rich Text Editor",
+  "EditorAlias": "Umbraco.RichText",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Tiptap",
+  "Configuration": {
+    "hideLabel": false,
+    "ignoreUserStartNodes": false,
+    "extensions": [
+      "Umb.Tiptap.RichTextEssentials",
+      "Umb.Tiptap.Anchor",
+      "Umb.Tiptap.Block",
+      "Umb.Tiptap.Blockquote",
+      "Umb.Tiptap.Bold",
+      "Umb.Tiptap.BulletList",
+      "Umb.Tiptap.CodeBlock",
+      "Umb.Tiptap.Heading",
+      "Umb.Tiptap.HorizontalRule",
+      "Umb.Tiptap.HtmlAttributeClass",
+      "Umb.Tiptap.HtmlAttributeDataset",
+      "Umb.Tiptap.HtmlAttributeId",
+      "Umb.Tiptap.HtmlAttributeStyle",
+      "Umb.Tiptap.HtmlTagDiv",
+      "Umb.Tiptap.HtmlTagSpan",
+      "Umb.Tiptap.Italic",
+      "Umb.Tiptap.OrderedList",
+      "Umb.Tiptap.Strike",
+      "Umb.Tiptap.TrailingNode"
+    ]
+  },
+  "Udi": "umb://data-type/e0ff14bdeb994c72b81681cbdcafed97",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

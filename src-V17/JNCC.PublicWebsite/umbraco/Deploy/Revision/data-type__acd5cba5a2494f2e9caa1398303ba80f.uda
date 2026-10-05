@@ -1,0 +1,27 @@
+{
+  "Name": "Nested Content: Resource Items",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "b5be20f2-4909-4d26-97ef-ff291e26ce00",
+        "label": "",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": true,
+    "maxPropertyWidth": "100%"
+  },
+  "Udi": "umb://data-type/acd5cba5a2494f2e9caa1398303ba80f",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/b5be20f249094d2697efff291e26ce00"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

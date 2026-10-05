@@ -1,0 +1,45 @@
+{
+  "Name": "Image Text Schema Section - Science Details",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "1baaa72c-9cf5-4fd0-8b32-0aa92943e691",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "8ef610c6-84d4-41bd-be63-aac3583d615a",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=headline}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/5d023a2343d44b39ac023e43c92eab97",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/1baaa72c9cf54fd08b320aa92943e691"
+    },
+    {
+      "Udi": "umb://document-type/8ef610c684d441bdbe63aac3583d615a"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

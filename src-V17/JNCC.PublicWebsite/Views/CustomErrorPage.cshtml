@@ -1,0 +1,16 @@
+﻿@using JNCC.PublicWebsite.Core.Models
+@model CustomErrorPage
+@{
+    Layout = "Master.cshtml";
+}
+<main id="main">
+    @(await Component.InvokeAsync("PageHero", new { model = Model }))
+    <div class="container no-breadcrumbs">
+        <div class="two-columns">
+            <div id="content">
+                @(await Component.InvokeAsync("NoPageHeroHeadline", new { model = Model }))
+                @Html.Raw(Model.MainContent)
+            </div>
+        </div>
+    </div>
+</main>

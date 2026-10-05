@@ -1,0 +1,58 @@
+{
+  "Name": "Related Items Picker",
+  "EditorAlias": "Umbraco.MultiNodeTreePicker",
+  "EditorUiAlias": "Umb.PropertyEditorUi.ContentPicker",
+  "Configuration": {
+    "startNode": {
+      "type": "content",
+      "id": null,
+      "dynamicRoot": null
+    },
+    "filter": "cd6ed229-bfb9-4a5e-ae00-7b51cf15ed9a,81786f6a-7603-40b4-910e-7b6c1c937249,91a95559-dc33-4e03-86fb-ddfb0a26b4ca,cb35e9f1-0716-438f-8227-97d45c9dde36,5a06cc8a-c356-49f4-b3da-bb85686713a3,9126e2ee-236c-4a42-ac9b-bb25bafbbe18,50ea9983-8bf8-4016-bcff-eb652534ed3c,37f159a2-ac73-4f41-bb6a-ec390cb09ea2,c9f50924-f784-4ba2-a952-0f559db4cc55",
+    "minNumber": "",
+    "maxNumber": "3",
+    "showOpenButton": false,
+    "umbMigrationV14": "2026-10-05T14:01:16.875055\u002B00:00"
+  },
+  "Udi": "umb://data-type/d9a98cd3d24e4e2ab6560cf9c64a3058",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/37f159a2ac734f41bb6aec390cb09ea2",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/50ea99838bf84016bcffeb652534ed3c",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/5a06cc8ac35649f4b3dabb85686713a3",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/81786f6a760340b4910e7b6c1c937249",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/9126e2ee236c4a42ac9bbb25bafbbe18",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/91a95559dc334e0386fbddfb0a26b4ca",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/c9f50924f7844ba2a9520f559db4cc55",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/cb35e9f10716438f822797d45c9dde36",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/cd6ed229bfb94a5eae007b51cf15ed9a",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

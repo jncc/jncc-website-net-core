@@ -1,0 +1,15 @@
+{
+  "Name": "Simple Science Category Page",
+  "Alias": "SimpleScienceCategoryPage",
+  "File": "umb://template-file/SimpleScienceCategoryPage.cshtml",
+  "Udi": "umb://template/7999191290a2415fa30572f646477432",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/SimpleScienceCategoryPage.cshtml",
+      "Ordering": true,
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "13.4.3"
+}

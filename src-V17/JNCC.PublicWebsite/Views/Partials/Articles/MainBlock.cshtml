@@ -1,0 +1,13 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels;
+@model IEnumerable<ArticlesSectionViewModel>
+
+@foreach (var section in Model)
+{
+    @if (!section.HideHeadline)
+    {
+        <h2 id="@(section.HtmlId)">@(section.Headline)</h2>
+    }
+
+    @(await Html.PartialAsync(string.Format("~/Views/Partials/Articles/{0}.cshtml", section.PartialViewName), section))
+
+}

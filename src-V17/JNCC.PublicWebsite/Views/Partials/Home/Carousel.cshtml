@@ -1,0 +1,51 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels;
+@model CarouselViewModel
+@if (Model != null)
+{
+    <div class="visual-section">
+        <div class="container">
+            <div class="row">
+                <div class="columns medium-8">
+                    <h1>@Model.Headline</h1>
+                    @if (Model.Text != null && string.IsNullOrWhiteSpace(Model.Text.ToHtmlString()) == false)
+                    {
+                        <div class="text-block">
+                            @Html.Raw(Model.Text)
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        @if (Model?.Images?.Any() ?? false)
+        {
+            <style nonce="k2svo49hkrmbs5s3g4t4awmg">
+                @foreach (var image in Model.Images.Select((x, i) => new { Value = x, Index = i }))
+                {
+                    <text>
+.slider-image-@image.Index {
+    background-image: url(@image.Value.Url);
+}
+                    </text>
+                }
+            </style>
+            <div class="main-slider">
+                @foreach (var image in Model.Images.Select((x, i) => new { Value = x, Index = i }))
+                {
+                    <div class="slide">
+                        <div class="slider-image slider-image-@image.Index"></div>
+
+                        @if (!image.Value.TitleText.IsNullOrWhiteSpace())
+                        {
+                            <div class="carousel-copyright-statement">
+                                <div class="text">
+                                    @image.Value.TitleText
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                }
+            </div>
+        }
+    </div>
+}

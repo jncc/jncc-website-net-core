@@ -1,0 +1,14 @@
+{
+  "Name": "Label",
+  "EditorAlias": "Umbraco.Label",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Label",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "umbracoDataValueType": "STRING",
+    "umbMigrationV14": "2026-10-05T14:01:16.8425937\u002B00:00"
+  },
+  "Udi": "umb://data-type/f0bc4bfbb49940d6ba86058885a5178c",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

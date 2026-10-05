@@ -1,0 +1,22 @@
+{
+  "Name": "Dropdown: Article Type",
+  "EditorAlias": "Umbraco.DropDown.Flexible",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Dropdown",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "multiple": false,
+    "items": [
+      "News Item",
+      "Case Study",
+      "Press Release",
+      "Event",
+      "Blog",
+      "Publication"
+    ],
+    "umbMigrationV14": "2026-10-05T14:01:16.8601765\u002B00:00"
+  },
+  "Udi": "umb://data-type/70ad520f1e0f4335aca8b413762414c0",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

@@ -1,0 +1,15 @@
+{
+  "Name": "Tags: Themes",
+  "EditorAlias": "Umbraco.Tags",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Tags",
+  "Configuration": {
+    "group": "themes",
+    "storageType": "Json",
+    "umbMigrationV14": "2026-10-05T14:01:16.8768711\u002B00:00",
+    "delimiter": "\u0000"
+  },
+  "Udi": "umb://data-type/05308cbfff414b2888eba30a54d0bf27",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

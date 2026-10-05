@@ -1,0 +1,162 @@
+{
+  "Name": "Simple Science Category Page",
+  "Alias": "simpleScienceCategoryPage",
+  "DefaultTemplate": "umb://template/7999191290a2415fa30572f646477432",
+  "AllowedTemplates": [
+    "umb://template/7999191290a2415fa30572f646477432"
+  ],
+  "HistoryCleanup": {},
+  "Icon": "icon-categories color-light-green",
+  "Thumbnail": "folder.png",
+  "Description": "A page to categorise Science Detail Pages and other Science Category Pages.",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "Parent": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+  "CompositionContentTypes": [
+    "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+    "umb://document-type/1774935ec0984c169078eb34c0fde458",
+    "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+    "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+    "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+    "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+    "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+    "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+    "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+    "umb://document-type/e7e93a2f706740bba19b7fc212604a32"
+  ],
+  "PropertyGroups": [
+    {
+      "Key": "ae1f5e48-d053-40c9-adc4-92ab27f185ae",
+      "Name": "Content",
+      "Alias": "content",
+      "PropertyTypes": [
+        {
+          "Key": "170847b9-4767-44a7-a4b8-32bf3e13badf",
+          "Alias": "relatedCategories",
+          "DataType": "umb://data-type/457d8757650d45c98fa60c97856b9a4b",
+          "Description": "Allows editors to related categories to the current category.This is a one way process, if the linked category is also related to this one, it must be authored on the other category page too.",
+          "MandatoryMessage": "",
+          "Name": "Related Categories",
+          "SortOrder": 6,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "4e33b75a-799b-40fa-aa04-9a42f2b0c80d",
+          "Alias": "imageAndTextSection",
+          "DataType": "umb://data-type/65fe95e6f0464ae091056a910e289447",
+          "Description": "Used to display an Image and Text section between the Preamble and the Contents listing block",
+          "MandatoryMessage": "",
+          "Name": "Image and Text Section",
+          "SortOrder": 3,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "64c0ccb0-3aaa-4f5a-9c6c-c91034e16fb8",
+          "Alias": "preamble",
+          "DataType": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+          "Description": "Introductory content explaining the purpose of the page.",
+          "MandatoryMessage": "",
+          "Name": "Preamble",
+          "SortOrder": 2,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "a94c4474-0e85-49cc-a6b4-ba17b5173c00",
+          "Alias": "featuredPages",
+          "DataType": "umb://data-type/b070bc0ce86e415eb19235e6d01c568b",
+          "Description": "The main science details pages that define this section.",
+          "MandatoryMessage": "",
+          "Name": "Featured Pages",
+          "SortOrder": 5,
+          "ValidationMessage": ""
+        },
+        {
+          "Key": "f4c1a5b1-8eb7-4748-854a-ba6c2177ac08",
+          "Alias": "mainContent",
+          "DataType": "umb://data-type/1b961a3b29314e4dafa3c1273d0bbac6",
+          "Description": "The main content for the page. Each section added here will be used to create an entry in the table of contents.If no sections are authored then no table of content will be created.",
+          "MandatoryMessage": "",
+          "Name": "Main Content",
+          "SortOrder": 4,
+          "ValidationMessage": ""
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/f4d11eb12c4040318505c6c343ed5836",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/1b961a3b29314e4dafa3c1273d0bbac6",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/457d8757650d45c98fa60c97856b9a4b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/65fe95e6f0464ae091056a910e289447",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/b070bc0ce86e415eb19235e6d01c568b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://data-type/dbb7c860e61b4214ba1b1eccc2c2a549",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type-container/2763fd254f8e4630a711036ae6d6fe8b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/0deb322be646495fa4c076ec7cfeef64",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/1774935ec0984c169078eb34c0fde458",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/22838cc0ea9149ed8ba04dc808726329",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/377709373a0c4261acf2e4ca75ba15b0",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/59aaa880442b46d5bab0004d3cca953c",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8762f228e97149d7a3a8ba7976e37a89",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/89d3ccfe541c4f5da7552078720f287b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/8d7c117c0ad24118a0519a1799b7fa67",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/96135853b8f04e8f91728b6e72dd903b",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://document-type/e7e93a2f706740bba19b7fc212604a32",
+      "Ordering": true
+    },
+    {
+      "Udi": "umb://template/7999191290a2415fa30572f646477432",
+      "Ordering": true,
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "13.4.3"
+}

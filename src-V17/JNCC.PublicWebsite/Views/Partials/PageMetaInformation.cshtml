@@ -1,0 +1,11 @@
+﻿@model DateTime
+<div id="meta" class="callout secondary">
+    <div class="row collapse">
+        <div class="column small-12 medium-8">
+            <p><span data-tooltip title="The date when the page was last published.">Published</span>: <time datetime="@Model.ToString("yyyy-MM-dd")">@Model.ToLongDateString()</time>. </p>
+        </div>
+        <!-- <div class="column small-12 medium-6">
+             <p><span data-tooltip title="The date the content was last updated">Last Updated</span>: Html.DisplayFor(model => model.ReviewedDate.Value).</p>
+         </div>-->
+    </div>
+</div>

@@ -1,0 +1,14 @@
+{
+  "Name": "Checkbox (Default: True)",
+  "EditorAlias": "Umbraco.TrueFalse",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Toggle",
+  "DatabaseType": "Integer",
+  "Configuration": {
+    "default": true,
+    "umbMigrationV14": "2026-10-05T14:01:16.8596894\u002B00:00"
+  },
+  "Udi": "umb://data-type/91c97a742e5244cba35aa2ca1fc10ee7",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

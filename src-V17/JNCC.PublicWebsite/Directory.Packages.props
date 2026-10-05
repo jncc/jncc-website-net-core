@@ -1,0 +1,23 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageFloatingVersionsEnabled>true</CentralPackageFloatingVersionsEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="ClosedXML" Version="0.105.1"/>
+    <PackageVersion Include="CMSImport" Version="17.1.4"/>
+    <PackageVersion Include="Diplo.GodMode" Version="17.2.2"/>
+    <PackageVersion Include="Newtonsoft.Json" Version="13.0.4"/>
+    <PackageVersion Include="NWebsec.AspNetCore.Middleware" Version="3.0.0"/>
+    <PackageVersion Include="SEOChecker" Version="17.0.4"/>
+    <PackageVersion Include="System.Text.Encodings.Web" Version="10.0.12"/>
+    <PackageVersion Include="Umbraco.Cms" Version="17.*"/>
+    <PackageVersion Include="Umbraco.Cms.DevelopmentMode.Backoffice" Version="17.*"/>
+    <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3"/>
+    <PackageVersion Include="Umbraco.Community.CSPManager" Version="17.0.5"/>
+    <PackageVersion Include="Umbraco.Deploy.OnPrem" Version="17.3.1"/>
+    <PackageVersion Include="Umbraco.Forms" Version="17.5.2"/>
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob" Version="17.1.0"/>
+    <PackageVersion Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="17.1.0"/>
+  </ItemGroup>
+</Project>

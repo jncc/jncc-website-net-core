@@ -1,0 +1,11 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model IEnumerable<SocialMediaNavigationItemViewModel>
+@if(Model?.Any() ?? false)
+{
+    <ul class="social-media no-bullet">
+        @foreach (var link in Model)
+        {
+            <li><a href="@link.Url" target="@link.Target"><span class="show-for-sr">@link.Text</span><i class="icon-@link.IconClassSuffix"></i></a></li>
+        }
+    </ul>
+}

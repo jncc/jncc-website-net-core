@@ -1,0 +1,31 @@
+﻿@using JNCC.PublicWebsite.Core.ViewModels
+@model IEnumerable<RelatedItemViewModel>
+@if (Model?.Any() ?? false)
+{
+    var count = 0;
+    <section class="links-section">
+        <div class="container">
+            <h2>Related links</h2>
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="columns small-12 medium-4">
+                        <a href="@item.Url" class="card">
+                            @if (string.IsNullOrWhiteSpace(item.ImageUrl) == false)
+                            {
+                                <style csp-manager-add-nonce="true">
+                                    .related-link-@count {
+                                        background-image: url(@item.ImageUrl);
+                                    }
+                                </style>
+                                <span class="img-holder related-link-@count"></span>
+                            }
+                            <span class="card-section"><strong>@item.Title</strong> @Html.Raw(item.Content)</span>
+                        </a>
+                    </div>
+                    count++;
+                }
+            </div>
+        </div>
+    </section>
+}

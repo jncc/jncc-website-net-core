@@ -1,0 +1,15 @@
+{
+  "Name": "Resources Page",
+  "Alias": "ResourcesPage",
+  "File": "umb://template-file/ResourcesPage.cshtml",
+  "Udi": "umb://template/a8db83c380134a2eabc8fb904f92f581",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/ResourcesPage.cshtml",
+      "Ordering": true,
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "17.3.1"
+}

@@ -64,14 +64,15 @@ namespace JNCC.PublicWebsite.Core.Composers
 
             builder.Services.AddSingleton<IResourcesService, ResourcesService>();
 
-            builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
-            builder.Services.AddSingleton<AmazonSQSExtendedClient>();
+            //TODO: TIM - CAUSES BUILD FAILURE, INVESTIGATE WHY
+            //builder.Services.AddSingleton<AmazonServiceConfigurationOptions>();
+            //builder.Services.AddSingleton<AmazonSQSExtendedClient>();
 
             //Resource API client
             builder.Services.AddSingleton<IResourceApi, ResourceApi>();
 
             //Content finders
-            builder.ContentFinders().InsertAfter<ContentFinderByUrl, ResourceContentFinder>();
+            builder.ContentFinders().InsertAfter<ContentFinderByUrlNew, ResourceContentFinder>();
 
             //builder.Services.Configure<ContentSettings>(options =>
             //{

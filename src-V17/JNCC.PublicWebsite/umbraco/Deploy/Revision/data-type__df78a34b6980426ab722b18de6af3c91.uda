@@ -1,0 +1,28 @@
+{
+  "Name": "Single Image Media Picker",
+  "EditorAlias": "Umbraco.MediaPicker3",
+  "EditorUiAlias": "Umb.PropertyEditorUi.MediaPicker",
+  "Configuration": {
+    "filter": "cc07b313-0843-4aa8-bbda-871c8da728c8,4c52d8ab-54e6-40cd-999c-7a5f24903e4d",
+    "multiple": false,
+    "validationLimit": {
+      "max": 1
+    },
+    "enableLocalFocalPoint": true,
+    "ignoreUserStartNodes": false,
+    "umbMigrationV14": "2026-10-05T14:01:16.8641479\u002B00:00"
+  },
+  "Udi": "umb://data-type/df78a34b6980426ab722b18de6af3c91",
+  "Dependencies": [
+    {
+      "Udi": "umb://media-type/4c52d8ab54e640cd999c7a5f24903e4d",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://media-type/cc07b31308434aa8bbda871c8da728c8",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

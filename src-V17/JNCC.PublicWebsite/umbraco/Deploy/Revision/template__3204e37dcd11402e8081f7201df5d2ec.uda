@@ -1,0 +1,15 @@
+{
+  "Name": "Simple Science Details Page",
+  "Alias": "SimpleScienceDetailsPage",
+  "File": "umb://template-file/SimpleScienceDetailsPage.cshtml",
+  "Udi": "umb://template/3204e37dcd11402e8081f7201df5d2ec",
+  "Dependencies": [
+    {
+      "Udi": "umb://template-file/SimpleScienceDetailsPage.cshtml",
+      "Ordering": true,
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.TemplateArtifact",
+  "__version": "13.4.3"
+}

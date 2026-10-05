@@ -1,0 +1,31 @@
+{
+  "Name": "[MNTP] - Latest Updates - Science Details - Max 3",
+  "EditorAlias": "Umbraco.MultiNodeTreePicker",
+  "EditorUiAlias": "Umb.PropertyEditorUi.ContentPicker",
+  "Configuration": {
+    "startNode": {
+      "type": "content",
+      "id": null,
+      "dynamicRoot": null
+    },
+    "filter": "81786f6a-7603-40b4-910e-7b6c1c937249,91a95559-dc33-4e03-86fb-ddfb0a26b4ca",
+    "minNumber": 0,
+    "maxNumber": 3,
+    "showOpenButton": false,
+    "ignoreUserStartNodes": false,
+    "umbMigrationV14": "2026-10-05T14:01:16.8762746\u002B00:00"
+  },
+  "Udi": "umb://data-type/a6ca9494926e4122b0192b61d55e9e49",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/81786f6a760340b4910e7b6c1c937249",
+      "Mode": "Exist"
+    },
+    {
+      "Udi": "umb://document-type/91a95559dc334e0386fbddfb0a26b4ca",
+      "Mode": "Exist"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

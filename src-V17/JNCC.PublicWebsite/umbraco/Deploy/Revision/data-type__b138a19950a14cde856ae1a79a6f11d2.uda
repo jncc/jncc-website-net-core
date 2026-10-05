@@ -1,0 +1,45 @@
+{
+  "Name": "Stacked Content: Science Slider Sections",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "457390df-af22-4eee-92e3-ea8cd69ed6ed",
+        "view": null,
+        "stylesheet": null,
+        "label": "",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      },
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "09577b99-c57a-4ccb-8d18-d5b18cb81b0d",
+        "view": null,
+        "stylesheet": null,
+        "label": "",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/b138a19950a14cde856ae1a79a6f11d2",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/09577b99c57a4ccb8d18d5b18cb81b0d"
+    },
+    {
+      "Udi": "umb://document-type/457390dfaf224eee92e3ea8cd69ed6ed"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

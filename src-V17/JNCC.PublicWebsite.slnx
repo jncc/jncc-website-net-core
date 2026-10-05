@@ -3,4 +3,5 @@
     <File Path="Directory.Packages.props" />
   </Folder>
   <Project Path="JNCC.PublicWebsite.Core/JNCC.PublicWebsite.Core.csproj" Id="b9f48db2-bcc4-4c8e-953a-37bb3ef77236" />
+  <Project Path="JNCC.PublicWebsite/JNCC.PublicWebsite.csproj" Id="e7ccfa0b-4163-47f9-ada8-7878500a835b" />
 </Solution>

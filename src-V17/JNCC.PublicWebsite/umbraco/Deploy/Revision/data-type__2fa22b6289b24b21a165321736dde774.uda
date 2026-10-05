@@ -1,0 +1,13 @@
+{
+  "Name": "Science Slider Schema - Image  Text - Text - Textbox",
+  "EditorAlias": "Umbraco.TextBox",
+  "EditorUiAlias": "Umb.PropertyEditorUi.TextBox",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "maxChars": ""
+  },
+  "Udi": "umb://data-type/2fa22b6289b24b21a165321736dde774",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

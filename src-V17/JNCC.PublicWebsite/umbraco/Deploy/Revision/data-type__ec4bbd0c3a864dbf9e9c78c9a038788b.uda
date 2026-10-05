@@ -1,0 +1,69 @@
+{
+  "Name": "List View - NewsAndInsightsLandingPage",
+  "EditorAlias": "Umbraco.ListView",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Collection",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "tabName": "Articles",
+    "pageSize": 10,
+    "layouts": [
+      {
+        "name": "List",
+        "collectionView": "Umb.CollectionView.Document.Table",
+        "icon": "icon-list",
+        "isSystem": true,
+        "selected": true
+      },
+      {
+        "name": "Grid",
+        "collectionView": "Umb.CollectionView.Document.Grid",
+        "icon": "icon-thumbnails-small",
+        "isSystem": true,
+        "selected": false
+      }
+    ],
+    "includeProperties": [
+      {
+        "alias": "articleType",
+        "header": "Article Type",
+        "nameTemplate": null,
+        "isSystem": false
+      },
+      {
+        "alias": "publishDate",
+        "header": "Publish Date",
+        "nameTemplate": null,
+        "isSystem": false
+      },
+      {
+        "alias": "updateDate",
+        "header": "Last edited",
+        "nameTemplate": null,
+        "isSystem": true
+      },
+      {
+        "alias": "creator",
+        "header": "Created by",
+        "nameTemplate": null,
+        "isSystem": true
+      }
+    ],
+    "orderBy": "updateDate",
+    "orderDirection": "desc",
+    "bulkActionPermissions": {
+      "allowBulkPublish": true,
+      "allowBulkUnpublish": true,
+      "allowBulkCopy": true,
+      "allowBulkMove": false,
+      "allowBulkDelete": true
+    },
+    "icon": "icon-badge color-black",
+    "showContentFirst": false,
+    "useInfiniteEditor": false,
+    "umbMigrationV14": "2026-10-05T14:01:16.8605081\u002B00:00"
+  },
+  "Udi": "umb://data-type/ec4bbd0c3a864dbf9e9c78c9a038788b",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

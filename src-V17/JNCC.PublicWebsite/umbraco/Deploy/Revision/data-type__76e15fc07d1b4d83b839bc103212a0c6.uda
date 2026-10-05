@@ -1,0 +1,15 @@
+{
+  "Name": "Tags: Teams",
+  "EditorAlias": "Umbraco.Tags",
+  "EditorUiAlias": "Umb.PropertyEditorUi.Tags",
+  "Configuration": {
+    "group": "teams",
+    "storageType": "Json",
+    "umbMigrationV14": "2026-10-05T14:01:16.8647948\u002B00:00",
+    "delimiter": "\u0000"
+  },
+  "Udi": "umb://data-type/76e15fc07d1b4d83b839bc103212a0c6",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

@@ -1,0 +1,13 @@
+{
+  "Name": "Blog Comments Form Picker",
+  "EditorAlias": "UmbracoForms.FormPicker",
+  "EditorUiAlias": "Forms.PropertyEditorUi.FormPicker.Single",
+  "DatabaseType": "Nvarchar",
+  "Configuration": {
+    "allowedForms": null
+  },
+  "Udi": "umb://data-type/d7e8c8fb892e42ecba2520298c88d1d1",
+  "Dependencies": [],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

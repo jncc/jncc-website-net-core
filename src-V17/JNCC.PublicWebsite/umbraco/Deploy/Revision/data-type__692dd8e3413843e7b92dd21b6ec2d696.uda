@@ -1,0 +1,31 @@
+{
+  "Name": "Stacked Content: Resources Collections",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "backgroundColor": null,
+        "iconColor": null,
+        "thumbnail": null,
+        "contentElementTypeKey": "214ccf2d-5c9f-43ab-a566-02a277981341",
+        "view": null,
+        "stylesheet": null,
+        "label": "{=title}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/692dd8e3413843e7b92dd21b6ec2d696",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/214ccf2d5c9f43aba56602a277981341"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}

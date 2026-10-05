@@ -1,0 +1,27 @@
+{
+  "Name": "Block List: Single Content Image",
+  "EditorAlias": "Umbraco.BlockList",
+  "EditorUiAlias": "Umb.PropertyEditorUi.BlockList",
+  "Configuration": {
+    "blocks": [
+      {
+        "contentElementTypeKey": "e3575e32-22e7-4aaa-9d51-8523d1c1032d",
+        "label": "{=imageAlternativeText}",
+        "editorSize": "medium",
+        "forceHideContentEditorInOverlay": false
+      }
+    ],
+    "validationLimit": {},
+    "useSingleBlockMode": false,
+    "useLiveEditing": false,
+    "useInlineEditingAsDefault": false
+  },
+  "Udi": "umb://data-type/e8b6bd7926cf463ab1547adf9e668626",
+  "Dependencies": [
+    {
+      "Udi": "umb://document-type/e3575e3222e74aaa9d518523d1c1032d"
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.DataTypeArtifact",
+  "__version": "17.3.1"
+}
