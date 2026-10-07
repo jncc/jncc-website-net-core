@@ -56,7 +56,7 @@
             {
               "label": "Float Left",
               "data": {
-                "tag": "div",
+                "tag": "span",
                 "class": "float-left"
               },
               "appearance": {
@@ -66,7 +66,7 @@
             {
               "label": "Float Right",
               "data": {
-                "tag": "div",
+                "tag": "span",
                 "class": "float-right"
               },
               "appearance": {
@@ -76,7 +76,7 @@
             {
               "label": "Border",
               "data": {
-                "tag": "div",
+                "tag": "span",
                 "class": "with-border"
               },
               "appearance": {
@@ -86,7 +86,7 @@
             {
               "label": "Clear Floats",
               "data": {
-                "tag": "div",
+                "tag": "span",
                 "class": "clearfix"
               },
               "appearance": {
