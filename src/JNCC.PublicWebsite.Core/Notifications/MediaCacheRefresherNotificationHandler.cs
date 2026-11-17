@@ -61,7 +61,7 @@ namespace JNCC.PublicWebsite.Core.Notifications
                     _logger.LogWarning(
                         $"MediaCacheRefresherNotification handled for type {notification.MessageType} but media item with Id {mediaItemId} could not be found."
                     );
-                    return;
+                    continue;
                 }
 
                 var fileName = mediaItem.GetValue<string>("umbracoFile");
@@ -80,13 +80,13 @@ namespace JNCC.PublicWebsite.Core.Notifications
                 {
                     _logger.LogInformation($"Published (update index)");
                     _mediaIndexService.Handle(mediaItem, fileName);
-                    return;
+                    continue;
                 }
                 if (mediaItem.Trashed)
                 {
                     _logger.LogInformation($"Unpublished (Try remove from index)");
                     _mediaRemoveIndexService.Handle(mediaItem, fileName);
-                    return;
+                    continue;
                 }
                 _logger.LogInformation($"No index change needed");
             }
