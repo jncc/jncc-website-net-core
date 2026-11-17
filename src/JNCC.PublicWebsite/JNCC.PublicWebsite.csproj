@@ -15,7 +15,7 @@
 		<PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
 		<PackageReference Include="NWebsec.AspNetCore.Middleware" Version="3.0.0" />
 		<PackageReference Include="SEOChecker" Version="13.6.2" />
-		<PackageReference Include="Umbraco.Cms" Version="13.16.3" />
+		<PackageReference Include="Umbraco.Cms" Version="13.16.5" />
 		<PackageReference Include="System.Text.Encodings.Web" Version="10.0.8" />
 	</ItemGroup>
 
@@ -23,10 +23,10 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="68.2.0.9" />
 		<PackageReference Include="Umbraco.Community.CSPManager" Version="1.4.2" />
-		<PackageReference Include="Umbraco.Deploy.OnPrem" Version="13.4.3" />
-		<PackageReference Include="Umbraco.Forms" Version="13.9.12" />
-		<PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="13.1.0" />
-		<PackageReference Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="13.1.0" />
+		<PackageReference Include="Umbraco.Deploy.OnPrem" Version="13.4.5" />
+		<PackageReference Include="Umbraco.Forms" Version="13.9.13" />
+		<PackageReference Include="Umbraco.StorageProviders.AzureBlob" Version="13.2.1" />
+		<PackageReference Include="Umbraco.StorageProviders.AzureBlob.ImageSharp" Version="13.2.1" />
 		<ProjectReference Include="..\JNCC.PublicWebsite.Core\JNCC.PublicWebsite.Core.csproj" />
 		<RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="68.2" />
 	</ItemGroup>
