@@ -1,0 +1,76 @@
+trigger:
+  branches:
+    include:
+    - development/*
+name: $(date:yyyyMMdd)$(rev:.r)
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: refs/heads/development
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  cancelTimeoutInMinutes: 1
+  pool:
+    name: Azure Pipelines
+    vmImage: windows-latest
+  steps:
+  - checkout: self
+    clean: true
+    fetchTags: false
+  - task: UseDotNet@2
+    displayName: Use .NET sdk 10.0.x
+    inputs:
+      version: 10.0.x
+  - task: DotNetCoreCLI@2
+    displayName: dotnet restore
+    inputs:
+      command: restore
+      projects: src-V17/JNCC.PublicWebsite.slnx
+  - task: DownloadSecureFile@1
+    displayName: Download secure file - seo-checker.lic
+    inputs:
+      secureFile: ee6e8cab-b1c0-4d01-be7a-49d70f195899
+  - task: DownloadSecureFile@1
+    displayName: Download secure file - cmsimport.lic
+    inputs:
+      secureFile: 729e2f97-7be4-4daf-b539-ca2b7c1f8c7d
+  - task: DownloadSecureFile@1
+    displayName: Download secure file - umbracoDeploy.lic
+    inputs:
+      secureFile: bf4870a1-e14e-436c-8a62-47afc9bd174d
+  - task: DownloadSecureFile@1
+    displayName: Download secure file - umbracoForms.lic
+    inputs:
+      secureFile: 2b8e8fe3-f54c-4d40-a3bb-89d1c3f5c5e3
+  - task: CopyFiles@2
+    displayName: 'Copy Files: Licenses'
+    inputs:
+      SourceFolder: $(Agent.TempDirectory)
+      Contents: '*.lic'
+      TargetFolder: $(Build.SourcesDirectory)\src-V17\JNCC.PublicWebsite\umbraco\Licenses
+  - task: VSBuild@1
+    displayName: 'Build solution '
+    inputs:
+      solution: src-V17/JNCC.PublicWebsite.slnx
+      msbuildArgs: /p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(Build.ArtifactStagingDirectory)\JNCC.PublicWebsite_$(BuildConfiguration).zip" /p:DeployIisAppPath="Default Web Site"
+      configuration: $(BuildConfiguration)
+  - task: ExtractFiles@1
+    displayName: 'Extract files '
+    inputs:
+      archiveFilePatterns: $(Build.ArtifactStagingDirectory)\JNCC.PublicWebsite_$(BuildConfiguration).zip
+      destinationFolder: $(Build.ArtifactStagingDirectory)\JNCC.PublicWebsite_$(BuildConfiguration)
+  - task: ArchiveFiles@2
+    displayName: Archive Files
+    inputs:
+      rootFolderOrFile: $(Build.ArtifactStagingDirectory)\JNCC.PublicWebsite_$(BuildConfiguration)
+      includeRootFolder: false
+      archiveFile: $(Build.ArtifactStagingDirectory)\JNCC.PublicWebsite_$(BuildConfiguration).zip
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: web'
+    condition: succeededOrFailed()
+    inputs:
+      PathtoPublish: $(Build.ArtifactStagingDirectory)\JNCC.PublicWebsite_$(BuildConfiguration).zip
+      ArtifactName: JNCC.PublicWebsite_$(BuildConfiguration)
+      TargetPath: '\\my\share\$(Build.DefinitionName)\$(Build.BuildNumber)'
